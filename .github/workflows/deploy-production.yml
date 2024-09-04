@@ -1,0 +1,59 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add known hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Install dependencies and build theme
+        working-directory: ./wp-content/themes/chrisbuyshomes
+        run: |
+          npm install
+          npm run build
+
+      - name: Sync Plugins and Themes to Production
+        run: |
+          rsync -avz --delete ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/carrot.chrisbuyshomes.com/wp-content/themes
+          rsync -avz --delete ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/carrot.chrisbuyshomes.com/wp-content/plugins
+
+      - name: Export wp_options and wp_postmeta from Staging
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/carrot-stg.chrisbuyshomes.com/partial_backup.sql --tables=wp_options,wp_postmeta --path=/home/rootadmin/public_html/carrot-stg.chrisbuyshomes.com"
+
+      - name: Transfer and Import SQL Dump to Production
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "cp /home/rootadmin/public_html/carrot-stg.chrisbuyshomes.com/partial_backup.sql /home/rootadmin/public_html/carrot.chrisbuyshomes.com/partial_backup.sql"
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db import /home/rootadmin/public_html/carrot.chrisbuyshomes.com/partial_backup.sql --path=/home/rootadmin/public_html/carrot.chrisbuyshomes.com"
+
+      - name: Set Site Title (blogname), Site URL (siteurl), and Home URL (home) in Production
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update blogname 'Chris Buys Homes' --path=/home/rootadmin/public_html/carrot.chrisbuyshomes.com"
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update siteurl 'https://carrot.chrisbuyshomes.com' --path=/home/rootadmin/public_html/carrot.chrisbuyshomes.com"
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update home 'https://carrot.chrisbuyshomes.com' --path=/home/rootadmin/public_html/carrot.chrisbuyshomes.com"
+
+      - name: Run Database Migrations in Production
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp core update-db --path=/home/rootadmin/public_html/carrot.chrisbuyshomes.com"

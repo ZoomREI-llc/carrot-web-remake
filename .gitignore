@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# WordPress specific
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
+wp-content/cache/
+wp-content/uploads/
+wp-content/updraft/
+wp-content/mu-plugins/
+wp-content/wp-rocket-config/
+wp-content/advanced-cache.php
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker overrides
+docker-compose.override.yml
+
+# Certificates
+ssl/*.pem
+
+# IDE specific
+.vscode/
