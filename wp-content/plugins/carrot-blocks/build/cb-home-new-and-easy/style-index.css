@@ -1,0 +1,45 @@
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-home-new-and-easy/style.css ***!
+  \****************************************************************************************************************************************************************************************/
+.cb-home-new-and-easy {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 15px;
+}
+
+.cb-home-new-and-easy > * {
+	max-width: 1030px;
+}
+
+.cb-home-new-and-easy h2 {
+	text-align: center;
+	margin: 30px 0 10px;
+
+	line-height: 1.2;
+	color: #212529;
+	font-size: 40px;
+	font-weight: 700;
+	font-family: "Poppins", sans-serif !important;
+}
+.cb-home-new-and-easy p {
+	font-size: 24px;
+	line-height: 1.5;
+	color: #212529;
+	font-style: italic;
+	font-family: "Poppins", sans-serif !important;
+}
+@media (min-width: 1024px) {
+	.cb-home-new-and-easy h2 {
+		font-size: 45px;
+	}
+	.cb-home-new-and-easy {
+		padding: 0;
+	}
+	
+}
+
+
+
+
+/*# sourceMappingURL=style-index.css.map*/

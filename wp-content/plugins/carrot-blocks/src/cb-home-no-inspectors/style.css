@@ -1,0 +1,49 @@
+.cb-home-no-inspectors {
+	font-size: 36px;
+	padding: 0 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 1.5;
+	color: #1d1d1d;
+	font-family: "Poppins", sans-serif !important;
+}
+.cb-home-no-inspectors p{
+margin: 0;
+}
+.cb-home-no-inspectors p a{
+color: #0c91b2;
+text-decoration: none;
+font-size: 36px;
+line-height: 1.5;
+font-family: "Poppins", sans-serif !important;
+}
+
+
+
+.cb-home-no-inspectors::before,
+.cb-home-no-inspectors::after {
+	content: "";
+	display: block;
+	width: 100%;
+	border: 1px solid #808080;
+	background-color: currentColor;
+	margin: 35px 0;
+	max-width:  1030px;
+}
+.cb-home-no-inspectors > * {
+	max-width:  1030px;
+}
+
+@media (min-width: 1024px) {
+	.cb-home-no-inspectors {
+		padding: 0;
+	}
+	/* .cb-home-no-inspectors {
+		font-size: 36px;
+	}
+	.cb-home-no-inspectors p a{
+	font-size: 36px;
+	} */
+}

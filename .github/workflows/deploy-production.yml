@@ -41,7 +41,7 @@ jobs:
 
       - name: Export wp_options and wp_postmeta from Staging
         run: |
-          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/carrot-stg.chrisbuyshomes.com/partial_backup.sql --tables=wp_options,wp_postmeta --path=/home/rootadmin/public_html/carrot-stg.chrisbuyshomes.com"
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/carrot-stg.chrisbuyshomes.com/partial_backup.sql --tables=wp_options --path=/home/rootadmin/public_html/carrot-stg.chrisbuyshomes.com"
 
       - name: Transfer and Import SQL Dump to Production
         run: |

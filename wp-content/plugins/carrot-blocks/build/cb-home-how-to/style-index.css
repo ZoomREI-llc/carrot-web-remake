@@ -1,0 +1,147 @@
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-home-how-to/style.css ***!
+  \**********************************************************************************************************************************************************************************/
+.cb-home-how-to {
+	padding-block: 10px 0;
+}
+
+.cb-home-how-to h2 {
+	font-size: 44px;
+	text-align: center;
+	color: #fff;
+	margin-bottom: 2rem;
+
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.2;
+	font-weight: 700;
+
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+
+.cb-home-how-to p {
+	font-size: 24px;
+	font-family: "Poppins", sans-serif !important;
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0;
+	color: #fff;
+}
+
+.cb-home-how-to > p::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 4px;
+	background-color: #fff;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.cb-home-how-to__steps {
+	display: flex;
+	flex-direction: column;
+	/* gap: 1rem; */
+}
+
+@media (min-width: 1024px) {
+	.cb-home-how-to {
+		padding-block: 0;
+	}
+	.cb-home-how-to h2 {
+		font-size: 50px;
+	}
+	.cb-home-how-to__steps {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+.cb-home-how-to__step {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	/* font-size: 1.125rem; */
+	margin-bottom: 30px;
+}
+.cb-home-how-to-step__image{
+	width: 100%;
+	height: 190px;
+
+}
+.cb-home-how-to-step__image img{
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+display: block;
+}
+@media (min-width: 1024px) {
+	.cb-home-how-to__step {
+		flex: 0 0 31%;
+		width: 31%;
+		margin-bottom: 0;
+	}
+	.cb-home-how-to-step__image{
+		width: 100%;
+		height: 170px;
+	
+	}
+}
+.cb-home-how-to-step__text__description {
+	font-size: 18px !important;
+}
+
+.cb-home-how-to-step__text__heading {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: bold;
+
+	font-size: 18px;
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.2;
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+.cb-home-how-to-step__text__heading a {
+	font-size: 18px;
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.2;
+	color: #fff;
+	text-decoration: none;
+}
+
+.cb-home-how-to__full-width {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	width: 100%;
+	max-width: none;
+	background-color: #d14200;
+}
+
+@media (min-width: 1024px) {
+	.cb-home-how-to__full-width {
+		padding: 2rem;
+	}
+}
+
+.cb-home-how-to__full-width > * {
+	max-width: 1080px;
+}
+
+/* .banner {
+	color: white;
+	background-color: var(--primary-dark-color);
+}
+
+.dark-banner {
+	color: white;
+	background-color: var(--dark-color);
+} */
+
+
+/*# sourceMappingURL=style-index.css.map*/

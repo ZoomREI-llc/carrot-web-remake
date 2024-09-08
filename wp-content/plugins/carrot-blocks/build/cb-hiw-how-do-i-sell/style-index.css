@@ -1,0 +1,206 @@
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-hiw-how-do-i-sell/style.css ***!
+  \****************************************************************************************************************************************************************************************/
+.cb-hiw-how-do-i-sell__container {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	
+}
+.cb-hiw-how-do-i-sell {
+	display: flex;
+	flex-direction: column;
+	/* gap: 30px; */
+	align-items: center;
+	text-align: center;
+	padding: 15px;
+	max-width: 1080px;
+	position: relative;
+}
+.cb-hiw-how-do-i-sell:before {
+	background: #e9ecef;
+	content: "";
+	display: block;
+	height: 5px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 115px;
+}
+.cb-hiw-how-do-i-sell h1 {
+	margin: 30px 0;
+	color: #212529;
+	font-size: 51px;
+	line-height: 1.2;
+	font-weight: 700;
+	font-family: "Poppins", sans-serif !important;
+}
+
+@media (min-width: 1024px) {
+	.cb-hiw-how-do-i-sell h1 {
+		font-size: 58px;
+		margin: 30px 0;
+	}
+	.cb-hiw-how-do-i-sell:before{
+		left: 15px;
+	}
+}
+
+.cb-hiw-how-do-i-sell h2 {
+	/* color:#212529; */
+	/* margin: 0; */
+	margin-top: 50px;
+	margin-bottom: 10px;
+	color: #ea4a00;
+	font-size: 35px;
+	line-height: 1.2;
+	font-weight: 700;
+	font-family: "Poppins", sans-serif !important;
+}
+
+
+@media (min-width: 1024px) {
+	.cb-hiw-how-do-i-sell h2 a,
+	.cb-hiw-how-do-i-sell h2 {
+		font-size: 40px;
+	}
+	.cb-hiw-how-do-i-sell h2 {
+		margin-top: 60px;
+		margin-bottom: 20px;
+		font-size: 40px;
+	}
+	
+}
+
+.cb-hiw-how-do-i-sell__subtitle {
+}
+.cb-hiw-how-do-i-sell p {
+	color: #1d1d1d;
+	font-size: 36px;
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: "Poppins", sans-serif !important;
+	margin: 0;
+	text-align: left;
+	text-decoration: none;
+}
+.cb-hiw-how-do-i-sell p a{
+	color: #0c91b2;
+	text-align: left;
+	font-size: 36px;
+	line-height: 1.2;
+	font-weight: 700;
+	font-family: "Poppins", sans-serif !important;
+	margin: 0;
+	text-decoration: none;
+}
+.cb-hiw-how-do-i-sell__text {
+}
+.cb-hiw-how-do-i-sell__list {
+	counter-reset: item;
+	font-weight: 700;
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+	list-style: none;
+}
+.cb-hiw-how-do-i-sell__list>li{
+	counter-increment: item;
+	font-size: 20px;
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.5;
+	text-align: left;
+	margin: 2rem 0;
+	overflow: hidden;
+	padding-left: 3.5rem;
+
+}
+
+.cb-hiw-how-do-i-sell__list>li a{
+	text-decoration: none;
+	font-size: 22px;
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.5;
+	color: #0c91b2;
+
+
+}
+
+.cb-hiw-how-do-i-sell__list>li:before {
+	align-items: center;
+	background: #ff651e;
+	border-radius: 50%;
+	color: #1d1d1d;
+	content: counter(item);
+	display: flex;
+	float: left;
+	font-size: 22px;
+	height: 40px;
+	justify-content: center;
+	line-height: 1;
+	margin-left: -3.5rem;
+	text-align: center;
+	width: 40px;
+
+	
+}
+@media (min-width: 1024px) {
+	.cb-hiw-how-do-i-sell__list>li:before {
+
+		height: 60px;
+		margin-left: -4.5rem;
+		width: 60px;
+	}
+	.cb-hiw-how-do-i-sell__list>li{
+
+		padding-left: 4.5rem;
+	}
+	.cb-hiw-how-do-i-sell__list>li{
+		font-size: 22px;
+	}
+}
+.cb-hiw-how-do-i-sell__form-wrapper {
+		background: #f8f9fa;
+		border: 1px solid #e9ecef;
+		clear: both;
+		color: #373a3c;
+		margin: 2rem auto;
+		width: 100%;
+		min-height: 200px;
+  
+}
+.cb-hiw-how-do-i-sell__footer{
+	width: 100%;
+}
+.cb-hiw-how-do-i-sell__footer p{
+	margin: 0 auto;
+	max-width: 920px;
+	font-style: italic;
+	font-size: 24px;
+	color: #ea4a00;
+	text-align: center;
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.2;
+}
+.cb-hiw-how-do-i-sell__footer::before, .cb-hiw-how-do-i-sell__footer::after {
+	content: "";
+	display: block;
+
+	width: 100%;
+	border: 1px solid #ff996b;
+	background-color: #ff996b;
+	margin-block: 30px;
+	font-family: "Poppins", sans-serif !important;
+}
+
+@media (min-width: 1024px) {
+.cb-hiw-how-do-i-sell__form-wrapper {
+	width: 70%;
+	min-height: 300px;
+
+}
+.cb-hiw-how-do-i-sell__footer p{
+	font-size: 27px;
+}
+}
+
+/*# sourceMappingURL=style-index.css.map*/

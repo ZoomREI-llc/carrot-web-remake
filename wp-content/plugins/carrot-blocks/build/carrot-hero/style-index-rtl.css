@@ -145,6 +145,14 @@
 	display: none !important;
 }
 
+.kc-hero .address_city,
+.kc-hero .address_state,
+.kc-hero .address_zip,
+.kc-hero .gform_heading,
+.kc-hero .gform-field-label--type-sub {
+	display: none !important;
+}
+
 /* ------------------------------------------- */
 /* ------------ COPIED FORM STYLES ---------- */
 /* ----------------------------------------- */
@@ -156,7 +164,7 @@
 	border-color: rgb(128, 189, 255) !important;
 	box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 0.2rem !important;
 	color: rgb(73, 80, 87) !important;
-	outline: 0px !important;
+	outline: 0px !important; 
 }
 
 .kc-hero .form-control,
@@ -186,9 +194,5 @@
 		border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	width: 100%;
-}
-
-.kc-hero .gfield--type-address {
-	display: none !important;
 }
 

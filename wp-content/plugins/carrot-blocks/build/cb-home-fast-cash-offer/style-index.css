@@ -1,0 +1,302 @@
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-home-fast-cash-offer/style.css ***!
+  \*******************************************************************************************************************************************************************************************/
+.cb-home-fast-cash-offer {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+}
+.cb-home-fast-cash-offer__full-width{
+	background-color: #212529;
+}
+.cb-home-fast-cash-offer h2 {
+	text-align: center;
+	margin: 0;
+	line-height: 1.2;
+	color: #fff;
+	font-family: "Poppins", sans-serif !important;
+font-size: 40px;
+	margin-bottom: 10px;
+}
+
+@media (min-width: 1024px) {
+	.cb-home-fast-cash-offer h2 {
+		font-size: 45px;
+	}
+	.cb-home-fast-cash-offer h2 br{
+		display: none;
+	}
+}
+
+.cb-home-fast-cash-offer__content {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	/* gap: 1rem; */
+}
+
+@media (min-width: 1024px) {
+	.cb-home-fast-cash-offer__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+
+	}
+}
+
+.cb-home-fast-cash-offer__text {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	/* font-size: 1.125rem; */
+	font-family: "Poppins", sans-serif !important;
+margin-bottom: 30px;
+}
+.cb-home-fast-cash-offer__form-block{
+
+}
+.cb-home-fast-cash-offer__form-block--text{
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.5;
+	color: #fff;
+	font-size: 14px;
+
+	margin-bottom: 10px;
+}
+.cb-home-fast-cash-offer__form-block--text a{
+	text-decoration: none;
+	color: #02bdfc;
+	text-transform: uppercase;
+}
+.cb-home-fast-cash-offer__form-wrapper{
+	width: 100%;
+	margin: 30px auto 0;
+	background-color: #fff;
+
+	min-height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@media (min-width: 1024px) {
+	.cb-home-fast-cash-offer__form-block--text{
+		font-size: 15px;
+	}
+	.cb-home-fast-cash-offer__text {
+		gap: 20px;
+	}
+	.cb-home-fast-cash-offer__text {
+		flex: 0 0 38%;
+		width: 38%;
+	}
+	.cb-home-fast-cash-offer__form-block{
+		flex: 0 0 59%;
+		width: 59%;
+	}
+	.cb-home-fast-cash-offer__form-wrapper{
+		width: 70%;
+		margin: 30px auto;
+	}
+}
+
+.cb-home-fast-cash-offer__text > span {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.2;
+	color: #fff;
+	font-size: 14px;
+}
+.cb-home-fast-cash-offer__text li{
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.2;
+	color: #fff;
+	font-size: 16px;
+
+	display: flex;
+	align-items: flex-start;
+}
+
+.cb-home-fast-cash-offer__text li::before {
+	content: "";
+	display: inline-block;
+	flex: 0 0 15px;
+	width: 15px;
+	height: 15px;
+	margin-top: 3px;
+	margin-right: 10px;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z\" fill=\"white\"/></svg>");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.cb-home-fast-cash-offer__hassle-free {
+	font-size: 24px !important;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.5;
+	font-family: "Poppins", sans-serif !important;
+	/* line-height: 1.2; */
+	color: #fff;
+	/* font-size: 18px; */
+
+	margin: 0;
+}
+@media (min-width: 1024px) {
+	.cb-home-fast-cash-offer__text > span {
+		font-size: 16px;
+	}
+	.cb-home-fast-cash-offer__text li{
+		font-size: 18px;
+	}
+	.cb-home-fast-cash-offer__text{
+		margin-bottom: 0;
+	}
+}
+.cb-home-fast-cash-offer__forget {
+	font-size: 12px;
+
+	font-family: "Poppins", sans-serif !important;
+	line-height: 1.5;
+	color: #fff;
+	margin: 0;
+}
+
+.cb-home-fast-cash-offer__forget::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: currentColor;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.cb-home-fast-cash-offer__form {
+	text-align: center;
+}
+
+.cb-home-fast-cash-offer__text ul {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	list-style: none !important;
+	/* margin-left: 2rem; */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cb-home-fast-cash-offer .gform_wrapper {
+	background-color: #f8f9fa;
+	color: #212529;
+	position: relative;
+	padding: 1.5rem;
+	box-shadow: 0 2px 3px 0 rgba(29, 29, 29, 0.5);
+	font-size: 1rem !important;
+	width: 100%;
+}
+
+/* @media (min-width: 1024px) {
+	.cb-home-fast-cash-offer .gform_wrapper {
+		max-width: 70% !important;
+	}
+} */
+
+/* .cb-home-fast-cash-offer .gform_wrapper {
+	margin-bottom: -6em;
+} */
+
+/* @media (max-width: 1024px) {
+	.cb-home-fast-cash-offer .gform_wrapper {
+		margin-bottom: 0;
+	}
+} */
+
+.cb-home-fast-cash-offer .gform_button {
+	background-color: #02bdfc;
+	border: 1px solid #0297c9;
+	font-size: 1.75rem !important;
+	/* font-weight: 700 !important; */
+	line-height: 1.5 !important;
+	padding: 1.375rem 1.125rem;
+	width: 100% !important;
+	color: white;
+	border-radius: 5px;
+}
+
+.cb-home-fast-cash-offer__full-width {
+	display: flex;
+	justify-content: center;
+	padding: 20px 15px 40px;
+	width: 100%;
+	max-width: none;
+}
+
+@media (min-width: 1024px) {
+	.cb-home-fast-cash-offer__full-width {
+		padding: 20px 0 40px;
+	}
+}
+
+.cb-home-fast-cash-offer__full-width > * {
+	max-width: 1050px;
+}
+
+/* .banner {
+	color: white;
+	background-color: var(--primary-dark-color);
+}
+
+.dark-banner {
+	color: white;
+	background-color: var(--dark-color);
+} */
+
+.cb-home-fast-cash-offer input:focus,
+.cb-home-fast-cash-offer textarea:focus,
+.cb-home-fast-cash-offer select:focus {
+	background-color: rgb(255, 255, 255) !important;
+	border-color: rgb(128, 189, 255) !important;
+	box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 0.2rem !important;
+	color: rgb(73, 80, 87) !important;
+	outline: 0px !important;
+}
+
+.cb-home-fast-cash-offer .form-control,
+.cb-home-fast-cash-offer .wp-block-search .wp-block-search__input,
+.cb-home-fast-cash-offer input[type="email"],
+.cb-home-fast-cash-offerinput[type="number"],
+.cb-home-fast-cash-offer input[type="password"],
+.cb-home-fast-cash-offer input[type="search"],
+.cb-home-fast-cash-offer input[type="tel"],
+.cb-home-fast-cash-offer input[type="text"],
+.cb-home-fast-cash-offer input[type="url"],
+.cb-home-fast-cash-offer select,
+.cb-home-fast-cash-offer select[multiple],
+.cb-home-fast-cash-offer textarea {
+	background-clip: padding-box;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	color: #495057;
+	display: block;
+	font-size: 1rem;
+	font-weight: 400;
+	height: calc(1.5em + 0.75rem + 2px);
+	line-height: 1.5;
+	padding: 0.375rem 0.75rem;
+	transition:
+		border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+	width: 100%;
+}
+
+.cb-home-fast-cash-offer .gform_heading {
+	display: none !important;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
