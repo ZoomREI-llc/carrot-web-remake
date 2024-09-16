@@ -1,6 +1,6 @@
 <?php
 // Include the header
-chris_buys_homes_get_header(); ?>
+carrot_get_header(); ?>
 
 <main id="site-content" role="main">
     <div class="legal-content">
@@ -16,4 +16,4 @@ chris_buys_homes_get_header(); ?>
 
 <?php
 // Include the footer
-chris_buys_homes_get_footer();
+carrot_get_footer();

@@ -2,12 +2,12 @@
 @import "./fonts.css";
 @import "./block-editor.css";
 
-/* 
+
 @import "./header.css";
 @import "./footer.css";
-@import "./page.css";
-@import "./post.css";
-@import "./legal.css"; */
+/* @import "./page.css"; */
+/* @import "./post.css"; */
+/* @import "./legal.css"; */
 
 :root {
   --primaryBlue1: #004c8d;
@@ -16,7 +16,7 @@
   --secondaryYellow: #ffb039;
   --warningColor: #ff0000;
 
-  --font-inter: "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
   /* --font-h1: clamp(2.25rem, 10vw, 4rem);
   --line-height-h1: 1.2;
@@ -29,6 +29,7 @@
   --font-p: 1.125rem;
   --line-height-p: 1.2; */
 }
+
 /* 
 @media (min-width: 1024px) {
   :root {

@@ -1,15 +1,15 @@
 <?php
 
 // Enqueue Scripts and Styles
-function chris_buys_homes_enqueue_assets()
+function carrot_enqueue_assets()
 {
     $style_version = filemtime(get_template_directory() . '/dist/style.css');
     $script_version = filemtime(get_template_directory() . '/src/js/script.js');
 
-    wp_enqueue_style('chrisbuyshomes-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
-    wp_enqueue_script('interactivity-api', get_template_directory_uri() . '/src/js/script.js', array(), $script_version, true);
+    wp_enqueue_style('carrot-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
+    wp_enqueue_script('doctor-homes-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
+    // wp_enqueue_script('interactivity-api', get_template_directory_uri() . '/src/js/script.js', array(), $script_version, true);
     // wp_enqueue_script('doctor-homes-menu', get_template_directory_uri() . '/src/js/menu.js', array(), null, true);
-    // wp_enqueue_script('doctor-homes-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
 
     // if (is_single()) {
     //     wp_enqueue_script('share-bar-js', get_template_directory_uri() . '/src/js/share-bar.js', array(), '1.0.0', true);
@@ -20,7 +20,7 @@ function chris_buys_homes_enqueue_assets()
     //     'crmWebhookUrl' => CRM_WEBHOOK_URL,
     // ));
 }
-add_action('wp_enqueue_scripts', 'chris_buys_homes_enqueue_assets');
+add_action('wp_enqueue_scripts', 'carrot_enqueue_assets');
 
 // Theme Support
 function chris_buys_homes_theme_support()
@@ -31,8 +31,8 @@ function chris_buys_homes_theme_support()
     add_theme_support('editor-color-palette');
     add_editor_style('dist/style.css');
     add_theme_support('custom-logo', array(
-        'height' => 100,
-        'width' => 400,
+        'height' => 'auto',
+        'width' => 260,
         'flex-height' => true,
         'flex-width' => true,
     ));
@@ -40,18 +40,27 @@ function chris_buys_homes_theme_support()
 }
 add_action('after_setup_theme', 'chris_buys_homes_theme_support');
 
+function add_custom_logo_class($html)
+{
+    // Check if the logo exists and add the custom class to the <a> tag
+    $html = str_replace('custom-logo-link', 'custom-logo-link cb-header__logo--link', $html);
+    return $html;
+}
+add_filter('get_custom_logo', 'add_custom_logo_class');
+
 // Register Menus
-// function chris_buys_homes_register_menus()
-// {
-//     register_nav_menus(array(
-//         'primary-menu' => __('Primary Menu'),
-//         'footer-company-menu' => __('Footer Company Menu'),
-//         'footer-locations-menu' => __('Footer Locations Menu'),
-//         'footer-resources-menu' => __('Footer Resources Menu'),
-//         'footer-legal-menu' => __('Footer Legal Menu'),
-//     ));
-// }
-// add_action('init', 'chris_buys_homes_register_menus');
+function carrot_register_menus()
+{
+    register_nav_menus(array(
+        'primary' => __('Primary Menu'),
+        'local-home-buyers' => __('Local Home Buyers In'),
+        'we-buy-houses'     => __('We Buy Houses In'),
+        'footer-navigation' => __('Footer Navigation'),
+        'sell-your-house'   => __('Sell Your House In'),
+        'cash-for-houses'   => __('Cash For Houses In'),
+    ));
+}
+add_action('init', 'carrot_register_menus');
 
 // Custom Mobile Navigation Walker
 class Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
@@ -73,7 +82,7 @@ class Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
 }
 
 // Template Part Loading Function
-function chris_buys_homes_get_template_part($slug, $name = null)
+function carrot_get_template_part($slug, $name = null)
 {
     $templates = array();
 
@@ -87,7 +96,7 @@ function chris_buys_homes_get_template_part($slug, $name = null)
 }
 
 // Custom Header and Footer Functions
-function chris_buys_homes_get_header($name = null)
+function carrot_get_header($name = null)
 {
     $template = $name ? locate_template("templates/header-{$name}.php") : locate_template("templates/header.php");
     if ($template) {
@@ -95,7 +104,7 @@ function chris_buys_homes_get_header($name = null)
     }
 }
 
-function chris_buys_homes_get_footer($name = null)
+function carrot_get_footer($name = null)
 {
     $template = $name ? locate_template("templates/footer-{$name}.php") : locate_template("templates/footer.php");
     if ($template) {
@@ -104,7 +113,7 @@ function chris_buys_homes_get_footer($name = null)
 }
 
 // Template Part Loading with Fallback
-function chris_buys_homes_get_template_part_with_fallback($slug, $name = null)
+function carrot_get_template_part_with_fallback($slug, $name = null)
 {
     $templates = array();
 
@@ -122,7 +131,7 @@ function chris_buys_homes_get_template_part_with_fallback($slug, $name = null)
 }
 
 // Template Include Filter
-function chris_buys_homes_template_include($template)
+function carrot_template_include($template)
 {
     // Get the base name of the current template file
     $template_name = basename($template);
@@ -240,7 +249,7 @@ function chris_buys_homes_template_include($template)
     // Return the original template if no custom template is found
     return $template;
 }
-add_filter('template_include', 'chris_buys_homes_template_include');
+add_filter('template_include', 'carrot_template_include');
 
 // Add custom user fields
 function add_custom_user_fields($user)
@@ -351,41 +360,89 @@ function handle_form_submission(WP_REST_Request $request)
 }
 
 
-// // Remove category base
-// // Remove category base
-// function custom_remove_category_base()
-// {
-//     // Remove the category base from permalinks
-//     add_filter('category_rewrite_rules', 'custom_category_rewrite_rules');
-//     add_filter('request', 'custom_category_request');
-// }
-// add_action('init', 'custom_remove_category_base');
+//---------------------------------------------
+// Replacing Carrot imported content variables
+//---------------------------------------------
 
-// function custom_category_rewrite_rules($category_rewrite)
-// {
-//     $category_rewrite = array();
-//     $categories = get_categories(array('hide_empty' => false));
-//     foreach ($categories as $category) {
-//         $category_nicename = $category->slug;
-//         if ($category->parent == $category->cat_ID) {
-//             $category->parent = 0;
-//         } elseif ($category->parent != 0) {
-//             $category_nicename = get_category_parents($category->parent, false, '/', true) . $category_nicename;
-//         }
-//         $category_rewrite['blog/' . $category_nicename . '/?$'] = 'index.php?category_name=' . $category->slug;
-//         $category_rewrite['blog/' . $category_nicename . '/page/?([0-9]{1,})/?$'] = 'index.php?category_name=' . $category->slug . '&paged=$matches[1]';
-//         $category_rewrite['blog/' . $category_nicename . '/(.*)$'] = 'index.php?category_name=' . $category->slug . '&attachment=$matches[1]';
-//     }
-//     return $category_rewrite;
-// }
+function get_market_city_from_title($title)
+{
+    // Log the title for debugging
+    error_log('Title: ' . $title);
 
-// function custom_category_request($request)
-// {
-//     if (isset($request['category_name'])) {
-//         $category_name = explode('/', $request['category_name']);
-//         if (isset($category_name[1])) {
-//             $request['category_name'] = $category_name[1];
-//         }
-//     }
-//     return $request;
-// }
+    // Normalize spaces in the title
+    $normalized_title = preg_replace('/\s+/', ' ', trim($title));
+
+    // Log the normalized title for debugging
+    error_log('Normalized Title: ' . $normalized_title);
+
+    // Extract the word(s) after "in"
+    preg_match('/in ([A-Za-z]+)/i', $normalized_title, $matches);
+    if (count($matches) === 2) {
+        return trim($matches[1]);
+    }
+    return 'Kansas City'; // Default value if no match found
+}
+
+function replace_carrot_variables_in_content($content)
+{
+    global $post;
+
+    // Ensure it only runs on the main query and the main loop on a single page
+    if (is_singular() && in_the_loop() && is_main_query()) {
+        $title = get_the_title($post->ID);
+        $market_city = get_market_city_from_title($title);
+
+        // Log the extracted market city for debugging
+        error_log('Extracted Market City (Content): ' . $market_city);
+
+        // Define replacements with dynamic values
+        $replacements = array(
+            '[market_city]' => $market_city,
+            '[market_state]' => 'MO',
+            '[company]' => 'Chris Buys Homes in ' . $market_city,
+            '[city]' => $market_city,
+            '[state]' => 'MO',
+            '[zipcode]' => '64137',
+            '[phone]' => '(816) 239-3873',
+            '[address]' => '11232 Jackson Ave, Kansas City, MO 64137'
+        );
+
+        foreach ($replacements as $placeholder => $replacement) {
+            $content = str_replace($placeholder, $replacement, $content);
+        }
+    }
+
+    return $content;
+}
+
+function replace_carrot_variables_in_title($title)
+{
+    // Check if the title contains the placeholders
+    if (strpos($title, '[state]') !== false || strpos($title, '[market_city]') !== false) {
+        $market_city = get_market_city_from_title($title);
+
+        // Log the extracted market city for debugging
+        error_log('Extracted Market City (Title): ' . $market_city);
+
+        // Define replacements with dynamic values
+        $replacements = array(
+            '[market_city]' => $market_city,
+            '[market_state]' => 'MO',
+            '[company]' => 'Chris Buys Homes in ' . $market_city,
+            '[city]' => $market_city,
+            '[state]' => 'MO',
+            '[zipcode]' => '64137',
+            '[phone]' => '(816) 239-3873',
+            '[address]' => '11232 Jackson Ave, Kansas City, MO 64137'
+        );
+
+        foreach ($replacements as $placeholder => $replacement) {
+            $title = str_replace($placeholder, $replacement, $title);
+        }
+    }
+
+    return $title;
+}
+
+add_filter('the_content', 'replace_carrot_variables_in_content');
+add_filter('the_title', 'replace_carrot_variables_in_title');
