@@ -28,6 +28,10 @@
     "secondMarketMention": {
       "type": "string",
       "default": "St. Louis"
+    },
+    "avoidCommissionsLink": {
+      "type": "string",
+      "default": "#"
     }
   }
 }

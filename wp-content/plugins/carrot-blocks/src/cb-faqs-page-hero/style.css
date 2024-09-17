@@ -1,0 +1,259 @@
+.cb-faqs-page-hero-wrapper {
+	position: relative;
+	background:
+		var(--hero-gradient),
+		var(--background-image) no-repeat center/cover;
+
+	margin-bottom: 30px;
+	display: none;
+}
+
+.cb-faqs-page-hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+	font-size: 1.5rem;
+	/* min-height: 25rem; */
+	z-index: 0;
+	max-width: 100%;
+	margin-inline: auto;
+
+	margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+	.cb-faqs-page-hero-wrapper {
+		margin-bottom: -220px;
+	
+	}
+	.cb-faqs-page-hero {
+		max-width: 1080px;
+		/* margin-bottom: -4vw; */
+	}
+	.cb-faqs-page-hero-wrapper {
+		display: block;
+	}
+}
+.cb-faqs-page-hero__triangle {
+	display: block;
+	height: 4vw;
+	width: 100%;
+	max-width: inherit;
+	z-index: 1;
+	fill: white;
+}
+
+.cb-faqs-page-hero__triangle.bottom {
+	transform: translateY(2px);
+}
+
+.cb-faqs-page-hero__triangle.top {
+	transform: translateY(-2px);
+}
+
+.cb-faqs-page-hero > * {
+	position: relative;
+	z-index: 2;
+}
+.cb-faqs-page-hero__top{
+	display: none;
+}
+.cb-faqs-page-hero__headline-image {
+	width: 100%;
+}
+@media (min-width: 1024px) {
+.cb-faqs-page-hero__top {
+	margin-top: -1.3333333333vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 100%;
+	margin-bottom: 10px;
+	max-width: 1080px;
+}
+}
+.cb-faqs-page-hero__call-us {
+	font-weight: bold;
+	align-self: end;
+	margin-bottom: 5px;
+	font-family: "Poppins", sans-serif !important;
+}
+.cb-faqs-page-hero__top--nav-link{
+	align-self: end;
+	color: white !important;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.2;
+	font-family: "Poppins", sans-serif !important;
+}
+@media (min-width: 1024px) {
+	.cb-faqs-page-hero__call-us {
+		/* display: none; */
+	}
+}
+
+.cb-faqs-page-hero__call-us a {
+	color: #02bdfc !important;
+	text-decoration: none;
+}
+
+/* .cb-faqs-page-hero__call-us a {
+	text-decoration: underline;
+	color: white;
+} */
+
+/* .cb-faqs-page-hero__call-us a:hover {
+	text-decoration: none;
+} */
+
+.cb-faqs-page-hero__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	position: relative;
+	padding: 0 15px;
+	min-height: 220px;
+	/* padding: 2rem 1rem; */
+}
+.cb-faqs-page-hero__form-wrapper{
+	width: 100%;
+	max-width: 720px;
+	height: 400px;
+	background-color: #fff;
+	box-shadow: 0 2px 3px 0 rgba(29, 29, 29, .5);
+
+}
+@media (min-width: 1024px) {
+	.cb-faqs-page-hero__content {
+		/* padding: 6rem 4rem; */
+		padding: 0;
+	}
+}
+
+@media (min-width: 1024px) {
+	.cb-faqs-page-hero__headline-image {
+		/* max-width: 48.75rem; */
+		max-width: 1080px;
+	}
+}
+
+.cb-faqs-page-hero__bbb-logo {
+	/* max-width: 3.125rem; */
+
+	width: 50px;
+    height: 84px;
+	 object-fit: contain;
+}
+
+.cb-faqs-page-hero__content h3 {
+	font-size: 18px;
+	font-weight: 400;
+	/* max-width: 42rem; */
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	max-width: 380px;
+	font-family: "Poppins", sans-serif !important;
+}
+
+.cb-faqs-page-hero .gform_wrapper {
+	background-color: white;
+	color: #212529;
+	position: relative;
+	padding: 1.5rem;
+	box-shadow: 0 2px 3px 0 rgba(29, 29, 29, 0.5);
+	font-size: 1rem !important;
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	/* .cb-faqs-page-hero .gform_wrapper {
+		max-width: 45rem !important;
+	} */
+	.cb-faqs-page-hero__content h3 {
+		max-width: 675px;
+	}
+}
+
+.cb-faqs-page-hero .gform_wrapper {
+	margin-bottom: -12rem;
+}
+
+@media (min-width: 1024px) {
+	.cb-faqs-page-hero .gform_wrapper {
+		margin-bottom: 0;
+	}
+}
+
+.cb-faqs-page-hero .gform_button {
+	background-color: #02bdfc;
+	border-color: #20c6fe;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-size: 1.75rem !important;
+	font-weight: 700 !important;
+	line-height: 1.5 !important;
+	padding: 1.375rem 1.125rem;
+	width: 100% !important;
+	color: white;
+}
+
+.cb-faqs-page-hero .gform_heading {
+	display: none !important;
+}
+
+.cb-faqs-page-hero .address_city,
+.cb-faqs-page-hero .address_state,
+.cb-faqs-page-hero .address_zip,
+.cb-faqs-page-hero .gform_heading,
+.cb-faqs-page-hero .gform-field-label--type-sub {
+	display: none !important;
+}
+
+/* ------------------------------------------- */
+/* ------------ COPIED FORM STYLES ---------- */
+/* ----------------------------------------- */
+
+.cb-faqs-page-hero input:focus,
+.cb-faqs-page-hero textarea:focus,
+.cb-faqs-page-hero select:focus {
+	background-color: rgb(255, 255, 255) !important;
+	border-color: rgb(128, 189, 255) !important;
+	box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 0.2rem !important;
+	color: rgb(73, 80, 87) !important;
+	outline: 0px !important; 
+}
+
+.cb-faqs-page-hero .form-control,
+.cb-faqs-page-hero .wp-block-search .wp-block-search__input,
+.cb-faqs-page-hero input[type="email"],
+.cb-faqs-page-heroinput[type="number"],
+.cb-faqs-page-hero input[type="password"],
+.cb-faqs-page-hero input[type="search"],
+.cb-faqs-page-hero input[type="tel"],
+.cb-faqs-page-hero input[type="text"],
+.cb-faqs-page-hero input[type="url"],
+.cb-faqs-page-hero select,
+.cb-faqs-page-hero select[multiple],
+.cb-faqs-page-hero textarea {
+	background-clip: padding-box;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	color: #495057;
+	display: block;
+	font-size: 1rem;
+	font-weight: 400;
+	height: calc(1.5em + 0.75rem + 2px);
+	line-height: 1.5;
+	padding: 0.375rem 0.75rem;
+	transition:
+		border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+	width: 100%;
+}

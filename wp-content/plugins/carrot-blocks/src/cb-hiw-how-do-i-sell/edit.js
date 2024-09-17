@@ -4,8 +4,11 @@ import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import "./editor.css";
 
 export default function Edit({ attributes, setAttributes }) {
-	const { selectedMarket, phoneNumber } = attributes;
+	const { selectedMarket, phoneNumber, formId } = attributes;
 
+	const onChangeFormId = (newFormId) => {
+		setAttributes({ formId: newFormId });
+	};
 	const onChangeSelectedMarket = (newMarket) => {
 		setAttributes({ selectedMarket: newMarket });
 	};
@@ -17,6 +20,17 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<div {...useBlockProps()}>
 			<InspectorControls>
+				<PanelBody
+					title={__("Form Settings", "carrot-blocks")}
+					initialOpen={true}
+				>
+					<TextControl
+						label={__("Form ID", "carrot-blocks")}
+						value={formId}
+						onChange={onChangeFormId}
+						placeholder={__("Enter Form ID", "carrot-blocks")}
+					/>
+				</PanelBody>
 				<PanelBody
 					title={__("Market Selection", "carrot-blocks")}
 					initialOpen={true}

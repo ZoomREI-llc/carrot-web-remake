@@ -24,6 +24,10 @@
 		"selectedCity": {
 			"type": "string",
 			"default": "San Francisco"
+		},
+		"phoneNumber": {
+			"type": "string",
+			"default": "(510) 680-2714"
 		}
 	}
 }

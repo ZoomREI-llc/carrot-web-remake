@@ -38,7 +38,7 @@
 	padding: 1rem;
 	width: 100%;
 	max-width: none;
-	background: #d14200;
+	background: var(--primary-dark-color);
 }
 
 @media (min-width: 1024px) {

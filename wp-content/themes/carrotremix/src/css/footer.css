@@ -1,7 +1,3 @@
-/* ==========================================
-   ============== FOOTER STYLES =============
-   ========================================== */
-
 .cb-footer {
   margin-top: 50px;
   padding-bottom: 70px;
@@ -98,7 +94,7 @@
   margin-bottom: 20px;
 }
 
-.cb-footer__nav--link {
+.cb-footer__nav a {
   display: block;
   font-size: 15px;
   line-height: 1.2;
@@ -152,10 +148,10 @@
   list-style: none;
   padding: 0;
 }
-.cb-footer__projects-block--item {
+.cb-footer__projects-block .menu-item {
   margin-bottom: 10px;
 }
-.cb-footer__projects-block--link {
+.cb-footer__projects-block a {
   font-size: 18px;
   line-height: 1.2;
   font-weight: 400;

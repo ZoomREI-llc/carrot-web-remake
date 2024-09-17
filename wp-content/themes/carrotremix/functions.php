@@ -7,7 +7,9 @@ function carrot_enqueue_assets()
     $script_version = filemtime(get_template_directory() . '/src/js/script.js');
 
     wp_enqueue_style('carrot-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
-    wp_enqueue_script('doctor-homes-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
+    wp_enqueue_script('carrot-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
+    wp_enqueue_script('gf-full-address', get_template_directory_uri() . '/src/js/full-address-field.js', array(), true);
+
     // wp_enqueue_script('interactivity-api', get_template_directory_uri() . '/src/js/script.js', array(), $script_version, true);
     // wp_enqueue_script('doctor-homes-menu', get_template_directory_uri() . '/src/js/menu.js', array(), null, true);
 
@@ -80,6 +82,119 @@ class Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
         $output .= "</li>\n";
     }
 }
+
+// Create a custom site settings page
+function create_site_settings_page()
+{
+    add_menu_page(
+        'Site Settings',            // Page title
+        'Site Settings',            // Menu title
+        'manage_options',           // Capability
+        'site-settings',            // Menu slug
+        'site_settings_page_html',  // Callback function to render the page
+        'dashicons-admin-generic',  // Icon (optional)
+        20                          // Position in the admin menu
+    );
+}
+add_action('admin_menu', 'create_site_settings_page');
+
+function site_settings_page_html()
+{
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    // Get the current blog ID (for multisite)
+    $blog_id = get_current_blog_id();
+
+    // Save the settings if the form is submitted
+    if (isset($_POST['site_settings_update'])) {
+        update_blog_option($blog_id, 'company_name', sanitize_text_field($_POST['company_name']));
+        update_blog_option($blog_id, 'market_city', sanitize_text_field($_POST['market_city']));
+        update_blog_option($blog_id, 'market_state', sanitize_text_field($_POST['market_state']));
+        update_blog_option($blog_id, 'phone', sanitize_text_field($_POST['phone']));
+        update_blog_option($blog_id, 'email', sanitize_email($_POST['email']));
+        update_blog_option($blog_id, 'address', sanitize_text_field($_POST['address']));
+        update_blog_option($blog_id, 'street_address', sanitize_text_field($_POST['street_address']));
+        update_blog_option($blog_id, 'city', sanitize_text_field($_POST['city']));
+        update_blog_option($blog_id, 'state', sanitize_text_field($_POST['state']));
+        update_blog_option($blog_id, 'zipcode', sanitize_text_field($_POST['zipcode']));
+        update_blog_option($blog_id, 'facebook_link', esc_url_raw($_POST['facebook_link'])); // Add Facebook Link
+        echo '<div id="message" class="updated">Settings saved</div>';
+    }
+
+    // Retrieve the saved values for the current site
+    $company_name = get_blog_option($blog_id, 'company_name', '');
+    $market_city = get_blog_option($blog_id, 'market_city', '');
+    $market_state = get_blog_option($blog_id, 'market_state', '');
+    $phone = get_blog_option($blog_id, 'phone', '');
+    $email = get_blog_option($blog_id, 'email', '');
+    $address = get_blog_option($blog_id, 'address', '');
+    $street_address = get_blog_option($blog_id, 'street_address', '');
+    $city = get_blog_option($blog_id, 'city', '');
+    $state = get_blog_option($blog_id, 'state', '');
+    $zipcode = get_blog_option($blog_id, 'zipcode', '');
+    $facebook_link = get_blog_option($blog_id, 'facebook_link', ''); // Retrieve Facebook Link
+
+?>
+    <div class="wrap">
+        <h1>Site Settings</h1>
+        <form method="POST" action="">
+            <table class="form-table">
+                <tr>
+                    <th scope="row"><label for="company_name">Company Name</label></th>
+                    <td><input type="text" name="company_name" value="<?php echo esc_attr($company_name); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="market_city">Market City</label></th>
+                    <td><input type="text" name="market_city" value="<?php echo esc_attr($market_city); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="market_state">Market State</label></th>
+                    <td><input type="text" name="market_state" value="<?php echo esc_attr($market_state); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="phone">Phone Number</label></th>
+                    <td><input type="text" name="phone" value="<?php echo esc_attr($phone); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="email">Email</label></th>
+                    <td><input type="email" name="email" value="<?php echo esc_attr($email); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="address">Address</label></th>
+                    <td><input type="text" name="address" value="<?php echo esc_attr($address); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="street_address">Street Address</label></th>
+                    <td><input type="text" name="street_address" value="<?php echo esc_attr($street_address); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="city">City</label></th>
+                    <td><input type="text" name="city" value="<?php echo esc_attr($city); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="state">State</label></th>
+                    <td><input type="text" name="state" value="<?php echo esc_attr($state); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="zipcode">Zipcode</label></th>
+                    <td><input type="text" name="zipcode" value="<?php echo esc_attr($zipcode); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="facebook_link">Facebook Link</label></th>
+                    <td><input type="url" name="facebook_link" value="<?php echo esc_attr($facebook_link); ?>" class="regular-text"></td>
+                </tr>
+            </table>
+            <input type="hidden" name="site_settings_update" value="Y">
+            <p class="submit">
+                <input type="submit" class="button-primary" value="Save Settings">
+            </p>
+        </form>
+    </div>
+<?php
+}
+
 
 // Template Part Loading Function
 function carrot_get_template_part($slug, $name = null)
@@ -415,34 +530,48 @@ function replace_carrot_variables_in_content($content)
     return $content;
 }
 
-function replace_carrot_variables_in_title($title)
+function replace_custom_placeholders_multisite($content)
 {
-    // Check if the title contains the placeholders
-    if (strpos($title, '[state]') !== false || strpos($title, '[market_city]') !== false) {
-        $market_city = get_market_city_from_title($title);
+    // Get current site ID for multisite
+    $site_id = get_current_blog_id();
 
-        // Log the extracted market city for debugging
-        error_log('Extracted Market City (Title): ' . $market_city);
+    // Fetch Site Settings values for the current site
+    $company_name = get_blog_option($site_id, 'company_name', '');
+    $market_city = get_blog_option($site_id, 'market_city', '');
+    $market_state = get_blog_option($site_id, 'market_state', '');
+    $phone = get_blog_option($site_id, 'phone', '');
+    $email = get_blog_option($site_id, 'email', '');
+    $address = get_blog_option($site_id, 'address', '');
+    $street_address = get_blog_option($site_id, 'street_address', '');
+    $city = get_blog_option($site_id, 'city', '');
+    $state = get_blog_option($site_id, 'state', '');
+    $zipcode = get_blog_option($site_id, 'zipcode', '');
+    $facebook_link = get_blog_option($site_id, 'facebook_link', '');
 
-        // Define replacements with dynamic values
-        $replacements = array(
-            '[market_city]' => $market_city,
-            '[market_state]' => 'MO',
-            '[company]' => 'Chris Buys Homes in ' . $market_city,
-            '[city]' => $market_city,
-            '[state]' => 'MO',
-            '[zipcode]' => '64137',
-            '[phone]' => '(816) 239-3873',
-            '[address]' => '11232 Jackson Ave, Kansas City, MO 64137'
-        );
+    // Define an array of placeholders and their corresponding values
+    $placeholders = array(
+        '[company]'        => $company_name,
+        '[market_city]'    => $market_city,
+        '[market_state]'   => $market_state,
+        '[phone]'          => $phone,
+        '[email]'          => $email,
+        '[address]'        => $address,
+        '[street_address]' => $street_address,
+        '[city]'           => $city,
+        '[state]'          => $state,
+        '[zipcode]'        => $zipcode,
+        '[facebook_link]'  => $facebook_link,
+    );
 
-        foreach ($replacements as $placeholder => $replacement) {
-            $title = str_replace($placeholder, $replacement, $title);
-        }
+    // Replace each placeholder with its corresponding value in the content
+    foreach ($placeholders as $placeholder => $value) {
+        $content = str_replace($placeholder, $value, $content);
     }
 
-    return $title;
+    return $content;
 }
 
-add_filter('the_content', 'replace_carrot_variables_in_content');
-add_filter('the_title', 'replace_carrot_variables_in_title');
+
+// Apply the filter to both title and content
+add_filter('the_content', 'replace_custom_placeholders_multisite');
+add_filter('the_title', 'replace_custom_placeholders_multisite');

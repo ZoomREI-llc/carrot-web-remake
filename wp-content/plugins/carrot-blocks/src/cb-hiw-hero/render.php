@@ -1,22 +1,4 @@
 <?php
-$primary_colors = [
-    'sf'  => '#006cbf',
-    'stl' => '#006cbf',
-    'kc'  => '#ff651e',
-    'det' => '#006cbf',
-    'cle' => '#006cbf',
-    'ind' => '#00768e',
-];
-
-$primary_dark_colors = [
-    'sf'  => '#004173',
-    'stl' => '#004173',
-    'kc'  => '#d14200',
-    'det' => '#004173',
-    'cle' => '#004173',
-    'ind' => '#003642',
-];
-
 $gradients = [
     'sf'  => 'linear-gradient(-90deg, rgba(13, 72, 118, 0.6), rgba(13, 29, 118, 0.6));',
     'stl' => 'linear-gradient(-90deg, rgba(13, 72, 118, 0.6), rgba(13, 29, 118, 0.6));',
@@ -26,24 +8,27 @@ $gradients = [
     'ind' => 'linear-gradient(-90deg, rgba(13, 77, 91, 0.6), rgba(13, 45, 91, 0.6));',
 ];
 
-$selected_market = esc_html($attributes['selectedMarket']);
+$marketNames = [
+    'sf'  => 'any condition',
+    'stl' => 'St. Louis',
+    'kc'  => 'Kansas City',
+    'det' => 'Metro Detroit',
+    'cle' => 'Cleveland, MI',
+    'ind' => 'Indianapolis',
+];
 
-$primary_color = $primary_colors[$selected_market] ?? '#FFFFFF';
-$primary_dark_color = $primary_dark_colors[$selected_market] ?? '#000000';
-$hero_gradient = $gradients[$selected_market] ?? 'linear-gradient(45deg, #FFFFFF, #EEEEEE)';
+$selected_market = esc_html($attributes['selectedMarket']);
+$marketName = esc_html($marketNames[$selected_market]) ?? 'any condition';
+
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 
-$formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
-
+$hero_gradient = $gradients[$selected_market] ?? 'linear-gradient(45deg, #FFFFFF, #EEEEEE)';
 $background_image_url = esc_url(plugins_url('src/cb-hiw-hero/assets/background-' . $selected_market . '.webp', dirname(__FILE__, 2)));
 $carrot_hero_url = esc_url(plugins_url('src/cb-hiw-hero/assets/carrot-hero.webp', dirname(__FILE__, 2)));
 ?>
 
 <style>
     :root {
-        --primary-color: <?php echo esc_attr($primary_color); ?>;
-        --primary-dark-color: <?php echo esc_attr($primary_dark_color); ?>;
-        --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
         --background-image: url('<?php echo $background_image_url; ?>');
     }
@@ -59,16 +44,16 @@ $carrot_hero_url = esc_url(plugins_url('src/cb-hiw-hero/assets/carrot-hero.webp'
             <div class="cb-hiw-hero__call-us">
                 Call Us! <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
             </div>
-            <a href="<?php echo site_url() ?>/sell-your-house/" class="cb-hiw-hero__top--nav-link">Get A Cash Offer Today</a>
+            <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-hiw-hero__top--nav-link">Get A Cash Offer Today</a>
         </div>
-       
+
         <div class="cb-hiw-hero__content">
             <img
                 class="cb-hiw-hero__headline-image"
                 src="<?php echo esc_url($carrot_hero_url); ?>"
                 alt="Sell Your Home Fast and Easy" />
             <h3>
-              We pay cash for houses in Kansas City. No realtors, no fees, no commissions, no repairs & don’t even clean. <strong>Get Your No-Obligation All Cash Offer Started Below!</strong>
+                We pay cash for houses in <?php echo $marketName; ?>. No realtors, no fees, no commissions, no repairs & don’t even clean. <strong>Get Your No-Obligation All Cash Offer Started Below!</strong>
             </h3>
         </div>
     </div>

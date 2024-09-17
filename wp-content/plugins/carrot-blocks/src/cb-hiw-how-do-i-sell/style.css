@@ -2,7 +2,6 @@
 	display: flex;
 	justify-content: center;
 	position: relative;
-	
 }
 .cb-hiw-how-do-i-sell {
 	display: flex;
@@ -38,7 +37,7 @@
 		font-size: 58px;
 		margin: 30px 0;
 	}
-	.cb-hiw-how-do-i-sell:before{
+	.cb-hiw-how-do-i-sell:before {
 		left: 15px;
 	}
 }
@@ -48,13 +47,12 @@
 	/* margin: 0; */
 	margin-top: 50px;
 	margin-bottom: 10px;
-	color: #ea4a00;
+	color: var(--heading-color);
 	font-size: 35px;
 	line-height: 1.2;
 	font-weight: 700;
 	font-family: "Poppins", sans-serif !important;
 }
-
 
 @media (min-width: 1024px) {
 	.cb-hiw-how-do-i-sell h2 a,
@@ -66,7 +64,6 @@
 		margin-bottom: 20px;
 		font-size: 40px;
 	}
-	
 }
 
 .cb-hiw-how-do-i-sell__subtitle {
@@ -81,12 +78,12 @@
 	text-align: left;
 	text-decoration: none;
 }
-.cb-hiw-how-do-i-sell p a{
+.cb-hiw-how-do-i-sell p a {
 	color: #0c91b2;
 	text-align: left;
 	font-size: 36px;
 	line-height: 1.2;
-	font-weight: 700;
+	font-weight: 400;
 	font-family: "Poppins", sans-serif !important;
 	margin: 0;
 	text-decoration: none;
@@ -100,7 +97,7 @@
 	padding-left: 0 !important;
 	list-style: none;
 }
-.cb-hiw-how-do-i-sell__list>li{
+.cb-hiw-how-do-i-sell__list > li {
 	counter-increment: item;
 	font-size: 20px;
 	font-family: "Poppins", sans-serif !important;
@@ -109,22 +106,19 @@
 	margin: 2rem 0;
 	overflow: hidden;
 	padding-left: 3.5rem;
-
 }
 
-.cb-hiw-how-do-i-sell__list>li a{
+.cb-hiw-how-do-i-sell__list > li a {
 	text-decoration: none;
 	font-size: 22px;
 	font-family: "Poppins", sans-serif !important;
 	line-height: 1.5;
 	color: #0c91b2;
-
-
 }
 
-.cb-hiw-how-do-i-sell__list>li:before {
+.cb-hiw-how-do-i-sell__list > li:before {
 	align-items: center;
-	background: #ff651e;
+	background: var(--primary-color);
 	border-radius: 50%;
 	color: #1d1d1d;
 	content: counter(item);
@@ -137,65 +131,204 @@
 	margin-left: -3.5rem;
 	text-align: center;
 	width: 40px;
-
-	
 }
 @media (min-width: 1024px) {
-	.cb-hiw-how-do-i-sell__list>li:before {
-
+	.cb-hiw-how-do-i-sell__list > li:before {
 		height: 60px;
 		margin-left: -4.5rem;
 		width: 60px;
 	}
-	.cb-hiw-how-do-i-sell__list>li{
-
+	.cb-hiw-how-do-i-sell__list > li {
 		padding-left: 4.5rem;
 	}
-	.cb-hiw-how-do-i-sell__list>li{
+	.cb-hiw-how-do-i-sell__list > li {
 		font-size: 22px;
+	}
+	.cb-hiw-how-do-i-sell p {
+		padding-right: 15px;
+	}
+	.cb-hiw-how-do-i-sell__list {
+		padding-right: 50px;
 	}
 }
 .cb-hiw-how-do-i-sell__form-wrapper {
-		background: #f8f9fa;
-		border: 1px solid #e9ecef;
-		clear: both;
-		color: #373a3c;
-		margin: 2rem auto;
-		width: 100%;
-		min-height: 200px;
-  
+	background: #f8f9fa;
+	border: 1px solid #e9ecef;
+	clear: both;
+	color: #373a3c;
+	margin: 0 auto;
+	width: 100%;
+	min-height: 100px;
 }
-.cb-hiw-how-do-i-sell__footer{
+.cb-hiw-how-do-i-sell__footer {
 	width: 100%;
 }
-.cb-hiw-how-do-i-sell__footer p{
+.cb-hiw-how-do-i-sell__footer p {
 	margin: 0 auto;
 	max-width: 920px;
 	font-style: italic;
 	font-size: 24px;
-	color: #ea4a00;
+	color: var(--heading-color);
 	text-align: center;
 	font-family: "Poppins", sans-serif !important;
 	line-height: 1.2;
 }
-.cb-hiw-how-do-i-sell__footer::before, .cb-hiw-how-do-i-sell__footer::after {
+.cb-hiw-how-do-i-sell__footer::before,
+.cb-hiw-how-do-i-sell__footer::after {
 	content: "";
 	display: block;
 
 	width: 100%;
-	border: 1px solid #ff996b;
-	background-color: #ff996b;
+	border: 1px solid var(--primary-light-color);
+	background-color: var(--primary-light-color);
 	margin-block: 30px;
 	font-family: "Poppins", sans-serif !important;
 }
 
 @media (min-width: 1024px) {
-.cb-hiw-how-do-i-sell__form-wrapper {
-	width: 70%;
-	min-height: 300px;
+	.cb-hiw-how-do-i-sell__form-wrapper {
+		width: 70%;
+		min-height: 100px;
+	}
+	.cb-hiw-how-do-i-sell__footer p {
+		font-size: 27px;
+	}
+}
 
+/* ---------------------------------------------- */
+
+.cb-hiw-how-do-i-sell__form-wrapper .gform_wrapper {
+	background-color: #f8f9fa;
+	color: #212529;
+	position: relative;
+	padding: 1.5rem;
+	/* box-shadow: 0 2px 3px 0 rgba(29, 29, 29, 0.5); */
+	font-size: 1rem !important;
+	width: 100%;
+	margin: 0;
+	padding-top: 0;
 }
-.cb-hiw-how-do-i-sell__footer p{
-	font-size: 27px;
+
+.cb-hiw-how-do-i-sell__form-wrapper .gform_button {
+	text-shadow: 0px 3px 5px #0000004a;
+	background-color: #04bad6;
+	border-color: #038ea4;
+	/* background-color: #02bdfc; */
+	/* border: 1px solid #0297c9;  */
+	border: 1px solid #038ea4;
+	/* font-size: 1.75rem !important; */
+	font-size: 25px !important;
+	/* font-weight: 700 !important; */
+	line-height: 1.5 !important;
+	/* padding: 1.375rem 1.125rem; */
+	padding: 0 !important;
+	width: 100% !important;
+	color: white;
+	border-radius: 5px;
+	font-family: "Source Sans Pro", sans-serif !important;
+	margin: 0 !important;
+	min-height: 45px !important;
 }
+
+.cb-hiw-how-do-i-sell__form-wrapper label.gfield_label {
+	width: 100%;
+	text-align: left;
+
+	color: #212529 !important;
+	text-decoration: none;
+	font-size: 18px !important;
+	font-weight: 500 !important;
+	line-height: 1.2 !important;
+	font-family: "Poppins", sans-serif !important;
+}
+.cb-hiw-how-do-i-sell__form-wrapper input:focus,
+.cb-hiw-how-do-i-sell__form-wrapper textarea:focus,
+.cb-hiw-how-do-i-sell__form-wrapper select:focus {
+	background-color: rgb(255, 255, 255) !important;
+	border-color: rgb(128, 189, 255) !important;
+	box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 0.2rem !important;
+	color: rgb(73, 80, 87) !important;
+	outline: 0px !important;
+}
+
+.cb-hiw-how-do-i-sell__form-wrapper .form-control,
+.cb-hiw-how-do-i-sell__form-wrapper .wp-block-search .wp-block-search__input,
+.cb-hiw-how-do-i-sell__form-wrapper input[type="email"],
+.cb-hiw-how-do-i-sell__form-wrapperinput[type="number"],
+.cb-hiw-how-do-i-sell__form-wrapper input[type="password"],
+.cb-hiw-how-do-i-sell__form-wrapper input[type="search"],
+.cb-hiw-how-do-i-sell__form-wrapper input[type="tel"],
+.cb-hiw-how-do-i-sell__form-wrapper input[type="text"],
+.cb-hiw-how-do-i-sell__form-wrapper input[type="url"],
+.cb-hiw-how-do-i-sell__form-wrapper select,
+.cb-hiw-how-do-i-sell__form-wrapper select[multiple],
+.cb-hiw-how-do-i-sell__form-wrapper textarea {
+	background-clip: padding-box;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	color: #495057;
+	display: block;
+	font-size: 1rem;
+	font-weight: 400;
+	height: calc(1.5em + 0.75rem + 2px);
+	line-height: 1.5;
+	padding: 0.375rem 0.75rem;
+	transition:
+		border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+	width: 100%;
+	min-height: 42px;
+}
+
+.cb-hiw-how-do-i-sell__form-wrapper .gform_heading {
+	display: none !important;
+}
+
+.cb-hiw-how-do-i-sell__form-wrapper .gform_legacy_markup_wrapper .gform_footer {
+	padding: 0 !important;
+}
+
+.cb-hiw-how-do-i-sell__form-wrapper ul {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	width: 100% !important;
+}
+.cb-hiw-how-do-i-sell__form-wrapper li {
+	flex: 0 0 100% !important;
+	width: 100% !important;
+	/* margin: 0  !important; */
+	padding: 0 !important;
+	/* margin-bottom: 20px !important; */
+}
+.cb-hiw-how-do-i-sell__form-wrapper li.gfield--type-select {
+	flex: 0 0 100% !important;
+	width: 100% !important;
+	padding: 0 !important;
+}
+@media (min-width: 1024px) {
+	.cb-hiw-how-do-i-sell__form-wrapper .gform_button {
+		font-size: 35px !important;
+		min-height: 55px !important;
+	}
+	.cb-hiw-how-do-i-sell__form-wrapper li {
+		flex: 0 0 48% !important;
+		width: 48% !important;
+		/* margin: 0  !important; */
+		padding: 0 !important;
+		/* margin-bottom: 20px !important; */
+	}
+	.cb-hiw-how-do-i-sell__form-wrapper li.gfield--type-select {
+		flex: 0 0 100% !important;
+		width: 100% !important;
+		/* margin: 0 !important; */
+		padding: 0 !important;
+		/* margin-bottom: 20px; */
+	}
+}
+
+.cb-hiw-how-do-i-sell__form-wrapper .gfield--type-address {
+	display: none !important;
 }

@@ -4,7 +4,7 @@ import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import "./editor.css";
 
 export default function Edit({ attributes, setAttributes }) {
-	const { formId, selectedMarket, phoneNumber } = attributes;
+	const { selectedMarket, phoneNumber } = attributes;
 
 	// Function to handle the change of selected market
 	const onChangeSelectedMarket = (newMarket) => {
@@ -14,11 +14,6 @@ export default function Edit({ attributes, setAttributes }) {
 	// Function to handle the change of phone number
 	const onChangePhoneNumber = (newPhoneNumber) => {
 		setAttributes({ phoneNumber: newPhoneNumber });
-	};
-
-	// Function to handle the change of form ID
-	const onChangeFormId = (newFormId) => {
-		setAttributes({ formId: newFormId });
 	};
 
 	return (
@@ -45,14 +40,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<PanelBody
 					title={__("Form Settings", "carrot-blocks")}
 					initialOpen={true}
-				>
-					<TextControl
-						label={__("Form ID", "carrot-blocks")}
-						value={formId}
-						onChange={onChangeFormId}
-						placeholder={__("Enter Form ID", "carrot-blocks")}
-					/>
-				</PanelBody>
+				></PanelBody>
 				<PanelBody
 					title={__("Contact Settings", "carrot-blocks")}
 					initialOpen={true}

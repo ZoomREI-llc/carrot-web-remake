@@ -4,16 +4,24 @@ import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import "./editor.css";
 
 export default function Edit({ attributes, setAttributes }) {
-	// const { formId } = attributes;
-	const { selectedCity, formId } = attributes;
+	const { selectedCity, formId, phoneNumber } = attributes;
 
-	const onChangeFormId = (newFormId) => {
-		setAttributes({ formId: newFormId });
+	const phoneNumbers = {
+		"Kansas City": "(816) 239-3605",
+		"San Francisco": "(510) 680-2714",
+		"St. Louis": "(314) 671-0956",
+		Detroit: "(313) 217-9851",
+		Cleveland: "(216) 677-2169",
+		Indianapolis: "(317) 526-4712",
 	};
 
 	const onChangeSelectedCity = (newCity) => {
-		setAttributes({ selectedCity: newCity });
+		setAttributes({
+			selectedCity: newCity,
+			phoneNumber: phoneNumbers[newCity] || "",
+		});
 	};
+
 	return (
 		<div {...useBlockProps()}>
 			<InspectorControls>
@@ -24,7 +32,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<TextControl
 						label={__("Form ID", "carrot-blocks")}
 						value={formId}
-						onChange={onChangeFormId}
+						onChange={(newFormId) => setAttributes({ formId: newFormId })}
 						placeholder={__("Enter Form ID", "carrot-blocks")}
 					/>
 				</PanelBody>
@@ -36,18 +44,12 @@ export default function Edit({ attributes, setAttributes }) {
 						label={__("Select City", "carrot-blocks")}
 						value={selectedCity}
 						options={[
-							{
-								label: "Kansas City",
-								value: "Kansas City",
-							},
+							{ label: "Kansas City", value: "Kansas City" },
 							{ label: "San Francisco", value: "San Francisco" },
 							{ label: "St. Louis", value: "St. Louis" },
 							{ label: "Detroit", value: "Detroit" },
 							{ label: "Cleveland", value: "Cleveland" },
-							{
-								label: "Indianapolis",
-								value: "Indianapolis",
-							},
+							{ label: "Indianapolis", value: "Indianapolis" },
 						]}
 						onChange={onChangeSelectedCity}
 					/>

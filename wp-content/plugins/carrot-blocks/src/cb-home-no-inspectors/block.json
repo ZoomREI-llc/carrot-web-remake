@@ -20,6 +20,10 @@
 		"selectedMarket": {
 			"type": "string",
 			"default": "Chris Buys Homes in St. Louis"
+		},
+		"marketLink": {
+			"type": "string",
+			"default": "https://www.stlouis-mo.gov/government/departments/public-safety/building/request-an-interior-residential-property-inspection.cfm"
 		}
 	}
 }

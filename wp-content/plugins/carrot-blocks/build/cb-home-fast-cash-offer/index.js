@@ -30,19 +30,23 @@ function Edit({
   attributes,
   setAttributes
 }) {
-  // const { formId } = attributes;
   const {
     selectedCity,
-    formId
+    formId,
+    phoneNumber
   } = attributes;
-  const onChangeFormId = newFormId => {
-    setAttributes({
-      formId: newFormId
-    });
+  const phoneNumbers = {
+    "Kansas City": "(816) 239-3605",
+    "San Francisco": "(510) 680-2714",
+    "St. Louis": "(314) 671-0956",
+    Detroit: "(313) 217-9851",
+    Cleveland: "(216) 677-2169",
+    Indianapolis: "(317) 526-4712"
   };
   const onChangeSelectedCity = newCity => {
     setAttributes({
-      selectedCity: newCity
+      selectedCity: newCity,
+      phoneNumber: phoneNumbers[newCity] || ""
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -53,7 +57,9 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Form ID", "carrot-blocks"),
     value: formId,
-    onChange: onChangeFormId,
+    onChange: newFormId => setAttributes({
+      formId: newFormId
+    }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Form ID", "carrot-blocks")
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("City Selection", "carrot-blocks"),
@@ -188,7 +194,7 @@ module.exports = window["wp"]["i18n"];
   \************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-home-fast-cash-offer","version":"0.1.0","title":"Fast Cash Offer (cb-home)","category":"widgets","icon":"","description":"A block to display the \'Fast Cash Offer (cb-home)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"formId":{"type":"string","default":"1"},"selectedCity":{"type":"string","default":"San Francisco"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-home-fast-cash-offer","version":"0.1.0","title":"Fast Cash Offer (cb-home)","category":"widgets","icon":"","description":"A block to display the \'Fast Cash Offer (cb-home)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"formId":{"type":"string","default":"1"},"selectedCity":{"type":"string","default":"San Francisco"},"phoneNumber":{"type":"string","default":"(510) 680-2714"}}}');
 
 /***/ })
 

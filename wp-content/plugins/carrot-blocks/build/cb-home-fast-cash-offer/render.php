@@ -1,5 +1,6 @@
 <?php
 $selected_city = esc_html($attributes['selectedCity']);
+$phone_number = esc_html($attributes['phoneNumber']);
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 ?>
@@ -31,11 +32,11 @@ $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
             </div>
             <div class="cb-home-fast-cash-offer__form-block">
                 <div class="cb-home-fast-cash-offer__form-block--text">
-                    <span>We buy houses in ANY CONDITION in <?php echo $selected_city; ?>. There are no commissions or fees and no obligation whatsoever. 
-                    For the fastest service, call us now <a href="tel:816-239-3909" style="color: #02bdfc">(816) 239-3909</a></span>
+                    <span>We buy houses in ANY CONDITION in <?php echo $selected_city; ?>. There are no commissions or fees and no obligation whatsoever.
+                        For the fastest service, call us now <a href="tel:<?php echo $phone_number; ?>" style="color: #02bdfc"><?php echo $phone_number; ?></a></span>
                 </div>
                 <div class="cb-home-fast-cash-offer__form-wrapper">
-                     <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
+                    <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
                 </div>
             </div>
         </div>

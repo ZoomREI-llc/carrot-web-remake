@@ -35,23 +35,14 @@
                 </button>
             </nav>
             <nav class="cb-header__menu-block">
-                <ul class="cb-header__menu">
-                    <li class="cb-header__menu--item">
-                        <a href="<?php echo site_url() ?>/how-we-buy-houses/" class="cb-header__menu--link">How It Works</a>
-                    </li>
-                    <li class="cb-header__menu--item">
-                        <a href="<?php echo site_url() ?>/faq/" class="cb-header__menu--link">FAQ</a>
-                    </li>
-                    <li class="cb-header__menu--item">
-                        <a href="<?php echo site_url() ?>/our-company/" class="cb-header__menu--link">Our Company</a>
-                    </li>
-                    <li class="cb-header__menu--item">
-                        <a href="<?php echo site_url() ?>/contact-us/" class="cb-header__menu--link">Contact Us</a>
-                    </li>
-                    <li class="cb-header__menu--item">
-                        <a href='<?php echo site_url() ?>/sell-your-house/' class="cb-header__sell-yuor-house"><strong>Sell Your House</strong></a>
-                    </li>
-                </ul>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'primary',
+                    'container' => false,
+                    'menu_class' => 'cb-header__menu',
+                    'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+                ));
+                ?>
             </nav>
         </div>
     </header>

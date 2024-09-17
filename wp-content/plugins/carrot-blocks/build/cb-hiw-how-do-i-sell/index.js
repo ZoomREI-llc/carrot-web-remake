@@ -32,8 +32,14 @@ function Edit({
 }) {
   const {
     selectedMarket,
-    phoneNumber
+    phoneNumber,
+    formId
   } = attributes;
+  const onChangeFormId = newFormId => {
+    setAttributes({
+      formId: newFormId
+    });
+  };
   const onChangeSelectedMarket = newMarket => {
     setAttributes({
       selectedMarket: newMarket
@@ -48,6 +54,14 @@ function Edit({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Form Settings", "carrot-blocks"),
+    initialOpen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Form ID", "carrot-blocks"),
+    value: formId,
+    onChange: onChangeFormId,
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Form ID", "carrot-blocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Market Selection", "carrot-blocks"),
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
@@ -188,7 +202,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-hiw-how-do-i-sell","version":"0.1.0","title":"How do i sell(cb-him)","category":"widgets","icon":"","description":"A block to display the \'How do i sell(cb-him)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"St. Louis, MO"},"phoneNumber":{"type":"string","default":"(314) 887-8043 "}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-hiw-how-do-i-sell","version":"0.1.0","title":"How do i sell(cb-him)","category":"widgets","icon":"","description":"A block to display the \'How do i sell(cb-him)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"formId":{"type":"string","default":"1"},"selectedMarket":{"type":"string","default":"St. Louis, MO"},"phoneNumber":{"type":"string","default":"(314) 887-8043"}}}');
 
 /***/ })
 

@@ -31,11 +31,24 @@ function Edit({
   setAttributes
 }) {
   const {
-    selectedMarket
+    selectedMarket,
+    marketLink
   } = attributes;
+
+  // Map each market to its respective link
+  const marketLinks = {
+    "Chris Buys Homes in Kansas City": "https://www.kcmo.gov/city-hall/departments/city-planning-development/permits-division",
+    "John Buys Bay Area Houses": "https://sfdbi.org/permit-services",
+    "Chris Buys Homes in St. Louis": "https://www.stlouis-mo.gov/government/departments/public-safety/building/request-an-interior-residential-property-inspection.cfm",
+    "Chris Buys Homes in Detroit": "https://detroitmi.gov/forms/request-certificate-occupancy-c-o",
+    "Chris Buys Homes in Cleveland": "https://www.clevelandohio.gov/CityofCleveland/Home/Government/CityAgencies/BuildingHousing/FormsPublications",
+    "Chris Buys Homes in Indianapolis": "https://www.indy.gov/activity/certificate-of-occupancy"
+  };
   const onChangeSelectedMarket = newMarket => {
+    const link = marketLinks[newMarket] || "#"; // Fallback to '#' if no link found
     setAttributes({
-      selectedMarket: newMarket
+      selectedMarket: newMarket,
+      marketLink: link // Store the appropriate link
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -173,7 +186,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-home-no-inspectors","version":"0.1.0","title":"No Inspectors (cb-home)","category":"widgets","icon":"","description":"A block to display the \'No Inspectors (cb-home)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"Chris Buys Homes in St. Louis"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-home-no-inspectors","version":"0.1.0","title":"No Inspectors (cb-home)","category":"widgets","icon":"","description":"A block to display the \'No Inspectors (cb-home)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"Chris Buys Homes in St. Louis"},"marketLink":{"type":"string","default":"https://www.stlouis-mo.gov/government/departments/public-safety/building/request-an-interior-residential-property-inspection.cfm"}}}');
 
 /***/ })
 

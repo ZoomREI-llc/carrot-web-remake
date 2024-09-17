@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "carrot-blocks/cb-faqs-page",
+  "version": "0.1.0",
+  "title": "CB block FAQs(cb-faqs-page)",
+  "category": "widgets",
+  "icon": "",
+  "description": "A Carrot Blocks block of client FAQs",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "carrot-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "selectedMarket": {
+      "type": "string",
+      "default": "San Francisco"
+    },
+    "formId7": {
+      "type": "string",
+      "default": "1"
+    },
+    "formId16": {
+      "type": "string",
+      "default": "2"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "default": "(314) 887-8043 "
+    }
+  }
+}

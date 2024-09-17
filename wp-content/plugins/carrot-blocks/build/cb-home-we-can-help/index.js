@@ -36,42 +36,50 @@ function Edit({
     secondMarketMention
   } = attributes;
 
-  // Updated mapping of markets to their respective text mentions
+  // Updated mapping of markets to their respective text mentions and URLs
   const marketMentions = {
     "Kansas City": {
       firstMarketMention: "Kansas City",
-      secondMarketMention: "Kansas City"
+      secondMarketMention: "Kansas City",
+      avoidCommissionsLink: "https://www.upnest.com/re/realtor-commissions/kansas-city-mo"
     },
     "San Francisco Bay Area": {
       firstMarketMention: "the San Francisco bay area",
-      secondMarketMention: "SF bay area, CA"
+      secondMarketMention: "SF bay area, CA",
+      avoidCommissionsLink: "https://www.financialsamurai.com/what-does-it-cost-to-sell-a-house-a-look-at-the-commissions-taxes-and-fees/"
     },
     "St. Louis": {
       firstMarketMention: "Saint Louis",
-      secondMarketMention: "St. Louis"
+      secondMarketMention: "St. Louis",
+      avoidCommissionsLink: "https://stlouisrealestatenews.com/legislative-regulatory/who-pays-the-buyers-agent/"
     },
     "Metro Detroit": {
       firstMarketMention: "Detroit",
-      secondMarketMention: "Metro Detroit"
+      secondMarketMention: "Metro Detroit",
+      avoidCommissionsLink: "https://www.listingbidder.com/real-estate-commission-rates/real-estate-commission-rate-detroit-warren-dearborn-michigan/"
     },
     Cleveland: {
       firstMarketMention: "Cleveland",
-      secondMarketMention: "Cleveland"
+      secondMarketMention: "Cleveland",
+      avoidCommissionsLink: "https://www.listingbidder.com/real-estate-commission-rates/real-estate-commission-rate-cleveland-elyria-ohio/"
     },
     Indianapolis: {
       firstMarketMention: "Indianapolis",
-      secondMarketMention: "Indianapolis"
+      secondMarketMention: "Indianapolis",
+      avoidCommissionsLink: "https://www.listingbidder.com/real-estate-commission-rates/real-estate-commission-rate-indianapolis-carmel-anderson-indiana/"
     }
   };
   const onChangeSelectedMarket = newMarket => {
     const mentions = marketMentions[newMarket] || {
       firstMarketMention: "Your Area",
-      secondMarketMention: "Your Area"
+      secondMarketMention: "Your Area",
+      avoidCommissionsLink: "#"
     };
     setAttributes({
       selectedMarket: newMarket,
       firstMarketMention: mentions.firstMarketMention,
-      secondMarketMention: mentions.secondMarketMention
+      secondMarketMention: mentions.secondMarketMention,
+      avoidCommissionsLink: mentions.avoidCommissionsLink // Store the link in attributes
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -209,7 +217,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-home-we-can-help","version":"0.1.0","title":"We Can Help (cb-home)","category":"widgets","icon":"","description":"A block to display the \'We Can Help (cb-home)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"St. Louis"},"firstMarketMention":{"type":"string","default":"Saint Louis"},"secondMarketMention":{"type":"string","default":"St. Louis"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/cb-home-we-can-help","version":"0.1.0","title":"We Can Help (cb-home)","category":"widgets","icon":"","description":"A block to display the \'We Can Help (cb-home)\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"St. Louis"},"firstMarketMention":{"type":"string","default":"Saint Louis"},"secondMarketMention":{"type":"string","default":"St. Louis"},"avoidCommissionsLink":{"type":"string","default":"#"}}}');
 
 /***/ })
 

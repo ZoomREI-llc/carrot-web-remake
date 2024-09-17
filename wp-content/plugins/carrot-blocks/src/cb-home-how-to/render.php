@@ -34,13 +34,13 @@ $sell_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/sell-' . $marke
         </p>
         <div class="cb-home-how-to__steps">
             <div class="cb-home-how-to__step">
-                <div class="cb-home-how-to-step__image">
+                <a href="/our-company" class="cb-home-how-to-step__image">
                     <img src="<?php echo $about_image_url; ?>" alt="Learn more about us in <?php echo $selected_market; ?>" />
-                </div>
+                </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
                         <img src="<?php echo $one_icon_url; ?>" alt="" />
-                        <span>Go to <a href="our-company" data-type="page" data-id="49">“About Us”</a></span>
+                        <span>Go to <a href="/our-company" data-type="page" data-id="49">“About Us”</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">
                         Learn more about who you’re dealing with and selling your
@@ -49,13 +49,13 @@ $sell_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/sell-' . $marke
                 </div>
             </div>
             <div class="cb-home-how-to__step">
-                <div class="cb-home-how-to-step__image">
+                <a href="/how-we-buy-houses" class="cb-home-how-to-step__image">
                     <img src="<?php echo $how_image_url; ?>" alt="Learn how we buy houses in <?php echo $selected_market; ?>" />
-                </div>
+                </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
                         <img src="<?php echo $two_icon_url; ?>" alt="" />
-                        <span>Read the <a href="how-it-work" data-type="page" data-id="349">“How It Works”</a></span>
+                        <span>Read the <a href="/how-we-buy-houses" data-type="page" data-id="349">“How It Works”</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">
                         This way you’ll be prepared when talking to us about your home
@@ -63,13 +63,13 @@ $sell_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/sell-' . $marke
                 </div>
             </div>
             <div class="cb-home-how-to__step">
-                <div class="cb-home-how-to-step__image">
+                <a href="/sell-your-house" class="cb-home-how-to-step__image">
                     <img src="<?php echo $sell_image_url; ?>" alt="Sell your house fast in <?php echo $selected_market; ?>" />
-                </div>
+                </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
                         <img src="<?php echo $three_icon_url; ?>" alt="" />
-                        <span>Request Your <a href="sell-your-house" data-type="page" data-id="20">Cash Offer</a></span>
+                        <span>Request Your <a href="/sell-your-house" data-type="page" data-id="20">Cash Offer</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">
                         We will not waste your time. Fill in any of our forms and

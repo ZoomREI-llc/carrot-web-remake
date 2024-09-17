@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "carrot-blocks/cb-oc-page-google-reviews",
+	"version": "0.1.0",
+	"title": "Google Reviews (cb-oc-page)",
+	"category": "widgets",
+	"icon": "",
+	"description": "A block to display the 'Google Reviews(cb-oc-page)' section",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "carrot-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		
+		"selectedCIty": {
+			"type": "string",
+			"default": "Independence, MO"
+		},
+		"selectedDirection": {
+			"type": "string",
+			"default": "ltr"
+		},
+		"reviewText": {
+			"type": "string",
+			"default": "Chris worked with us through all odds, even when others failed us. He has gone way beyond what he needed to do to make us feel secure in this transaction! We greatly appreciate his character and honesty as a professional in this business. He showed true compassion. Thank you, Chris and God bless you! Bill"
+		},
+		"reviewerName": {
+			"type": "string",
+			"default": "Bill S. [Independence, MO]"
+		}
+	}
+}

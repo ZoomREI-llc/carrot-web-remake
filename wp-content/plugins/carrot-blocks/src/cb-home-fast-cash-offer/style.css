@@ -69,12 +69,12 @@
 	width: 100%;
 	margin: 30px auto 0;
 	background-color: #fff;
+
 	min-height: 300px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-
 @media (min-width: 1024px) {
 	.cb-home-fast-cash-offer__form-block--text {
 		font-size: 15px;
@@ -152,6 +152,7 @@
 }
 .cb-home-fast-cash-offer__forget {
 	font-size: 12px;
+
 	font-family: "Poppins", sans-serif !important;
 	line-height: 1.5;
 	color: #fff;
@@ -191,57 +192,43 @@
 	box-shadow: 0 2px 3px 0 rgba(29, 29, 29, 0.5);
 	font-size: 1rem !important;
 	width: 100%;
-	margin: 0 !important;
-	font-family: "Poppins", sans-serif !important;
+	margin: 0;
 }
 
-@media (min-width: 1024px) {
-	.cb-home-fast-cash-offer .gform_fields {
-		display: grid !important;
-		grid-template-columns: 1fr 1fr !important;
-		gap: 1rem 2rem !important;
+/* @media (min-width: 1024px) {
+	.cb-home-fast-cash-offer .gform_wrapper {
+		max-width: 70% !important;
 	}
+} */
 
-	.cb-home-fast-cash-offer .gform_fields > * {
-		padding: 0 !important;
-		margin: 0 !important;
-		width: 100% !important;
+/* .cb-home-fast-cash-offer .gform_wrapper {
+	margin-bottom: -6em;
+} */
+
+/* @media (max-width: 1024px) {
+	.cb-home-fast-cash-offer .gform_wrapper {
+		margin-bottom: 0;
 	}
-
-	.cb-home-fast-cash-offer .gfield--type-select {
-		grid-column: span 2 !important;
-	}
-
-	/* .cb-home-fast-cash-offer .dl-phone {
-		grid-column: 2 / 3 !important;
-		grid-row: 1 / 2 !important;
-	}
-
-	.cb-home-fast-cash-offer .autocomplete-field {
-		grid-column: 1 / 2 !important;
-		grid-row: 2 / 3 !important;
-	} */
-}
+} */
 
 .cb-home-fast-cash-offer .gform_button {
+	text-shadow: 0px 3px 5px #0000004a;
 	background-color: #04bad6;
-	border-color: #038ea4;
-	border: 1px solid #0297c9;
-	border-radius: 5px;
-	font-size: 2rem !important;
-	font-weight: 600 !important;
-	font-family: "Source Sans Pro", sans-serif !important;
+	border: 1px solid #038ea4;
+	font-size: 30px !important;
+	font-weight: 600;
 	line-height: 1 !important;
-	padding: 0.5rem 2rem;
+	padding: 0.5rem 0.875rem;
 	width: 100% !important;
 	color: white;
-	text-shadow: rgba(0, 0, 0, 0.29) 0px 3px 5px;
+	border-radius: 5px;
 	margin: 0 !important;
+	font-family: "Source Sans Pro", sans-serif !important;
 }
 
 @media (min-width: 1024px) {
 	.cb-home-fast-cash-offer .gform_button {
-		font-size: 2.5rem !important;
+		font-size: 40px !important;
 	}
 }
 
@@ -312,12 +299,29 @@
 	width: 100%;
 }
 
+@media (min-width: 1024px) {
+	.cb-home-fast-cash-offer .gform_fields {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr !important;
+		gap: 1rem !important;
+	}
+
+	.cb-home-fast-cash-offer .gform_fields > * {
+		width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.cb-home-fast-cash-offer .gfield--type-select {
+		grid-column: span 2 !important;
+	}
+}
+
 .cb-home-fast-cash-offer .gform_wrapper label {
 	font-weight: 500 !important;
 	font-size: 1.125rem !important;
 	width: 100% !important;
 	/* text-align: center !important; */
-	font-family: "Poppins", sans-serif !important;
 }
 
 .cb-home-fast-cash-offer .gform_heading {

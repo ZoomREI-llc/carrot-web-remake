@@ -4,10 +4,29 @@ import { PanelBody, SelectControl } from "@wordpress/components";
 import "./editor.css";
 
 export default function Edit({ attributes, setAttributes }) {
-	const { selectedMarket } = attributes;
+	const { selectedMarket, marketLink } = attributes;
+
+	// Map each market to its respective link
+	const marketLinks = {
+		"Chris Buys Homes in Kansas City":
+			"https://www.kcmo.gov/city-hall/departments/city-planning-development/permits-division",
+		"John Buys Bay Area Houses": "https://sfdbi.org/permit-services",
+		"Chris Buys Homes in St. Louis":
+			"https://www.stlouis-mo.gov/government/departments/public-safety/building/request-an-interior-residential-property-inspection.cfm",
+		"Chris Buys Homes in Detroit":
+			"https://detroitmi.gov/forms/request-certificate-occupancy-c-o",
+		"Chris Buys Homes in Cleveland":
+			"https://www.clevelandohio.gov/CityofCleveland/Home/Government/CityAgencies/BuildingHousing/FormsPublications",
+		"Chris Buys Homes in Indianapolis":
+			"https://www.indy.gov/activity/certificate-of-occupancy",
+	};
 
 	const onChangeSelectedMarket = (newMarket) => {
-		setAttributes({ selectedMarket: newMarket });
+		const link = marketLinks[newMarket] || "#"; // Fallback to '#' if no link found
+		setAttributes({
+			selectedMarket: newMarket,
+			marketLink: link, // Store the appropriate link
+		});
 	};
 
 	return (

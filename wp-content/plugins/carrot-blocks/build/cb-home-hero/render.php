@@ -60,7 +60,7 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
             <div class="cb-home-hero__call-us">
                 Call Us! <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
             </div>
-            <a href="<?php echo site_url() ?>/sell-your-house/" class="cb-home-hero__top--nav-link">Get A Cash Offer Today</a>
+            <a href="/get-a-cash-offer" class="cb-home-hero__top--nav-link">Get A Cash Offer Today</a>
         </div>
        
         <div class="cb-home-hero__content">

@@ -10,7 +10,7 @@ $selected_market = esc_html($attributes['selectedMarket']);
         <h2>
             Sell Your House Fast In <?php echo $selected_market; ?>, And Avoid Paying Agent Fees,
             Closing Costs, Repairs, and Having Months of Uncertainty. Find Out How
-            <a rel="noreferrer noopener" href="how-we-buy-houses/" data-type="page" data-id="349" target="_blank">Our Home Buying Process&nbsp;</a> Works!
+            <a rel="noreferrer noopener" href="/how-we-buy-houses" data-type="page" data-id="349" target="_blank">Our Home Buying Process&nbsp;</a> Works!
         </h2>
     </div>
 </section>

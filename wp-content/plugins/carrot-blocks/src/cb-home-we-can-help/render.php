@@ -1,6 +1,7 @@
 <?php
 $first_market_mention = esc_html($attributes['firstMarketMention']);
 $second_market_mention = esc_html($attributes['secondMarketMention']);
+$avoid_commissions_link = esc_url($attributes['avoidCommissionsLink']);
 
 $checkmark_url = esc_url(plugins_url('src/cb-home-we-can-help/assets/circled-checkmark.webp', dirname(__FILE__, 2)));
 ?>
@@ -20,7 +21,7 @@ $checkmark_url = esc_url(plugins_url('src/cb-home-we-can-help/assets/circled-che
             everyone</strong>, and this is why we came up with our service.
     </p>
     <p>
-        Avoid <a href="https://www.upnest.com/re/realtor-commissions/kansas-city-mo">agent commissions</a>, closing costs, walk-throughs, open houses, uncertainties, or costly
+        Avoid <a href="<?php echo $avoid_commissions_link; ?>">agent commissions</a>, closing costs, walk-throughs, open houses, uncertainties, or costly
         repairs. <strong>We buy homes in <?php echo $second_market_mention; ?></strong> no matter what
         your reasons for selling are:
     </p>
@@ -34,25 +35,25 @@ $checkmark_url = esc_url(plugins_url('src/cb-home-we-can-help/assets/circled-che
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Tired of Being a Landlord</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Too Many Costly Repairs</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Behind on Payments</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Hoarder Houses</span>
             </div>
@@ -60,31 +61,31 @@ $checkmark_url = esc_url(plugins_url('src/cb-home-we-can-help/assets/circled-che
         <div class="col-2">
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Need To Relocate</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark " />
                 <span>Vacant Houses</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Elderly in Need of Assisted Living</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Sell Old House To Buy A New Place</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
                 <img
-                    src="<?php echo $checkmark_url ?>"
+                    src="<?php echo $checkmark_url ?> "
                     alt="checkmark" />
                 <span>Going Through a Divorce</span>
             </div>
