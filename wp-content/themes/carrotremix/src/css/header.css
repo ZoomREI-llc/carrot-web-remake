@@ -163,17 +163,17 @@
   vertical-align: middle;
   overflow: hidden;
 }
-.cb-triangle-top {
-}
+
 .hl-triangle-poly-1 {
   fill: var(--primary-color);
 }
+
 .cb-telephone-text {
   font-size: 1.2em;
   position: absolute;
   right: 15px;
   /* top: 25%; */
-  bottom: 10px;
+  /* bottom: 10px; */
 }
 .cb-contact-phone-text {
   color: #fff;

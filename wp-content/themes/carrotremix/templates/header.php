@@ -25,11 +25,11 @@
                     <div class="cb-telephone-text">
                         <span class="cb-contact-phone-text">Call Us!</span>
                         <span itemprop="telephone">
-                            <b><a href="tel:816-227-6952" style="color: #02bdfc">(816) 227-6952</a></b>
+                            <b><a href="tel: <?php echo get_blog_option($site_id, 'phone', ''); ?>" style="color: #02bdfc;"><?php echo get_blog_option($site_id, 'phone', ''); ?></a></b>
                         </span>
                     </div>
                 </div>
-                <a href="#" class='cb-header__mobile-nav-link'>Get A Cash Offer Today</a>
+                <a href=" /get-a-cash-offer-today" class='cb-header__mobile-nav-link'>Get A Cash Offer Today</a>
                 <button type="button" class="cb-header__mobile-toggler">
                     Menu&nbsp;▾
                 </button>
