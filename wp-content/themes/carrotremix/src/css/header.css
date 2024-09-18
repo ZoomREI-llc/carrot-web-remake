@@ -28,10 +28,16 @@
 }
 .cb-header__logo img {
   height: auto;
-  max-width: 16.25rem;
+  max-width: 8.75rem;
   width: auto;
   object-fit: contain;
   margin: 0 auto;
+}
+
+@media (min-width: 670px) {
+  .cb-header__logo img {
+    max-width: 16.25rem;
+  }
 }
 
 .cb-header__menu-block {
@@ -59,7 +65,7 @@
   flex-direction: column;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 670px) {
   .cb-header__inner {
     flex-direction: row;
     padding: 0;
@@ -94,7 +100,7 @@
   font-weight: normal;
   line-height: 1.2;
 }
-@media (min-width: 1024px) {
+@media (min-width: 670px) {
   .cb-header__menu a {
     padding: 10px;
   }
@@ -113,7 +119,7 @@
   font-family: "Poppins", sans-serif !important;
   color: #fff;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 700;
   line-height: 1;
 
   display: flex;
@@ -122,7 +128,7 @@
   width: 100%;
   text-decoration: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 670px) {
   .cb-header__sell-yuor-house {
     width: max-content;
   }
@@ -224,7 +230,7 @@
   border-top: 2px solid #e9ecef;
   padding-top: 1em;
 }
-@media (min-width: 1024px) {
+@media (min-width: 670px) {
   .cb-header__menu {
     border-top: unset;
     padding-top: unset;

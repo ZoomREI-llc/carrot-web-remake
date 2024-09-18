@@ -55,11 +55,12 @@ function carrot_register_menus()
 {
     register_nav_menus(array(
         'primary' => __('Primary Menu'),
+        'footer-navigation' => __('Footer Navigation'),
         'local-home-buyers' => __('Local Home Buyers In'),
         'we-buy-houses'     => __('We Buy Houses In'),
-        'footer-navigation' => __('Footer Navigation'),
         'sell-your-house'   => __('Sell Your House In'),
         'cash-for-houses'   => __('Cash For Houses In'),
+        'sell-your-house-in'   => __('Sell Your House in'),
     ));
 }
 add_action('init', 'carrot_register_menus');
@@ -109,6 +110,7 @@ function site_settings_page_html()
 
     // Save the settings if the form is submitted
     if (isset($_POST['site_settings_update'])) {
+        update_blog_option($blog_id, 'market_code', sanitize_text_field($_POST['market_code']));
         update_blog_option($blog_id, 'company_name', sanitize_text_field($_POST['company_name']));
         update_blog_option($blog_id, 'market_city', sanitize_text_field($_POST['market_city']));
         update_blog_option($blog_id, 'market_state', sanitize_text_field($_POST['market_state']));
@@ -119,11 +121,18 @@ function site_settings_page_html()
         update_blog_option($blog_id, 'city', sanitize_text_field($_POST['city']));
         update_blog_option($blog_id, 'state', sanitize_text_field($_POST['state']));
         update_blog_option($blog_id, 'zipcode', sanitize_text_field($_POST['zipcode']));
-        update_blog_option($blog_id, 'facebook_link', esc_url_raw($_POST['facebook_link'])); // Add Facebook Link
+        update_blog_option($blog_id, 'facebook_link', esc_url_raw($_POST['facebook_link']));
+        update_blog_option($blog_id, 'twitter_link', esc_url_raw($_POST['twitter_link']));
+        update_blog_option($blog_id, 'youtube_link', esc_url_raw($_POST['youtube_link']));
+        update_blog_option($blog_id, 'linkedin_link', esc_url_raw($_POST['linkedin_link']));
+        update_blog_option($blog_id, 'instagram_link', esc_url_raw($_POST['instagram_link']));
+        update_blog_option($blog_id, 'pinterest_link', esc_url_raw($_POST['pinterest_link']));
+        update_blog_option($blog_id, 'zillow_link', esc_url_raw($_POST['zillow_link']));
         echo '<div id="message" class="updated">Settings saved</div>';
     }
 
     // Retrieve the saved values for the current site
+    $market_code = get_blog_option($blog_id, 'market_code', '');
     $company_name = get_blog_option($blog_id, 'company_name', '');
     $market_city = get_blog_option($blog_id, 'market_city', '');
     $market_state = get_blog_option($blog_id, 'market_state', '');
@@ -134,13 +143,23 @@ function site_settings_page_html()
     $city = get_blog_option($blog_id, 'city', '');
     $state = get_blog_option($blog_id, 'state', '');
     $zipcode = get_blog_option($blog_id, 'zipcode', '');
-    $facebook_link = get_blog_option($blog_id, 'facebook_link', ''); // Retrieve Facebook Link
+    $facebook_link = get_blog_option($blog_id, 'facebook_link', '');
+    $twitter_link = get_blog_option($blog_id, 'twitter_link', '');
+    $youtube_link = get_blog_option($blog_id, 'youtube_link', '');
+    $linkedin_link = get_blog_option($blog_id, 'linkedin_link', '');
+    $instagram_link = get_blog_option($blog_id, 'instagram_link', '');
+    $pinterest_link = get_blog_option($blog_id, 'pinterest_link', '');
+    $zillow_link = get_blog_option($blog_id, 'zillow_link', '');
 
 ?>
     <div class="wrap">
         <h1>Site Settings</h1>
         <form method="POST" action="">
             <table class="form-table">
+                <tr>
+                    <th scope="row"><label for="market_code">Market Code</label></th>
+                    <td><input type="text" name="market_code" value="<?php echo esc_attr($market_code); ?>" class="regular-text"></td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="company_name">Company Name</label></th>
                     <td><input type="text" name="company_name" value="<?php echo esc_attr($company_name); ?>" class="regular-text"></td>
@@ -185,6 +204,30 @@ function site_settings_page_html()
                     <th scope="row"><label for="facebook_link">Facebook Link</label></th>
                     <td><input type="url" name="facebook_link" value="<?php echo esc_attr($facebook_link); ?>" class="regular-text"></td>
                 </tr>
+                <tr>
+                    <th scope="row"><label for="twitter_link">Twitter Link</label></th>
+                    <td><input type="url" name="twitter_link" value="<?php echo esc_attr($twitter_link); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="youtube_link">YouTube Link</label></th>
+                    <td><input type="url" name="youtube_link" value="<?php echo esc_attr($youtube_link); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="linkedin_link">LinkedIn Link</label></th>
+                    <td><input type="url" name="linkedin_link" value="<?php echo esc_attr($linkedin_link); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="instagram_link">Instagram Link</label></th>
+                    <td><input type="url" name="instagram_link" value="<?php echo esc_attr($instagram_link); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="pinterest_link">Pinterest Link</label></th>
+                    <td><input type="url" name="pinterest_link" value="<?php echo esc_attr($pinterest_link); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="zillow_link">Zillow Link</label></th>
+                    <td><input type="url" name="zillow_link" value="<?php echo esc_attr($zillow_link); ?>" class="regular-text"></td>
+                </tr>
             </table>
             <input type="hidden" name="site_settings_update" value="Y">
             <p class="submit">
@@ -228,33 +271,51 @@ function carrot_get_footer($name = null)
 }
 
 // Template Part Loading with Fallback
-function carrot_get_template_part_with_fallback($slug, $name = null)
-{
-    $templates = array();
-
-    if (isset($name)) {
-        $templates[] = "templates/{$slug}-{$name}.php";
-    }
-    $templates[] = "templates/{$slug}.php";
-    $templates[] = "{$slug}.php";
-
-    $found_template = locate_template($templates, true, false);
-
-    if (!$found_template) {
-        get_template_part($slug, $name);
-    }
-}
-
-// Template Include Filter
 function carrot_template_include($template)
 {
     // Get the base name of the current template file
     $template_name = basename($template);
 
+    // Get global post object
+    global $post;
+
     // Log the current template and custom template path
     error_log('Current template: ' . $template);
 
-    // Specific checks for different template types
+    if (is_page()) {
+        // Apply `legal.php` for Privacy Policy page (or based on title)
+        if (strtolower($post->post_title) === 'privacy policy') {
+            $legal_template = locate_template('templates/legal.php');
+            if ($legal_template) {
+                error_log('Legal page template found: ' . $legal_template);
+                return $legal_template;
+            } else {
+                error_log('Legal page template not found');
+            }
+        }
+
+        // Apply `seo-page.php` for pages where the title contains the word "in"
+        if (strpos(strtolower($post->post_title), 'in') !== false) {
+            $seo_template = locate_template('templates/seo-page.php');
+            if ($seo_template) {
+                error_log('SEO page template found: ' . $seo_template);
+                return $seo_template;
+            } else {
+                error_log('SEO page template not found');
+            }
+        }
+
+        // If no conditions matched, use the default page template
+        $page_template = locate_template('templates/page.php');
+        if ($page_template) {
+            error_log('Page template found: ' . $page_template);
+            return $page_template;
+        } else {
+            error_log('Page template not found');
+        }
+    }
+
+    // Other conditions for different templates (single, author, category, etc.) remain unchanged
     if (is_single()) {
         $single_template = locate_template('templates/single.php');
         if ($single_template) {
@@ -265,79 +326,7 @@ function carrot_template_include($template)
         }
     }
 
-    if (is_page()) {
-        global $post;
-        // Check if the page is the Privacy Policy or Terms of Use page
-        if ($post->ID == 3 || $post->ID == 507) {
-            $legal_template = locate_template('templates/legal.php');
-            if ($legal_template) {
-                error_log('Legal page template found: ' . $legal_template);
-                return $legal_template;
-            } else {
-                error_log('Legal page template not found');
-            }
-        }
-
-        // Check for other specific page templates
-        $page_template = locate_template('templates/page.php');
-        if ($page_template) {
-            error_log('Page template found: ' . $page_template);
-            return $page_template;
-        } else {
-            error_log('Page template not found');
-        }
-    }
-
-    if (is_author()) {
-        $author_template = locate_template('templates/author.php');
-        if ($author_template) {
-            error_log('Author template found: ' . $author_template);
-            return $author_template;
-        } else {
-            error_log('Author template not found');
-        }
-    }
-
-    if (is_category()) {
-        $category_template = locate_template('templates/category.php');
-        if ($category_template) {
-            error_log('Category template found: ' . $category_template);
-            return $category_template;
-        } else {
-            error_log('Category template not found');
-        }
-    }
-
-    if (is_tag()) {
-        $tag_template = locate_template('templates/tag.php');
-        if ($tag_template) {
-            error_log('Tag template found: ' . $tag_template);
-            return $tag_template;
-        } else {
-            error_log('Tag template not found');
-        }
-    }
-
-    if (is_archive()) {
-        $archive_template = locate_template('templates/archive.php');
-        if ($archive_template) {
-            error_log('Archive template found: ' . $archive_template);
-            return $archive_template;
-        } else {
-            error_log('Archive template not found');
-        }
-    }
-
-    if (is_search()) {
-        $search_template = locate_template('templates/search.php');
-        if ($search_template) {
-            error_log('Search template found: ' . $search_template);
-            return $search_template;
-        } else {
-            error_log('Search template not found');
-        }
-    }
-
+    // Handle 404 template
     if (is_404()) {
         $error_template = locate_template('templates/404.php');
         if ($error_template) {
@@ -365,6 +354,7 @@ function carrot_template_include($template)
     return $template;
 }
 add_filter('template_include', 'carrot_template_include');
+
 
 // Add custom user fields
 function add_custom_user_fields($user)
@@ -560,6 +550,7 @@ function replace_custom_placeholders_multisite($content)
         '[city]'           => $city,
         '[state]'          => $state,
         '[zipcode]'        => $zipcode,
+        '[market_zipcode]' => $zipcode,
         '[facebook_link]'  => $facebook_link,
     );
 

@@ -4,9 +4,8 @@
         <div class="entry-dets">
             <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
             <div class="entry-meta">
-                <span class="author"><?php the_author(); ?></span>
-                |
-                <span class="date"><?php the_date(); ?></span>
+                <p class="author"><?php the_author(); ?></p>
+                <time class="date"><?php the_date(); ?></time>
             </div>
         </div>
         <?php get_template_part('template-parts/share-bar'); ?>

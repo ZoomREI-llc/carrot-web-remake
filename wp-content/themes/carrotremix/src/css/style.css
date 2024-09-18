@@ -2,11 +2,12 @@
 @import "./fonts.css";
 @import "./block-editor.css";
 
-
 @import "./header.css";
 @import "./footer.css";
+@import "./hero.css";
+@import "./sidebar.css";
+@import "./post.css";
 /* @import "./page.css"; */
-/* @import "./post.css"; */
 /* @import "./legal.css"; */
 
 :root {
@@ -47,7 +48,7 @@
 } */
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
 /* 

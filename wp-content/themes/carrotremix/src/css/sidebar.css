@@ -1,0 +1,259 @@
+aside {
+  padding: 0 1rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.widget_listing_vs_selling {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-image: var(--banner-gradient);
+  color: #1d1d1d !important;
+  padding: 2.25rem 1.75rem;
+}
+
+.widget_listing_vs_selling h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.widget_listing_vs_selling p {
+  font-size: 1.125rem;
+}
+
+.widget .btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  color: #1d1d1d !important;
+  border-bottom: 2px solid #1d1d1d;
+  padding: 0.4rem 0.875rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.widget_cash_offer_form {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(233, 236, 239);
+  color: #373a3c;
+  border-top: 0.3333333333rem solid #e9ecef;
+  padding: 1.125rem;
+}
+
+.widget_cash_offer_form h3 {
+  font-size: 1.25rem;
+}
+
+.widget_cash_offer_form h3::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 0.3333333333rem;
+  background: var(--primary-color);
+  margin-block: 0.5rem;
+}
+
+/* ------------------------------------------- */
+/* ------------ FORM STYLES ---------- */
+/* ----------------------------------------- */
+
+.widget_cash_offer_form .gform_wrapper {
+  /* background-color: white; */
+  color: #212529;
+  position: relative;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 3px 0 rgba(29, 29, 29, 0.5); */
+  font-size: 1rem !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  /* .widget_cash_offer_form .gform_wrapper {
+		max-width: 45rem !important;
+	} */
+  .widget_cash_offer_form__content h3 {
+    max-width: 720px;
+  }
+}
+
+.widget_cash_offer_form .gform_wrapper {
+  margin: 0;
+  /* padding: 5px 15px 30px; */
+}
+
+@media (min-width: 1024px) {
+  .widget_cash_offer_form .gform_wrapper {
+    /* margin: 0;
+		margin-bottom: 0; */
+    /* padding: 10px 25px 25px; */
+  }
+  .widget_cash_offer_form label.gfield_label {
+    width: 100%;
+    /* text-align: center; */
+  }
+}
+
+.widget_cash_offer_form label.gfield_label {
+  width: 100%;
+  /* text-align: center; */
+
+  color: #212529 !important;
+  text-decoration: none;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.widget_cash_offer_form .gform_button {
+  /* background-color: #02bdfc;
+	border-color: #20c6fe; */
+  text-shadow: 0px 3px 5px #0000004a;
+  background-color: #04bad6;
+  border-color: #038ea4;
+  /* font-size: 1.75rem !important; */
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  padding: 0.4rem 0.875rem;
+  width: 100% !important;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif !important;
+  margin: 0 !important;
+  border-radius: 0.25rem;
+}
+
+.widget_cash_offer_form .gform_heading {
+  display: none !important;
+}
+
+.widget_cash_offer_form .address_city,
+.widget_cash_offer_form .address_state,
+.widget_cash_offer_form .address_zip,
+.widget_cash_offer_form .gform_heading,
+.widget_cash_offer_form .gform-field-label--type-sub {
+  display: none !important;
+}
+
+/* ------------------------------------------- */
+/* ------------ COPIED FORM STYLES ---------- */
+/* ----------------------------------------- */
+
+.widget_cash_offer_form input:focus,
+.widget_cash_offer_form textarea:focus,
+.widget_cash_offer_form select:focus {
+  background-color: rgb(255, 255, 255) !important;
+  border-color: rgb(128, 189, 255) !important;
+  box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 0.2rem !important;
+  color: rgb(73, 80, 87) !important;
+  outline: 0px !important;
+}
+
+.widget_cash_offer_form .form-control,
+.widget_cash_offer_form .wp-block-search .wp-block-search__input,
+.widget_cash_offer_form input[type="email"],
+.widget_cash_offer_forminput[type="number"],
+.widget_cash_offer_form input[type="password"],
+.widget_cash_offer_form input[type="search"],
+.widget_cash_offer_form input[type="tel"],
+.widget_cash_offer_form input[type="text"],
+.widget_cash_offer_form input[type="url"],
+.widget_cash_offer_form select,
+.widget_cash_offer_form select[multiple],
+.widget_cash_offer_form textarea {
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  color: #495057;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  height: calc(1.5em + 0.75rem + 2px);
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+  font-family: "Poppins", sans-serif !important;
+  min-height: 48px;
+}
+
+.widget_cash_offer_form .gform_legacy_markup_wrapper .gform_footer {
+  padding: 0 !important;
+}
+
+.widget_cash_offer_form .gform_wrapper ul {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+}
+
+.widget_cash_offer_form .gform_wrapper li {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.widget_cash_offer_form .gform_wrapper li.gfield--type-select {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+}
+
+@media (min-width: 1024px) {
+  .widget_cash_offer_form .gform_button {
+    font-size: 40px !important;
+    text-wrap: wrap;
+  }
+
+  .widget_cash_offer_form .gform_wrapper li {
+    flex: 0 0 48% !important;
+    width: 48% !important;
+    padding: 0 !important;
+  }
+
+  .widget_cash_offer_form .gform_wrapper li.gfield--type-select {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+  }
+}
+
+.widget_cash_offer_form .gfield--type-address {
+  display: none !important;
+}
+
+.widget_recent_posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.widget_recent_posts::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.35rem;
+  background-color: #e9ecef;
+  /* margin-block: 0.5rem; */
+}
+
+.widget_recent_posts h3 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.recent-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+}
