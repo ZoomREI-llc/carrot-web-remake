@@ -14,10 +14,10 @@
         <?php
         if (have_posts()) :
             while (have_posts()) : the_post();
-                carrot_get_template_part_with_fallback('template-parts/content', get_post_format());
+                carrot_get_template_part('template-parts/content', get_post_format());
             endwhile;
         else :
-            carrot_get_template_part_with_fallback('template-parts/content', 'none');
+            carrot_get_template_part('template-parts/content', 'none');
         endif;
         ?>
     </main>

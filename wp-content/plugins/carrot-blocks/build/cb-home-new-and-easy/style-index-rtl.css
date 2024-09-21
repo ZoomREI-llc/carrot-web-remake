@@ -20,14 +20,14 @@
 	color: #212529;
 	font-size: 40px;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-home-new-and-easy p {
 	font-size: 24px;
 	line-height: 1.5;
 	color: #212529;
 	font-style: italic;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 @media (min-width: 1024px) {
 	.cb-home-new-and-easy h2 {
@@ -36,8 +36,87 @@
 	.cb-home-new-and-easy {
 		padding: 0;
 	}
-	
 }
 
+.entry-share {
+	margin-top: 3.375rem;
+	justify-self: start;
+	width: 100%;
+}
 
+.social-list {
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	/* color: #1d1d1d; */
+	-moz-column-gap: 0.75rem;
+	     column-gap: 0.75rem;
+	display: flex;
+	/* justify-content: flex-end; */
+	list-style: none;
+}
+
+.social-item {
+	margin: 0;
+	padding: 0;
+}
+
+.social-link {
+	align-items: center;
+	background-color: #fff;
+	border: none;
+	display: flex;
+	height: 24px;
+	justify-content: center;
+	width: 24px;
+	color: currentColor;
+}
+.social-link svg {
+	margin: 0 auto;
+	width: 15px;
+	height: 15px;
+	display: block;
+}
+
+.social--sr-only {
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	white-space: nowrap;
+}
+
+.entry-share-btns {
+	display: flex;
+	gap: 0.625rem;
+}
+
+.entry-share-btn {
+	cursor: pointer;
+	padding: 0 0.5rem;
+	border-radius: 0.25rem;
+	color: white;
+}
+
+.entry-share-btn a {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	font-weight: normal !important;
+	font-size: 1rem;
+	color: white;
+}
+
+.entry-share-btn-facebook {
+	background-color: #3b5998;
+}
+
+.entry-share-btn-twitter {
+	background-color: #00aced;
+}
 

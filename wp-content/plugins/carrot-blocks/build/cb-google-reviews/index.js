@@ -80,7 +80,7 @@ function Edit({
       value: "rtl"
     }],
     onChange: onChangeSelectedDirection
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Carrot Google Reviews (cb-syh-page)", "carrot-blocks")));
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Carrot Google Reviews (cb-blocks)", "carrot-blocks")));
 }
 
 /***/ }),

@@ -3,7 +3,16 @@ $selected_city = esc_html($attributes['selectedCity']);
 $phone_number = esc_html($attributes['phoneNumber']);
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
+
+$bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.svg', dirname(__FILE__, 2)));
 ?>
+
+<style>
+    :root {
+        <?php if ($selected_city === 'Indianapolis') : ?>--show-select: none;
+        <?php endif; ?>
+    }
+</style>
 
 <section class="cb-home-fast-cash-offer__full-width">
     <div class="cb-home-fast-cash-offer">
@@ -32,10 +41,21 @@ $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
             </div>
             <div class="cb-home-fast-cash-offer__form-block">
                 <div class="cb-home-fast-cash-offer__form-block--text">
-                    <span>We buy houses in ANY CONDITION in <?php echo $selected_city; ?>. There are no commissions or fees and no obligation whatsoever.
-                        For the fastest service, call us now <a href="tel:<?php echo $phone_number; ?>" style="color: #02bdfc"><?php echo $phone_number; ?></a></span>
+                    <?php if ($selected_city !== 'Indianapolis'): ?>
+                        <span>We buy houses in ANY CONDITION in <?php echo $selected_city; ?>. There are no commissions or fees and no obligation whatsoever.
+                            For the fastest service, call us now <a href="tel:<?php echo $phone_number; ?>" style="color: #02bdfc"><?php echo $phone_number; ?></a></span>
+                    <?php else: ?>
+                        <div class="custom-form-content">
+                            <h3>What Do You Have To Lose? Get Started Now...</h3>
+                            <img class="cb-home-hero__bbb-logo"
+                                src="<?php echo esc_url($bbb_url); ?>"
+                                alt="" />
+                            <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning. <span style="color: rgb(2, 189, 252); font-weight: 700;"> Find Out How Much We Can Offer For Your House!</span></span>
+                            <h4>Get a solid offer today!</h4>
+                        </div>
+                    <?php endif; ?>
                 </div>
-                <div class="cb-home-fast-cash-offer__form-wrapper">
+                <div class=" cb-home-fast-cash-offer__form-wrapper">
                     <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
                 </div>
             </div>

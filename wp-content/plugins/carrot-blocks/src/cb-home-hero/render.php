@@ -47,6 +47,9 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
         --background-image: url('<?php echo $background_image_url; ?>');
+
+        <?php if ($selected_market === 'ind') : ?>--show-select: none;
+        <?php endif; ?>
     }
 </style>
 
@@ -62,7 +65,7 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
             </div>
             <a href="/get-a-cash-offer" class="cb-home-hero__top--nav-link">Get A Cash Offer Today</a>
         </div>
-       
+
         <div class="cb-home-hero__content">
             <img
                 class="cb-home-hero__headline-image"
@@ -76,7 +79,7 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
                 no repairs & not even cleaning.
             </h3>
             <div class="cb-home-hero__form-wrapper">
-               <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
+                <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@
 	color: #fff;
 	font-size: 40px;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-hiw-are-you-ready-to-get-cash__form-wrapper {
 	width: 100%;
@@ -76,7 +76,7 @@
 	width: 100% !important;
 	color: white;
 	border-radius: 5px;
-	font-family: "Source Sans Pro", sans-serif !important;
+	/* font-family: "Source Sans Pro", sans-serif !important; */
 	margin: 0 !important;
 	min-height: 45px !important;
 }
@@ -90,7 +90,7 @@
 	font-size: 18px !important;
 	font-weight: 500 !important;
 	line-height: 1.2 !important;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-hiw-are-you-ready-to-get-cash__form-wrapper input:focus,
 .cb-hiw-are-you-ready-to-get-cash__form-wrapper textarea:focus,

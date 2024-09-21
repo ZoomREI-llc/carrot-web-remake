@@ -69,7 +69,7 @@
 		overflow-x: hidden;
 		max-width: 220px;
 		vertical-align: middle;
-		font-family: "Poppins", sans-serif !important;
+		/* font-family: "Poppins", sans-serif !important; */
 	
 }
 .cb-popup-link-get-a-cash-offer__content--text{
@@ -81,7 +81,7 @@
 	color: #686b81;
 	max-height: 16px;
 	overflow: hidden;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 
 }
 .cb-popup-link-get-a-cash-offer__content--footer {
@@ -91,7 +91,7 @@
 		font-size: 9px;
 		font-weight: 300;
 		color: #9196b6;
-		font-family: "Poppins", sans-serif !important;
+		/* font-family: "Poppins", sans-serif !important; */
 	
 }
 @media (min-width: 1024px) {

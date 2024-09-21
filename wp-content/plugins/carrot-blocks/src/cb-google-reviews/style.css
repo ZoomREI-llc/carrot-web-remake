@@ -34,7 +34,7 @@
 		justify-items: center;
 		align-items: center;
 		padding: 0;
-		gap: 0;
+		gap: 2rem;
 	}
 	.cb-syh-page-google-reviews--ltr {
 		flex-direction: row;
@@ -62,7 +62,7 @@
 .cb-syh-page-google-reviews__review p {
 	font-style: italic;
 	font-size: 24px !important;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	color: #fff !important;
 	margin: 0;
 }
@@ -73,7 +73,7 @@
 	align-items: flex-end;
 	text-align: right;
 	font-size: 24px !important;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	color: #fff !important;
 }
 

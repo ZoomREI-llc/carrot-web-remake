@@ -13,7 +13,7 @@
 .cb-home-as-is h2 {
 	font-size: 44px;
 	text-align: center;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	color: #fff;
 	line-height: 1.2;
 	font-weight: 700;
@@ -24,7 +24,7 @@
 
 .cb-home-as-is p {
 	font-size: 16px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	color: #fff;
 	line-height: 1.5;
 	font-weight: bold;

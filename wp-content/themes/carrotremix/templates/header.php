@@ -1,3 +1,10 @@
+<?php
+
+$site_id = get_current_blog_id();
+$market_code = get_blog_option($site_id, 'market_code', '');
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -7,7 +14,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> <?php if ($market_code == 'ind') : ?>style="font-family: Source Sans Pro, sans-serif !important;" <?php endif; ?>>
     <?php wp_body_open(); ?>
 
     <header class="cb-header">

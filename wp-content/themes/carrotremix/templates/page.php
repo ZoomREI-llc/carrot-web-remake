@@ -1,8 +1,12 @@
 <?php
 // Include the header
-carrot_get_header(); ?>
+carrot_get_header();
 
-<main id="main" class="site-main" role="main">
+$site_id = get_current_blog_id();
+$market_code = get_blog_option($site_id, 'market_code', '');
+
+?>
+<main id="main" class="site-main" role="main" <?php if ($market_code == 'ind') : ?>style="font-family: Source Sans Pro, sans-serif !important;" <?php endif; ?>>
     <div class="page-container">
         <?php
         // Start the loop

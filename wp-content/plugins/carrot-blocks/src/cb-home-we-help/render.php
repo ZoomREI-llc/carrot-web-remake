@@ -26,9 +26,12 @@ $satisfaction_url = esc_url(plugins_url('src/cb-home-we-help/assets/satisfaction
                     but even then – we promise to guide you and advise you through the
                     best solution for YOU!
                 </p>
-                <img
-                    src="<?php echo $satisfaction_url; ?>"
-                    alt="Satisfaction Guarantee" />
+                <?php if ($selected_market !== 'ind') : ?>
+                    <img
+                        src="<?php echo $satisfaction_url; ?>"
+                        alt="Satisfaction Guarantee" />
+
+                <?php endif; ?>
             </div>
         </div>
     </div>

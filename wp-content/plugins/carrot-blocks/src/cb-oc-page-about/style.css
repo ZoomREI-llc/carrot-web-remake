@@ -22,7 +22,7 @@
 	color: #212529;
 	font-size: 51px;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-oc-page-about__content {
 	display: flex;
@@ -41,7 +41,7 @@ object-fit: cover;
 
 }
 .cb-oc-page-about__text  p {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 24px;
 	text-align: left;
 	line-height: 1.5;

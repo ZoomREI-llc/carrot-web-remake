@@ -294,8 +294,9 @@ function carrot_template_include($template)
             }
         }
 
-        // Apply `seo-page.php` for pages where the title contains the word "in"
-        if (strpos(strtolower($post->post_title), 'in') !== false) {
+        // Check if the title does not contain '##'
+        if (strpos($post->post_title, '##') === false) {
+            // Apply `seo-page.php` for pages without '##' in the title
             $seo_template = locate_template('templates/seo-page.php');
             if ($seo_template) {
                 error_log('SEO page template found: ' . $seo_template);
@@ -312,6 +313,17 @@ function carrot_template_include($template)
             return $page_template;
         } else {
             error_log('Page template not found');
+        }
+    }
+
+    // Check if the current page is the blog page and use `index.php`
+    if (is_home()) {
+        $blog_template = locate_template('index.php');
+        if ($blog_template) {
+            error_log('Blog page template found: ' . $blog_template);
+            return $blog_template;
+        } else {
+            error_log('Blog page template not found');
         }
     }
 
@@ -354,6 +366,7 @@ function carrot_template_include($template)
     return $template;
 }
 add_filter('template_include', 'carrot_template_include');
+
 
 
 // Add custom user fields

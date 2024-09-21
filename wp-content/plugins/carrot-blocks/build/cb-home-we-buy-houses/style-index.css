@@ -5,7 +5,6 @@
 	display: flex;
 	justify-content: center;
 	position: relative;
-	
 }
 .cb-home-we-buy-houses {
 	display: flex;
@@ -33,7 +32,7 @@
 	font-size: 52px;
 	line-height: 1.2;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 
 @media (min-width: 1024px) {
@@ -41,24 +40,24 @@
 		font-size: 58px;
 		margin: 30px 0;
 	}
-	.cb-home-we-buy-houses:before{
+	.cb-home-we-buy-houses:before {
 		left: 15px;
 	}
 }
 
 .cb-home-we-buy-houses h2 {
-	color:#212529;
+	color: #212529;
 	font-size: 28px;
 	line-height: 1.2;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
-.cb-home-we-buy-houses h2 a{
-	color: #0c91b2;
+.cb-home-we-buy-houses h2 a {
+	color: var(--link-color);
 	font-size: 28px;
 	line-height: 1.2;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	margin: 0;
 	text-decoration: none;
 }
@@ -72,5 +71,6 @@
 		margin: 25px 0;
 	}
 }
+
 
 /*# sourceMappingURL=style-index.css.map*/

@@ -23,10 +23,10 @@
 	color: #212529;
 	font-size: 52px;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-faqs__header p {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 36px;
 	text-align: right;
 	line-height: 1.5;
@@ -63,7 +63,7 @@
 	display: list-item;
 	text-align: -webkit-match-parent;
 	unicode-bidi: isolate;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 16px;
 	text-align: right;
 	font-weight: 400;
@@ -96,7 +96,7 @@
 	/* height: 100vh; */
 }
 .cb-faqs__answer-block--item h2 {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 28px;
 	text-align: right;
 	font-weight: 700;
@@ -108,7 +108,7 @@
 	margin-bottom: 20px;
 }
 .cb-faqs__answer-block--item h3 {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 20px;
 	font-style: italic;
 	text-align: right;
@@ -118,7 +118,7 @@
 	margin: 30px 0 10px;
 }
 .cb-faqs__answer-block--item h4 {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 36px;
 	text-align: center;
 	font-style: italic;
@@ -143,7 +143,7 @@
 	margin: 30px 0;
 }
 .cb-faqs__answer-block--item p {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 24px;
 	text-align: right;
 	line-height: 1.5;
@@ -168,7 +168,7 @@
 	max-width: 80%;
 }
 .cb-faqs-btn-back-to-top {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 24px;
 	text-align: right;
 	line-height: 1.5;
@@ -241,7 +241,7 @@
 	width: 100% !important;
 	color: white;
 	border-radius: 5px;
-	font-family: "Source Sans Pro", sans-serif !important;
+	/* font-family: "Source Sans Pro", sans-serif !important; */
 	margin: 0 !important;
 	min-height: 45px !important;
 }
@@ -255,7 +255,7 @@
 	font-size: 18px !important;
 	font-weight: 500 !important;
 	line-height: 1.2 !important;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-faqs__form-wrapper input:focus,
 .cb-faqs__form-wrapper textarea:focus,

@@ -18,7 +18,7 @@
 	border: 3px solid var(--primaty-light-color);
 	background-color: var(--primaty-light-color);
 	margin-block: 30px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-hiw-whast-next h2 {
 	text-align: center;
@@ -28,7 +28,7 @@
 	color: #212529;
 	font-size: 40px;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-hiw-whast-next p {
 	font-size: 36px;
@@ -36,7 +36,7 @@
 	color: #212529;
 	/* padding:0 15px; */
 	/* font-style: italic; */
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 
 	margin: 0 0 20px;
 }

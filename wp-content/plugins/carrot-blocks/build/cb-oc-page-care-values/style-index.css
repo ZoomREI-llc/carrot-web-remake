@@ -28,7 +28,7 @@
 }
 .cb-oc-page-care-values li{
 		/* display: block; */
-		font-family: "Poppins", sans-serif !important;
+		/* font-family: "Poppins", sans-serif !important; */
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -45,11 +45,11 @@
 	color: #212529;
 	font-size: 40px;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 
 .cb-oc-page-care-values p {
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	font-size: 24px;
 	font-weight: 400;
 	/* text-align: center; */

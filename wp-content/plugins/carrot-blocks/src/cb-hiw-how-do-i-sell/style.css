@@ -29,7 +29,7 @@
 	font-size: 51px;
 	line-height: 1.2;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 
 @media (min-width: 1024px) {
@@ -51,7 +51,7 @@
 	font-size: 35px;
 	line-height: 1.2;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 
 @media (min-width: 1024px) {
@@ -73,7 +73,7 @@
 	font-size: 36px;
 	line-height: 1.5;
 	font-weight: 400;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	margin: 0;
 	text-align: left;
 	text-decoration: none;
@@ -84,7 +84,7 @@
 	font-size: 36px;
 	line-height: 1.2;
 	font-weight: 400;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	margin: 0;
 	text-decoration: none;
 }
@@ -100,7 +100,7 @@
 .cb-hiw-how-do-i-sell__list > li {
 	counter-increment: item;
 	font-size: 20px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	line-height: 1.5;
 	text-align: left;
 	margin: 2rem 0;
@@ -111,7 +111,7 @@
 .cb-hiw-how-do-i-sell__list > li a {
 	text-decoration: none;
 	font-size: 22px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	line-height: 1.5;
 	color: #0c91b2;
 }
@@ -120,7 +120,7 @@
 	align-items: center;
 	background: var(--primary-color);
 	border-radius: 50%;
-	color: #1d1d1d;
+	color: var(--contrast-text-color);
 	content: counter(item);
 	display: flex;
 	float: left;
@@ -170,7 +170,7 @@
 	font-size: 24px;
 	color: var(--heading-color);
 	text-align: center;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	line-height: 1.2;
 }
 .cb-hiw-how-do-i-sell__footer::before,
@@ -182,7 +182,7 @@
 	border: 1px solid var(--primary-light-color);
 	background-color: var(--primary-light-color);
 	margin-block: 30px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 
 @media (min-width: 1024px) {
@@ -225,7 +225,7 @@
 	width: 100% !important;
 	color: white;
 	border-radius: 5px;
-	font-family: "Source Sans Pro", sans-serif !important;
+	/* font-family: "Source Sans Pro", sans-serif !important; */
 	margin: 0 !important;
 	min-height: 45px !important;
 }
@@ -239,7 +239,7 @@
 	font-size: 18px !important;
 	font-weight: 500 !important;
 	line-height: 1.2 !important;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-hiw-how-do-i-sell__form-wrapper input:focus,
 .cb-hiw-how-do-i-sell__form-wrapper textarea:focus,

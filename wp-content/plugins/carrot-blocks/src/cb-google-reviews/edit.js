@@ -59,7 +59,7 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<h3>{__("Carrot Google Reviews (cb-syh-page)", "carrot-blocks")}</h3>
+			<h3>{__("Carrot Google Reviews (cb-blocks)", "carrot-blocks")}</h3>
 		</div>
 	);
 }

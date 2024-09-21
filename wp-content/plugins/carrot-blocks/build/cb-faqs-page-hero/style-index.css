@@ -29,7 +29,6 @@
 @media (min-width: 1024px) {
 	.cb-faqs-page-hero-wrapper {
 		margin-bottom: -220px;
-	
 	}
 	.cb-faqs-page-hero {
 		max-width: 1080px;
@@ -60,37 +59,37 @@
 	position: relative;
 	z-index: 2;
 }
-.cb-faqs-page-hero__top{
+.cb-faqs-page-hero__top {
 	display: none;
 }
 .cb-faqs-page-hero__headline-image {
 	width: 100%;
 }
 @media (min-width: 1024px) {
-.cb-faqs-page-hero__top {
-	margin-top: -1.3333333333vw;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	width: 100%;
-	margin-bottom: 10px;
-	max-width: 1080px;
-}
+	.cb-faqs-page-hero__top {
+		margin-top: -1.3333333333vw;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		width: 100%;
+		margin-bottom: 10px;
+		max-width: 1080px;
+	}
 }
 .cb-faqs-page-hero__call-us {
 	font-weight: bold;
 	align-self: end;
 	margin-bottom: 5px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
-.cb-faqs-page-hero__top--nav-link{
+.cb-faqs-page-hero__top--nav-link {
 	align-self: end;
 	color: white !important;
 	text-decoration: none;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 1.2;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 @media (min-width: 1024px) {
 	.cb-faqs-page-hero__call-us {
@@ -122,13 +121,12 @@
 	min-height: 220px;
 	/* padding: 2rem 1rem; */
 }
-.cb-faqs-page-hero__form-wrapper{
+.cb-faqs-page-hero__form-wrapper {
 	width: 100%;
 	max-width: 720px;
 	height: 400px;
 	background-color: #fff;
-	box-shadow: 0 2px 3px 0 rgba(29, 29, 29, .5);
-
+	box-shadow: 0 2px 3px 0 rgba(29, 29, 29, 0.5);
 }
 @media (min-width: 1024px) {
 	.cb-faqs-page-hero__content {
@@ -148,9 +146,9 @@
 	/* max-width: 3.125rem; */
 
 	width: 50px;
-    height: 84px;
-	 -o-object-fit: contain;
-	    object-fit: contain;
+	height: 84px;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 
 .cb-faqs-page-hero__content h3 {
@@ -161,7 +159,7 @@
 	margin: 0;
 	padding: 0;
 	max-width: 380px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 
 .cb-faqs-page-hero .gform_wrapper {
@@ -194,7 +192,7 @@
 }
 
 .cb-faqs-page-hero .gform_button {
-	background-color: #02bdfc;
+	background-color: var(--btn-color);
 	border-color: #20c6fe;
 	border-top: none;
 	border-left: none;
@@ -230,7 +228,7 @@
 	border-color: rgb(128, 189, 255) !important;
 	box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 0.2rem !important;
 	color: rgb(73, 80, 87) !important;
-	outline: 0px !important; 
+	outline: 0px !important;
 }
 
 .cb-faqs-page-hero .form-control,

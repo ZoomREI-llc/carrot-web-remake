@@ -82,7 +82,7 @@
 	font-weight: bold;
 	align-self: end;
 	margin-bottom: 5px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-syh-page-hero-sell-your-house__top--nav-link {
 	align-self: end;
@@ -91,7 +91,7 @@
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 1.2;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 @media (min-width: 1024px) {
 	.cb-syh-page-hero-sell-your-house__call-us {
@@ -130,7 +130,7 @@
 	font-weight: 700;
 	text-align: center;
 	margin: 30px auto 10px;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 
 .cb-syh-page-hero-sell-your-house__content--wrapper {
@@ -153,7 +153,7 @@
 	line-height: 1.5;
 	text-align: left;
 	font-weight: normal;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-syh-page-hero-sell-your-house__content--column-left p img {
 	vertical-align: middle;
@@ -205,7 +205,7 @@
 	font-size: 18px;
 	line-height: 1.5;
 	font-weight: normal;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 	text-align: left;
 	margin-bottom: 10px;
 }
@@ -269,7 +269,7 @@
 	width: 100% !important;
 	color: white;
 	border-radius: 5px;
-	font-family: "Source Sans Pro", sans-serif !important;
+	/* font-family: "Source Sans Pro", sans-serif !important; */
 	margin: 0 !important;
 	min-height: 45px !important;
 }
@@ -284,7 +284,7 @@
 	font-size: 18px !important;
 	font-weight: 500 !important;
 	line-height: 1.2 !important;
-	font-family: "Poppins", sans-serif !important;
+	/* font-family: "Poppins", sans-serif !important; */
 }
 .cb-syh-page-hero-sell-your-house__content--column-right--form-wrapper
 	input:focus,

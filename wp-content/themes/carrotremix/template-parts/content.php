@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php echo get_breadcrumb(); ?>
+        <!-- <?php echo get_breadcrumb(); ?> -->
         <div class="entry-dets">
             <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
             <div class="entry-meta">
@@ -8,14 +8,14 @@
                 <time class="date"><?php the_date(); ?></time>
             </div>
         </div>
-        <?php get_template_part('template-parts/share-bar'); ?>
+        <!-- <?php get_template_part('template-parts/share-bar'); ?> -->
     </header>
 
     <div class="entry-content">
         <?php the_content(); ?>
     </div>
 
-    <footer class="entry-footer">
+    <!-- <footer class="entry-footer">
         <?php get_template_part('template-parts/share-bar'); ?>
         <div class="author-bio">
             <div class="author-avatar">
@@ -39,5 +39,5 @@
         </div>
 
         <?php echo do_shortcode('[doctor_homes_post-banner]'); ?>
-    </footer>
+    </footer> -->
 </article>
