@@ -4,7 +4,7 @@ $phone_number = esc_html($attributes['phoneNumber']);
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 
-$bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.svg', dirname(__FILE__, 2)));
+$bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.png', dirname(__FILE__, 2)));
 ?>
 
 <style>
@@ -47,9 +47,11 @@ $bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.svg', dir
                     <?php else: ?>
                         <div class="custom-form-content">
                             <h3>What Do You Have To Lose? Get Started Now...</h3>
-                            <img class="cb-home-hero__bbb-logo"
-                                src="<?php echo esc_url($bbb_url); ?>"
-                                alt="" />
+                            <a href="https://chrisbuyshomesstlseller8.carrot.com/legitimate-home-buyers-in-indianapolis/#BBB">
+                                <img class="cb-home-hero__bbb-logo"
+                                    src="<?php echo esc_url($bbb_url); ?>"
+                                    alt="" />
+                            </a>
                             <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning. <span style="color: rgb(2, 189, 252); font-weight: 700;"> Find Out How Much We Can Offer For Your House!</span></span>
                             <h4>Get a solid offer today!</h4>
                         </div>

@@ -1,0 +1,105 @@
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-step-2-intro/style.css ***!
+  \***********************************************************************************************************************************************************************************/
+.cb-step-2-intro-wrapper {
+	position: relative;
+	max-width: 1080px;
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 1.125em 2rem;
+	/* gap: 2rem; */
+	justify-content: center;
+}
+
+.cb-step-2-intro__step-2 {
+	font-size: 1.125rem;
+}
+
+.cb-step-2-intro-wrapper h1 {
+	font-size: 2.25rem;
+	font-weight: 700;
+	margin-block: 2.25rem 0.5rem;
+}
+
+.cb-step-2-intro__5-min {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.125rem;
+	margin-bottom: 1.125rem;
+}
+
+.cb-step-2-intro__call {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.125rem;
+	margin-bottom: 1.125rem;
+}
+
+.cb-step-2-hero__form-wrapper {
+	width: 100%;
+	max-width: 720px;
+	/* height: 400px; */
+	background-color: #f8f9fa;
+	border: 1px solid #e9ecef;
+	align-self: center;
+	margin: 2.25rem auto;
+	padding: 1.4rem;
+	color: #373a3c !important;
+}
+
+.cb-step-2-hero__form-wrapper .gform_required_legend {
+	display: none !important;
+}
+
+.cb-step-2-hero__form-wrapper input,
+.cb-step-2-hero__form-wrapper select,
+.cb-step-2-hero__form-wrapper textarea {
+	background-clip: padding-box !important;
+	background-color: #fff !important;
+	border: 1px solid #ced4da !important;
+	border-radius: 0.25rem !important;
+	color: #495057 !important;
+	display: block !important;
+	font-size: 1rem !important;
+	font-weight: 400 !important;
+	height: calc(1.5em + 0.75rem + 2px) !important;
+	line-height: 1.5 !important;
+	padding: 0.375rem 0.75rem !important;
+	transition:
+		border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+	width: 100% !important;
+}
+
+.cb-step-2-hero__form-wrapper label,
+.cb-step-2-hero__form-wrapper .gfield_description {
+	font-size: 1.125rem !important;
+	font-weight: 500 !important;
+}
+
+.cb-step-2-hero__form-wrapper h2,
+.cb-step-2-hero__form-wrapper h3 {
+	color: var(--primary-color) !important;
+	font-size: 1.75rem !important;
+	font-weight: 700 !important;
+	line-height: 1.2 !important;
+}
+
+.cb-step-2-hero__form-wrapper .gfield--type-address {
+	display: none !important;
+}
+
+.cb-step-2-hero__form-wrapper .gform_button {
+	color: white !important;
+	background-color: var(--btn-color) !important;
+	border: 1px solid #00727a !important;
+	padding: 0.375rem 0.75rem !important;
+	border-radius: 0.25rem !important;
+	font-size: 1.25rem !important;
+	font-weight: 400 !important;
+	line-height: 1.5 !important;
+	width: 100% !important;
+}
+

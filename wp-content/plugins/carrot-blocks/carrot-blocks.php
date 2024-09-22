@@ -30,12 +30,14 @@ function carrot_blocks_carrot_blocks_block_init()
 	$blocks = [
 		'cb-faqs-page',
 		'cb-faqs-page-hero',
+
 		'cb-syh-page-what-are-the-benefits',
 		'cb-syh-page-no-risk',
 		'cb-syh-page-need-to-sell',
 		'cb-syh-page-chris-reviews',
 		'cb-syh-page-hero-sell-your-house',
 		'cb-syh-page-hero-get-a-cash-offer',
+
 		'cb-oc-page-hero',
 		'cb-oc-page-our-mission',
 		'cb-oc-page-how-do-we-work',
@@ -44,10 +46,12 @@ function carrot_blocks_carrot_blocks_block_init()
 		'cb-oc-page-reputable',
 		'cb-oc-page-care-values',
 		'cb-oc-page-we-became-real-estate-investors',
+
 		'cb-contact-page-hero',
 		'cb-contact-page-conect-with-us',
 		'cb-contact-page-contacts',
 		'cb-contact-page-conect-open-to-communication',
+
 		'cb-hiw-hero',
 		'cb-hiw-how-do-we-now-forward',
 		'cb-hiw-congrats',
@@ -56,6 +60,7 @@ function carrot_blocks_carrot_blocks_block_init()
 		'cb-hiw-make-an-offer-on-a-home',
 		'cb-hiw-how-do-i-sell',
 		'cb-hiw-want-to-sell',
+
 		'cb-home-hero',
 		'cb-home-we-buy-houses',
 		'cb-home-never-lowball',
@@ -72,6 +77,13 @@ function carrot_blocks_carrot_blocks_block_init()
 		'cb-home-as-is',
 		'cb-home-reviews',
 		'cb-home-new-and-easy',
+
+		'cb-step-2-hero',
+		'cb-step-2-intro',
+		'cb-step-2-outro',
+
+		'cb-compare-hero',
+		'cb-compare-body',
 	];
 
 	foreach ($blocks as $block) {

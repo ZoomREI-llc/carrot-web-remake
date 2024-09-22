@@ -5,7 +5,9 @@ function initAutocomplete() {
     const autocompleteField = form.querySelector(".autocomplete-field input"); // Autocomplete field
     const streetAddressField = form.querySelector(".address_line_1 input"); // Street address field
     const cityField = form.querySelector(".address_city input"); // City field
-    const stateField = form.querySelector(".address_state select"); // State field (as select)
+    const stateField = form.querySelector(".address_state select")
+      ? form.querySelector(".address_state select")
+      : form.querySelector(".address_state input"); // State field (as select)
     const zipcodeFields = form.querySelectorAll(".address_zip input"); // Zipcode fields
 
     let zipcodeField = null;
