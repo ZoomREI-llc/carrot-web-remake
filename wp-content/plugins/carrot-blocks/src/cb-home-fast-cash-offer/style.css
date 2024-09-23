@@ -364,6 +364,11 @@
 		padding: 0 !important;
 	}
 
+	.cb-home-fast-cash-offer .gform_wrapper .autocomplete-field,
+	.cb-home-fast-cash-offer .gform_wrapper .dl-full-name {
+		grid-column: var(--set-custom-form-field-width, initial) !important;
+	}
+
 	.cb-home-fast-cash-offer .gfield--type-select {
 		grid-column: span 2 !important;
 	}

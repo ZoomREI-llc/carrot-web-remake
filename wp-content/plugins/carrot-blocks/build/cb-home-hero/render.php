@@ -48,8 +48,24 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
         --background-image: url('<?php echo $background_image_url; ?>');
 
-        <?php if ($selected_market === 'ind') : ?>--show-select: none;
-        <?php endif; ?>
+        <?php
+        // Set '--show-select' for 'ind', 'cle', and 'det' markets
+        if (in_array($selected_market, ['ind', 'cle', 'det'])) {
+            echo '--show-select: none;';
+        }
+
+        // Set '--set-bbb-logo-width' for 'sf' market
+        if ($selected_market === 'sf') {
+            echo '--set-bbb-logo-width: 68px;';
+            echo '--set-h3-font-weight: 700;';
+        }
+
+        // Set '--set-custom-form-field-flex' for 'sf', 'stl', 'cle', and 'det' markets
+        if (in_array($selected_market, ['sf', 'stl', 'cle', 'det'])) {
+            echo '--set-custom-form-field-flex: 0 0 100%;';
+            echo '--set-custom-form-field-width: 100%;';
+        }
+        ?>
     }
 </style>
 
@@ -63,7 +79,24 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
             <div class="cb-home-hero__call-us">
                 Call Us! <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
             </div>
-            <a href="/get-a-cash-offer" class="cb-home-hero__top--nav-link">Get A Cash Offer Today</a>
+            <div class="cb-home-hero__links">
+                <?php if ($selected_market === 'kc'): ?>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get A Cash Offer Today</a>
+
+                <?php elseif (in_array($selected_market, ['stl', 'sf'])): ?>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get A Cash Offer in 7 Minutes</a>
+
+                <?php elseif ($selected_market === 'ind'): ?>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get A Cash Offer in 7 Minutes</a>
+                    <a href="<?php echo site_url() ?>/our-company/">Our Company</a>
+
+                <?php elseif (in_array($selected_market, ['cle', 'det'])): ?>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get Your Cash Offer</a>
+                    <a href="<?php echo site_url() ?>/contact-us/">Contact Us</a>
+
+                <?php endif; ?>
+            </div>
+
         </div>
 
         <div class="cb-home-hero__content">

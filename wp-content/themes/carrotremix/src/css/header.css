@@ -28,7 +28,7 @@
 }
 .cb-header__logo img {
   height: auto;
-  max-width: 8.75rem;
+  max-width: var(--set-logo-width-mobile, 8.75rem);
   width: auto;
   object-fit: contain;
   margin: 0 auto;
@@ -36,7 +36,7 @@
 
 @media (min-width: 670px) {
   .cb-header__logo img {
-    max-width: 16.25rem;
+    max-width: var(--set-logo-width-desktop, 16.25rem);
   }
 }
 
@@ -113,7 +113,7 @@
 .cb-header__menu strong {
   /* padding: 2px 10px !important; */
   border-radius: 10px;
-  background-color: #006cbf;
+  background-color: var(--primary-color);
   padding: 15px 20px;
 
   /* font-family: "Poppins", sans-serif !important; */
@@ -187,9 +187,15 @@
   text-decoration: underline;
 }
 
+.cb-header____links {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+
 .cb-header__mobile-nav-link {
   /* font-family: "Poppins", sans-serif !important; */
-  color: #ea4a00;
+  color: var(--heading-color);
   /* padding: .2rem .4rem; */
   padding-top: 7px;
   display: block;

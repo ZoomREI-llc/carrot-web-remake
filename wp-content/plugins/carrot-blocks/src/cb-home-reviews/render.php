@@ -32,10 +32,15 @@ $reviews_header_url = esc_url(plugins_url('src/cb-home-reviews/assets/reviews-he
 
 <section id="cb-home-reviews" class="cb-home-reviews">
     <div class="cb-home-reviews__header">
-        <h2 class="" id=""><strong>😊</strong> People Love Us, And So Will You <strong>😊</strong></h2>
-        <!-- <img src="<?php echo $reviews_header_url; ?>" alt="People Love Us, And So Will You">  -->
+        <?php if ($selected_market !== 'St. Louis' && $selected_market !== 'Cleveland' && $selected_market !== 'Detroit') : ?>
+            <h2 class="" id=""><strong>😊</strong> People Love Us, And So Will You <strong>😊</strong></h2>
+        <?php else : ?>
+            <div class="cb-home-reviews__img-wrapper">
+                <img src="<?php echo $reviews_header_url; ?>" alt="People Love Us, And So Will You">
+            </div>
+        <?php endif; ?>
     </div>
-    <?php if ($selected_market !== 'Indianapolis') : ?>
+    <?php if ($selected_market !== 'Indianapolis' && $selected_market !== 'Cleveland' && $selected_market !== 'Detroit') : ?>
         <div class="cb-home-reviews__wrapper">
             <hr />
             <?php foreach ($selected_reviews as $review) : ?>

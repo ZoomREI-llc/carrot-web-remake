@@ -20,10 +20,16 @@ $brand_name = esc_html($attributes['brandName']);
 $brand_area = esc_html($attributes['brandArea']);
 ?>
 
+<style>
+    :root {
+        <?php echo $market_code === 'sf' ? '--set-after-element-display: none;' : ''; ?><?php echo $market_code === 'sf' ? '--set-bottom-margin: 60px;' : ''; ?>
+    }
+</style>
+
 <section class="cb-home-never-lowball">
     <div class="cb-home-never-lowball__content">
         <div class="cb-home-never-lowball__content--img-block">
-           <img src="<?php echo $imageUrl; ?>" alt="<?php echo $brand_name; ?> Logo" />
+            <img src="<?php echo $imageUrl; ?>" alt="<?php echo $brand_name; ?> Logo" />
         </div>
         <p class='cb-home-never-lowball__content--text'>
             <strong>We buy houses in <?php echo $brand_area; ?>.</strong>

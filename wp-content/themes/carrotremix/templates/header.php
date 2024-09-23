@@ -9,13 +9,81 @@ $market_code = get_blog_option($site_id, 'market_code', '');
 <html <?php language_attributes(); ?>>
 
 <head>
+
+    <?php
+    // List of production blog names
+    $production_blog_names = array(
+        'Chris Buys Homes in Indianapolis',
+        'Chris Buys Homes in Kansas City',
+        'Chris Buys Homes in St. Louis',
+        'Chris Buys Homes in Detroit',
+        'Chris Buys Homes in Cleveland',
+        'John Buys Bay Area Houses'
+    );
+
+    // Map markets to GTM IDs
+    $market_gtm_map = array(
+        'sf'  => 'GTM-NJ6LP74',
+        'stl' => 'GTM-PQTW9BQ',
+        'kc'  => 'GTM-K4Q5CKB',
+        'det' => 'GTM-T75JTFR',
+        'cle' => 'GTM-MFXJR55',
+        'ind' => 'GTM-MPG2VCR',
+    );
+
+    // Determine if the environment is production
+    $current_blog_name = get_bloginfo('name');
+    $is_production = in_array($current_blog_name, $production_blog_names);
+
+    // Check if selected market has a GTM ID and is production
+    if ($is_production && !empty($selected_market) && array_key_exists($selected_market, $market_gtm_map)) {
+        $gtm_id = $market_gtm_map[$selected_market];
+    ?>
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', '<?php echo $gtm_id; ?>');
+        </script>
+        <!-- End Google Tag Manager -->
+    <?php
+    }
+    ?>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php if ($market_code == 'ind') : ?>style="font-family: Source Sans Pro, sans-serif !important;" <?php endif; ?>>
+<style>
+    :root {
+        <?php echo $market_code === 'cle' ? '--set-logo-width-mobile: 10.25rem; --set-logo-width-desktop: 19.125rem;' : ''; ?><?php echo $market_code === 'sf' ? '--set-logo-width-mobile: 10.625rem; --set-logo-width-desktop: 20rem;' : ''; ?>
+    }
+</style>
+
+
+<body <?php body_class(); ?> <?php if ($market_code == 'det' || $market_code == 'cle' || $market_code == 'ind') : ?>style="font-family: Source Sans Pro, sans-serif !important;" <?php endif; ?>>
     <?php wp_body_open(); ?>
+    
+    <?php
+    // Check if the GTM ID is set and the environment is production
+    if ($is_production && !empty($gtm_id)) :
+    ?>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_id; ?>"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    <?php endif; ?>
 
     <header class="cb-header">
         <div class="cb-header__inner">
@@ -36,7 +104,23 @@ $market_code = get_blog_option($site_id, 'market_code', '');
                         </span>
                     </div>
                 </div>
-                <a href=" /get-a-cash-offer-today" class='cb-header__mobile-nav-link'>Get A Cash Offer Today</a>
+                <div class="cb-header____links">
+                    <?php if ($market_code === 'kc'): ?>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get A Cash Offer Today</a>
+
+                    <?php elseif (in_array($market_code, ['stl', 'sf'])): ?>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
+
+                    <?php elseif ($market_code === 'ind'): ?>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
+                        <a href="<?php echo site_url() ?>/our-company/" class="cb-header__mobile-nav-link">Our Company</a>
+
+                    <?php elseif (in_array($market_code, ['cle', 'det'])): ?>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get Your Cash Offer</a>
+                        <a href="<?php echo site_url() ?>/contact-us/" class="cb-header__mobile-nav-link">Contact Us</a>
+
+                    <?php endif; ?>
+                </div>
                 <button type="button" class="cb-header__mobile-toggler">
                     Menu&nbsp;▾
                 </button>

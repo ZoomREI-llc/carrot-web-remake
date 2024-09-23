@@ -9,10 +9,20 @@ $bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.png', dir
 
 <style>
     :root {
-        <?php if ($selected_city === 'Indianapolis') : ?>--show-select: none;
-        <?php endif; ?>
+        <?php
+        // Set '--show-select' for 'Indianapolis', 'Cleveland', and 'Detroit'
+        if (in_array($selected_city, ['Indianapolis', 'Cleveland', 'Detroit'])) {
+            echo '--show-select: none;';
+        }
+
+        // Set '--set-custom-form-field-width' for 'San Francisco', 'St. Louis', 'Cleveland', and 'Detroit'
+        if (in_array($selected_city, ['San Francisco', 'St. Louis', 'Cleveland', 'Detroit'])) {
+            echo '--set-custom-form-field-width: span 2;';
+        }
+        ?>
     }
 </style>
+
 
 <section class="cb-home-fast-cash-offer__full-width">
     <div class="cb-home-fast-cash-offer">
@@ -41,23 +51,47 @@ $bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.png', dir
             </div>
             <div class="cb-home-fast-cash-offer__form-block">
                 <div class="cb-home-fast-cash-offer__form-block--text">
-                    <?php if ($selected_city !== 'Indianapolis'): ?>
+                    <?php if ($selected_city === 'Kansas City'): ?>
+                        <!-- Short content for Kansas City -->
                         <span>We buy houses in ANY CONDITION in <?php echo $selected_city; ?>. There are no commissions or fees and no obligation whatsoever.
                             For the fastest service, call us now <a href="tel:<?php echo $phone_number; ?>" style="color: #02bdfc"><?php echo $phone_number; ?></a></span>
-                    <?php else: ?>
+
+                    <?php elseif (in_array($selected_city, ['St. Louis', 'Detroit', 'Cleveland', 'Indianapolis'])): ?>
+                        <!-- Custom content for specified cities -->
                         <div class="custom-form-content">
                             <h3>What Do You Have To Lose? Get Started Now...</h3>
-                            <a href="https://chrisbuyshomesstlseller8.carrot.com/legitimate-home-buyers-in-indianapolis/#BBB">
-                                <img class="cb-home-hero__bbb-logo"
-                                    src="<?php echo esc_url($bbb_url); ?>"
-                                    alt="" />
-                            </a>
-                            <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning. <span style="color: rgb(2, 189, 252); font-weight: 700;"> Find Out How Much We Can Offer For Your House!</span></span>
+                            <?php if ($selected_city === 'Indianapolis'): ?>
+                                <!-- BBB logo and link for Indianapolis -->
+                                <a href="https://www.chrisbuyshomesindy.com/legitimate-home-buyers-in-indianapolis/#BBB">
+                                    <img class="cb-home-hero__bbb-logo"
+                                        src="<?php echo esc_url($bbb_url); ?>"
+                                        alt="" />
+                                </a>
+                            <?php elseif ($selected_city === 'St. Louis'): ?>
+                                <!-- BBB logo and link for St. Louis -->
+                                <a href="https://www.chrisbuyshomesstl.com/legitimate-house-buyers-in-st-louis/#BBB">
+                                    <img class="cb-home-hero__bbb-logo"
+                                        src="<?php echo esc_url($bbb_url); ?>"
+                                        alt="" />
+                                </a>
+                            <?php endif; ?>
+                            <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning.
+                                <span style="color: rgb(2, 189, 252); font-weight: 700;"> Find Out How Much We Can Offer For Your House!</span>
+                            </span>
                             <h4>Get a solid offer today!</h4>
                         </div>
+
+                    <?php elseif ($selected_city === 'San Francisco'): ?>
+                        <!-- Only form for San Francisco -->
+                        <!-- No text content, form below will be displayed -->
+
+                    <?php else: ?>
+                        <!-- Default content for other cities -->
+                        <span>We buy houses in ANY CONDITION in <?php echo $selected_city; ?>. There are no commissions or fees and no obligation whatsoever.
+                            For the fastest service, call us now <a href="tel:<?php echo $phone_number; ?>" style="color: #02bdfc"><?php echo $phone_number; ?></a></span>
                     <?php endif; ?>
                 </div>
-                <div class=" cb-home-fast-cash-offer__form-wrapper">
+                <div class="cb-home-fast-cash-offer__form-wrapper">
                     <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
                 </div>
             </div>
