@@ -8,8 +8,17 @@ $market_code = get_blog_option($site_id, 'market_code', '');
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
-<head>
+<?php
 
+$site_id = get_current_blog_id();
+$market_code = get_blog_option($site_id, 'market_code', '');
+
+?>
+
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
     <?php
     // List of production blog names
     $production_blog_names = array(
@@ -35,9 +44,9 @@ $market_code = get_blog_option($site_id, 'market_code', '');
     $current_blog_name = get_bloginfo('name');
     $is_production = in_array($current_blog_name, $production_blog_names);
 
-    // Check if selected market has a GTM ID and is production
-    if ($is_production && !empty($selected_market) && array_key_exists($selected_market, $market_gtm_map)) {
-        $gtm_id = $market_gtm_map[$selected_market];
+    // Check if the market code has a corresponding GTM ID and is in production
+    if ($is_production && !empty($market_code) && array_key_exists($market_code, $market_gtm_map)) {
+        $gtm_id = $market_gtm_map[$market_code];
     ?>
         <!-- Google Tag Manager -->
         <script>
@@ -65,6 +74,7 @@ $market_code = get_blog_option($site_id, 'market_code', '');
     <?php wp_head(); ?>
 </head>
 
+
 <style>
     :root {
         <?php echo $market_code === 'cle' ? '--set-logo-width-mobile: 10.25rem; --set-logo-width-desktop: 19.125rem;' : ''; ?><?php echo $market_code === 'sf' ? '--set-logo-width-mobile: 10.625rem; --set-logo-width-desktop: 20rem;' : ''; ?>
@@ -74,7 +84,7 @@ $market_code = get_blog_option($site_id, 'market_code', '');
 
 <body <?php body_class(); ?> <?php if ($market_code == 'det' || $market_code == 'cle' || $market_code == 'ind') : ?>style="font-family: Source Sans Pro, sans-serif !important;" <?php endif; ?>>
     <?php wp_body_open(); ?>
-    
+
     <?php
     // Check if the GTM ID is set and the environment is production
     if ($is_production && !empty($gtm_id)) :

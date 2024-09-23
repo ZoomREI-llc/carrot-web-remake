@@ -82,6 +82,10 @@
 	font-weight: 500;
 }
 
+.cb-home-hero__links a {
+	color: white;
+}
+
 .cb-home-hero__top--nav-link {
 	align-self: end;
 	color: white !important;

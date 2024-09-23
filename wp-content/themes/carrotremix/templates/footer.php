@@ -75,7 +75,7 @@
                     [street_address]<br>
                     [city], [state] [zipcode]<br>
                     <b>[phone]</b><br>
-                    <span style="color: #02bdfc"><b><a style="color: #02bdfc" href="mailto:[email]">[email]</a></b></span>
+                    <span><b><a href="mailto:[email]">[email]</a></b></span>
                 ';
                 echo replace_custom_placeholders_multisite($footer_contact);
                 ?>
