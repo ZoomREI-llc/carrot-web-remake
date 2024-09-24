@@ -23,6 +23,10 @@
 	/* font-family: "Poppins", sans-serif !important; */
 }
 
+.cb-home-no-inspectors p a:hover {
+	color: var(--link-color-hover);
+}
+
 .cb-home-no-inspectors::before,
 .cb-home-no-inspectors::after {
 	content: "";

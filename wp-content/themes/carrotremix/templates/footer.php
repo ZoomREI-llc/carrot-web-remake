@@ -84,7 +84,7 @@
             <p class="cb-footer__copy">
                 <?php
                 // Footer copyright content with dynamic company name
-                $footer_copy = '&copy; 2024 [company]';
+                $footer_copy = '&copy; ' . date('Y') . ' [company]';
                 echo replace_custom_placeholders_multisite($footer_copy);
                 ?>
             </p>

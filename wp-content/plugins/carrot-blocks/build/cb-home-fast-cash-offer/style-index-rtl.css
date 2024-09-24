@@ -120,7 +120,7 @@
 .cb-home-fast-cash-offer__text li::before {
 	content: "";
 	display: inline-block;
-	flex: 0 0 15px;
+	flex: 0 0 18px;
 	width: 18px;
 	height: 18px;
 	margin-top: 3px;
@@ -216,10 +216,10 @@
 		grid-column: 1 / 2;
 	}
 
-	.custom-form-content img {
+	.custom-form-content a {
 		width: 100%;
 		grid-column: 2 / 3;
-		grid-row: span 2;
+		grid-row: 2 / 4;
 		align-self: center;
 	}
 }
@@ -279,6 +279,11 @@
 	border-radius: 5px;
 	margin: 0 !important;
 	/* font-family: "Source Sans Pro", sans-serif !important; */
+	cursor: pointer;
+}
+
+.cb-home-fast-cash-offer .gform_button:hover {
+	background-color: var(--btn-color-hover);
 }
 
 @media (min-width: 1024px) {

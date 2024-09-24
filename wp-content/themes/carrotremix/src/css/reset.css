@@ -38,6 +38,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--link-color-hover);
+}
+
 ul,
 ol {
   list-style: none;

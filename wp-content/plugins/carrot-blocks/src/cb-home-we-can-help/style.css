@@ -45,6 +45,11 @@
 	font-weight: 400;
 	text-decoration: none;
 }
+
+.cb-home-we-can-help p a:hover {
+	color: var(--link-color-hover);
+}
+
 .cb-home-we-can-help__reasons {
 	display: flex;
 	flex-direction: column;

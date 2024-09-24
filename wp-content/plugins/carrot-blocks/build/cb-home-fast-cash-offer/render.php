@@ -62,14 +62,14 @@ $bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.png', dir
                             <h3>What Do You Have To Lose? Get Started Now...</h3>
                             <?php if ($selected_city === 'Indianapolis'): ?>
                                 <!-- BBB logo and link for Indianapolis -->
-                                <a href="https://www.chrisbuyshomesindy.com/legitimate-home-buyers-in-indianapolis/#BBB">
+                                <a href="/legitimate-home-buyers-in-indianapolis/#BBB">
                                     <img class="cb-home-hero__bbb-logo"
                                         src="<?php echo esc_url($bbb_url); ?>"
                                         alt="" />
                                 </a>
                             <?php elseif ($selected_city === 'St. Louis'): ?>
                                 <!-- BBB logo and link for St. Louis -->
-                                <a href="https://www.chrisbuyshomesstl.com/legitimate-house-buyers-in-st-louis/#BBB">
+                                <a href="/legitimate-house-buyers-in-st-louis/#BBB">
                                     <img class="cb-home-hero__bbb-logo"
                                         src="<?php echo esc_url($bbb_url); ?>"
                                         alt="" />

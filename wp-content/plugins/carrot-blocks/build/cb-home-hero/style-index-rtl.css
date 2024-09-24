@@ -233,6 +233,11 @@
 	color: white;
 	font-family: "Source Sans Pro", sans-serif !important;
 	margin: 0 !important;
+	cursor: pointer;
+}
+
+.cb-home-hero .gform_button:hover {
+	background-color: var(--btn-color-hover);
 }
 
 .cb-home-hero .gform_heading {
