@@ -3,18 +3,18 @@ $selected_market = esc_html($attributes['selectedMarket']);
 
 $market_image_map = [
     'Kansas City' => 'circle-ks.webp',
-    'SF Bay Area' => '',
+    'San Francisco' => '',
     'St. Louis' => 'circle-stl.webp',
-    'Metro Detroit' => 'circle-det.webp',
+    'Detroit' => 'circle-det.webp',
     'Cleveland' => 'circle-cle.webp',
     'Indianapolis' => 'circle-ind.webp'
 ];
 
 $before_after_map = [
-    'SF Bay Area' => 'before-after-john.webp',
+    'San Francisco' => 'before-after-john.webp',
     'Kansas City' => 'before-after-chris.webp',
     'St. Louis' => 'before-after-chris.webp',
-    'Metro Detroit' => 'before-after-chris.webp',
+    'Detroit' => 'before-after-chris.webp',
     'Cleveland' => 'before-after-chris.webp',
     'Indianapolis' => 'before-after-chris.webp'
 ];

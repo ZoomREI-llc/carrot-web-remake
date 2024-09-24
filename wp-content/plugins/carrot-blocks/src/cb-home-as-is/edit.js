@@ -22,7 +22,7 @@ export default function Edit({ attributes, setAttributes }) {
 						value={selectedMarket}
 						options={[
 							{ label: "Kansas City", value: "Kansas City" },
-							{ label: "San Francisco", value: "SF Bay Area" },
+							{ label: "San Francisco", value: "San Francisco" },
 							{ label: "St. Louis", value: "St. Louis" },
 							{ label: "Detroit", value: "Detroit" },
 							{ label: "Cleveland", value: "Cleveland" },
