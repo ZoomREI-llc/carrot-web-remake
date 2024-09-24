@@ -5,7 +5,7 @@ $image_url = esc_url(plugins_url('src/cb-home-we-help/assets/couple-' . strtolow
 $satisfaction_url = esc_url(plugins_url('src/cb-home-we-help/assets/satisfaction.webp', dirname(__FILE__, 2)));
 ?>
 
-<section class="cb-home-we-help__container" <?= in_array($selected_market, ['ind', 'cle', 'det']) ? 'style="margin: 0;"' : ''; ?>>
+<section class="cb-home-we-help__container" <?= in_array($selected_market, ['ind', 'cle', 'det']) ? 'style="padding-block: 0;"' : ''; ?>>
     <div class="cb-home-we-help">
         <div class="cb-home-we-help__image">
             <img

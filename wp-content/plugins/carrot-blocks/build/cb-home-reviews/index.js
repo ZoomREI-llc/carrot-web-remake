@@ -51,13 +51,13 @@ function Edit({
       value: "Kansas City"
     }, {
       label: "San Francisco",
-      value: "San Francisco Bay Area"
+      value: "San Francisco"
     }, {
       label: "St. Louis",
       value: "St. Louis"
     }, {
       label: "Detroit",
-      value: "Metro Detroit"
+      value: "Detroit"
     }, {
       label: "Cleveland",
       value: "Cleveland"
