@@ -5,6 +5,7 @@ $phone_number = esc_html($attributes['phoneNumber']);
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 
 $bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.png', dirname(__FILE__, 2)));
+$checkmark_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/checkmark.svg', dirname(__FILE__, 2)));
 ?>
 
 <style>
@@ -19,7 +20,8 @@ $bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.png', dir
         if (in_array($selected_city, ['San Francisco', 'St. Louis', 'Cleveland', 'Detroit'])) {
             echo '--set-custom-form-field-width: span 2;';
         }
-        ?>
+        ?>--checkmark-url: url('<?php echo $checkmark_url; ?>');
+
     }
 </style>
 
