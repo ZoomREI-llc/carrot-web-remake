@@ -42,6 +42,52 @@ function chris_buys_homes_theme_support()
 }
 add_action('after_setup_theme', 'chris_buys_homes_theme_support');
 
+function chris_buys_homes_custom_js_customizer($wp_customize)
+{
+    // Add Section
+    $wp_customize->add_section('custom_js_section', array(
+        'title'       => __('Custom JavaScript', 'chris_buys_homes'),
+        'priority'    => 160,
+    ));
+
+    // Add Setting
+    $wp_customize->add_setting('custom_js_code', array(
+        'default'           => '',
+        'sanitize_callback' => 'chris_buys_homes_sanitize_js', // Custom sanitizer
+    ));
+
+    // Add Control
+    $wp_customize->add_control('custom_js_code', array(
+        'label'    => __('Custom JavaScript', 'chris_buys_homes'),
+        'section'  => 'custom_js_section',
+        'settings' => 'custom_js_code',
+        'type'     => 'textarea',
+    ));
+}
+add_action('customize_register', 'chris_buys_homes_custom_js_customizer');
+
+// Sanitization function to allow <script> tags
+function chris_buys_homes_sanitize_js($input)
+{
+    return wp_kses($input, array(
+        'script' => array(
+            'src'   => true,
+            'async' => true,
+            'defer' => true,
+        )
+    ));
+}
+
+function chris_buys_homes_output_custom_js()
+{
+    $custom_js = get_theme_mod('custom_js_code');
+    if (!empty($custom_js)) {
+        echo  $custom_js;
+    }
+}
+add_action('wp_head', 'chris_buys_homes_output_custom_js');
+
+
 function add_custom_logo_class($html)
 {
     // Check if the logo exists and add the custom class to the <a> tag
