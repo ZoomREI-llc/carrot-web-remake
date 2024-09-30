@@ -9,6 +9,7 @@ function carrot_enqueue_assets()
     wp_enqueue_style('carrot-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
     wp_enqueue_script('carrot-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
     wp_enqueue_script('gf-full-address', get_template_directory_uri() . '/src/js/full-address-field.js', array(), true);
+    wp_enqueue_script('lead-source-tracker', get_template_directory_uri() . '/src/js/lead-source-tracker.js ', array(), true);
 
     // wp_enqueue_script('interactivity-api', get_template_directory_uri() . '/src/js/script.js', array(), $script_version, true);
     // wp_enqueue_script('doctor-homes-menu', get_template_directory_uri() . '/src/js/menu.js', array(), null, true);
@@ -44,24 +45,42 @@ add_action('after_setup_theme', 'chris_buys_homes_theme_support');
 
 function chris_buys_homes_custom_js_customizer($wp_customize)
 {
-    // Add Section
+    // Add Section for Custom JavaScript
     $wp_customize->add_section('custom_js_section', array(
         'title'       => __('Custom JavaScript', 'chris_buys_homes'),
         'priority'    => 160,
     ));
 
-    // Add Setting
+    // Add Setting for Custom JS Code
     $wp_customize->add_setting('custom_js_code', array(
         'default'           => '',
-        'sanitize_callback' => 'chris_buys_homes_sanitize_js', // Custom sanitizer
+        'sanitize_callback' => 'chris_buys_homes_sanitize_js', // Custom sanitization
     ));
 
-    // Add Control
+    // Add Control for Custom JS Code
     $wp_customize->add_control('custom_js_code', array(
         'label'    => __('Custom JavaScript', 'chris_buys_homes'),
         'section'  => 'custom_js_section',
         'settings' => 'custom_js_code',
         'type'     => 'textarea',
+    ));
+
+    // Add Setting for JS Placement (Head or Footer)
+    $wp_customize->add_setting('custom_js_placement', array(
+        'default'           => 'head',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    // Add Control for JS Placement (Radio Button)
+    $wp_customize->add_control('custom_js_placement', array(
+        'label'    => __('Where should the JavaScript be placed?', 'chris_buys_homes'),
+        'section'  => 'custom_js_section',
+        'settings' => 'custom_js_placement',
+        'type'     => 'radio',
+        'choices'  => array(
+            'head'   => __('Head', 'chris_buys_homes'),
+            'footer' => __('Footer', 'chris_buys_homes'),
+        ),
     ));
 }
 add_action('customize_register', 'chris_buys_homes_custom_js_customizer');
@@ -78,15 +97,28 @@ function chris_buys_homes_sanitize_js($input)
     ));
 }
 
+// Output custom JS in head or footer based on Customizer setting
 function chris_buys_homes_output_custom_js()
 {
     $custom_js = get_theme_mod('custom_js_code');
+    $js_placement = get_theme_mod('custom_js_placement', 'head');
+
     if (!empty($custom_js)) {
-        echo  $custom_js;
+        $js_output = '<script type="text/javascript">' . $custom_js . '</script>';
+
+        // Output in <head>
+        if ($js_placement === 'head') {
+            echo $js_output;
+        }
+        // Output in footer
+        elseif ($js_placement === 'footer') {
+            add_action('wp_footer', function () use ($js_output) {
+                echo $js_output;
+            });
+        }
     }
 }
 add_action('wp_head', 'chris_buys_homes_output_custom_js');
-
 
 function add_custom_logo_class($html)
 {
