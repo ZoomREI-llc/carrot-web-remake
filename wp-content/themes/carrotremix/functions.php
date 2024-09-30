@@ -99,7 +99,7 @@ function chris_buys_homes_output_header_js()
 {
     $custom_header_js = get_theme_mod('custom_header_js_code');
     if (!empty($custom_header_js)) {
-        echo '<script type="text/javascript">' . $custom_header_js . '</script>';
+        echo $custom_header_js;
     }
 }
 add_action('wp_head', 'chris_buys_homes_output_header_js');
@@ -109,7 +109,7 @@ function chris_buys_homes_output_footer_js()
 {
     $custom_footer_js = get_theme_mod('custom_footer_js_code');
     if (!empty($custom_footer_js)) {
-        echo '<script type="text/javascript">' . $custom_footer_js . '</script>';
+        echo $custom_footer_js;
     }
 }
 add_action('wp_footer', 'chris_buys_homes_output_footer_js');
