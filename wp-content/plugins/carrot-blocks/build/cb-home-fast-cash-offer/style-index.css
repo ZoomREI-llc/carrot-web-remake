@@ -387,9 +387,9 @@
 	}
 }
 
-.cb-home-fast-cash-offer .gfield--type-select {
+/* .cb-home-fast-cash-offer .gfield--type-select {
 	display: var(--show-select) !important;
-}
+} */
 
 .cb-home-fast-cash-offer .gform_wrapper label {
 	font-weight: 500 !important;

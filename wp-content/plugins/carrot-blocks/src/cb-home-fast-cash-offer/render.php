@@ -11,10 +11,10 @@ $checkmark_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/checkma
 <style>
     :root {
         <?php
-        // Set '--show-select' for 'Indianapolis', 'Cleveland', and 'Detroit'
-        if (in_array($selected_city, ['Indianapolis', 'Cleveland', 'Detroit'])) {
-            echo '--show-select: none;';
-        }
+        // // Set '--show-select' for 'Indianapolis', 'Cleveland', and 'Detroit'
+        // if (in_array($selected_city, ['Indianapolis', 'Cleveland', 'Detroit'])) {
+        //     echo '--show-select: none;';
+        // }
 
         // Set '--set-custom-form-field-width' for 'San Francisco', 'St. Louis', 'Cleveland', and 'Detroit'
         if (in_array($selected_city, ['San Francisco', 'St. Louis', 'Cleveland', 'Detroit'])) {

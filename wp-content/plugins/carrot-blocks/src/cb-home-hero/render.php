@@ -49,10 +49,10 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
         --background-image: url('<?php echo $background_image_url; ?>');
 
         <?php
-        // Set '--show-select' for 'ind', 'cle', and 'det' markets
-        if (in_array($selected_market, ['ind', 'cle', 'det'])) {
-            echo '--show-select: none;';
-        }
+        // // Set '--show-select' for 'ind', 'cle', and 'det' markets
+        // if (in_array($selected_market, ['ind', 'cle', 'det'])) {
+        //     echo '--show-select: none;';
+        // }
 
         // Set '--set-bbb-logo-width' for 'sf' market
         if ($selected_market === 'sf') {

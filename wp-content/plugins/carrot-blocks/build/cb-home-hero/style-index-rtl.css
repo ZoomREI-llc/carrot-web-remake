@@ -319,7 +319,7 @@
 .cb-home-hero .gform_wrapper li.gfield--type-select {
 	flex: 0 0 100% !important;
 	width: 100% !important;
-	display: var(--show-select) !important;
+	/* display: var(--show-select) !important; */
 }
 
 @media (min-width: 1024px) {

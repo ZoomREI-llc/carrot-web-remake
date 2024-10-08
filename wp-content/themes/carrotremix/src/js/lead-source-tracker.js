@@ -78,10 +78,12 @@ function storeInitialLeadSource() {
 // Function to attach the lead source to a form's hidden field before submission
 function attachLeadSourceToFormSubmission() {
   const leadSource = getLocalStorage("Initial_Lead_Source");
-  const leadSourceField = document.querySelector('.trk_lead_source input');
+  const leadSourceFields = document.querySelectorAll(".trk_lead_source input");
 
-  if (leadSource && leadSourceField) {
-    leadSourceField.value = leadSource;
+  if (leadSource && leadSourceFields.length) {
+    leadSourceFields.forEach((field) => {
+      field.value = leadSource;
+    });
   }
 }
 
