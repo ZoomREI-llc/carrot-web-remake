@@ -71,6 +71,7 @@ $market_code = get_blog_option($site_id, 'market_code', '');
     ?>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php wp_title(''); ?></title>
     <?php wp_head(); ?>
 </head>
 
