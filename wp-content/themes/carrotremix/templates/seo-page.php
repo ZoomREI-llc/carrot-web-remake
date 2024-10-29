@@ -5,7 +5,7 @@ $market_code = get_blog_option($site_id, 'market_code', '');
 
 $phone_numbers = [
     'sf'  => '(510) 283-9871',
-    'stl' => '(314) 887-8043',
+    'stl' => '(314) 334-1481',
     'kc'  => '(816) 720-7760',
     'det' => '(313) 217-9851',
     'cle' => '(216) 677-2169',
