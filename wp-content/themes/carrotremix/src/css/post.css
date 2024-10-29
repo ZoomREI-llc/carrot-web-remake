@@ -467,7 +467,6 @@ article h2 {
 .entry-content .gform_wrapper ul,
 .post-bottom-form .gform_wrapper ul {
   display: flex !important;
-  align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: wrap !important;
 }

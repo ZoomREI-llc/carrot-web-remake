@@ -180,7 +180,6 @@
 .cb-contact-page-contacts__form-wrapper ul {
 	display: flex !important;
 	flex-wrap: wrap !important;
-	align-items: center !important;
 	justify-content: space-between !important;
 	width: 100% !important;
 }

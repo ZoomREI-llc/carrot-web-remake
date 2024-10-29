@@ -2,31 +2,36 @@ function initAutocomplete() {
   const forms = document.querySelectorAll('form[id^="gform_"]');
 
   forms.forEach((form) => {
-    const autocompleteField = form.querySelector(".autocomplete-field input"); // Autocomplete field
-    const streetAddressField = form.querySelector(".address_line_1 input"); // Street address field
-    const cityField = form.querySelector(".address_city input"); // City field
-    const stateField = form.querySelector(".address_state select")
-      ? form.querySelector(".address_state select")
-      : form.querySelector(".address_state input"); // State field (as select)
-    const zipcodeFields = form.querySelectorAll(".address_zip input"); // Zipcode fields
+    const autocompleteField = form.querySelector(".autocomplete-field input");
+    const streetAddressField = form.querySelector(".address_line_1 input");
+    const cityField = form.querySelector(".address_city input");
+    const stateField = form.querySelector(".address_state :is(select, input)");
+    const zipcodeFields = form.querySelectorAll(".address_zip input");
+    const nameField = form.querySelector(".dl-full-name input");
+    const phoneField = form.querySelector(".dl-phone input");
+    const submitButton = form.querySelector('input[type="submit"]');
 
     let zipcodeField = null;
     let isAddressValid = false;
+    let isNameValid = false;
+    let isPhoneValid = false;
+    let errorMessageContainers = {};
+    let lastAddressError = null;
 
-    // Ensure we select the right field if there are multiple
     zipcodeFields.forEach((field) => {
       if (field) {
         zipcodeField = field;
       }
     });
 
-    // Check for missing required fields
     const missingFields = [];
     if (!autocompleteField) missingFields.push("autocompleteField");
     if (!streetAddressField) missingFields.push("streetAddressField");
     if (!cityField) missingFields.push("cityField");
     if (!stateField) missingFields.push("stateField");
     if (!zipcodeField) missingFields.push("zipcodeField");
+    if (!nameField) missingFields.push("nameField");
+    if (!phoneField) missingFields.push("phoneField");
 
     if (missingFields.length > 0) {
       console.error(`Required fields not found in form:`, form);
@@ -34,15 +39,15 @@ function initAutocomplete() {
       return;
     }
 
-    // Function to validate address and show message if invalid
+    submitButton.disabled = true;
+
     function validateAddress() {
       const place = autocomplete.getPlace();
       if (!place || !place.geometry) {
         isAddressValid = false;
-        handleInvalidAddress(
-          autocompleteField,
-          "Please select a valid address."
-        );
+        lastAddressError =
+          "Please re-enter and select your address from the dropdown";
+        showError(autocompleteField, lastAddressError);
         return;
       }
 
@@ -51,7 +56,6 @@ function initAutocomplete() {
       let stateShort = "";
       let stateLong = "";
       let zipcode = "";
-      let country = "";
       let hasStreetNumber = false;
 
       for (const component of place.address_components) {
@@ -75,49 +79,31 @@ function initAutocomplete() {
           case "postal_code":
             zipcode = component.long_name;
             break;
-          case "country":
-            if (component.short_name === "US") {
-              country = "USA";
-            }
-            break;
         }
       }
 
       if (!hasStreetNumber) {
         isAddressValid = false;
-        handleInvalidAddress(
-          autocompleteField,
-          "Address must include a street number."
-        );
+        lastAddressError = "Address must include a street number";
+        showError(autocompleteField, lastAddressError);
         return;
       }
 
-      // Populate the hidden fields
       streetAddressField.value = streetAddress;
       cityField.value = city;
       stateField.value = stateLong;
       zipcodeField.value = zipcode;
 
-      // Update the autocomplete field with the full address
       autocompleteField.value = `${streetAddress}, ${city}, ${stateShort}, ${zipcode}`;
 
-      // Address is valid
       isAddressValid = true;
-      autocompleteField.setCustomValidity(""); // Clear any previous custom validity message
+      lastAddressError = null;
+      clearError(autocompleteField);
       autocompleteField.classList.remove("invalid");
-
-      // Log the populated address components
-      console.log("Address populated:", {
-        streetAddress,
-        city,
-        stateShort,
-        stateLong,
-        zipcode,
-        country,
-      });
+      checkSubmitButton();
     }
 
-    // Initialize Google Maps Autocomplete
+    // Google Maps Autocomplete Initialization
     let autocomplete = new google.maps.places.Autocomplete(autocompleteField, {
       types: ["address"],
       componentRestrictions: { country: "us" },
@@ -125,32 +111,46 @@ function initAutocomplete() {
 
     autocomplete.addListener("place_changed", validateAddress);
 
-    // Handle Gravity Forms pre-submission validation
-    gform.addFilter("gform_pre_submission", function (formId) {
-      console.log("Pre-submission validation...");
-
-      if (!isAddressValid) {
-        console.warn("Invalid address detected. Blocking submission.");
-        handleInvalidAddress(
-          autocompleteField,
-          "Please use autocomplete to enter a complete property address."
-        );
-        return false; // Block form submission if the address is invalid
+    // Validation for other fields (Name & Phone)
+    function validateField(field, message) {
+      if (field.value.trim() === "") {
+        showError(field, message);
+        return false;
+      } else {
+        clearError(field);
+        return true;
       }
+    }
 
-      // Address is valid, allowing form submission.
-      console.log("Address is valid, allowing form submission.");
-      return true;
+    nameField.addEventListener("blur", function () {
+      isNameValid = validateField(nameField, "Name cannot be empty");
+      checkSubmitButton();
     });
 
-    // Revalidate when the user changes the address
+    phoneField.addEventListener("blur", function () {
+      isPhoneValid = validateField(phoneField, "Phone cannot be empty");
+      checkSubmitButton();
+    });
+
+    autocompleteField.addEventListener("blur", function () {
+      if (!isAddressValid) {
+        // Only show the specific error if it was previously set
+        showError(
+          autocompleteField,
+          lastAddressError ||
+            "Please use the dropdown to enter a complete property address"
+        );
+      }
+    });
+
     autocompleteField.addEventListener("input", function () {
       isAddressValid = false;
-      autocompleteField.setCustomValidity(""); // Reset custom validity message
-      autocompleteField.classList.remove("invalid");
+      lastAddressError = null;
+      autocompleteField.classList.add("invalid");
+      submitButton.disabled = true;
+      clearError(autocompleteField);
     });
 
-    // Allow the user to re-trigger the autocomplete by clearing the field
     autocompleteField.addEventListener("input", function () {
       if (autocompleteField.value === "") {
         streetAddressField.value = "";
@@ -158,9 +158,50 @@ function initAutocomplete() {
         stateField.value = "";
         zipcodeField.value = "";
         isAddressValid = false;
+        lastAddressError = null;
         autocompleteField.classList.add("invalid");
+        submitButton.disabled = true;
+        clearError(autocompleteField);
       }
     });
+
+    form.addEventListener("submit", function (event) {
+      if (!isAddressValid || !isNameValid || !isPhoneValid) {
+        event.preventDefault();
+        showError(
+          autocompleteField,
+          lastAddressError ||
+            "Please use the dropdown to enter a complete property address"
+        );
+      }
+    });
+
+    function showError(field, message) {
+      if (!errorMessageContainers[field.name]) {
+        const errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("error-message-container");
+        field.parentNode.insertBefore(errorMessageContainer, field.nextSibling);
+        errorMessageContainers[field.name] = errorMessageContainer;
+      }
+      errorMessageContainers[field.name].textContent = message;
+      field.classList.add("invalid");
+    }
+
+    function clearError(field) {
+      if (errorMessageContainers[field.name]) {
+        errorMessageContainers[field.name].remove();
+        delete errorMessageContainers[field.name];
+      }
+      field.classList.remove("invalid");
+    }
+
+    function checkSubmitButton() {
+      if (isAddressValid && isNameValid && isPhoneValid) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    }
   });
 }
 
@@ -188,12 +229,4 @@ function loadScript(src) {
   script.async = true;
   script.defer = true;
   document.head.appendChild(script);
-}
-
-// Function to handle invalid addresses (e.g., missing street number)
-function handleInvalidAddress(autocompleteField, message) {
-  console.log("Handling invalid address, setting custom validity message.");
-  autocompleteField.classList.add("invalid");
-  autocompleteField.setCustomValidity(message);
-  autocompleteField.reportValidity(); // Trigger native validation UI
 }
