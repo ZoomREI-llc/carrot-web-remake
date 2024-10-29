@@ -73,7 +73,7 @@ $carrot_step3_url = esc_url(plugins_url('src/cb-syh-page-hero-get-a-cash-offer/a
                  <div class="cb-syh-page-hero-get-a-cash-offer__call-us">
                      Call Us! <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
                  </div>
-                 <a href="/get-a-cash-offer" class="cb-syh-page-hero-get-a-cash-offer__top--nav-link">Get A Cash Offer Today</a>
+                 <a href="/get-a-cash-offer-today/" class="cb-syh-page-hero-get-a-cash-offer__top--nav-link">Get A Cash Offer Today</a>
              </div>
          </div>
          <div class="cb-syh-page-hero-get-a-cash-offer__block-for-hight"></div>
