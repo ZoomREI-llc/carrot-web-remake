@@ -57,7 +57,7 @@ $carrot_hero_url = esc_url(plugins_url('src/cb-step-2-hero/assets/carrot-hero.we
             <div class="cb-step-2-hero__call-us">
                 Call Us! <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
             </div>
-            <a href="<?php echo site_url() ?>/get-a-cash-offer" class="cb-step-2-hero__top--nav-link">Get A Cash Offer Today</a>
+            <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-step-2-hero__top--nav-link">Get A Cash Offer Today</a>
         </div>
 
         <div class="cb-step-2-hero__content">

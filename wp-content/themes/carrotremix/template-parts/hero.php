@@ -31,7 +31,7 @@ $background_image_url = get_bloginfo('template_directory') . '/src/assets/hero-b
             <div class="hero__call-us">
                 Call Us! <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
             </div>
-            <a href="<?php echo site_url() ?>/get-a-cash-offer" class="hero__top--nav-link">Get A Cash Offer Today</a>
+            <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="hero__top--nav-link">Get A Cash Offer Today</a>
         </div>
 
         <div class="hero__content">

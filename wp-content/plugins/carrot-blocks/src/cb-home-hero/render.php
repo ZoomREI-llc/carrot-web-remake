@@ -81,17 +81,17 @@ $bbb_url = esc_url(plugins_url('src/cb-home-hero/assets/bbb.svg', dirname(__FILE
             </div>
             <div class="cb-home-hero__links">
                 <?php if ($selected_market === 'kc'): ?>
-                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get A Cash Offer Today</a>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer-today/">Get A Cash Offer Today</a>
 
                 <?php elseif (in_array($selected_market, ['stl', 'sf'])): ?>
-                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get A Cash Offer in 7 Minutes</a>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer-today/">Get A Cash Offer in 7 Minutes</a>
 
                 <?php elseif ($selected_market === 'ind'): ?>
-                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get A Cash Offer in 7 Minutes</a>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer-today/">Get A Cash Offer in 7 Minutes</a>
                     <a href="<?php echo site_url() ?>/our-company/">Our Company</a>
 
                 <?php elseif (in_array($selected_market, ['cle', 'det'])): ?>
-                    <a href="<?php echo site_url() ?>/get-a-cash-offer/">Get Your Cash Offer</a>
+                    <a href="<?php echo site_url() ?>/get-a-cash-offer-today/">Get Your Cash Offer</a>
                     <a href="<?php echo site_url() ?>/contact-us/">Contact Us</a>
 
                 <?php endif; ?>

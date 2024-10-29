@@ -117,17 +117,17 @@ $market_code = get_blog_option($site_id, 'market_code', '');
                 </div>
                 <div class="cb-header____links">
                     <?php if ($market_code === 'kc'): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get A Cash Offer Today</a>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer Today</a>
 
                     <?php elseif (in_array($market_code, ['stl', 'sf'])): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
 
                     <?php elseif ($market_code === 'ind'): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
                         <a href="<?php echo site_url() ?>/our-company/" class="cb-header__mobile-nav-link">Our Company</a>
 
                     <?php elseif (in_array($market_code, ['cle', 'det'])): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer/" class="cb-header__mobile-nav-link">Get Your Cash Offer</a>
+                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get Your Cash Offer</a>
                         <a href="<?php echo site_url() ?>/contact-us/" class="cb-header__mobile-nav-link">Contact Us</a>
 
                     <?php endif; ?>
