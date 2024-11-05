@@ -88,6 +88,11 @@
                 echo replace_custom_placeholders_multisite($footer_copy);
                 ?>
             </p>
+            <?php
+            $site_id = get_current_blog_id();
+            $market_code = get_blog_option($site_id, 'market_code', '');
+            ?>
+
             <?php if (in_array($market_code, ['cle', 'det', 'ind'])): ?>
                 <a href="https://doctorhomes.com/" class="ref-link" target="_blank">www.DoctorHomes.com</a>
             <?php endif; ?>
