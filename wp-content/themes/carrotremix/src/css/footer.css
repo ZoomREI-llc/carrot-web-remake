@@ -180,6 +180,7 @@
   font-weight: 400;
   color: var(--contrast-text-color);
   font-family: "Poppins", sans-serif !important;
+  margin-bottom: 1rem;
 }
 .cb-footer__copy p {
   margin: 0;
@@ -228,11 +229,8 @@
 }
 
 .cb-footer .ref-link {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.2;
   font-weight: 400;
-  margin: 0;
-  margin-bottom: 20px;
-  color: var(--footer-color);
-  filter: brightness(1.1);
+  color: var(--contrast-text-color);
 }
