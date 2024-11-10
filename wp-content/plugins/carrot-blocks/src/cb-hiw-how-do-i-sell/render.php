@@ -1,4 +1,7 @@
 <?php
+$site_id = get_current_blog_id();
+$market_code = get_blog_option($site_id, 'market_code', '');
+
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 $selected_market = esc_html($attributes['selectedMarket']);
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
