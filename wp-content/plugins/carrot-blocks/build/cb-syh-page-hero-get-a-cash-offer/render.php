@@ -102,7 +102,7 @@ $carrot_step3_url = esc_url(plugins_url('src/cb-syh-page-hero-get-a-cash-offer/a
             </div>
             <div class="cb-syh-page-hero-get-a-cash-offer__content--column-right">
                <div class="cb-syh-page-hero-get-a-cash-offer__content--column-right--heading">
-                   <p class="">We buy houses in ANY CONDITION in <?php echo $market_name; ?>. There are no commissions or fees and no obligation whatsoever. For the fastest service, call us now <a href="tel:<?php echo $phoneNumber; ?>" style="color: #02bdfc">(816) 239-3909</a></p>
+                   <p class="">We buy houses in ANY CONDITION in <?php echo $market_name; ?>. There are no commissions or fees and no obligation whatsoever. For the fastest service, call us now <a href="tel:<?php echo $phoneNumber; ?>" style="color: #02bdfc"><?php echo $phoneNumber; ?></a></p>
                </div>
                <div class="cb-syh-page-hero-get-a-cash-offer__content--column-right--form-wrapper">
                   <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
