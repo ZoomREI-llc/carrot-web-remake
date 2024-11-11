@@ -654,53 +654,69 @@ function replace_custom_placeholders_multisite($content)
 add_filter('the_content', 'replace_custom_placeholders_multisite');
 add_filter('the_title', 'replace_custom_placeholders_multisite');
 
-function add_custom_query_vars($vars)
-{
-    $vars[] = 'custom_path';  // Register custom_path as a valid query var
+// Register custom query variable
+function add_custom_query_vars($vars) {
+    $vars[] = 'custom_path';  // Register 'custom_path' as a valid query variable
     return $vars;
 }
 add_filter('query_vars', 'add_custom_query_vars');
 
-function dynamic_landing_page_rewrite_rules()
-{
-    // Capture any URL that starts with /lp/ and store everything after it as custom_path
-    add_rewrite_rule('^lp/(.+)/?', 'index.php?custom_path=$matches[1]', 'top');
+// Add rewrite rule for custom paths with conditional multisite support
+function dynamic_landing_page_rewrite_rules() {
+    global $wp_rewrite;
+
+    if ( is_multisite() && ! is_main_site() ) {
+        // Multisite sub-site: include blog prefix
+        add_rewrite_rule(
+            '^lp/(.+)/?',
+            'index.php?custom_path=$matches[1]',
+            'top',
+            true // Enable blog prefix
+        );
+    } else {
+        // Main site or single site: no blog prefix
+        add_rewrite_rule(
+            '^lp/(.+)/?',
+            'index.php?custom_path=$matches[1]',
+            'top'
+        );
+    }
 }
 add_action('init', 'dynamic_landing_page_rewrite_rules');
 
-function handle_dynamic_path_redirect()
-{
+// Handle dynamic path redirection
+function handle_dynamic_path_redirect() {
     // Get the custom path from the URL
     $custom_path = get_query_var('custom_path');
-    
+
     // Debugging: Log the custom_path to ensure it's being captured
     error_log('Custom Path: ' . ($custom_path ? $custom_path : 'No path'));
-    
+
     // Check if the custom path is empty or if it's a request for a static asset
     if (empty($custom_path) || preg_match('/\.(?:css|js|png|jpg|jpeg|gif|ico|svg|map)$/', $custom_path)) {
         error_log('No custom path found or static file request');
         return;  // Exit early if no custom path is found or it's a static file request
     }
-    
+
     // Query the database for a page with a matching custom URL slug
     $args = array(
         'post_type' => 'page',
         'meta_query' => array(
             array(
-                'key' => 'custom_url_slugs',  // This is the ACF field name
-                'value' => $custom_path,      // Match the custom path from the URL
+                'key'     => 'custom_url_slugs',  // This is the ACF field name
+                'value'   => $custom_path,        // Match the custom path from the URL
                 'compare' => 'LIKE'
             )
         )
     );
-    
+
     // Run the query
     $query = new WP_Query($args);
-    
+
     // Check if a page was found
     if ($query->have_posts()) {
         $page = $query->posts[0];  // Get the first matching page
-        
+
         // Set up the post data to render the page
         global $wp_query;
         $wp_query->post = $page;
@@ -708,30 +724,30 @@ function handle_dynamic_path_redirect()
         $wp_query->is_page = true;
         $wp_query->is_singular = true;
         $wp_query->is_404 = false;
-        
+
         // Ensure Gutenberg blocks are parsed correctly
         $parsed_content = parse_blocks($page->post_content);
         $rendered_content = '';
         foreach ($parsed_content as $block) {
             $rendered_content .= render_block($block);
         }
-        
+
         // Output the header with meta tags before rendering content
-        carrot_get_header();
-        
+        chris_buys_homes_get_header();
+
         // Output the rendered content
         echo $rendered_content;
-        
+
         // Output the footer after the content
-        carrot_get_footer();
-        
+        chris_buys_homes_get_footer();
+
         exit;
     } else {
         // If no matching page is found, return a 404 error
         global $wp_query;
         $wp_query->is_404 = true;
         status_header(404);
-        
+
         // Fix: Check if get_404_template() returns a valid path before including
         $template_404 = get_404_template();
         if ($template_404) {
@@ -740,8 +756,24 @@ function handle_dynamic_path_redirect()
             // If no 404 template is found, output a default message or handle accordingly
             echo '404 Not Found';
         }
-        
+
         exit;
     }
 }
 add_action('template_redirect', 'handle_dynamic_path_redirect');
+
+// Function to flush rewrite rules for all sites (use cautiously)
+function multisite_flush_rewrite_rules() {
+    if (is_multisite()) {
+        $sites = get_sites();
+        foreach ($sites as $site) {
+            switch_to_blog($site->blog_id);
+            flush_rewrite_rules();
+            restore_current_blog();
+        }
+    } else {
+        flush_rewrite_rules();
+    }
+}
+// Hook into 'admin_init' to avoid performance issues on every page load
+add_action('admin_init', 'multisite_flush_rewrite_rules');
