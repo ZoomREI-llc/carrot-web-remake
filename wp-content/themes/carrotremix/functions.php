@@ -733,13 +733,13 @@ function handle_dynamic_path_redirect() {
         }
 
         // Output the header with meta tags before rendering content
-        chris_buys_homes_get_header();
+        carrot_get_header();
 
         // Output the rendered content
         echo $rendered_content;
 
         // Output the footer after the content
-        chris_buys_homes_get_footer();
+        carrot_get_footer();
 
         exit;
     } else {
