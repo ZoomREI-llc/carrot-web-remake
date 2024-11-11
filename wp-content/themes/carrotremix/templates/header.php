@@ -1,14 +1,5 @@
 <?php
-
-$site_id = get_current_blog_id();
-$market_code = get_blog_option($site_id, 'market_code', '');
-
-?>
-
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-
-<?php
+global $no_header;
 
 $site_id = get_current_blog_id();
 $market_code = get_blog_option($site_id, 'market_code', '');
@@ -96,6 +87,7 @@ $market_code = get_blog_option($site_id, 'market_code', '');
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
 
+    <?php if(!$no_header): ?>
     <header class="cb-header">
         <div class="cb-header__inner">
             <div class="cb-header__logo">
@@ -148,3 +140,4 @@ $market_code = get_blog_option($site_id, 'market_code', '');
             </nav>
         </div>
     </header>
+    <?php endif; ?>

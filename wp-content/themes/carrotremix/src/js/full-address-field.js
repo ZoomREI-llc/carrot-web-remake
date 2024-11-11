@@ -254,12 +254,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-function loadScript(src) {
-  const script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = src;
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
+if(typeof loadScript === 'undefined') {
+  function loadScript(src) {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = src;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
 }
