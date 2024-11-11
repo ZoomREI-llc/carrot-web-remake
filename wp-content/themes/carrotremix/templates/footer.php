@@ -1,3 +1,8 @@
+<?php
+global $no_footer;
+?>
+
+<?php if(!$no_footer): ?>
 <footer class="cb-footer">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1" style="transform: translateY(-6%)" class="cb-footer-triangle">
         <polygon class="cb-footer-triangle-poly-1" fill="#ffffff" points="100,6 100,0 0,0 0,6 0,100"></polygon>
@@ -189,6 +194,7 @@
 
     </div>
 </footer>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>
