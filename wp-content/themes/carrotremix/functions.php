@@ -668,7 +668,7 @@ function dynamic_landing_page_rewrite_rules() {
     if ( is_multisite() && ! is_main_site() ) {
         // Multisite sub-site: include blog prefix
         add_rewrite_rule(
-            '^lp/(.+)/?',
+            '^ws/(.+)/?',
             'index.php?custom_path=$matches[1]',
             'top',
             true // Enable blog prefix
@@ -676,7 +676,7 @@ function dynamic_landing_page_rewrite_rules() {
     } else {
         // Main site or single site: no blog prefix
         add_rewrite_rule(
-            '^lp/(.+)/?',
+            '^ws/(.+)/?',
             'index.php?custom_path=$matches[1]',
             'top'
         );
