@@ -4,8 +4,7 @@ $phone_number = esc_html($attributes['phoneNumber']);
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 
-$bbb_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/bbb.png', dirname(__FILE__, 2)));
-$checkmark_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/checkmark.svg', dirname(__FILE__, 2)));
+$checkmark_url = 'cb-home-fast-cash-offer/checkmark.svg';
 ?>
 
 <style>
@@ -20,8 +19,7 @@ $checkmark_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/checkma
         if (in_array($selected_city, ['San Francisco', 'St. Louis', 'Cleveland', 'Detroit'])) {
             echo '--set-custom-form-field-width: span 2;';
         }
-        ?>--checkmark-url: url('<?php echo $checkmark_url; ?>');
-
+        ?>--checkmark-url: url('<?php echo cb_get_image_url($checkmark_url, 768); ?>');
     }
 </style>
 
@@ -65,16 +63,12 @@ $checkmark_url = esc_url(plugins_url('src/cb-home-fast-cash-offer/assets/checkma
                             <?php if ($selected_city === 'Indianapolis'): ?>
                                 <!-- BBB logo and link for Indianapolis -->
                                 <a href="/legitimate-home-buyers-in-indianapolis/#BBB">
-                                    <img class="cb-home-hero__bbb-logo"
-                                        src="<?php echo esc_url($bbb_url); ?>"
-                                        alt="" />
+                                    <?php echo cb_get_responsive_image('cb-home-fast-cash-offer/bbb', 'Logo', 'bbb-logo'); ?>
                                 </a>
                             <?php elseif ($selected_city === 'St. Louis'): ?>
                                 <!-- BBB logo and link for St. Louis -->
                                 <a href="/legitimate-house-buyers-in-st-louis/#BBB">
-                                    <img class="cb-home-hero__bbb-logo"
-                                        src="<?php echo esc_url($bbb_url); ?>"
-                                        alt="" />
+                                    <?php echo cb_get_responsive_image('cb-home-fast-cash-offer/bbb', 'Logo', 'bbb-logo'); ?>
                                 </a>
                             <?php endif; ?>
                             <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning.

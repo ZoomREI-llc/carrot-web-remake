@@ -2,25 +2,25 @@
 $selected_market = esc_html($attributes['selectedMarket']);
 
 $market_image_map = [
-    'Kansas City' => 'circle-ks.webp',
+    'Kansas City' => 'circle-ks',
     'San Francisco' => '',
-    'St. Louis' => 'circle-stl.webp',
-    'Detroit' => 'circle-det.webp',
-    'Cleveland' => 'circle-cle.webp',
-    'Indianapolis' => 'circle-ind.webp'
+    'St. Louis' => 'circle-stl',
+    'Detroit' => 'circle-det',
+    'Cleveland' => 'circle-cle',
+    'Indianapolis' => 'circle-ind'
 ];
 
 $before_after_map = [
-    'San Francisco' => 'before-after-john.webp',
-    'Kansas City' => 'before-after-chris.webp',
-    'St. Louis' => 'before-after-chris.webp',
-    'Detroit' => 'before-after-chris.webp',
-    'Cleveland' => 'before-after-chris.webp',
-    'Indianapolis' => 'before-after-chris.webp'
+    'San Francisco' => 'before-after-john',
+    'Kansas City' => 'before-after-chris',
+    'St. Louis' => 'before-after-chris',
+    'Detroit' => 'before-after-chris',
+    'Cleveland' => 'before-after-chris',
+    'Indianapolis' => 'before-after-chris'
 ];
 
-$image_url = isset($market_image_map[$selected_market]) && $market_image_map[$selected_market] ? esc_url(plugins_url('src/cb-home-as-is/assets/' . $market_image_map[$selected_market], dirname(__FILE__, 2))) : '';
-$before_after_bg = isset($before_after_map[$selected_market]) ? esc_url(plugins_url('src/cb-home-as-is/assets/' . $before_after_map[$selected_market], dirname(__FILE__, 2))) : '';
+$image_url = isset($market_image_map[$selected_market]) && $market_image_map[$selected_market] ? 'cb-home-as-is/' . $market_image_map[$selected_market] : '';
+$before_after_bg = isset($before_after_map[$selected_market]) ? cb_get_image_url('cb-home-as-is/' . $before_after_map[$selected_market], 768) : '';
 
 ?>
 
@@ -29,9 +29,7 @@ $before_after_bg = isset($before_after_map[$selected_market]) ? esc_url(plugins_
         <h2>Sell Your <?php echo $selected_market; ?> House As-Is, True As-Is</h2>
         <div class="cb-home-as-is__image">
             <?php if ($image_url) : ?>
-                <img
-                    src="<?php echo $image_url; ?>"
-                    alt="Logo representing <?php echo $selected_market; ?>" />
+                <?php echo cb_get_responsive_image($image_url, 'Logo representing '.$selected_market, 'never-lowball-logo'); ?>
             <?php endif; ?>
         </div>
         <p>

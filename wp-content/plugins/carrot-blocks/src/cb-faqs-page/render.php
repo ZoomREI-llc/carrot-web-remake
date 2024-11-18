@@ -7,10 +7,6 @@ $selected_market = esc_html($attributes['selectedMarket']);
 $selectedName = ($selected_market === 'San Francisco') ? 'John' : 'Chris';
 $brand_name = ($selected_market === 'San Francisco') ? 'John Buys Bay Area Houses' : 'Chris Buys Homes in ' . $selected_market;
 
-
-
-$answer_img_url = esc_url(plugins_url('src/cb-faqs-page/assets/logo.webp', dirname(__FILE__, 2)));
-
 $faqs = array(
     array(
         "paramId" => "id-1",
@@ -68,7 +64,7 @@ $faqs = array(
         "formId" => "",
         "answerImg" => "",
         "answer" => "
-                    <h2>5. Will You List My House On The MLS?</h2> 
+                    <h2>5. Will You List My House On The MLS?</h2>
                     <p>We will not list your house on the MLS. We are not agents. Our intention is to buy your house in cash, and rehab it in case any work needs to be done on it and sell it again at a profit or rent it. We have many solutions to buying your house, including seller financing and other creative financing options, and of course buying it for cash. All this ensures you will get your house sold fast!</p>
                    "
     ),
@@ -78,7 +74,7 @@ $faqs = array(
         "formId" => "",
         "answerImg" => "",
         "answer" => "
-                    <h2>6. How Are You Different From a Real Estate Agent?</h2> 
+                    <h2>6. How Are You Different From a Real Estate Agent?</h2>
                     <p>A real estate agent does not actually buy your house. Agents market your house on the Multiple Listing Service (MLS), in hopes a buyer will be interested. Agents charge commissions and fees. Listing your house in $selected_market with an agent means you pay closing costs, title fees, and have to tolerate countless of walkthroughs while the house is on the market which can be a long time.</p>
                     <p>We are direct cash buyers with the ability to buy your house and connections to other cash buyers interested in buying houses, rehab them, and put it back on the market for sale for a profit. We are cash buyers and investors. We are the ones actually buying your house. We skip the entire “agent” process and jump immediately to the offer and closing on your property you have for sale in $selected_market. We cover the conventional expenses associated with selling a house like closing costs and inspections. The most notable difference is that we do not charge you any fees or commissions. As mentioned, we skip the entire “agent” process.</p>
                    "
@@ -89,7 +85,7 @@ $faqs = array(
         "formId" => "$formId7",
         "answerImg" => "",
         "answer" => "
-                    <h2>7. Should I Just List My House in $selected_market With an Agent?</h2> 
+                    <h2>7. Should I Just List My House in $selected_market With an Agent?</h2>
                     <p>Honestly, we do not know… (yet)! We would need to better understand the condition of your house, your situation, your timeline, your location your expectations, needs, and requirements for us to give you a solid answer. And we are happy to provide you with our professional recommendation.</p>
                     <p>Many people do not understand the advantages and <a href='https://www.trulia.com/voices/Home_Selling/What_are_the_pros_and_cons_of_flat_fee_MLS_listing-108805'>disadvantages of listing a house on the MLS</a>. We would love to help you with this. If you would like that answer now, just fill in our form below and we will get in touch with you with what we believe is your best course of action concerning selling your house in $selected_market.</p>
                    "
@@ -109,9 +105,9 @@ $faqs = array(
         "paramId" => "id-9",
         "question" => "Are There Any Obligations After I Fill The Form?",
         "formId" => "",
-        "answerImg" => "`$answer_img_url`",
+        "answerImg" => "cb-faqs-page/logo",
         "answer" => "
-                    <h2>9. Are There Any Obligations After I Fill The Form?</h2> 
+                    <h2>9. Are There Any Obligations After I Fill The Form?</h2>
                     <p>There are no obligations, at all. We understand that you have options. We know there are people out there eager to scam you, and eager to take advantage of you and your situation. To distinguish ourselves from those, we make sure you know there are no costs to you. You truly and absolutely have nothing to lose. We make you an offer and if you accept the offer, great! You will get your cash quickly. If you do not accept the offer we will do our best to guide you in the right direction.</p>
                    "
     ),
@@ -229,9 +225,8 @@ $faqs = array(
                     <?php echo wp_kses_post($faq['answer']); ?>
 
                     <?php if ($faq['answerImg'] != '') {  ?>
-                        <img class="" src="<?php echo esc_url($faq['answerImg']); ?>" />
-                    <?php } else {
-                    } ?>
+                        <?php echo cb_get_responsive_image($faq['answerImg'], 'Answer'); ?>
+                    <?php } ?>
 
                     <?php if ($faq['formId'] != '') {  ?>
                         <div class="cb-faqs__form-wrapper">

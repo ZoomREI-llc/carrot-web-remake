@@ -85,3 +85,12 @@ input.invalid {
 input[type="submit"]:disabled {
   opacity: 1 !important;
 }
+.bbb-logo{
+  width: 50px;
+}
+.checkmark-icon{
+  width: 27px;
+}
+.never-lowball-logo{
+  max-width: 265px;
+}

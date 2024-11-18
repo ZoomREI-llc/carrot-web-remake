@@ -33,8 +33,7 @@ $primary_dark_color = $primary_dark_colors[$selected_market] ?? '#000000';
 $hero_gradient = $gradients[$selected_market] ?? 'linear-gradient(45deg, #FFFFFF, #EEEEEE)';
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 
-$background_image_url = esc_url(plugins_url('src/cb-contact-page-hero/assets/background-' . $selected_market . '.webp', dirname(__FILE__, 2)));
-$carrot_hero_url = esc_url(plugins_url('src/cb-contact-page-hero/assets/carrot-hero.webp', dirname(__FILE__, 2)));
+$background_image_url = 'cb-contact-page-hero/background-' . $selected_market;
 ?>
 
 <style>
@@ -43,7 +42,10 @@ $carrot_hero_url = esc_url(plugins_url('src/cb-contact-page-hero/assets/carrot-h
         --primary-dark-color: <?php echo esc_attr($primary_dark_color); ?>;
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
-        --background-image: url('<?php echo $background_image_url; ?>');
+
+        --background-image-small: url('<?php echo cb_get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo cb_get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo cb_get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 

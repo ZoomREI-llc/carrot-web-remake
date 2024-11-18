@@ -98,3 +98,19 @@ function carrot_blocks_carrot_blocks_block_init()
 	}
 }
 add_action('init', 'carrot_blocks_carrot_blocks_block_init');
+
+add_action('wp_enqueue_scripts', function () {
+    wp_register_script('doctor-homes-inline', '', [], false, false);
+    
+    $loadScripts = file_get_contents(__DIR__ . '/utils/loadScript.js');
+    
+    if ($loadScripts !== false) {
+        wp_add_inline_script('doctor-homes-inline', $loadScripts);
+    }
+    
+    wp_enqueue_script('doctor-homes-inline');
+}, 0);
+
+add_filter('should_load_separate_core_block_assets', '__return_true');
+
+include_once plugin_dir_path(__FILE__) . 'includes/image-helper.php';

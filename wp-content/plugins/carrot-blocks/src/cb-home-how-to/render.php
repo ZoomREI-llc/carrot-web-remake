@@ -12,14 +12,6 @@ $market_code_map = [
 ];
 
 $market_code = isset($market_code_map[$selected_market]) ? $market_code_map[$selected_market] : 'kc';
-
-$one_icon_url = esc_url(plugins_url('src/cb-home-how-to/assets/1-black.svg', dirname(__FILE__, 2)));
-$two_icon_url = esc_url(plugins_url('src/cb-home-how-to/assets/2-black.svg', dirname(__FILE__, 2)));
-$three_icon_url = esc_url(plugins_url('src/cb-home-how-to/assets/3-black.svg', dirname(__FILE__, 2)));
-
-$about_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/about-' . $market_code . '.webp', dirname(__FILE__, 2)));
-$how_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/how-' . $market_code . '.webp', dirname(__FILE__, 2)));
-$sell_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/sell-' . $market_code . '.webp', dirname(__FILE__, 2)));
 ?>
 
 <section class="cb-home-how-to__full-width ">
@@ -35,11 +27,11 @@ $sell_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/sell-' . $marke
         <div class="cb-home-how-to__steps">
             <div class="cb-home-how-to__step">
                 <a href="/our-company" class="cb-home-how-to-step__image">
-                    <img src="<?php echo $about_image_url; ?>" alt="Learn more about us in <?php echo $selected_market; ?>" />
+                    <?php echo cb_get_responsive_image('cb-home-how-to/about-' . $market_code, 'Learn more about us in '.$selected_market); ?>
                 </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
-                        <img src="<?php echo $one_icon_url; ?>" alt="" />
+                        <?php echo cb_get_responsive_image('cb-home-how-to/1-black', 'Icon'); ?>
                         <span>Go to <a href="/our-company" data-type="page" data-id="49">“About Us”</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">
@@ -50,11 +42,11 @@ $sell_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/sell-' . $marke
             </div>
             <div class="cb-home-how-to__step">
                 <a href="/how-we-buy-houses" class="cb-home-how-to-step__image">
-                    <img src="<?php echo $how_image_url; ?>" alt="Learn how we buy houses in <?php echo $selected_market; ?>" />
+                    <?php echo cb_get_responsive_image('cb-home-how-to/how-' . $market_code, 'Learn how we buy houses in '.$selected_market); ?>
                 </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
-                        <img src="<?php echo $two_icon_url; ?>" alt="" />
+                        <?php echo cb_get_responsive_image('cb-home-how-to/2-black', 'Icon'); ?>
                         <span>Read the <a href="/how-we-buy-houses" data-type="page" data-id="349">“How It Works”</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">
@@ -64,11 +56,11 @@ $sell_image_url = esc_url(plugins_url('src/cb-home-how-to/assets/sell-' . $marke
             </div>
             <div class="cb-home-how-to__step">
                 <a href="/sell-your-house" class="cb-home-how-to-step__image">
-                    <img src="<?php echo $sell_image_url; ?>" alt="Sell your house fast in <?php echo $selected_market; ?>" />
+                    <?php echo cb_get_responsive_image('cb-home-how-to/sell-' . $market_code, 'Sell your house fast in '.$selected_market); ?>
                 </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
-                        <img src="<?php echo $three_icon_url; ?>" alt="" />
+                        <?php echo cb_get_responsive_image('cb-home-how-to/3-black', 'Icon'); ?>
                         <span>Request Your <a href="/sell-your-house" data-type="page" data-id="20">Cash Offer</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">

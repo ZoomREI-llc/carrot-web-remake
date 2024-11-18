@@ -2,12 +2,27 @@
 	position: relative;
 	background:
 		var(--hero-gradient),
-		var(--background-image) no-repeat center/cover;
+		var(--background-image-small) no-repeat center/cover;
 
 	margin-bottom: 30px;
 	display: none;
 }
 
+@media (min-width: 768px) {
+	.cb-step-2-hero-wrapper {
+		background:
+				var(--hero-gradient),
+				var(--background-image-medium) no-repeat center/cover;
+	}
+}
+
+@media (min-width: 1024px) {
+	.cb-step-2-hero-wrapper {
+		background:
+				var(--hero-gradient),
+				var(--background-image-large) no-repeat center/cover;
+	}
+}
 .cb-step-2-hero {
 	display: flex;
 	flex-direction: column;
