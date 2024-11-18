@@ -1,1 +1,64 @@
-.cb-hiw-congrats{align-items:center;display:flex;flex-direction:column;margin-bottom:50px;padding:0 15px}.cb-hiw-congrats>*{max-width:1030px}.cb-hiw-congrats__border-line{background-color:var(--primary-light-color);border:3px solid var(--primary-light-color);display:block;margin-block:30px;width:100%}.cb-hiw-congrats h2{color:#212529;font-size:40px;font-weight:700;line-height:1.2;margin:100px 0 30px;text-align:center}.cb-hiw-congrats p{color:#212529;display:block;font-size:36px;line-height:1.5;margin:0 0 20px;width:100%}.cb-hiw-congrats p a{color:#0c91b2;text-decoration:none}@media (min-width:1024px){.cb-hiw-congrats h2{font-size:45px}.cb-hiw-congrats{padding:0}.cb-hiw-congrats p{font-size:37.1px}}
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-hiw-congrats/style.css ***!
+  \***********************************************************************************************************************************************************************************/
+.cb-hiw-congrats {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 15px;
+	margin-bottom: 50px;
+}
+
+.cb-hiw-congrats > * {
+	max-width: 1030px;
+}
+.cb-hiw-congrats__border-line {
+	display: block;
+	width: 100%;
+
+	border: 3px solid var(--primary-light-color);
+	background-color: var(--primary-light-color);
+	margin-block: 30px;
+	/* font-family: "Poppins", sans-serif !important; */
+}
+.cb-hiw-congrats h2 {
+	text-align: center;
+	margin: 100px 0 30px;
+
+	line-height: 1.2;
+	color: #212529;
+	font-size: 40px;
+	font-weight: 700;
+	/* font-family: "Poppins", sans-serif !important; */
+}
+.cb-hiw-congrats p {
+	display: block;
+	width: 100%;
+	font-size: 36px;
+	line-height: 1.5;
+	color: #212529;
+	/* padding:0 15px; */
+	/* font-style: italic; */
+	/* font-family: "Poppins", sans-serif !important; */
+	margin: 0;
+	margin-bottom: 20px;
+}
+.cb-hiw-congrats p a {
+	text-decoration: none;
+	color: #0c91b2;
+}
+@media (min-width: 1024px) {
+	.cb-hiw-congrats h2 {
+		font-size: 45px;
+		/* margin: 100px 0 10px; */
+	}
+	.cb-hiw-congrats {
+		padding: 0;
+	}
+	.cb-hiw-congrats p {
+		font-size: 37.1px;
+	}
+}
+
+
+/*# sourceMappingURL=style-index.css.map*/

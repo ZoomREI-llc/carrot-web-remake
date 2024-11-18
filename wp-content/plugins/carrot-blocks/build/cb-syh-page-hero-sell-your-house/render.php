@@ -43,14 +43,10 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 
-$background_image_url = esc_url(plugins_url('src/cb-syh-page-hero-sell-your-house/assets/background-' . $selected_market . '.webp', dirname(__FILE__, 2)));
-$carrot_hero_url = esc_url(plugins_url('src/cb-syh-page-hero-sell-your-house/assets/carrot-hero.webp', dirname(__FILE__, 2)));
+$background_image_url = 'cb-syh-page-hero-sell-your-house/background-' . $selected_market;
 
 $market_name = $fullNameMarket[$selected_market] ?? 'Kansas City';
 
-$carrot_step1_url = esc_url(plugins_url('src/cb-syh-page-hero-sell-your-house/assets/step1.webp', dirname(__FILE__, 2)));
-$carrot_step2_url = esc_url(plugins_url('src/cb-syh-page-hero-sell-your-house/assets/step2.webp', dirname(__FILE__, 2)));
-$carrot_step3_url = esc_url(plugins_url('src/cb-syh-page-hero-sell-your-house/assets/step3.webp', dirname(__FILE__, 2)));
 ?>
 
 <style>
@@ -59,7 +55,10 @@ $carrot_step3_url = esc_url(plugins_url('src/cb-syh-page-hero-sell-your-house/as
         --primary-dark-color: <?php echo esc_attr($primary_dark_color); ?>;
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
-        --background-image: url('<?php echo $background_image_url; ?>');
+
+        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 
@@ -86,17 +85,17 @@ $carrot_step3_url = esc_url(plugins_url('src/cb-syh-page-hero-sell-your-house/as
         <div class="cb-syh-page-hero-sell-your-house__content--wrapper">
             <div class="cb-syh-page-hero-sell-your-house__content--column-left">
                 <p class="">
-                    <img alt="step 1" src="<?php echo $carrot_step1_url; ?>">
+                    <?php echo get_responsive_image('cb-syh-page-hero-sell-your-house/step1', 'step 1', 'cb-syh-page-hero-sell-your-house__icon'); ?>
                     <strong>Fill in the information in this form. You can also call us at <a href="tel:<?php echo $phoneNumber; ?>" style="color: #02bdfc"><?php echo $phoneNumber; ?></a> if you prefer.</strong>
                 </p>
                 <hr class="cb-syh-page-hero-sell-your-house__content--separator">
                 <p class="">
-                    <img alt="step 2" src="<?php echo $carrot_step2_url; ?>">
+                    <?php echo get_responsive_image('cb-syh-page-hero-sell-your-house/step2', 'step 2', 'cb-syh-page-hero-sell-your-house__icon'); ?>
                     <strong>We will then call you to talk about the house, and make you an offer. Don’t be surprised if we call you within a few minutes.</strong>😊
                 </p>
                 <hr class="cb-syh-page-hero-sell-your-house__content--separator">
                 <p class="">
-                    <img alt="step 3" src="<?php echo $carrot_step3_url; ?>">
+                    <?php echo get_responsive_image('cb-syh-page-hero-sell-your-house/step3', 'step 3', 'cb-syh-page-hero-sell-your-house__icon'); ?>
                     <strong>You choose a closing date when you will receive your cash.</strong>
                 </p>
             </div>

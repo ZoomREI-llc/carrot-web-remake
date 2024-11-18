@@ -1,5 +1,191 @@
-.cb-hiw-are-you-ready-to-get-cash{align-items:center;background-color:#212529;display:flex;flex-direction:column;padding:30px 15px 50px}.cb-hiw-are-you-ready-to-get-cash>*{max-width:1030px}.cb-hiw-are-you-ready-to-get-cash h2{color:#fff;font-size:40px;font-weight:700;line-height:1.2;margin:0 0 30px;text-align:center}.cb-hiw-are-you-ready-to-get-cash__form-wrapper{background:#f8f9fa;border:1px solid #e9ecef;clear:both;color:#373a3c;margin:0 auto;min-height:200px;width:100%}@media (min-width:1024px){.cb-hiw-are-you-ready-to-get-cash h2{font-size:45px}.cb-hiw-are-you-ready-to-get-cash__form-wrapper{max-width:740px;width:70%}}.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_wrapper{background-color:#f8f9fa;color:#212529;font-size:1rem!important;margin:0;padding:0 1.5rem 1.5rem;position:relative;width:100%}.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_button{background-color:#04bad6;border:1px solid #038ea4;border-radius:5px;color:#fff;font-size:25px!important;line-height:1.5!important;margin:0!important;min-height:45px!important;padding:0!important;text-shadow:0 3px 5px #0000004a;width:100%!important}.cb-hiw-are-you-ready-to-get-cash__form-wrapper label.gfield_label{color:#212529!important;font-size:18px!important;font-weight:500!important;line-height:1.2!important;text-align:left;text-decoration:none;width:100%}.cb-hiw-are-you-ready-to-get-cash__form-wrapper input:focus,.cb-hiw-are-you-ready-to-get-cash__form-wrapper select:focus,.cb-hiw-are-you-ready-to-get-cash__form-wrapper textarea:focus{background-color:#fff!important;border-color:#80bdff!important;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)!important;color:#495057!important;outline:0!important}.cb-hiw-are-you-ready-to-get-cash__form-wrapper
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-hiw-are-you-ready-to-get-cash/style.css ***!
+  \****************************************************************************************************************************************************************************************************/
+.cb-hiw-are-you-ready-to-get-cash {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px 15px 50px;
+	background-color: #212529;
+}
+
+.cb-hiw-are-you-ready-to-get-cash > * {
+	max-width: 1030px;
+}
+.cb-hiw-are-you-ready-to-get-cash h2 {
+	text-align: center;
+	margin: 0px 0 30px;
+
+	line-height: 1.2;
+	color: #fff;
+	font-size: 40px;
+	font-weight: 700;
+	/* font-family: "Poppins", sans-serif !important; */
+}
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper {
+	width: 100%;
+	min-height: 200px;
+	background: #f8f9fa;
+	border: 1px solid #e9ecef;
+	clear: both;
+	color: #373a3c;
+	margin: 0 auto;
+}
+@media (min-width: 1024px) {
+	.cb-hiw-are-you-ready-to-get-cash h2 {
+		font-size: 45px;
+		/* margin: 100px 0 10px; */
+	}
+	.cb-hiw-are-you-ready-to-get-cash {
+		/* padding: 0; */
+	}
+	.cb-hiw-are-you-ready-to-get-cash__form-wrapper {
+		width: 70%;
+		max-width: 740px;
+	}
+}
+
+/* -------------------------------- */
+/* ---------------------------------------------- */
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_wrapper {
+	background-color: #f8f9fa;
+	color: #212529;
+	position: relative;
+	padding: 1.5rem;
+	/* box-shadow: 0 2px 3px 0 rgba(29, 29, 29, 0.5); */
+	font-size: 1rem !important;
+	width: 100%;
+	margin: 0;
+	padding-top: 0;
+}
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_button {
+	text-shadow: 0px 3px 5px #0000004a;
+	background-color: #04bad6;
+	border-color: #038ea4;
+	/* background-color: #02bdfc; */
+	/* border: 1px solid #0297c9;  */
+	border: 1px solid #038ea4;
+	/* font-size: 1.75rem !important; */
+	font-size: 25px !important;
+	/* font-weight: 700 !important; */
+	line-height: 1.5 !important;
+	/* padding: 1.375rem 1.125rem; */
+	padding: 0 !important;
+	width: 100% !important;
+	color: white;
+	border-radius: 5px;
+	/* font-family: "Source Sans Pro", sans-serif !important; */
+	margin: 0 !important;
+	min-height: 45px !important;
+}
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper label.gfield_label {
+	width: 100%;
+	text-align: left;
+
+	color: #212529 !important;
+	text-decoration: none;
+	font-size: 18px !important;
+	font-weight: 500 !important;
+	line-height: 1.2 !important;
+	/* font-family: "Poppins", sans-serif !important; */
+}
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input:focus,
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper textarea:focus,
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper select:focus {
+	background-color: rgb(255, 255, 255) !important;
+	border-color: rgb(128, 189, 255) !important;
+	box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 0.2rem !important;
+	color: rgb(73, 80, 87) !important;
+	outline: 0px !important;
+}
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper .form-control,
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper
 	.wp-block-search
-	.wp-block-search__input,.cb-hiw-are-you-ready-to-get-cash__form-wrapper .form-control,.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type=email],.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type=number],.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type=password],.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type=search],.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type=tel],.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type=text],.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type=url],.cb-hiw-are-you-ready-to-get-cash__form-wrapper select,.cb-hiw-are-you-ready-to-get-cash__form-wrapper select[multiple],.cb-hiw-are-you-ready-to-get-cash__form-wrapper textarea{background-clip:padding-box;background-color:#fff;border:1px solid #ced4da;border-radius:.25rem;color:#495057;display:block;font-size:1rem;font-weight:400;height:calc(1.5em + .75rem + 2px);line-height:1.5;min-height:42px;padding:.375rem .75rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;width:100%}.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_heading{display:none!important}.cb-hiw-are-you-ready-to-get-cash__form-wrapper
+	.wp-block-search__input,
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type="email"],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type="number"],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type="password"],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type="search"],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type="tel"],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type="text"],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper input[type="url"],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper select,
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper select[multiple],
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper textarea {
+	background-clip: padding-box;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	color: #495057;
+	display: block;
+	font-size: 1rem;
+	font-weight: 400;
+	height: calc(1.5em + 0.75rem + 2px);
+	line-height: 1.5;
+	padding: 0.375rem 0.75rem;
+	transition:
+		border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+	width: 100%;
+	min-height: 42px;
+}
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_heading {
+	display: none !important;
+}
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper
 	.gform_legacy_markup_wrapper
-	.gform_footer{padding:0!important}.cb-hiw-are-you-ready-to-get-cash__form-wrapper ul{display:flex!important;flex-wrap:wrap!important;justify-content:space-between!important;width:100%!important}.cb-hiw-are-you-ready-to-get-cash__form-wrapper li,.cb-hiw-are-you-ready-to-get-cash__form-wrapper li.gfield--type-select{flex:0 0 100%!important;padding:0!important;width:100%!important}@media (min-width:1024px){.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_button{font-size:35px!important;min-height:55px!important}.cb-hiw-are-you-ready-to-get-cash__form-wrapper li{flex:0 0 48%!important;padding:0!important;width:48%!important}.cb-hiw-are-you-ready-to-get-cash__form-wrapper li.gfield--type-select{flex:0 0 100%!important;padding:0!important;width:100%!important}}.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gfield--type-address{display:none!important}
+	.gform_footer {
+	padding: 0 !important;
+}
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper ul {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: space-between !important;
+	width: 100% !important;
+}
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper li {
+	flex: 0 0 100% !important;
+	width: 100% !important;
+	/* margin: 0  !important; */
+	padding: 0 !important;
+	/* margin-bottom: 20px !important; */
+}
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper li.gfield--type-select {
+	flex: 0 0 100% !important;
+	width: 100% !important;
+	padding: 0 !important;
+}
+@media (min-width: 1024px) {
+	.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gform_button {
+		font-size: 35px !important;
+		min-height: 55px !important;
+	}
+	.cb-hiw-are-you-ready-to-get-cash__form-wrapper li {
+		flex: 0 0 48% !important;
+		width: 48% !important;
+		/* margin: 0  !important; */
+		padding: 0 !important;
+		/* margin-bottom: 20px !important; */
+	}
+	.cb-hiw-are-you-ready-to-get-cash__form-wrapper li.gfield--type-select {
+		flex: 0 0 100% !important;
+		width: 100% !important;
+		/* margin: 0 !important; */
+		padding: 0 !important;
+		/* margin-bottom: 20px; */
+	}
+}
+
+.cb-hiw-are-you-ready-to-get-cash__form-wrapper .gfield--type-address {
+	display: none !important;
+}
+
+
+/*# sourceMappingURL=style-index.css.map*/

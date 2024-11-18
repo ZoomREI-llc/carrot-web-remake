@@ -14,7 +14,6 @@ $selected_market = isset($attributes['selectedMarket']) ? esc_html($attributes['
 $market_code = isset($market_codes[$selected_market]) ? $market_codes[$selected_market] : 'stl';
 
 // Construct the image URL based on the market code, pointing to the src folder
-$imageUrl = esc_url(plugins_url('src/cb-home-never-lowball/assets/circle-' . $market_code . '.webp', dirname(__FILE__, 2)));
 
 $brand_name = esc_html($attributes['brandName']);
 $brand_area = esc_html($attributes['brandArea']);
@@ -29,7 +28,7 @@ $brand_area = esc_html($attributes['brandArea']);
 <section class="cb-home-never-lowball">
     <div class="cb-home-never-lowball__content">
         <div class="cb-home-never-lowball__content--img-block">
-            <img src="<?php echo $imageUrl; ?>" alt="<?php echo $brand_name; ?> Logo" />
+            <?php echo get_responsive_image('cb-home-never-lowball/circle-' . $market_code, $brand_name.' Logo', 'never-lowball-logo'); ?>
         </div>
         <p class='cb-home-never-lowball__content--text'>
             <strong>We buy houses in <?php echo $brand_area; ?>.</strong>

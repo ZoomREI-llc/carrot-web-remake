@@ -2,11 +2,26 @@
 	position: relative;
 	background:
 		var(--hero-gradient),
-		var(--background-image) no-repeat center/cover;
+		var(--background-image-small) no-repeat center/cover;
 
 	margin-bottom: 30px;
 }
 
+@media (min-width: 768px) {
+	.cb-home-hero-wrapper {
+		background:
+				var(--hero-gradient),
+				var(--background-image-medium) no-repeat center/cover;
+	}
+}
+
+@media (min-width: 1024px) {
+	.cb-home-hero-wrapper {
+		background:
+				var(--hero-gradient),
+				var(--background-image-large) no-repeat center/cover;
+	}
+}
 .cb-home-hero {
 	display: flex;
 	flex-direction: column;

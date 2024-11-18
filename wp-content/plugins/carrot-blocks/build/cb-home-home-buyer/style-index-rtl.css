@@ -1,1 +1,69 @@
-.cb-home-home-buyer{padding-bottom:20px}.cb-home-home-buyer h2{color:#fff;font-size:44px;font-weight:700;line-height:1.2;margin:0 0 30px;max-width:370px;text-align:center}@media (min-width:1024px){.cb-home-home-buyer h2{font-size:50px;max-width:unset;text-align:center}}.cb-home-home-buyer p{color:#fff;font-size:36px;font-weight:400;line-height:1.5;margin:0}.cb-home-home-buyer__full-width{background:var(--primary-dark-color);display:flex;justify-content:center;max-width:none;padding:1rem;width:100%}@media (min-width:1024px){.cb-home-home-buyer__full-width{padding:30px}.cb-home-home-buyer p{font-size:36px}}.cb-home-home-buyer__full-width>*{max-width:1035px}
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cb-home-home-buyer/style.css ***!
+  \**************************************************************************************************************************************************************************************/
+.cb-home-home-buyer {
+	/* padding-block: 0; */
+	padding-bottom: 20px;
+}
+
+.cb-home-home-buyer h2 {
+	/* font-family: "Poppins", sans-serif !important; */
+	font-weight: 700;
+	margin: 0;
+	font-size: 44px;
+	color: #fff;
+	line-height: 1.2;
+	text-align: center;
+	margin-bottom: 30px;
+	max-width: 370px;
+}
+
+@media (min-width: 1024px) {
+	.cb-home-home-buyer h2 {
+		font-size: 50px;
+		text-align: center;
+		max-width: unset;
+	}
+}
+
+.cb-home-home-buyer p {
+	/* font-family: "Poppins", sans-serif !important; */
+	font-weight: 400;
+	margin: 0;
+	font-size: 36px;
+	color: #fff;
+	line-height: 1.5;
+}
+
+.cb-home-home-buyer__full-width {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	width: 100%;
+	max-width: none;
+	background: var(--primary-dark-color);
+}
+
+@media (min-width: 1024px) {
+	.cb-home-home-buyer__full-width {
+		padding: 30px;
+	}
+	.cb-home-home-buyer p {
+		font-size: 36px;
+	}
+}
+
+.cb-home-home-buyer__full-width > * {
+	max-width: 1035px;
+}
+
+/* .banner {
+	color: white;
+	background-color: var(--primary-dark-color);
+}
+
+.dark-banner {
+	color: white;
+	background-color: var(--dark-color);
+} */
+

@@ -14,8 +14,6 @@ $brand_name = ($selected_market === 'San Francisco') ? 'John Buys Bay Area House
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
-
-$bbb_url = esc_url(plugins_url('src/cb-compare-body/assets/bbb.png', dirname(__FILE__, 2)));
 ?>
 
 <style>
@@ -110,9 +108,7 @@ $bbb_url = esc_url(plugins_url('src/cb-compare-body/assets/bbb.png', dirname(__F
                 <div class="custom-form-content">
                     <h3>What Do You Have To Lose? Get Started Now...</h3>
                     <a href="https://chrisbuyshomesstlseller8.carrot.com/legitimate-home-buyers-in-indianapolis/#BBB">
-                        <img class="cb-home-hero__bbb-logo"
-                            src="<?php echo esc_url($bbb_url); ?>"
-                            alt="" />
+                        <?php echo get_responsive_image('cb-compare-body/bbb', 'Logo', 'bbb-logo'); ?>
                     </a>
                     <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning. <span style="color: rgb(2, 189, 252); font-weight: 700;"> Find Out How Much We Can Offer For Your House!</span></span>
                     <h4>Get a solid offer today!</h4>

@@ -2,32 +2,28 @@
 $selected_market = esc_html($attributes['selectedMarket']);
 
 $chris_reviews = [
-    'chris-review-4.webp',
-    'chris-review-5.webp',
-    'chris-review-6.webp',
-    'chris-review-7.webp',
-    'chris-review-8.webp',
-    'chris-review-10.webp',
-    'chris-review-11.webp'
+    'chris-review-4',
+    'chris-review-5',
+    'chris-review-6',
+    'chris-review-7',
+    'chris-review-8',
+    'chris-review-10',
+    'chris-review-11'
 
 ];
 
 $john_reviews = [
-    'john-review-1.webp',
-    'john-review-2.webp',
-    'john-review-3.webp',
-    'john-review-4.webp',
-    'john-review-5.webp',
-    'john-review-6.webp',
-    'john-review-7.webp',
-    'john-review-8.webp'
+    'john-review-1',
+    'john-review-2',
+    'john-review-3',
+    'john-review-4',
+    'john-review-5',
+    'john-review-6',
+    'john-review-7',
+    'john-review-8'
 ];
 
 $selected_reviews = in_array($selected_market, ['San Francisco Bay Area']) ? $john_reviews : $chris_reviews;
-
-$base_url = esc_url(plugins_url('src/cb-home-reviews/assets/', dirname(__FILE__, 2)));
-
-$reviews_header_url = esc_url(plugins_url('src/cb-home-reviews/assets/reviews-header.webp', dirname(__FILE__, 2)));
 ?>
 
 <section id="cb-home-reviews" class="cb-home-reviews">
@@ -36,7 +32,7 @@ $reviews_header_url = esc_url(plugins_url('src/cb-home-reviews/assets/reviews-he
             <h2 class="" id=""><strong>😊</strong> People Love Us, And So Will You <strong>😊</strong></h2>
         <?php else : ?>
             <div class="cb-home-reviews__img-wrapper">
-                <img src="<?php echo $reviews_header_url; ?>" alt="People Love Us, And So Will You">
+                <?php echo get_responsive_image('cb-home-reviews/reviews-header', 'People Love Us, And So Will You'); ?>
             </div>
         <?php endif; ?>
     </div>
@@ -45,9 +41,7 @@ $reviews_header_url = esc_url(plugins_url('src/cb-home-reviews/assets/reviews-he
             <hr />
             <?php foreach ($selected_reviews as $review) : ?>
                 <div class="cb-home-reviews__item">
-                    <img
-                        src="<?php echo $base_url . $review; ?>"
-                        alt="Review" />
+                    <?php echo get_responsive_image('cb-home-reviews/'.$review, 'Review'); ?>
                 </div>
                 <hr />
             <?php endforeach; ?>
