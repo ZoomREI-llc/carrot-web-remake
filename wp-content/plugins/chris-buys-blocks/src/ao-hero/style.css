@@ -1,6 +1,6 @@
 .ao-hero-wrapper {
 	position: relative;
-	background-image: var(--background-image);
+	background-image: var(--background-image-small);
 	background-size: cover;
 	background-position: 0% center;
 	overflow: hidden;
@@ -8,6 +8,17 @@
 	z-index: 0;
 	display: flex;
 	justify-content: center;
+}
+@media (min-width: 768px) {
+	.ao-hero-wrapper {
+		background-image: var(--background-image-medium);
+	}
+}
+
+@media (min-width: 1024px) {
+	.ao-hero-wrapper {
+		background-image: var(--background-image-large);
+	}
 }
 
 .ao-hero-wrapper::before {
@@ -322,6 +333,7 @@
 	line-height: 1.2 !important;
 	border-radius: 10px !important;
 	padding: 0.75rem !important;
+	width: 100% !important;
 }
 
 @media (min-width: 1024px) {

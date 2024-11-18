@@ -41,9 +41,15 @@ function loadScript(src, callback = ()=>{}) {
   window.loadedScripts = Array.from(new Set([...window.loadedScripts, ...shouldLoad.map(item=>item.replace(/&callback=[^&]*/, ''))]));
 
   shouldLoad.forEach(function (scriptSrc) {
-    const script = document.createElement("script");
+    const isCss = scriptSrc.endsWith('.css')
+    const script = document.createElement(isCss ? 'link' : 'script');
 
-    script.type = "text/javascript";
+    if(isCss){
+      script.rel = "stylesheet";
+    } else {
+      script.type = "text/javascript";
+    }
+
     script.async = true;
     script.defer = true;
     script.onload = function() {
@@ -68,7 +74,13 @@ function loadScript(src, callback = ()=>{}) {
         });
       }
     };
-    script.src = scriptSrc;
-    document.body.appendChild(script);
+
+    if(isCss){
+      script.href = scriptSrc;
+      document.head.prepend(script);
+    } else {
+      script.src = scriptSrc;
+      document.body.appendChild(script);
+    }
   })
 }
