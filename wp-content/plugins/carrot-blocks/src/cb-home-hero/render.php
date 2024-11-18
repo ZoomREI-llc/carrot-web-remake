@@ -45,9 +45,9 @@ $background_image_url = 'cb-home-hero/background-' . $selected_market;
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
 
-        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
-        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
-        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
+        --background-image-small: url('<?php echo cb_get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo cb_get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo cb_get_image_url($background_image_url, 2048); ?>');
         <?php
         // // Set '--show-select' for 'ind', 'cle', and 'det' markets
         // if (in_array($selected_market, ['ind', 'cle', 'det'])) {
@@ -100,8 +100,8 @@ $background_image_url = 'cb-home-hero/background-' . $selected_market;
         </div>
 
         <div class="cb-home-hero__content">
-            <?php echo get_responsive_image('cb-home-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'cb-home-hero__headline-image'); ?>
-            <?php echo get_responsive_image('cb-home-hero/bbb', 'Logo', 'bbb-logo'); ?>
+            <?php echo cb_get_responsive_image('cb-home-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'cb-home-hero__headline-image'); ?>
+            <?php echo cb_get_responsive_image('cb-home-hero/bbb', 'Logo', 'bbb-logo'); ?>
             <h3>
                 We buy houses in any condition. No realtors, no fees, no commissions,
                 no repairs & not even cleaning.

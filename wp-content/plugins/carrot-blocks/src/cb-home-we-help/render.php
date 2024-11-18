@@ -6,7 +6,7 @@ $image_url = 'cb-home-we-help/couple-' . strtolower(str_replace(' ', '-', $selec
 <section class="cb-home-we-help__container" <?= in_array($selected_market, ['ind', 'cle', 'det']) ? 'style="padding-block: 0;"' : ''; ?>>
     <div class="cb-home-we-help">
         <div class="cb-home-we-help__image">
-            <?php echo get_responsive_image($image_url, 'We’re Here'); ?>
+            <?php echo cb_get_responsive_image($image_url, 'We’re Here'); ?>
         </div>
         <div class="cb-home-we-help__text">
             <h2>We’re Here to Help!</h2>

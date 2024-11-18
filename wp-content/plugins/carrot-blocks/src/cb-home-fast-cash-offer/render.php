@@ -19,7 +19,7 @@ $checkmark_url = 'cb-home-fast-cash-offer/checkmark.svg';
         if (in_array($selected_city, ['San Francisco', 'St. Louis', 'Cleveland', 'Detroit'])) {
             echo '--set-custom-form-field-width: span 2;';
         }
-        ?>--checkmark-url: url('<?php echo get_image_url($checkmark_url, 768); ?>');
+        ?>--checkmark-url: url('<?php echo cb_get_image_url($checkmark_url, 768); ?>');
     }
 </style>
 
@@ -63,12 +63,12 @@ $checkmark_url = 'cb-home-fast-cash-offer/checkmark.svg';
                             <?php if ($selected_city === 'Indianapolis'): ?>
                                 <!-- BBB logo and link for Indianapolis -->
                                 <a href="/legitimate-home-buyers-in-indianapolis/#BBB">
-                                    <?php echo get_responsive_image('cb-home-fast-cash-offer/bbb', 'Logo', 'bbb-logo'); ?>
+                                    <?php echo cb_get_responsive_image('cb-home-fast-cash-offer/bbb', 'Logo', 'bbb-logo'); ?>
                                 </a>
                             <?php elseif ($selected_city === 'St. Louis'): ?>
                                 <!-- BBB logo and link for St. Louis -->
                                 <a href="/legitimate-house-buyers-in-st-louis/#BBB">
-                                    <?php echo get_responsive_image('cb-home-fast-cash-offer/bbb', 'Logo', 'bbb-logo'); ?>
+                                    <?php echo cb_get_responsive_image('cb-home-fast-cash-offer/bbb', 'Logo', 'bbb-logo'); ?>
                                 </a>
                             <?php endif; ?>
                             <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning.

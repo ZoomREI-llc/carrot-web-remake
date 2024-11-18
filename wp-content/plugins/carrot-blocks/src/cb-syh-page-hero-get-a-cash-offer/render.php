@@ -55,9 +55,9 @@ $market_name = $fullNameMarket[$selected_market] ?? 'Kansas City' ;
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
 
-        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
-        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
-        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
+        --background-image-small: url('<?php echo cb_get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo cb_get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo cb_get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 
@@ -84,17 +84,17 @@ $market_name = $fullNameMarket[$selected_market] ?? 'Kansas City' ;
         <div class="cb-syh-page-hero-get-a-cash-offer__content--wrapper">
             <div class="cb-syh-page-hero-get-a-cash-offer__content--column-left">
                  <p class="">
-                     <?php echo get_responsive_image('cb-syh-page-hero-get-a-cash-offer/step1', 'step 1', 'cb-syh-page-hero-get-a-cash-offer__icon'); ?>
+                     <?php echo cb_get_responsive_image('cb-syh-page-hero-get-a-cash-offer/step1', 'step 1', 'cb-syh-page-hero-get-a-cash-offer__icon'); ?>
                    <strong>Fill in the information in this form. You can also call us at <a href="tel:<?php echo $phoneNumber; ?>" style="color: #02bdfc"><?php echo $phoneNumber; ?></a> if you prefer.</strong>
                  </p>
                  <hr class="cb-syh-page-hero-get-a-cash-offer__content--separator">
                  <p class="">
-                     <?php echo get_responsive_image('cb-syh-page-hero-get-a-cash-offer/step2', 'step 2', 'cb-syh-page-hero-get-a-cash-offer__icon'); ?>
+                     <?php echo cb_get_responsive_image('cb-syh-page-hero-get-a-cash-offer/step2', 'step 2', 'cb-syh-page-hero-get-a-cash-offer__icon'); ?>
                    <strong>We will then call you to talk about the house, and make you an offer. Don’t be surprised if we call you within a few minutes. 😊</strong>
                  </p>
                  <hr class="cb-syh-page-hero-get-a-cash-offer__content--separator">
                  <p class="">
-                     <?php echo get_responsive_image('cb-syh-page-hero-get-a-cash-offer/step3', 'step 3', 'cb-syh-page-hero-get-a-cash-offer__icon'); ?>
+                     <?php echo cb_get_responsive_image('cb-syh-page-hero-get-a-cash-offer/step3', 'step 3', 'cb-syh-page-hero-get-a-cash-offer__icon'); ?>
                    <strong>You choose a closing date when you will receive your cash.</strong>
                  </p>
             </div>

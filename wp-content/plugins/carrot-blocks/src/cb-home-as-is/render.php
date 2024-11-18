@@ -20,7 +20,7 @@ $before_after_map = [
 ];
 
 $image_url = isset($market_image_map[$selected_market]) && $market_image_map[$selected_market] ? 'cb-home-as-is/' . $market_image_map[$selected_market] : '';
-$before_after_bg = isset($before_after_map[$selected_market]) ? get_image_url('cb-home-as-is/' . $before_after_map[$selected_market], 768) : '';
+$before_after_bg = isset($before_after_map[$selected_market]) ? cb_get_image_url('cb-home-as-is/' . $before_after_map[$selected_market], 768) : '';
 
 ?>
 
@@ -29,7 +29,7 @@ $before_after_bg = isset($before_after_map[$selected_market]) ? get_image_url('c
         <h2>Sell Your <?php echo $selected_market; ?> House As-Is, True As-Is</h2>
         <div class="cb-home-as-is__image">
             <?php if ($image_url) : ?>
-                <?php echo get_responsive_image($image_url, 'Logo representing '.$selected_market, 'never-lowball-logo'); ?>
+                <?php echo cb_get_responsive_image($image_url, 'Logo representing '.$selected_market, 'never-lowball-logo'); ?>
             <?php endif; ?>
         </div>
         <p>
