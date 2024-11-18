@@ -23,14 +23,16 @@ $marketName = esc_html($marketNames[$selected_market]) ?? 'any condition';
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 
 $hero_gradient = $gradients[$selected_market] ?? 'linear-gradient(45deg, #FFFFFF, #EEEEEE)';
-$background_image_url = esc_url(plugins_url('src/cb-hiw-hero/assets/background-' . $selected_market . '.webp', dirname(__FILE__, 2)));
-$carrot_hero_url = esc_url(plugins_url('src/cb-hiw-hero/assets/carrot-hero.webp', dirname(__FILE__, 2)));
+$background_image_url = 'cb-hiw-hero/background-' . $selected_market;
 ?>
 
 <style>
     :root {
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
-        --background-image: url('<?php echo $background_image_url; ?>');
+        
+        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 
@@ -48,10 +50,7 @@ $carrot_hero_url = esc_url(plugins_url('src/cb-hiw-hero/assets/carrot-hero.webp'
         </div>
 
         <div class="cb-hiw-hero__content">
-            <img
-                class="cb-hiw-hero__headline-image"
-                src="<?php echo esc_url($carrot_hero_url); ?>"
-                alt="Sell Your Home Fast and Easy" />
+            <?php echo get_responsive_image('cb-hiw-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'cb-hiw-hero__headline-image'); ?>
             <h3>
                 We pay cash for houses in <?php echo $marketName; ?>. No realtors, no fees, no commissions, no repairs & don’t even clean. <strong>Get Your No-Obligation All Cash Offer Started Below!</strong>
             </h3>
