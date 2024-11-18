@@ -30,9 +30,9 @@ $background_image_url = 'cb-hiw-hero/background-' . $selected_market;
     :root {
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
         
-        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
-        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
-        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
+        --background-image-small: url('<?php echo cb_get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo cb_get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo cb_get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 
@@ -50,7 +50,7 @@ $background_image_url = 'cb-hiw-hero/background-' . $selected_market;
         </div>
 
         <div class="cb-hiw-hero__content">
-            <?php echo get_responsive_image('cb-hiw-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'cb-hiw-hero__headline-image'); ?>
+            <?php echo cb_get_responsive_image('cb-hiw-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'cb-hiw-hero__headline-image'); ?>
             <h3>
                 We pay cash for houses in <?php echo $marketName; ?>. No realtors, no fees, no commissions, no repairs & don’t even clean. <strong>Get Your No-Obligation All Cash Offer Started Below!</strong>
             </h3>

@@ -108,7 +108,7 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
                 <div class="custom-form-content">
                     <h3>What Do You Have To Lose? Get Started Now...</h3>
                     <a href="https://chrisbuyshomesstlseller8.carrot.com/legitimate-home-buyers-in-indianapolis/#BBB">
-                        <?php echo get_responsive_image('cb-compare-body/bbb', 'Logo', 'bbb-logo'); ?>
+                        <?php echo cb_get_responsive_image('cb-compare-body/bbb', 'Logo', 'bbb-logo'); ?>
                     </a>
                     <span>We buy houses in any condition. No realtors, no fees, no repairs, no cleaning. <span style="color: rgb(2, 189, 252); font-weight: 700;"> Find Out How Much We Can Offer For Your House!</span></span>
                     <h4>Get a solid offer today!</h4>

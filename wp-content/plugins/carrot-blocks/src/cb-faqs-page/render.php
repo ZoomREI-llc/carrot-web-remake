@@ -225,7 +225,7 @@ $faqs = array(
                     <?php echo wp_kses_post($faq['answer']); ?>
 
                     <?php if ($faq['answerImg'] != '') {  ?>
-                        <?php echo get_responsive_image($faq['answerImg'], 'Answer'); ?>
+                        <?php echo cb_get_responsive_image($faq['answerImg'], 'Answer'); ?>
                     <?php } ?>
 
                     <?php if ($faq['formId'] != '') {  ?>

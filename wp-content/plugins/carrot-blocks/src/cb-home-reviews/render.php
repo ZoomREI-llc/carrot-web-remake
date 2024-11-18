@@ -32,7 +32,7 @@ $selected_reviews = in_array($selected_market, ['San Francisco Bay Area']) ? $jo
             <h2 class="" id=""><strong>😊</strong> People Love Us, And So Will You <strong>😊</strong></h2>
         <?php else : ?>
             <div class="cb-home-reviews__img-wrapper">
-                <?php echo get_responsive_image('cb-home-reviews/reviews-header', 'People Love Us, And So Will You'); ?>
+                <?php echo cb_get_responsive_image('cb-home-reviews/reviews-header', 'People Love Us, And So Will You'); ?>
             </div>
         <?php endif; ?>
     </div>
@@ -41,7 +41,7 @@ $selected_reviews = in_array($selected_market, ['San Francisco Bay Area']) ? $jo
             <hr />
             <?php foreach ($selected_reviews as $review) : ?>
                 <div class="cb-home-reviews__item">
-                    <?php echo get_responsive_image('cb-home-reviews/'.$review, 'Review'); ?>
+                    <?php echo cb_get_responsive_image('cb-home-reviews/'.$review, 'Review'); ?>
                 </div>
                 <hr />
             <?php endforeach; ?>

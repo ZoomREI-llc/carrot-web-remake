@@ -33,7 +33,7 @@ $closing_costs_link = isset($market_links[$selected_market]) ? $market_links[$se
     <h1>About <?php echo esc_html($brand_name); ?></h1>
 
     <div class="cb-oc-page-about__content">
-        <?php echo get_responsive_image('cb-oc-page-about/' . $image_file, $brand_name); ?>
+        <?php echo cb_get_responsive_image('cb-oc-page-about/' . $image_file, $brand_name); ?>
         <div class="cb-oc-page-about__text">
             <p><?php echo esc_html($brand_name); ?> is a locally owned and operated small business. We are legitimate house buyers in <?php echo esc_html($selected_market); ?>, and through our real estate experience and the long-term relationships with our clients, we became a reputable home buying company and realized that a lot of homeowners are dealing with very stressful situations. They don’t have the time or patience to deal with realtors, commissions, costly repairs,
                 <?php if ($closing_costs_link !== 'N/A'): ?>

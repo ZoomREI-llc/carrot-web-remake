@@ -28,7 +28,7 @@ $brand_area = esc_html($attributes['brandArea']);
 <section class="cb-home-never-lowball">
     <div class="cb-home-never-lowball__content">
         <div class="cb-home-never-lowball__content--img-block">
-            <?php echo get_responsive_image('cb-home-never-lowball/circle-' . $market_code, $brand_name.' Logo', 'never-lowball-logo'); ?>
+            <?php echo cb_get_responsive_image('cb-home-never-lowball/circle-' . $market_code, $brand_name.' Logo', 'never-lowball-logo'); ?>
         </div>
         <p class='cb-home-never-lowball__content--text'>
             <strong>We buy houses in <?php echo $brand_area; ?>.</strong>

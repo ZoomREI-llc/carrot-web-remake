@@ -21,7 +21,7 @@ $image_file = isset($market_images[$selected_market]) ? $market_images[$selected
         <em><strong>Get your offer with peace of mind, knowing you are dealing with a legit and reputable company with A+ reviews. We want to buy your house and help you, as much as you want to sell your house, and the only way this will happen is if we make you an offer you will be happy with and will solve your problem!</strong></em>
     </h1>
     <p class="">
-        <?php echo get_responsive_image('cb-syh-page-chris-reviews/' . $image_file, $selected_name); ?>
+        <?php echo cb_get_responsive_image('cb-syh-page-chris-reviews/' . $image_file, $selected_name); ?>
         <strong><?php echo esc_html($selected_name); ?></strong>
     </p>
 </section>

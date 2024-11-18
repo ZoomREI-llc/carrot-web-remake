@@ -27,11 +27,11 @@ $market_code = isset($market_code_map[$selected_market]) ? $market_code_map[$sel
         <div class="cb-home-how-to__steps">
             <div class="cb-home-how-to__step">
                 <a href="/our-company" class="cb-home-how-to-step__image">
-                    <?php echo get_responsive_image('cb-home-how-to/about-' . $market_code, 'Learn more about us in '.$selected_market); ?>
+                    <?php echo cb_get_responsive_image('cb-home-how-to/about-' . $market_code, 'Learn more about us in '.$selected_market); ?>
                 </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
-                        <?php echo get_responsive_image('cb-home-how-to/1-black', 'Icon'); ?>
+                        <?php echo cb_get_responsive_image('cb-home-how-to/1-black', 'Icon'); ?>
                         <span>Go to <a href="/our-company" data-type="page" data-id="49">“About Us”</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">
@@ -42,11 +42,11 @@ $market_code = isset($market_code_map[$selected_market]) ? $market_code_map[$sel
             </div>
             <div class="cb-home-how-to__step">
                 <a href="/how-we-buy-houses" class="cb-home-how-to-step__image">
-                    <?php echo get_responsive_image('cb-home-how-to/how-' . $market_code, 'Learn how we buy houses in '.$selected_market); ?>
+                    <?php echo cb_get_responsive_image('cb-home-how-to/how-' . $market_code, 'Learn how we buy houses in '.$selected_market); ?>
                 </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
-                        <?php echo get_responsive_image('cb-home-how-to/2-black', 'Icon'); ?>
+                        <?php echo cb_get_responsive_image('cb-home-how-to/2-black', 'Icon'); ?>
                         <span>Read the <a href="/how-we-buy-houses" data-type="page" data-id="349">“How It Works”</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">
@@ -56,11 +56,11 @@ $market_code = isset($market_code_map[$selected_market]) ? $market_code_map[$sel
             </div>
             <div class="cb-home-how-to__step">
                 <a href="/sell-your-house" class="cb-home-how-to-step__image">
-                    <?php echo get_responsive_image('cb-home-how-to/sell-' . $market_code, 'Sell your house fast in '.$selected_market); ?>
+                    <?php echo cb_get_responsive_image('cb-home-how-to/sell-' . $market_code, 'Sell your house fast in '.$selected_market); ?>
                 </a>
                 <div class="cb-home-how-to-step__text">
                     <div class="cb-home-how-to-step__text__heading">
-                        <?php echo get_responsive_image('cb-home-how-to/3-black', 'Icon'); ?>
+                        <?php echo cb_get_responsive_image('cb-home-how-to/3-black', 'Icon'); ?>
                         <span>Request Your <a href="/sell-your-house" data-type="page" data-id="20">Cash Offer</a></span>
                     </div>
                     <p class="cb-home-how-to-step__text__description">

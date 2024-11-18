@@ -43,9 +43,9 @@ $background_image_url = 'cb-contact-page-hero/background-' . $selected_market;
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
 
-        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
-        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
-        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
+        --background-image-small: url('<?php echo cb_get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo cb_get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo cb_get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 

@@ -27,45 +27,45 @@ $avoid_commissions_link = esc_url($attributes['avoidCommissionsLink']);
     <div class="cb-home-we-can-help__reasons">
         <div class=".cb-home-we-can-help-col-1">
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Inherited a House</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Tired of Being a Landlord</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Too Many Costly Repairs</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Behind on Payments</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Hoarder Houses</span>
             </div>
         </div>
         <div class="col-2">
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Need To Relocate</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Vacant Houses</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Elderly in Need of Assisted Living</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Sell Old House To Buy A New Place</span>
             </div>
             <div class="cb-home-we-can-help-reason ">
-                <?php echo get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
+                <?php echo cb_get_responsive_image('cb-home-we-can-help/circled-checkmark', 'checkmark', 'checkmark-icon'); ?>
                 <span>Going Through a Divorce</span>
             </div>
         </div>

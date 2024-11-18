@@ -15,11 +15,11 @@ $selected_market = esc_html($attributes['selectedMarket']);
               <p class=""><strong>Second</strong>, we will look for similar houses in the neighborhood (similar size, number of bedrooms, bathroom etc.) that <strong><a href="https://propertymetrics.com/blog/sales-comparison-approach/">we’re recently sold in As-Is condition</a></strong> and are in a similar condition to your house (also known as “comparable sales”, or “comps”). <br>We always compare apples to apples. It doesn’t make sense to compare a fully renovated “like new” house with an one that has not been updated for years.</p>
               <div class="cb-hiw-make-an-offer-on-a-home__steps--media-block">
                      <div class="cb-hiw-make-an-offer-on-a-home__steps--media-item">
-                         <?php echo get_responsive_image('cb-hiw-make-an-offer-on-a-home/Tulane-Before-5-1', 'Sell My House Fast For Cash in ' . $selected_market); ?>
+                         <?php echo cb_get_responsive_image('cb-hiw-make-an-offer-on-a-home/Tulane-Before-5-1', 'Sell My House Fast For Cash in ' . $selected_market); ?>
                             <span class="cb-hiw-make-an-offer-on-a-home__steps--media-discr">As-Is House</span>
                      </div>
                      <div class="cb-hiw-make-an-offer-on-a-home__steps--media-item">
-                         <?php echo get_responsive_image('cb-hiw-make-an-offer-on-a-home/Tulane-After-5', 'Cash For Houses in ' . $selected_market); ?>
+                         <?php echo cb_get_responsive_image('cb-hiw-make-an-offer-on-a-home/Tulane-After-5', 'Cash For Houses in ' . $selected_market); ?>
                             <span class="cb-hiw-make-an-offer-on-a-home__steps--media-discr">Renovated House (Believe it or not, this is the same house, just few months later)</span>
                      </div>
               </div>
