@@ -4,26 +4,13 @@
 function carrot_enqueue_assets()
 {
     $style_version = filemtime(get_template_directory() . '/dist/style.css');
-    $script_version = filemtime(get_template_directory() . '/src/js/script.js');
 
     wp_enqueue_style('carrot-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
     wp_enqueue_script('carrot-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
     wp_enqueue_script('gf-full-address', get_template_directory_uri() . '/src/js/full-address-field.js', array(), true);
     wp_enqueue_script('lead-source-tracker', get_template_directory_uri() . '/src/js/lead-source-tracker.js ', array(), true);
-    wp_enqueue_script('utm-persister', get_template_directory_uri() . '/src/js/utm-persister.js ', array(), true);
+    wp_enqueue_script('params-persister', get_template_directory_uri() . '/src/js/params-persister.js ', array(), true);
     wp_enqueue_script('events-handler', get_template_directory_uri() . '/src/js/events-handler.js ', array(), true);
-
-    // wp_enqueue_script('interactivity-api', get_template_directory_uri() . '/src/js/script.js', array(), $script_version, true);
-    // wp_enqueue_script('doctor-homes-menu', get_template_directory_uri() . '/src/js/menu.js', array(), null, true);
-
-    // if (is_single()) {
-    //     wp_enqueue_script('share-bar-js', get_template_directory_uri() . '/src/js/share-bar.js', array(), '1.0.0', true);
-    // }
-
-    // wp_localize_script('interactivity-api', 'formConfig', array(
-    //     'googleMapsApiKey' => GOOGLE_MAPS_API_KEY,
-    //     'crmWebhookUrl' => CRM_WEBHOOK_URL,
-    // ));
 }
 add_action('wp_enqueue_scripts', 'carrot_enqueue_assets');
 
