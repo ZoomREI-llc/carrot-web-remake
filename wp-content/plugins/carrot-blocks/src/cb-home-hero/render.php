@@ -27,12 +27,12 @@ $gradients = [
 ];
 
 $bbbs = [
-    'sf'  => 'https://seal-goldengate.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-890496.png?chk=37C5297039',
-    'stl' => 'https://seal-stlouis.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-1000021855.png?chk=DFD528B2C1',
-    'kc'  => 'https://seal-nebraska.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-1000050344.png?chk=CF9CF3FF1D',
-    'det' => 'https://seal-easternmichigan.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-90043256.png?chk=79304931E1',
+    'sf' => '<a href="https://www.bbb.org/us/ca/walnut-creek/profile/real-estate-investing/john-buys-bay-area-houses-1116-890496/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-goldengate.bbb.org/seals/blue-seal-150-110-whitetxt-bbb-890496.png" style="border: 0;" alt="John Buys Bay Area Houses BBB Business Review" /></a>',
+    'stl' => '<a href="https://www.bbb.org/us/mo/st-louis/profile/real-estate-investing/chris-buys-homes-in-st-louis-1116-1000021855/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-stlouis.bbb.org/seals/blue-seal-150-110-whitetxt-bbb-1000021855.png" style="border: 0;" alt="Chris Buys Homes in St. Louis BBB Business Review" /></a>',
+    'kc' => '<a href="https://www.bbb.org/us/mo/kansas-city/profile/real-estate-investing/chris-buys-homes-in-kansas-city-1116-1000050344/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-nebraska.bbb.org/seals/blue-seal-150-110-whitetxt-bbb-1000050344.png" style="border: 0;" alt="Chris Buys Homes in Kansas City BBB Business Review" /></a>',
+    'det' => '<a href="https://www.bbb.org/us/mi/detroit/profile/real-estate-investing/chris-buys-homes-in-detroit-1116-90043256/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-easternmichigan.bbb.org/seals/blue-seal-150-110-whitetxt-bbb-90043256.png" style="border: 0;" alt="Chris Buys Homes In Detroit BBB Business Review" /></a>',
     'cle' => '',
-    'ind' => 'https://seal-indy.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-90038382.png?chk=780BF3031C',
+    'ind' => '<a href="https://www.bbb.org/us/in/indianapolis/profile/real-estate-investing/chris-buys-homes-in-indianapolis-1116-90038382/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-indy.bbb.org/seals/blue-seal-150-110-whitetxt-bbb-90038382.png" style="border: 0;" alt="Chris Buys Homes in Indianapolis BBB Business Review" /></a>',
 ];
 
 $selected_market = esc_html($attributes['selectedMarket']);
@@ -59,11 +59,6 @@ $background_image_url = 'cb-home-hero/background-' . $selected_market;
         --background-image-medium: url('<?php echo cb_get_image_url($background_image_url, 1024); ?>');
         --background-image-large: url('<?php echo cb_get_image_url($background_image_url, 2048); ?>');
         <?php
-        // // Set '--show-select' for 'ind', 'cle', and 'det' markets
-        // if (in_array($selected_market, ['ind', 'cle', 'det'])) {
-        //     echo '--show-select: none;';
-        // }
-
         // Set '--set-bbb-logo-width' for 'sf' market
         if ($selected_market === 'sf') {
             echo '--set-bbb-logo-width: 68px;';
@@ -115,7 +110,7 @@ $background_image_url = 'cb-home-hero/background-' . $selected_market;
             if ($selected_market == 'cle') {
                 echo cb_get_responsive_image('cb-home-hero/bbb', 'Logo', 'bbb-logo');
             } else {
-                echo '<iframe border="0" frameborder="0" style="border: 0; height:110px; width:150px;" src="' . esc_url($bbb) . '"></iframe>';
+                echo $bbbs[$selected_market];
             }
             ?>
             <h3>
