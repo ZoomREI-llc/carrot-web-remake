@@ -26,12 +26,22 @@ $gradients = [
     'ind' => 'linear-gradient(-90deg, rgba(13, 77, 91, 0.6), rgba(13, 45, 91, 0.6));',
 ];
 
+$bbbs = [
+    'sf'  => 'https://seal-goldengate.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-890496.png?chk=37C5297039',
+    'stl' => 'https://seal-stlouis.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-1000021855.png?chk=DFD528B2C1',
+    'kc'  => 'https://seal-nebraska.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-1000050344.png?chk=CF9CF3FF1D',
+    'det' => 'https://seal-easternmichigan.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-90043256.png?chk=79304931E1',
+    'cle' => '',
+    'ind' => 'https://seal-indy.bbb.org/frame/blue-seal-150-110-whitetxt-bbb-90038382.png?chk=780BF3031C',
+];
+
 $selected_market = esc_html($attributes['selectedMarket']);
 
 $primary_color = $primary_colors[$selected_market] ?? '#FFFFFF';
 $primary_dark_color = $primary_dark_colors[$selected_market] ?? '#000000';
 $hero_gradient = $gradients[$selected_market] ?? 'linear-gradient(45deg, #FFFFFF, #EEEEEE)';
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
+$bbb = $bbbs[$selected_market] ?? '';
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 
@@ -101,7 +111,13 @@ $background_image_url = 'cb-home-hero/background-' . $selected_market;
 
         <div class="cb-home-hero__content">
             <?php echo cb_get_responsive_image('cb-home-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'cb-home-hero__headline-image'); ?>
-            <?php echo cb_get_responsive_image('cb-home-hero/bbb', 'Logo', 'bbb-logo'); ?>
+            <?php
+            if ($selected_market == 'cle') {
+                echo cb_get_responsive_image('cb-home-hero/bbb', 'Logo', 'bbb-logo');
+            } else {
+                echo '<iframe border="0" frameborder="0" style="border: 0; height:110px; width:150px;" src="' . esc_url($bbb) . '"></iframe>';
+            }
+            ?>
             <h3>
                 We buy houses in any condition. No realtors, no fees, no commissions,
                 no repairs & not even cleaning.
