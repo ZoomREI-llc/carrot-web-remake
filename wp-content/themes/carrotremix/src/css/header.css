@@ -1,6 +1,11 @@
 .cb-header {
   border-top: 5px solid var(--primary-color);
   padding-top: 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
 }
 
 .cb-header__inner {
