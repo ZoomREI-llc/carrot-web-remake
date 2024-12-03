@@ -106,13 +106,7 @@ $background_image_url = 'cb-home-hero/background-' . $selected_market;
 
         <div class="cb-home-hero__content">
             <?php echo cb_get_responsive_image('cb-home-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'cb-home-hero__headline-image'); ?>
-            <?php
-            if ($selected_market == 'cle') {
-                echo cb_get_responsive_image('cb-home-hero/bbb', 'Logo', 'bbb-logo');
-            } else {
-                echo $bbbs[$selected_market];
-            }
-            ?>
+            <?php echo cb_get_responsive_image('cb-home-hero/bbb', 'Logo', 'bbb-logo'); ?>
             <h3>
                 We buy houses in any condition. No realtors, no fees, no commissions,
                 no repairs & not even cleaning.
