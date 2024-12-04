@@ -11,7 +11,7 @@ function carrot_enqueue_assets()
     wp_enqueue_script('lead-source-tracker', get_template_directory_uri() . '/src/js/lead-source-tracker.js ', array(), true);
     wp_enqueue_script('params-persister', get_template_directory_uri() . '/src/js/params-persister.js ', array(), true);
     wp_enqueue_script('events-handler', get_template_directory_uri() . '/src/js/events-handler.js ', array(), true);
-    
+
     wp_localize_script('events-handler', 'formConfig', array(
         'googleMapsApiKey' => GOOGLE_MAPS_API_KEY,
         'storagePrefix' => 'chrisbuys_',
@@ -663,13 +663,13 @@ function handle_lead_form_v2(WP_REST_Request $request)
             continue;
         }
         $fieldData = [];
-        
+
         if ($webhook['usePreset']) {
             $mapping = $presets[$webhook['fieldsPreset']];
         } else {
             $mapping = $webhook['fieldsMapping'];
         }
-        
+
         foreach ($mapping as $field) {
             if (!$field['field'] || !$field['key']) {
                 continue;
@@ -680,12 +680,12 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 $fieldData[$field['key']] = $field['default'];
             }
         }
-        
+
         $fieldDatas[] = [
             'url' => $webhook['url'],
             'body' => $fieldData
         ];
-        
+
         if (!empty($fieldData)) {
             $response = wp_remote_post($webhook['url'], array(
                 'body' => json_encode($fieldData),
@@ -693,15 +693,15 @@ function handle_lead_form_v2(WP_REST_Request $request)
                     'Content-Type' => 'application/json',
                 ),
             ));
-            
+
             if (is_wp_error($response)) {
                 return new WP_REST_Response('Error sending data to webhook', 500);
             }
         }
     }
     wp_send_json_success($fieldDatas);
-    
-    
+
+
     return new WP_REST_Response('Form submitted successfully', 200);
 }
 
@@ -762,21 +762,52 @@ function replace_carrot_variables_in_content($content)
 
 function replace_custom_placeholders_multisite($content)
 {
+    global $post;
+
     // Get current site ID for multisite
     $site_id = get_current_blog_id();
 
     // Fetch Site Settings values for the current site
-    $company_name = get_blog_option($site_id, 'company_name', '');
-    $market_city = get_blog_option($site_id, 'market_city', '');
-    $market_state = get_blog_option($site_id, 'market_state', '');
-    $phone = get_blog_option($site_id, 'phone', '');
-    $email = get_blog_option($site_id, 'email', '');
-    $address = get_blog_option($site_id, 'address', '');
+    $company_name   = get_blog_option($site_id, 'company_name', '');
+    $market_city    = get_blog_option($site_id, 'market_city', '');
+    $market_state   = get_blog_option($site_id, 'market_state', '');
+    $phone          = get_blog_option($site_id, 'phone', '');
+    $email          = get_blog_option($site_id, 'email', '');
+    $address        = get_blog_option($site_id, 'address', '');
     $street_address = get_blog_option($site_id, 'street_address', '');
-    $city = get_blog_option($site_id, 'city', '');
-    $state = get_blog_option($site_id, 'state', '');
-    $zipcode = get_blog_option($site_id, 'zipcode', '');
-    $facebook_link = get_blog_option($site_id, 'facebook_link', '');
+    $city           = get_blog_option($site_id, 'city', '');
+    $state          = get_blog_option($site_id, 'state', '');
+    $zipcode        = get_blog_option($site_id, 'zipcode', '');
+    $facebook_link  = get_blog_option($site_id, 'facebook_link', '');
+
+    // Check for per-page overrides
+    if (is_object($post)) {
+        // Override 'City' if set
+        $market_city_override = get_post_meta($post->ID, '_market_city_override', true);
+        if (!empty($market_city_override)) {
+            $market_city = $market_city_override;
+            $city = $market_city_override; // Also override [city]
+        }
+
+        // Override 'State' if set
+        $market_state_override = get_post_meta($post->ID, '_market_state_override', true);
+        if (!empty($market_state_override)) {
+            $market_state = $market_state_override;
+            $state = $market_state_override; // Also override [state]
+        }
+
+        // Override 'Zipcode' if set
+        $zipcode_override = get_post_meta($post->ID, '_zipcode_override', true);
+        if (!empty($zipcode_override)) {
+            $zipcode = $zipcode_override;
+        }
+
+        // Override 'Phone' if set
+        $phone_override = get_post_meta($post->ID, '_phone_override', true);
+        if (!empty($phone_override)) {
+            $phone = $phone_override;
+        }
+    }
 
     // Define an array of placeholders and their corresponding values
     $placeholders = array(
@@ -802,23 +833,147 @@ function replace_custom_placeholders_multisite($content)
     return $content;
 }
 
+// Add meta box to the page editor
+function add_market_override_meta_box()
+{
+    add_meta_box(
+        'market_override_meta_box', // ID
+        'Market Overrides',         // Title
+        'market_override_meta_box_callback', // Callback function
+        'page',                     // Post type (pages)
+        'side'                      // Context (sidebar)
+    );
+}
+add_action('add_meta_boxes', 'add_market_override_meta_box');
+
+// Display the meta box
+// Display the meta box with placeholders
+function market_override_meta_box_callback($post)
+{
+    // Add a nonce field for security
+    wp_nonce_field('save_market_override_meta_box_data', 'market_override_meta_box_nonce');
+
+    // Retrieve existing values from the post meta, if any
+    $market_city   = get_post_meta($post->ID, '_market_city_override', true);
+    $market_state  = get_post_meta($post->ID, '_market_state_override', true);
+    $zipcode       = get_post_meta($post->ID, '_zipcode_override', true);
+    $phone         = get_post_meta($post->ID, '_phone_override', true);
+
+    // Retrieve site-wide values
+    $site_id = get_current_blog_id();
+    $default_market_city   = get_blog_option($site_id, 'market_city', '');
+    $default_market_state  = get_blog_option($site_id, 'market_state', '');
+    $default_zipcode       = get_blog_option($site_id, 'zipcode', '');
+    $default_phone         = get_blog_option($site_id, 'phone', '');
+
+    // Output the fields with placeholders
+?>
+    <p>
+        <label for="market_city_override">City:</label><br />
+        <input type="text" id="market_city_override" name="market_city_override" value="<?php echo esc_attr($market_city); ?>" placeholder="<?php echo esc_attr($default_market_city); ?>" />
+    </p>
+    <p>
+        <label for="market_state_override">State:</label><br />
+        <input type="text" id="market_state_override" name="market_state_override" value="<?php echo esc_attr($market_state); ?>" placeholder="<?php echo esc_attr($default_market_state); ?>" />
+    </p>
+    <p>
+        <label for="zipcode_override">Zipcode:</label><br />
+        <input type="text" id="zipcode_override" name="zipcode_override" value="<?php echo esc_attr($zipcode); ?>" placeholder="<?php echo esc_attr($default_zipcode); ?>" />
+    </p>
+    <p>
+        <label for="phone_override">Phone:</label><br />
+        <input type="text" id="phone_override" name="phone_override" value="<?php echo esc_attr($phone); ?>" placeholder="<?php echo esc_attr($default_phone); ?>" />
+    </p>
+<?php
+}
+
+// Save the meta box data
+function save_market_override_meta_box_data($post_id)
+{
+    // Check if nonce is set
+    if (!isset($_POST['market_override_meta_box_nonce'])) {
+        return;
+    }
+
+    // Verify the nonce
+    if (!wp_verify_nonce($_POST['market_override_meta_box_nonce'], 'save_market_override_meta_box_data')) {
+        return;
+    }
+
+    // Check for autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    // Check user permissions
+    if ('page' === $_POST['post_type']) {
+        if (!current_user_can('edit_page', $post_id)) {
+            return;
+        }
+    }
+
+    // Save or delete the 'City' override
+    if (isset($_POST['market_city_override'])) {
+        $market_city = sanitize_text_field($_POST['market_city_override']);
+        if (!empty($market_city)) {
+            update_post_meta($post_id, '_market_city_override', $market_city);
+        } else {
+            delete_post_meta($post_id, '_market_city_override');
+        }
+    }
+
+    // Save or delete the 'State' override
+    if (isset($_POST['market_state_override'])) {
+        $market_state = sanitize_text_field($_POST['market_state_override']);
+        if (!empty($market_state)) {
+            update_post_meta($post_id, '_market_state_override', $market_state);
+        } else {
+            delete_post_meta($post_id, '_market_state_override');
+        }
+    }
+
+    // Save or delete the 'Zipcode' override
+    if (isset($_POST['zipcode_override'])) {
+        $zipcode = sanitize_text_field($_POST['zipcode_override']);
+        if (!empty($zipcode)) {
+            update_post_meta($post_id, '_zipcode_override', $zipcode);
+        } else {
+            delete_post_meta($post_id, '_zipcode_override');
+        }
+    }
+
+    // Save or delete the 'Phone' override
+    if (isset($_POST['phone_override'])) {
+        $phone = sanitize_text_field($_POST['phone_override']);
+        if (!empty($phone)) {
+            update_post_meta($post_id, '_phone_override', $phone);
+        } else {
+            delete_post_meta($post_id, '_phone_override');
+        }
+    }
+}
+add_action('save_post', 'save_market_override_meta_box_data');
+
+
 
 // Apply the filter to both title and content
 add_filter('the_content', 'replace_custom_placeholders_multisite');
 add_filter('the_title', 'replace_custom_placeholders_multisite');
 
 // Register custom query variable
-function add_custom_query_vars($vars) {
+function add_custom_query_vars($vars)
+{
     $vars[] = 'custom_path';  // Register 'custom_path' as a valid query variable
     return $vars;
 }
 add_filter('query_vars', 'add_custom_query_vars');
 
 // Add rewrite rule for custom paths with conditional multisite support
-function dynamic_landing_page_rewrite_rules() {
+function dynamic_landing_page_rewrite_rules()
+{
     global $wp_rewrite;
 
-    if ( is_multisite() && ! is_main_site() ) {
+    if (is_multisite() && ! is_main_site()) {
         // Multisite sub-site: include blog prefix
         add_rewrite_rule(
             '^ws/(.+)/?',
@@ -838,7 +993,8 @@ function dynamic_landing_page_rewrite_rules() {
 add_action('init', 'dynamic_landing_page_rewrite_rules');
 
 // Handle dynamic path redirection
-function handle_dynamic_path_redirect() {
+function handle_dynamic_path_redirect()
+{
     // Get the custom path from the URL
     $custom_path = get_query_var('custom_path');
 
@@ -916,7 +1072,8 @@ function handle_dynamic_path_redirect() {
 add_action('template_redirect', 'handle_dynamic_path_redirect');
 
 // Function to flush rewrite rules for all sites (use cautiously)
-function multisite_flush_rewrite_rules() {
+function multisite_flush_rewrite_rules()
+{
     if (is_multisite()) {
         $sites = get_sites();
         foreach ($sites as $site) {
