@@ -46,7 +46,7 @@ function exitPopupCallback() {
 
 		let prevY = 0;
 		document.addEventListener("mousemove", (event) => {
-			if (!popupShown && event.clientY < prevY && event.clientY <= 50) {
+			if (!popupShown && event.clientY < prevY && event.clientY <= 5) {
 				showPopup();
 			}
 			prevY = event.clientY;
@@ -55,8 +55,6 @@ function exitPopupCallback() {
 		let touchStartY = 0;
 		let touchStartTime = 0;
 		const screenHeight = window.innerHeight;
-		const distanceThreshold = screenHeight * 0.1; // 10% of screen height
-		const speedThreshold = 0.5; // px/ms
 		window.addEventListener("touchstart", function (e) {
 			touchStartY = e.touches[0].clientY;
 			touchStartTime = e.timeStamp;
@@ -72,13 +70,18 @@ function exitPopupCallback() {
 
 			const speed = deltaY / deltaTime; // Scroll speed in px/ms
 
+			// Set thresholds
+			const distanceThreshold = screenHeight * 0.2; // 20% of screen height
+			const speedThreshold = 0.8; // px/ms
+
 			if (
-				deltaY > 0 &&
-				deltaY > distanceThreshold &&
-				speed > speedThreshold
+				deltaY < 0 &&
+				Math.abs(deltaY) > distanceThreshold &&
+				Math.abs(speed) > speedThreshold
 			) {
 				showPopup();
 			}
+			g;
 		});
 
 		popupEl.addEventListener("lead-form-interaction", function () {
