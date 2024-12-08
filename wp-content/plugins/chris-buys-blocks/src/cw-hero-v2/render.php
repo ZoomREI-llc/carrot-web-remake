@@ -15,7 +15,7 @@ if ($selectedMarket === "the Bay Area") {
     --background-image-medium: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 1024); ?>');
     --background-image-large: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 2048); ?>');
     ">
-    <div class="cw-hero__content">
+    <div class="cw-hero__content grid-container">
         <div class="cw-hero__reviews">
             <div class="cw-hero__reviews-stars-wrapper">
                 <?php for ($i = 0; $i < 5; $i++): ?>
@@ -26,7 +26,7 @@ if ($selectedMarket === "the Bay Area") {
                 <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
             </div>
         </div>
-        <h1 class="cw-hero__title">We Buy ANY House In <span>ANY Condition, On YOUR Timeline</span></h1>
+        <h1 class="cw-hero__title title-1">We Buy ANY House In <span>ANY Condition, On YOUR Timeline</span></h1>
         <div id="cw-form" class="cw-hero__form">
             <div class="cw-hero__form-title">
                 <span>Get Your Offer In Record Time</span>

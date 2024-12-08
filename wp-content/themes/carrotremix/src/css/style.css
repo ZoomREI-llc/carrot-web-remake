@@ -30,8 +30,133 @@
   --line-height-subtitle: 1.2;
   --font-p: 1.125rem;
   --line-height-p: 1.2; */
+
+  --container-columns: 12;
+  --container-columns-mobile: 4;
+  --container-gap: 1.5rem;
+  --container-gap-mobile: 1rem;
+  --container-padding: 6.25rem;
+  --container-padding-mobile: 1rem;
 }
 
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--container-columns-mobile), 1fr);
+  column-gap: var(--container-gap-mobile);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+  max-width: 768px;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .grid-container {
+    padding: 0 var(--container-padding);
+    column-gap: var(--container-gap);
+    grid-template-columns: repeat(var(--container-columns), 1fr);
+    max-width: 1280px;
+  }
+}
+
+.title-1 *,
+.title-2 *,
+.title-3 *,
+.title-4 *,
+.pre-title *,
+.sub-title *{
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+.title-1{
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 120%;
+}
+@media (min-width: 769px) {
+  .title-1 {
+    font-size: 3rem;
+  }
+}
+
+.title-2{
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 120%;
+}
+@media (min-width: 769px) {
+  .title-2 {
+    font-size: 2.5rem;
+  }
+}
+.title-3{
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 120%;
+}
+@media (min-width: 769px) {
+  .title-3{
+    font-size: 1.875rem;
+  }
+}
+.title-4{
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 140%;
+}
+@media (min-width: 769px) {
+  .title-4 {
+    font-size: 1.5rem;
+  }
+}
+
+.pre-title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #00b43d;
+}
+.sub-title {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 140%;
+  color: #004c8d;
+}
+@media (min-width: 769px) {
+  .sub-title {
+    font-size: 1.25rem;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+@media (max-width: 1279px) {
+  html{
+    font-size: 14px;
+  }
+}
+@media (max-width: 1080px) {
+  html{
+    font-size: 13px;
+  }
+}
+@media (max-width: 991px) {
+  html{
+    font-size: 11px;
+  }
+}
+@media (max-width: 768px) {
+  html{
+    font-size: 16px;
+  }
+}
 /* 
 @media (min-width: 1024px) {
   :root {

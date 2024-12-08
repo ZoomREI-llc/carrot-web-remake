@@ -19,7 +19,7 @@ $brandName = $selectedMarket === "San Francisco Bay Area" ? "John Buys Bay Area 
 ?>
 
 <footer class="cw-footer">
-    <div class="cw-footer__content">
+    <div class="grid-container">
         <div class="cw-footer__logo">
             <?php echo get_responsive_image($logoUrl, 'Logo'); ?>
         </div>

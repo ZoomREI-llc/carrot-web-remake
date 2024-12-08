@@ -1,5 +1,5 @@
 <?php
-
+define('GOOGLE_MAPS_API_KEY', 'AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI');
 // Enqueue Scripts and Styles
 function carrot_enqueue_assets()
 {

@@ -151,9 +151,9 @@ form button {
 	margin-bottom: 10px;
 	display: block;
 	text-align: left;
-	font-size: 0.875rem !important;
 	line-height: normal;
 	color: #112337;
+	font-size: 0.75rem !important;
 }
 
 .input.input--squared > input {
