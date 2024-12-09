@@ -1,7 +1,7 @@
 <?php
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
 ?>
-<section class="cw-sell-today">
+<section class="cw-sell-today inter-font">
     <div class="grid-container">
         <div class=" cw-hero__content">
             <div class="cw-hero__titles">

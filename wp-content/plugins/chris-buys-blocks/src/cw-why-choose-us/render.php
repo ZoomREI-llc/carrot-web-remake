@@ -9,7 +9,7 @@ if ($selectedMarket === "the Bay Area") {
 }
 ?>
 
-<section id='benefits' class="cw-why-choose-us">
+<section id='benefits' class="cw-why-choose-us inter-font">
     <div class="grid-container">
         <div class="cw-why-choose-us__heading">
             <p class="pre-title">benefits</p>

@@ -16,7 +16,7 @@ $logoUrl = isset($logos[$selected_market]) ? $logos[$selected_market] : $logos['
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 ?>
 
-<header class="lc-header">
+<header class="lc-header inter-font">
     <div class="lc-header__content">
         <div class="lc-header__logo">
             <?php echo get_responsive_image($logoUrl, 'Logo'); ?>

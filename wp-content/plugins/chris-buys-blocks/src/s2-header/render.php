@@ -14,7 +14,7 @@ $selected_market = isset($attributes['selectedMarket']) ? esc_html($attributes['
 $logoUrl = isset($logos[$selected_market]) ? $logos[$selected_market] : $logos['St. Louis'];
 ?>
 
-<header class="s2-header s2-header--centered">
+<header class="s2-header s2-header--centered inter-font">
     <div class="s2-header__content">
         <div class="s2-header__logo">
             <?php echo get_responsive_image($logoUrl, 'Logo'); ?>

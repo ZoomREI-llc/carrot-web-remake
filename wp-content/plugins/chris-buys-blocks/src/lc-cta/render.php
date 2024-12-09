@@ -2,7 +2,7 @@
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
 ?>
 
-<section class="lc-cta">
+<section class="lc-cta inter-font">
     <div class="lc-cta__container">
         <div class="lc-cta__image">
             <?php echo get_responsive_image('lc-cta/lc-cta-img', 'Hassle-Free Solution'); ?>

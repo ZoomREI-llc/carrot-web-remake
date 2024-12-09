@@ -4,7 +4,7 @@ $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName']
 $lc_cta_img_url = plugins_url('src/cw-cta/assets/lc-cta-img.webp', dirname(__FILE__, 2));
 ?>
 
-<section class="cw-cta">
+<section class="cw-cta inter-font">
     <div class="cw-cta__inner">
         <div class="cw-cta__image">
             <?php echo get_responsive_image('cw-cta/lc-cta-img', 'Hassle-Free Solution'); ?>

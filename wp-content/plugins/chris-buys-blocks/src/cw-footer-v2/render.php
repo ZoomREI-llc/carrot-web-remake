@@ -18,7 +18,7 @@ $logoUrl = isset($logos[$selectedMarket]) ? $logos[$selectedMarket] : $logos['St
 $brandName = $selectedMarket === "San Francisco Bay Area" ? "John Buys Bay Area Houses" : "Chris Buys Homes";
 ?>
 
-<footer class="cw-footer-v2">
+<footer class="cw-footer-v2 inter-font">
     <div class="cw-footer-v2__content">
         <div class="cw-footer-v2__logo">
             <?php echo get_responsive_image($logoUrl, 'Logo'); ?>

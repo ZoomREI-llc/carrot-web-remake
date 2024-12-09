@@ -26,7 +26,7 @@ $faqs = array(
 );
 ?>
 
-<section class="ao-faqs">
+<section class="ao-faqs inter-font">
     <div class="ao-faqs__header">
         <h2 class="ao-faqs__title">Frequently Asked Questions</h2>
         <p>Have any questions? We’re here to help.</p>

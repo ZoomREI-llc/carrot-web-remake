@@ -6,7 +6,7 @@ $gregory_marks_url = plugins_url('src/lc-testimonials/assets/gregory-marks.webp'
 
 ?>
 
-<section class="lc-testimonials">
+<section class="lc-testimonials inter-font">
     <div class="lc-testimonials__title">
         <h2>Check Out Our Customer Reviews</h2>
         <div class="lc-hero__reviews">

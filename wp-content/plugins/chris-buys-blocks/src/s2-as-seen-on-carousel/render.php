@@ -1,5 +1,5 @@
 
-<section id='how-it-works' class="cw-as-seen-on-carousel-section">
+<section id='how-it-works' class="cw-as-seen-on-carousel-section inter-font">
     <div class="cw-as-seen-on-carousel__title">
         <h2>We are a Trusted Buyer</h2>
     </div>

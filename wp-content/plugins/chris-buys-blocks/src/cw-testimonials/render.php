@@ -35,7 +35,7 @@ $testimonials = [
 ];
 ?>
 
-<section id='reviews' class="cw-testimonials">
+<section id='reviews' class="cw-testimonials inter-font">
     <div class="grid-container">
         <header class="cw-testimonials__header">
             <div class="pre-title">

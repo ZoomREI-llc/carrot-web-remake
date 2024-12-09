@@ -2,7 +2,7 @@
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
 ?>
 
-<section class="ao-testimonials">
+<section class="ao-testimonials inter-font">
     <div class="ao-testimonials__title">
         <h2>Check Out Our Customer Reviews</h2>
         <div class="ao-hero__reviews">

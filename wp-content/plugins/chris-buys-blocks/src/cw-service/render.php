@@ -6,7 +6,7 @@ $selectedName = ($selectedMarket === 'sf') ? "John Buys Bay Area Houses" : "Chri
 $logoUrl = "cw-service/{$selectedMarket}-favicon";
 ?>
 
-<section id='compare' class="cw-service">
+<section id='compare' class="cw-service inter-font">
     <div class="grid-container">
         <div class="cw-service__header">
             <div class="pre-title">OUR SERVICE VS. REALTORS</div>

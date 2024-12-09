@@ -10,7 +10,7 @@ if ($selectedMarket === "the Bay Area") {
 }
 ?>
 
-<section class="cw-hero-wrapper" style="
+<section class="cw-hero-wrapper inter-font" style="
     --background-image-small: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 768); ?>');
     --background-image-medium: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 1024); ?>');
     --background-image-large: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 2048); ?>');

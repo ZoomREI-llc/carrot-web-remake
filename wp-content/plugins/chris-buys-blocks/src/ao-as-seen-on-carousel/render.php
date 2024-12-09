@@ -1,5 +1,5 @@
 
-<section class="ao-as-seen-on-carousel-wrapper">
+<section class="ao-as-seen-on-carousel-wrapper inter-font">
     <div class="ao-as-seen-on-carousel">
         <div class="ao-as-seen-on-carousel__container">
             <span class="ao-as-seen-on-carousel__text">As Seen On</span>

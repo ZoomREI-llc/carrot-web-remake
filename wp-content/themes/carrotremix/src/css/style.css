@@ -216,6 +216,10 @@ html {
     max-width: 100%;
   }
 }
+
+.inter-font{
+  font-family: "Inter", sans-serif;
+}
 /* 
 @media (min-width: 1024px) {
   :root {

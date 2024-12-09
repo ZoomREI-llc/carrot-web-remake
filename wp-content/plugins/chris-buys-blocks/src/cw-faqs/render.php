@@ -38,7 +38,7 @@ $faqs = array(
 );
 ?>
 
-<section id='faq' class="cw-faqs">
+<section id='faq' class="cw-faqs inter-font">
     <div class="grid-container">
         <div class="cw-faqs__header">
             <span class="pre-title">FAQs</span>
