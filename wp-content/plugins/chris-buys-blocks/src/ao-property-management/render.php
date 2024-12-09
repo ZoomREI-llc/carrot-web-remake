@@ -6,7 +6,7 @@ $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName']
 $arrow_icon_url = plugins_url('src/ao-property-management/assets/cta-arrow.svg', dirname(__FILE__, 2));
 ?>
 
-<section class="ao-property-management">
+<section class="ao-property-management inter-font">
     <div class="ao-property-management__inner">
          <div class="ao-property-management__title">
              <h2>Exhausted Or Stressed Out By Property Management? We Can Help!</h2>

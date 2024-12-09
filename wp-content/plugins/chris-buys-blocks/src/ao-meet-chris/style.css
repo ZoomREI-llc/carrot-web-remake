@@ -7,7 +7,6 @@
 	background-color: #E4F3FF;
 	color: #000D17;
 	/* gap: 2rem; */
-	font-family: "Inter", sans-serif;
 }
 
 @media (min-width: 1024px) {
@@ -62,16 +61,14 @@
 	/* font-size: 1.125rem;
 	font-weight: 700;
 	color: #004C8D; */
-
-	font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 140%;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: #004C8D;
-margin-bottom: -10px;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 140%;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: #004C8D;
+	margin-bottom: -10px;
 }
 
 @media (min-width: 1024px) {

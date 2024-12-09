@@ -3,7 +3,7 @@
 
 ?>
 
-<div class="s2-form">
+<div class="s2-form inter-font">
     <div class="s2-form__container">
         <div data-page="main" class="s2-form__step">
             <div class="s2-form__title">

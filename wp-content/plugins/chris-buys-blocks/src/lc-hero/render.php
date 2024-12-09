@@ -2,7 +2,7 @@
 $formId = isset($attributes['formId']) ? esc_html($attributes['formId']) : '1';
 ?>
 
-<section class="lc-hero-wrapper" style="
+<section class="lc-hero-wrapper inter-font" style="
     --background-image-small: url('<?php echo get_image_url('lc-hero/life-changes-hero-background', 768); ?>');
     --background-image-medium: url('<?php echo get_image_url('lc-hero/life-changes-hero-background', 1024); ?>');
     --background-image-large: url('<?php echo get_image_url('lc-hero/life-changes-hero-background', 2048); ?>');

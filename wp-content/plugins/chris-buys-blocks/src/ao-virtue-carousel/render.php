@@ -1,5 +1,5 @@
 
-<div class="ao-virtue-carousel">
+<div class="ao-virtue-carousel inter-font">
     <div class="ao-carousel-wrapper">
         <div class="ao-carousel-track">
             <div class="ao-carousel-item">

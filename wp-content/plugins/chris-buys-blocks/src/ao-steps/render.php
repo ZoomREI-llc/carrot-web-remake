@@ -1,5 +1,5 @@
 
-<section class="ao-steps">
+<section class="ao-steps inter-font">
     <div class="ao-steps__text">
         <h2>House Sales Are Complicated, Right? <br>Not With Us - Just 3 Easy Steps</h2>
         <p>We’ll make a competitive cash offer on your property in under 7 minutes.</p>

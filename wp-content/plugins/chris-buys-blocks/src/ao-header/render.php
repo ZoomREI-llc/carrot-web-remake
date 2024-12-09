@@ -17,7 +17,7 @@ $telephoneUrl = plugins_url('src/ao-header/assets/telephone.svg', dirname(__FILE
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 ?>
 
-<header class="ao-header">
+<header class="ao-header inter-font">
     <div class="ao-header__content">
         <div class="ao-header__logo">
             <?php echo get_responsive_image($logoUrl, 'Logo'); ?>
@@ -27,6 +27,9 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
                 <span class="ao-header__phone--icon"><?php echo get_responsive_image('ao-header/telephone', 'Phone Icon'); ?></span>
                 <span class="ao-header__phone--text">Call Us On </span>
                 <span class="ao-header__phone--number"><?php echo $phoneNumber; ?></span>
+            </div>
+            <div class="contact-phone">
+                <?php echo get_responsive_image('ao-header/phone-icon', 'Phone Icon'); ?>
             </div>
         </a>
     </div>

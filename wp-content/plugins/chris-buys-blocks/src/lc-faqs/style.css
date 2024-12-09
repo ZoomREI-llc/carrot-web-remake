@@ -3,7 +3,6 @@
 	padding: 1.5rem 1rem;
 	display: flex;
 	justify-content: center;
-	font-family: "Inter", sans-serif;
 }
 
 @media (min-width: 1024px) {

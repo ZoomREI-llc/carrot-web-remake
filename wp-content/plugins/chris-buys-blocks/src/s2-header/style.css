@@ -1,7 +1,6 @@
 .s2-header {
 	display: flex;
 	flex-direction: column;
-	font-family: "Inter", sans-serif;
 }
 
 .s2-header__content {
@@ -49,7 +48,6 @@ display: none;
 	/* font-size: 1.125rem; */
 	font-size: 15px;
 	line-height: 1.2;
-	font-family: "Inter";
 	color: #000000;
 	text-decoration: none;
 }
@@ -66,7 +64,6 @@ display: none;
 		/* font-size: 1.125rem; */
 		font-size: 15px;
 		line-height: 1.2;
-		font-family: "Inter";
 		color: #000000;
 		text-decoration: none;
 	}
@@ -78,7 +75,6 @@ display: none;
 .s2-header__phone-number {
 	padding: 0;
 	font-size: 0.9rem;
-	font-family: "Inter";
 	font-weight: bold;
 	color: #004C8D;
 	display: block;

@@ -1,5 +1,4 @@
 .lc-fresh-start {
-	font-family: "Inter", sans-serif;
 	display: flex;
 	justify-content: center;
 	padding: 1.75rem 1rem;
@@ -12,7 +11,6 @@
 }
 
 .lc-fresh-start__container {
-	font-family: "Inter", sans-serif;
 	display: flex;
 	flex-direction: column;
 	gap: 1.75rem;

@@ -9,7 +9,6 @@
 	}
 }
 .cw-fresh-start__inner{
-	font-family: "Inter", sans-serif;
 	display: flex;
 	flex-direction: column;
 	gap: 1.75rem;
@@ -136,7 +135,7 @@ margin: 0;
 	gap: 1rem;
 }
 
-.cw-hero__reviews-stars-wrapper{
+.cw-fresh-start .cw-hero__reviews-stars-wrapper{
 	display: flex;
 	margin-bottom: 0.3125rem;
 }

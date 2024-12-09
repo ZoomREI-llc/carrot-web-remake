@@ -16,7 +16,7 @@ $logoUrl = isset($logos[$selected_market]) ? $logos[$selected_market] : $logos['
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 ?>
 
-<header class="lc-header">
+<header class="lc-header inter-font">
     <div class="lc-header__content">
         <div class="lc-header__logo">
             <?php echo get_responsive_image($logoUrl, 'Logo'); ?>
@@ -26,6 +26,9 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
                 <span class="lc-header__phone--icon"><?php echo get_responsive_image('lc-header/telephone', 'Phone Icon'); ?></span>
                 <span class="lc-header__phone--text">Call Us On</span>
                 <span class="lc-header__phone--number"><?php echo $phoneNumber; ?></span>
+            </div>
+            <div class="contact-phone">
+                <?php echo get_responsive_image('lc-header/phone-icon', 'Phone Icon'); ?>
             </div>
         </a>
     </div>

@@ -5,7 +5,7 @@ $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName']
 $arrow_icon_url = plugins_url('src/ao-why-choose-us/assets/cta-arrow.svg', dirname(__FILE__, 2));
 ?>
 
-<section class="ao-why-choose-us">
+<section class="ao-why-choose-us inter-font">
     <div class="ao-why-choose-us__heading">
         <h2 class="ao-why-choose-us__title">Why Choose Us?</h2>
         <p class="ao-why-choose-us__subtitle">We make every step as simple as possible - we do the hard work for you.</p>
