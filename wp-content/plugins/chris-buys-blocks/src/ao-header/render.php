@@ -28,6 +28,9 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
                 <span class="ao-header__phone--text">Call Us On </span>
                 <span class="ao-header__phone--number"><?php echo $phoneNumber; ?></span>
             </div>
+            <div class="contact-phone">
+                <?php echo get_responsive_image('ao-header/phone-icon', 'Phone Icon'); ?>
+            </div>
         </a>
     </div>
 </header>

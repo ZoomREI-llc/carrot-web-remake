@@ -235,7 +235,6 @@
 .ao-hero__form {
 	flex: 0 0 45%;
 	z-index: 1;
-	min-height: 60vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;

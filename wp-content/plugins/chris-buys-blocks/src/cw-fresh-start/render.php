@@ -47,7 +47,7 @@ $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName']
            </div>
        </div>
    
-       <a class="cw-fresh-start__cta cta-btn" href="#cw-form">Get Fast Cash OFFER <?php echo get_responsive_image('cw-fresh-start/cta-arrow', 'Arrow'); ?></a>
+       <a class="cw-fresh-start__cta green-btn green-btn--arrow cta-btn" href="#cw-form">Get Fast Cash OFFER</a>
        <div class="cw-hero__reviews">
            <div class="cw-hero__reviews-stars-wrapper">
                <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>

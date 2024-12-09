@@ -11,7 +11,7 @@ $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName']
             </div>
   
             <div class="cw-hero__footer-block">
-               <a class="cw-service__cta cta-btn" href="#cw-form">Get my offer <?php echo get_responsive_image('cw-sell-today/cta-arrow', 'Arrow'); ?></a>
+               <a class="cw-service__cta green-btn green-btn--arrow cta-btn" href="#cw-form">Get my offer</a>
                <div class="cw-hero__reviews">
                    <div class="cw-hero__reviews-stars-wrapper">
                        <span class="cw-hero__star"><?php echo get_responsive_image('cw-sell-today/star', 'star'); ?></span>
@@ -29,7 +29,7 @@ $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName']
 
             <ul class="cw-hero__statistic--list">
                 <li class="cw-hero__statistic--item">
-                    <div class="cw-hero__statistic--amunt">36M+</div>
+                    <div class="cw-hero__statistic--amunt">$36M+</div>
                     <div class="cw-hero__statistic--text">Saved <br>Fees</div>
                 </li>
                 <li class="cw-hero__statistic--item">
