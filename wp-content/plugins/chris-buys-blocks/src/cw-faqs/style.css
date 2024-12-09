@@ -34,7 +34,6 @@
 .cw-faqs__question {
 	align-items: center;
 	display: flex;
-	font-family: "Inter", sans-serif;
 	justify-content: space-between;
 	gap: 1rem;
 	background-color: transparent;
@@ -74,7 +73,6 @@
 	border-radius: 50%;
 	font-size: 0.875rem;
 	font-weight: 500;
-	font-family: "Inter", sans-serif;
 	padding-bottom: 0.1875rem;
 }
 
@@ -82,7 +80,6 @@
 	/* margin-bottom: 0.75rem; */
 	overflow: hidden;
 	padding: 1.5rem 1.125rem;
-	font-family: "Inter", sans-serif;
 	background-color: #fff;
 	font-size: 1rem;
 }

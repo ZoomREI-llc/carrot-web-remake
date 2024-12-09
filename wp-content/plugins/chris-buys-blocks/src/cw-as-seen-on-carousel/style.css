@@ -55,7 +55,6 @@
 
 .cw-as-seen-on-carousel__text {
 	/* flex-shrink: 0; */
-	font-family: "Inter", sans-serif;
 	width: 100%;
 	display: flex;
 	align-items: center;

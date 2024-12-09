@@ -1,7 +1,6 @@
 .lc-header {
 	display: flex;
 	justify-content: center;
-	font-family: "Inter", sans-serif;
 }
 
 .lc-header__content {

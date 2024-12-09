@@ -1,5 +1,4 @@
 .lc-why-choose-us {
-	font-family: "Inter", sans-serif;
 	padding: 2.5rem 1rem;
 	display: flex;
 	justify-content: center;
@@ -13,7 +12,6 @@
 }
 
 .lc-why-choose-us__container {
-	font-family: "Inter", sans-serif;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;

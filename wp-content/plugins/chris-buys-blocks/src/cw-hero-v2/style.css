@@ -171,7 +171,6 @@
 }
 .cw-hero__subtitle {
 	text-align: left;
-	font-family: "Inter", sans-serif;
 	font-weight: 400;
 	line-height: 1.4;
 	margin: 0;
@@ -264,7 +263,6 @@
 	max-width: 28.125rem;
 }
 .cw-hero__statistic--amunt {
-	font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
 	/* font-size: 1rem; */
@@ -276,7 +274,6 @@
 	text-align: left;
 }
 .cw-hero__statistic--text {
-	font-family: "Inter";
 	font-style: normal;
 	font-weight: 400;
 	/* font-size: 0.8rem; */

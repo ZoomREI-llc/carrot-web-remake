@@ -1,7 +1,6 @@
 .ao-header {
 	display: flex;
 	flex-direction: column;
-	font-family: "Inter", sans-serif;
 }
 
 .ao-header__content {

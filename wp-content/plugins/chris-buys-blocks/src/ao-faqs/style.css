@@ -6,7 +6,6 @@
 	align-items: center;
 	padding: 4rem 1rem;
 	background-color: #eef7ff;
-	font-family: "Inter", sans-serif;
 }
 
 @media (min-width: 1024px) {
@@ -29,7 +28,6 @@
 	line-height: 1.3;
 	font-weight: 700;
 	margin: 0;
-	font-family: "Inter", sans-serif;
 	margin-bottom: 0.8rem;
 }
 .ao-faqs__header p {
@@ -73,7 +71,6 @@
 
 .ao-faqs__question {
 	display: flex;
-	font-family: "Inter", sans-serif;
 	justify-content: space-between;
 	gap: 1rem;
 	background-color: white;
@@ -112,14 +109,12 @@
 	/* font-size: 1.5rem; */
 	font-size: 1.5rem;
 	font-weight: 500;
-	font-family: "Inter", sans-serif;
 }
 
 .ao-faqs__answer {
 	margin-bottom: 0.75rem;
 	overflow: hidden;
 	padding: 1.5rem 1.125rem;
-	font-family: "Inter", sans-serif;
 	font-size: 16px;
 	line-height: 1.4;
 }

@@ -40,7 +40,6 @@
 
 .cw-as-seen-on-carousel__text {
 	/* flex-shrink: 0; */
-	font-family: "Inter", sans-serif;
 	width: 100%;
 	margin-bottom: 30px;
 	display: flex;
@@ -138,7 +137,6 @@
 	line-height: 71%;
 	text-align: center;
 	margin-bottom: 60px;
-	font-family: "Inter", sans-serif;
 }
 
 .cw-as-seen-on-carousel__title > * {

@@ -193,7 +193,6 @@
 }
 
 .cw-sell-today .cw-hero__statistic--amunt {
-	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
 	font-size: 1.5625rem;
@@ -203,7 +202,6 @@
 	margin-bottom: 0.4rem;
 }
 .cw-sell-today .cw-hero__statistic--text {
-	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 12px;
