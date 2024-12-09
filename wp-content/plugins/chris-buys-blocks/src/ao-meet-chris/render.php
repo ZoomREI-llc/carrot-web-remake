@@ -10,7 +10,7 @@ $image_url = ($selectedName === 'John') ? $john_url : $chris_url;
 
 ?>
 
-<section class="ao-meet-chris">
+<section class="ao-meet-chris inter-font">
     <div class="ao-meet-chris__container">
         <div class="ao-meet-chris__content">
             <div class="ao-meet-chris__text">

@@ -16,7 +16,7 @@ $logoUrl = isset($logos[$selected_market]) ? $logos[$selected_market] : $logos['
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 ?>
 
-<header class="cw-header">
+<header class="cw-header inter-font">
     <div class="grid-container">
         <div class="cw-header__content">
             <div class="cw-header__logo">

@@ -17,7 +17,7 @@ $telephoneUrl = plugins_url('src/ao-header/assets/telephone.svg', dirname(__FILE
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 ?>
 
-<header class="ao-header">
+<header class="ao-header inter-font">
     <div class="ao-header__content">
         <div class="ao-header__logo">
             <?php echo get_responsive_image($logoUrl, 'Logo'); ?>

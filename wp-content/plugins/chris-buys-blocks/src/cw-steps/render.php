@@ -1,5 +1,5 @@
 
-<section class="cw-steps">
+<section class="cw-steps inter-font">
     <div class="grid-container">
         <div class="cw-steps__text">
             <div class="pre-title">

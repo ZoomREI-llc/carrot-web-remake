@@ -1,5 +1,5 @@
 
-<section class="cw-blockquote">
+<section class="cw-blockquote inter-font">
     <div class="grid-container">
         <?php echo get_responsive_image('cw-blockquote/logo_blockquote', 'Logo', 'cw-blockquote__logo'); ?>
         <blockquote>

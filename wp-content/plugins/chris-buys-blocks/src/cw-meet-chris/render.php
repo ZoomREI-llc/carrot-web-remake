@@ -15,7 +15,7 @@ $john_url = 'cw-meet-chris/meet-john-foto';
 $image_url = ($selectedName === 'Chris') ? $chris_url : $john_url;
 ?>
 
-<section id='about' class="cw-meet-chris">
+<section id='about' class="cw-meet-chris inter-font">
     <div class="grid-container">
         <div class="cw-meet-chris__content">
             <div class="cw-meet-chris__text">

@@ -2,7 +2,7 @@
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
 ?>
 
-<section class="cw-fresh-start">
+<section class="cw-fresh-start inter-font">
     <div class="cw-fresh-start__inner">
        <div class="cw-fresh-start__intro">
            <h2>Recently Inherited A Property?</h2>
