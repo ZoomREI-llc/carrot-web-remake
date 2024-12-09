@@ -36,6 +36,9 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
                     <span class="cw-header__phone--text">Call Us On</span>
                     <span class="cw-header__phone--number"><?php echo $phoneNumber; ?></span>
                 </div>
+                <div class="contact-phone">
+                    <?php echo get_responsive_image('cw-header/phone-icon', 'Phone Icon'); ?>
+                </div>
             </a>
         </div>
     </div>

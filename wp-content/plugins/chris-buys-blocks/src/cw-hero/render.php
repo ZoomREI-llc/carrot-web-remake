@@ -61,7 +61,7 @@ if ($selectedMarket === "the Bay Area") {
             </div>
             <ul class="cw-hero__statistic--list">
                 <li class="cw-hero__statistic--item">
-                    <div class="cw-hero__statistic--amunt">36M+</div>
+                    <div class="cw-hero__statistic--amunt">$36M+</div>
                     <div class="cw-hero__statistic--text">Saved <span>Fees</span></div>
                 </li>
                 <li class="cw-hero__statistic--item">
@@ -70,7 +70,7 @@ if ($selectedMarket === "the Bay Area") {
                 </li>
                 <li class="cw-hero__statistic--item">
                     <div class="cw-hero__statistic--amunt">96%</div>
-                    <div class="cw-hero__statistic--text">SATISFIED <span>CUSTOMERS</span></div>
+                    <div class="cw-hero__statistic--text">SATISFIED <br><span>CUSTOMERS</span></div>
                 </li>
             </ul>
         </div>

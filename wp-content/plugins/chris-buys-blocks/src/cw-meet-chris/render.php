@@ -29,7 +29,7 @@ $image_url = ($selectedName === 'Chris') ? $chris_url : $john_url;
                 <span class="title-4">Ready to sell your house right now?</span>
             </div>
             <div class="cw-meet-chris__footer-block">
-                <a class="cw-meet-chris__cta cta-btn" href="#cw-form">Get my offer <?php echo get_responsive_image('cw-meet-chris/cta-arrow', 'Arrow'); ?></a>
+                <a class="cw-meet-chris__cta green-btn green-btn--arrow cta-btn" href="#cw-form">Get my offer</a>
                 <div class="cw-hero__reviews">
                     <div class="cw-hero__reviews-stars-wrapper">
                         <?php for ($i = 0; $i < 5; $i++): ?>

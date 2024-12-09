@@ -31,7 +31,7 @@ $lc_cta_img_url = plugins_url('src/cw-cta/assets/lc-cta-img.webp', dirname(__FIL
                 <li><?php echo get_responsive_image('cw-cta/check-circle', 'checkmark'); ?>We’ll buy your house in&nbsp;<strong>any condition</strong></li>
                 <li><?php echo get_responsive_image('cw-cta/check-circle', 'checkmark'); ?><strong>No agent fees,</strong>&nbsp;commissions, or hidden costs</li>
             </ul>
-            <a class="cw-cta__cta--button cta-btn" href="#cw-form">GET MY CASH OFFER NOW  <?php echo get_responsive_image('cw-cta/cta-arrow', 'Arrow'); ?></a>
+            <a class="cw-cta__cta--button green-btn green-btn--arrow cta-btn" href="#cw-form">GET MY CASH OFFER NOW</a>
         </div>
         <div class="cw-fresh-start__testimonial">
             <?php echo get_responsive_image('cw-fresh-start/testimonee', 'Leigh Williams', 'cw-fresh-start__testimonee'); ?>

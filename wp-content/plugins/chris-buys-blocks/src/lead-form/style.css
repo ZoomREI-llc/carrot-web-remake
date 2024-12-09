@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
+	gap: 0.625rem;
 	width: 100%;
 }
 
@@ -10,9 +10,9 @@
 	display: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
 	.dh-hero form{
-		gap: 20px;
+		gap: 1.25rem;
 	}
 	.dh-hero__content form {
 		grid-column: 1 / 6;
@@ -22,38 +22,16 @@
 	}
 }
 
-form input,
-form button {
+form input {
 	width: 100%;
 	border-radius: 100vmax;
 }
 
-
-form button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1.25rem 3.75rem;
-	background-color: var(--secondaryYellow);
-	color: #fff;
-	font-weight: bold;
-	gap: 0.625rem;
-	width: max-content;
-	justify-self: center;
-	transition: all 0.2s ease;
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
 	.lead-form__address-btn {
 		padding: 0.625rem 1.25rem;
 		font-size: 1.25rem;
 		flex-shrink: 0;
-	}
-
-	form button {
-		justify-self: start;
-		padding: 1.875rem 3.75rem;
-		font-size: 1.25rem;
 	}
 }
 
@@ -79,7 +57,7 @@ form button {
 .lead-form__fields-btn {
 	display: flex;
 	justify-content: center;
-	margin-top: 10px;
+	margin-top: 0.625rem;
 }
 .lead-form__fields {
 	width: 100%;
@@ -106,13 +84,13 @@ form button {
 }
 
 .input__dropdown ul {
-	padding: 10px 30px;
-	max-height: 260px;
+	padding: 0.625rem 1.875rem;
+	max-height: 16.25rem;
 	overflow-y: auto;
 }
 .input__dropdown li {
-	padding: 10px 15px;
-	margin: 0 -15px;
+	padding: 0.625rem 0.9375rem;
+	margin: 0 -0.9375rem;
 	cursor: pointer;
 	transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
@@ -148,7 +126,7 @@ form button {
 .input.input--squared > label {
 	font-weight: 700 !important;
 	text-transform: uppercase;
-	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
 	display: block;
 	text-align: left;
 	line-height: normal;
@@ -159,15 +137,15 @@ form button {
 .input.input--squared > input {
 	border: 1px solid #afbfcc;
 	border-radius: 3px;
-	padding: 10px 15px;
-	font-size: 14px;
+	padding: 0.625rem 0.9375rem;
+	font-size: 0.875rem;
 	background: #f1f6fa;
 	line-height: normal;
 	color: #000;
 }
 
 .lead-form > .input:not(:last-child) {
-	margin-bottom: 15px;
+	margin-bottom: 0.9375rem;
 }
 
 .lead-form {
@@ -178,7 +156,7 @@ form button {
 	color: #000D17;
 	opacity: .6;
 	text-align: center;
-	margin-top: 18px;
+	margin-top: 1.125rem;
 }
 
 .lead-form__disclaimer::before {
@@ -188,54 +166,23 @@ form button {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 8px;
-	height: 10px;
+	width: 0.5rem;
+	height: 0.625rem;
 }
 
 .lead-form__disclaimer > * {
 	display: inline;
-	font-size: 14px;
+	font-size: 0.875rem;
 	line-height: 114%;
 	text-transform: capitalize;
 }
 
 .lead-form__disclaimer::before {
-	margin-right: 4px;
+	margin-right: 0.25rem;
 }
 
 .lead-form__fields-btn {
-	margin-top: 22px;
-}
-
-
-.lead-form button {
-	font-size: 1rem;
-	padding: .75rem;
-	background-color: #00b43d;
-	width: 100%;
-	text-transform: uppercase;
-	position: relative;
-}
-.lead-form button::after {
-	content: '';
-	position: absolute;
-	top: 50%;
-	right: 1.25rem;
-	width: 1.5rem;
-	height: 1.5rem;
-	transform: translateY(-50%);
-	background-image: var(--loader-gif);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-	opacity: 0;
-}
-.lead-form button.is-loading {
-	opacity: .7;
-	cursor: wait;
-}
-.lead-form button.is-loading::after {
-	opacity: 1;
+	margin-top: 1.375rem;
 }
 
 .form-submit img {
@@ -248,38 +195,31 @@ form button {
 
 
 
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
 	.lead-form__fields-row {
-		margin: 0 -10px;
-		width: calc(100% + 20px);
+		margin: 0 -0.625rem;
+		width: calc(100% + 1.25rem);
 		flex-direction: row;
 		align-items: flex-start;
 	}
 	.lead-form__fields-row > * {
-		margin: 0 10px 20px;
+		margin: 0 0.625rem 1.25rem;
 		align-self: start;
 	}
 
 	.input.input--squared > label {
-		font-size: 14px !important;
+		font-size: 0.875rem !important;
 		line-height: 120%;
-		margin-bottom: 7px;
+		margin-bottom: 0.4375rem;
 	}
 
 	.input.input--squared > input {
-		font-size: 14px;
-		padding: 10px 12px;
+		font-size: 0.875rem;
+		padding: 0.625rem 0.75rem;
 	}
 
 	.lead-form > .input:not(:last-child) {
 		margin-bottom: 1rem;
-	}
-
-	.lead-form button {
-		font-size: 20px;
-		padding: 18px 48px;
-		width: 100%;
-		text-transform: uppercase;
 	}
 
 	.form-submit img {
@@ -287,7 +227,7 @@ form button {
 	}
 
 	.lead-form__disclaimer {
-		margin-top: 15px;
+		margin-top: 0.9375rem;
 	}
 
 }

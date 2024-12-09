@@ -191,15 +191,12 @@
 	padding: 0;
 	margin: 0;
 }
-.cw-sell-today .cw-hero__statistic--item{
-	flex: 0 0 30%;
-	width: 30%;
-}
+
 .cw-sell-today .cw-hero__statistic--amunt {
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 25px;
+	font-size: 1.5625rem;
 	line-height: 1.2;
 	text-transform: uppercase;
 	color: #FFFFFF;
@@ -225,12 +222,7 @@
 		line-height: 1.5;
 	}
 	.cw-sell-today .cw-hero__statistic--amunt {
-		font-size: 40px;
-	}
-	.cw-sell-today .cw-hero__statistic--item{
-		flex: 0 0 max-content;
-		width: max-content;
-		max-width: 31%;
+		font-size: 2.5rem;
 	}
 
 	.cw-sell-today .cw-hero__footer-block{
@@ -246,13 +238,14 @@
 		align-items: flex-start;
 		display: flex;
 		width: 100%;
+		gap: 0.325rem;
 	}
 }
 
 
 
 
-.cw-hero__content,
+.cw-sell-today .cw-hero__content,
 .cw-sell-today__media {
 	grid-column: span 4;
 }
@@ -313,9 +306,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 0.625rem;
 }
 
-.cw-hero__content {
+.cw-sell-today .cw-hero__content {
 	order: 2;
 }
 
@@ -328,15 +322,12 @@
 	height: 16%;
 }
 
-.cw-service__cta {
-	max-width: unset;
-}
 @media (min-width: 769px) {
-	.cw-hero__content,
+	.cw-sell-today .cw-hero__content,
 	.cw-sell-today__media {
 		grid-column: span 6;
 	}
-	.cw-hero__content {
+	.cw-sell-today .cw-hero__content {
 		order: 0;
 	}
 	.cw-sell-today {
@@ -359,10 +350,7 @@
 
 	.cw-sell-today .cw-hero__footer-block {
 		flex-direction: row;
-	}
-
-	.cw-sell-today .cw-hero__footer-block .cw-hero__reviews {
-		margin-left: 1.5rem;
+		gap: 1.5rem;
 	}
 	.cw-sell-today .cw-hero__reviews-text p {
 		font-size: 0.875rem;

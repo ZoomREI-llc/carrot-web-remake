@@ -11,9 +11,8 @@
 	height: 100%;
 	object-fit: cover;
 }
-.cw-hero__reviews-stars-wrapper{
+.cw-meet-chris .cw-hero__reviews-stars-wrapper{
 	display: flex;
-	margin-bottom: 0.3125rem;
 }
 
 .cw-meet-chris__photo img{
@@ -89,38 +88,17 @@
 		align-items: center;
 	}
 }
-.cw-meet-chris__cta {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
-	padding-block: 1.25rem;
-	background-color: #00b43d;
-	color: white;
-	border-radius: 70px;
-	width: 100%;
 
-	font-size: 1.125rem;
-	font-weight: 700;
-
-	text-transform: uppercase;
-	text-decoration: none;
-}
 .cw-meet-chris__footer-block .cw-hero__reviews {
 	margin-top: 1.5rem;
-	flex-direction: row;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 	display: flex;
+	flex-direction: column;
+	gap: 0.425rem;
 }
 
 @media (min-width: 769px) {
-	.cw-meet-chris__cta {
-		max-width: 20rem;
-		/* font-size: 1.25rem; */
-		font-size: 1.125rem;
-		margin-right: 1rem;
-	}
 	.cw-meet-chris__footer-block .cw-hero__reviews-text p {
 		/* font-size: 0.8rem; */
 		font-size: 0.875rem;
@@ -219,10 +197,10 @@
 		width: 100%;
 		padding-top: 145%;
 	}
-	.cw-hero__star {
+	.cw-meet-chris .cw-hero__star {
 		width: 0.9375rem;
 	}
-	.cw-hero__reviews-text {
+	.cw-meet-chris .cw-hero__reviews-text {
 		margin-left: 0;
 	}
 }

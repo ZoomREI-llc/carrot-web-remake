@@ -37,9 +37,8 @@ $form_config = [
   </div>
 
   <div class="lead-form__fields-btn">
-    <button type="submit" class="form-submit">
+    <button type="submit" class="green-btn green-btn--arrow cta-btn">
       <?= $btnText ?>
-      <?php echo get_responsive_image('lead-form/cta-arrow', 'Arrow Icon', 'form-btn-arrow'); ?>
     </button>
   </div>
 </form>

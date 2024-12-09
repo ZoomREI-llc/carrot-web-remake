@@ -79,29 +79,29 @@ function loadCallback() {
 	});
 
 	// Open the first FAQ by default
-	if (faqs.length > 0) {
-		const firstFaq = faqs[0];
-		const firstQuestion = firstFaq.querySelector(".cw-faqs__question");
-		const firstAnswer = firstFaq.querySelector(".cw-faqs__answer");
-		const firstIndicator = firstFaq.querySelector(".cw-faq-indicator");
-
-		firstAnswer.style.height = "auto";
-		const fullHeight = firstAnswer.scrollHeight + 48; // Add padding top and bottom
-		gsap.to(firstAnswer, {
-			height: fullHeight,
-			opacity: 1,
-			paddingTop: "1.5rem",
-			paddingBottom: "1.5rem",
-			duration: 0.5,
-			onComplete: () => {
-				firstAnswer.style.height = "auto";
-			},
-		});
-		firstIndicator.innerHTML = "-";
-		firstQuestion.style.fontWeight = "600";
-
-		firstQuestion.classList.add("_active");
-	}
+	// if (faqs.length > 0) {
+	// 	const firstFaq = faqs[0];
+	// 	const firstQuestion = firstFaq.querySelector(".cw-faqs__question");
+	// 	const firstAnswer = firstFaq.querySelector(".cw-faqs__answer");
+	// 	const firstIndicator = firstFaq.querySelector(".cw-faq-indicator");
+	//
+	// 	firstAnswer.style.height = "auto";
+	// 	const fullHeight = firstAnswer.scrollHeight + 48; // Add padding top and bottom
+	// 	gsap.to(firstAnswer, {
+	// 		height: fullHeight,
+	// 		opacity: 1,
+	// 		paddingTop: "1.5rem",
+	// 		paddingBottom: "1.5rem",
+	// 		duration: 0.5,
+	// 		onComplete: () => {
+	// 			firstAnswer.style.height = "auto";
+	// 		},
+	// 	});
+	// 	firstIndicator.innerHTML = "-";
+	// 	firstQuestion.style.fontWeight = "600";
+	//
+	// 	firstQuestion.classList.add("_active");
+	// }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
