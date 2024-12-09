@@ -2,7 +2,7 @@
     $popupId = substr(wp_generate_uuid4(), 0, 8);;
 ?>
 
-<div class="nhp-exit-popup" id="<?= $popupId ?>" style="display: none;">
+<div class="nhp-exit-popup inter-font" id="<?= $popupId ?>" style="display: none;">
     <div class="nhp-exit-popup__img">
         <?php echo get_responsive_image('nhp-exit-popup/bg', 'Background image'); ?>
     </div>

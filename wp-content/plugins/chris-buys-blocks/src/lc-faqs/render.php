@@ -22,7 +22,7 @@ $faqs = array(
 );
 ?>
 
-<section class="lc-faqs">
+<section class="lc-faqs inter-font">
     <div class="lc-faqs__container">
         <div class="lc-faqs__header">
             <h2 class="lc-faqs__title">Frequently Asked Questions</h2>

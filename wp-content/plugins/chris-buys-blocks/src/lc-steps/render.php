@@ -1,5 +1,5 @@
 
-<section class="lc-steps">
+<section class="lc-steps inter-font">
     <div class="lc-steps__text">
         <h2>House Sales Are Complicated, Right? Not With Us - Just 3 Easy Steps</h2>
         <p>We’ll make a fair cash offer on your home in under 7 minutes.</p>

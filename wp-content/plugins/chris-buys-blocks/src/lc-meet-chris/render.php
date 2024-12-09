@@ -2,7 +2,7 @@
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
 ?>
 
-<section class="lc-meet-chris">
+<section class="lc-meet-chris inter-font">
     <div class="lc-meet-chris__container">
         <div class="lc-meet-chris__content">
             <div class="lc-meet-chris__text">

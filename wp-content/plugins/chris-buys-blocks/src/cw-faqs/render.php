@@ -38,22 +38,24 @@ $faqs = array(
 );
 ?>
 
-<section id='faq' class="cw-faqs">
-    <div class="cw-faqs__header">
-        <h2 class="cw-faqs__prevtitle">FAQs</h2>
-        <h2 class="cw-faqs__title">Frequently Asked <span>Questions</span></h2>
-    </div>
-    <div class="cw-faqs__items">
-        <?php foreach ($faqs as $faq) : ?>
-            <div class="cw-faqs__item">
-                <div class="faq-question cw-faqs__question">
-                    <?php echo esc_html($faq['question']); ?>
-                    <span class="cw-faq-indicator">+</span>
+<section id='faq' class="cw-faqs inter-font">
+    <div class="grid-container">
+        <div class="cw-faqs__header">
+            <span class="pre-title">FAQs</span>
+            <h2 class="title-2">Frequently Asked <span>Questions</span></h2>
+        </div>
+        <div class="cw-faqs__items">
+            <?php foreach ($faqs as $faq) : ?>
+                <div class="cw-faqs__item">
+                    <div class="faq-question cw-faqs__question">
+                        <?php echo esc_html($faq['question']); ?>
+                        <span class="cw-faq-indicator">+</span>
+                    </div>
+                    <div class="cw-faqs__answer">
+                        <?php echo wp_kses_post($faq['answer']); ?>
+                    </div>
                 </div>
-                <div class="cw-faqs__answer">
-                    <?php echo wp_kses_post($faq['answer']); ?>
-                </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>

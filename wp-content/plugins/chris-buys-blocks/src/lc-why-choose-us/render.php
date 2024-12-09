@@ -2,7 +2,7 @@
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
 ?>
 
-<section class="lc-why-choose-us">
+<section class="lc-why-choose-us inter-font">
     <div class="lc-why-choose-us__container">
         <div class="lc-why-choose-us__heading">
             <h2 class="lc-why-choose-us__title">Why Choose Us?</h2>

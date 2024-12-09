@@ -9,7 +9,6 @@
 	}
 }
 .cw-property-management__inner{
-	font-family: "Inter", sans-serif;
 	background-color: #004C8D;
 	display: flex;
 	flex-direction: column;
@@ -31,7 +30,7 @@
 	}
 }
 
-.cw-hero__reviews-stars-wrapper{
+.cw-property-management .cw-hero__reviews-stars-wrapper{
 	display: flex;
 	margin-bottom: 0.3125rem;
 }

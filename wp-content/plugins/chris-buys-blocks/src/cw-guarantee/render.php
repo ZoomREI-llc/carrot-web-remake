@@ -1,5 +1,5 @@
 
-<section class="cw-guarantee--wrapper">
+<section class="cw-guarantee--wrapper inter-font">
     <div class="cw-guarantee__title">
         <h2>Here’s Our Guarantee To You</h2>
         <p>If you need a hassle-free, fast sale, here’s what we guarantee.</p>

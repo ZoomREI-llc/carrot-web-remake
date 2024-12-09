@@ -1,5 +1,5 @@
 
-<div class="lc-virtue-carousel">
+<div class="lc-virtue-carousel inter-font">
     <div class="carousel-track">
         <div class="carousel-item">
             <?php echo get_responsive_image('lc-virtue-carousel/privacy', 'Privacy Icon'); ?>

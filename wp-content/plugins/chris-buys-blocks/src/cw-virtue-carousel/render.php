@@ -1,5 +1,5 @@
 
-<div class="cw-virtue-carousel">
+<div class="cw-virtue-carousel inter-font">
     <div class="cw-carousel-wrapper">
         <div class="cw-carousel-track">
             <div class="cw-carousel-item">

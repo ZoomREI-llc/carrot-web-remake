@@ -1,5 +1,5 @@
 
-<section class="ao-guarantee__wrapper">
+<section class="ao-guarantee__wrapper inter-font">
     <div class="ao-guarantee__title">
         <h2>Here’s Our Guarantee To You</h2>
         <p>If you need a hassle-free, fast sale, here’s what we guarantee.</p>

@@ -3,7 +3,7 @@
 	$phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 ?>
 
-<div class="s2-form-small">
+<div class="s2-form-small inter-font">
 	<div class="s2-form-small__start">
 		<a href="tel:<?php echo $phoneNumber; ?>" class="s2-form-small__start-phone call-btn"><span>Call Us! <br><?php echo $phoneNumber; ?></span></a>
 		<div class="s2-form-small__start-title"><span>Get A Cash Offer in 7 Minutes</span></div>
