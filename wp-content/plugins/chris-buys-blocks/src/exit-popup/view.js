@@ -66,7 +66,7 @@ function exitPopupCallback() {
 
       // Set thresholds
       const distanceThreshold = screenHeight * 0.2; // 20% of screen height
-      const speedThreshold = .7; // px/ms
+      const speedThreshold = .8; // px/ms
 
       if (deltaY < 0 && Math.abs(deltaY) > distanceThreshold && Math.abs(speed) > speedThreshold) {
         showPopup()

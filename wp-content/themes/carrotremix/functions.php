@@ -19,9 +19,10 @@ function carrot_enqueue_assets()
 }
 add_action('wp_enqueue_scripts', 'carrot_enqueue_assets');
 
-// Theme Support
+// Add theme supports
 function chris_buys_homes_theme_support()
 {
+    add_theme_support('title-tag');
     add_theme_support('align-wide');
     add_theme_support('wp-block-styles');
     add_theme_support('editor-styles');
@@ -29,9 +30,9 @@ function chris_buys_homes_theme_support()
     add_editor_style('dist/style.css');
     add_theme_support('custom-logo', array(
         'height' => 'auto',
-        'width' => 260,
+        'width'  => 260,
         'flex-height' => true,
-        'flex-width' => true,
+        'flex-width'  => true,
     ));
     add_theme_support('post-thumbnails');
 }
@@ -954,16 +955,78 @@ function save_market_override_meta_box_data($post_id)
 }
 add_action('save_post', 'save_market_override_meta_box_data');
 
-
-
 // Apply the filter to both title and content
 add_filter('the_content', 'replace_custom_placeholders_multisite');
 add_filter('the_title', 'replace_custom_placeholders_multisite');
 
+// Add a meta box to specify custom paths for the page
+function add_custom_paths_meta_box()
+{
+    add_meta_box(
+        'custom_paths_meta_box',   // Unique ID
+        'Custom Paths',            // Box title
+        'custom_paths_meta_box_callback', // Content callback
+        'page',                    // Post type
+        'side'                     // Context (side, normal, advanced)
+    );
+}
+add_action('add_meta_boxes', 'add_custom_paths_meta_box');
+
+// Display the meta box
+function custom_paths_meta_box_callback($post)
+{
+    // Add a nonce field for security
+    wp_nonce_field('save_custom_paths', 'custom_paths_nonce');
+
+    // Retrieve existing values
+    $custom_slugs = get_post_meta($post->ID, 'custom_slugs', true);
+
+    echo '<p>Enter one or more custom paths (slugs) that will map to this page. ';
+    echo 'Separate multiple slugs by line breaks or commas.</p>';
+    echo '<textarea name="custom_slugs" style="width:100%;height:80px;">' . esc_textarea($custom_slugs) . '</textarea>';
+}
+
+// Save the custom paths when the page is saved
+function save_custom_paths($post_id)
+{
+    // Check if nonce is set
+    if (!isset($_POST['custom_paths_nonce'])) {
+        return;
+    }
+
+    // Verify the nonce
+    if (!wp_verify_nonce($_POST['custom_paths_nonce'], 'save_custom_paths')) {
+        return;
+    }
+
+    // Check for autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    // Check user permissions
+    if ('page' === $_POST['post_type'] && !current_user_can('edit_page', $post_id)) {
+        return;
+    }
+
+    // Get the submitted custom slugs
+    $custom_slugs = isset($_POST['custom_slugs']) ? sanitize_textarea_field($_POST['custom_slugs']) : '';
+
+    // Normalize slugs: split by commas or new lines
+    $slugs = preg_split('/[\r\n,]+/', $custom_slugs);
+    $slugs = array_map('trim', $slugs);
+    $slugs = array_filter($slugs); // remove empty entries
+    $final_slugs = implode("\n", $slugs); // store them line-separated
+
+    // Save the meta
+    update_post_meta($post_id, 'custom_slugs', $final_slugs);
+}
+add_action('save_post', 'save_custom_paths');
+
 // Register custom query variable
 function add_custom_query_vars($vars)
 {
-    $vars[] = 'custom_path';  // Register 'custom_path' as a valid query variable
+    $vars[] = 'custom_path';
     return $vars;
 }
 add_filter('query_vars', 'add_custom_query_vars');
@@ -971,18 +1034,14 @@ add_filter('query_vars', 'add_custom_query_vars');
 // Add rewrite rule for custom paths with conditional multisite support
 function dynamic_landing_page_rewrite_rules()
 {
-    global $wp_rewrite;
-
     if (is_multisite() && ! is_main_site()) {
-        // Multisite sub-site: include blog prefix
         add_rewrite_rule(
             '^ws/(.+)/?',
             'index.php?custom_path=$matches[1]',
             'top',
-            true // Enable blog prefix
+            true
         );
     } else {
-        // Main site or single site: no blog prefix
         add_rewrite_rule(
             '^ws/(.+)/?',
             'index.php?custom_path=$matches[1]',
@@ -992,84 +1051,79 @@ function dynamic_landing_page_rewrite_rules()
 }
 add_action('init', 'dynamic_landing_page_rewrite_rules');
 
-// Handle dynamic path redirection
+// Handle dynamic path resolution early, before template loading
 function handle_dynamic_path_redirect()
 {
-    // Get the custom path from the URL
     $custom_path = get_query_var('custom_path');
-
-    // Debugging: Log the custom_path to ensure it's being captured
     error_log('Custom Path: ' . ($custom_path ? $custom_path : 'No path'));
 
-    // Check if the custom path is empty or if it's a request for a static asset
-    if (empty($custom_path) || preg_match('/\.(?:css|js|png|jpg|jpeg|gif|ico|svg|map)$/', $custom_path)) {
+    // If empty or static file request, do nothing
+    if (empty($custom_path) || preg_match('/\.(css|js|png|jpg|jpeg|gif|ico|svg|map)$/', $custom_path)) {
         error_log('No custom path found or static file request');
-        return;  // Exit early if no custom path is found or it's a static file request
+        return;
     }
 
-    // Query the database for a page with a matching custom URL slug
+    // Query for a page with the 'custom_slugs' meta field instead of the ACF 'custom_url_slugs'
     $args = array(
         'post_type' => 'page',
         'meta_query' => array(
             array(
-                'key'     => 'custom_url_slugs',  // This is the ACF field name
-                'value'   => $custom_path,        // Match the custom path from the URL
+                'key'     => 'custom_slugs',
+                'value'   => $custom_path,
                 'compare' => 'LIKE'
             )
         )
     );
 
-    // Run the query
     $query = new WP_Query($args);
 
-    // Check if a page was found
     if ($query->have_posts()) {
-        $page = $query->posts[0];  // Get the first matching page
+        $page = $query->posts[0];
 
-        // Set up the post data to render the page
-        global $wp_query;
+        // Set the global post/query variables
+        global $wp_query, $post;
         $wp_query->post = $page;
         $wp_query->queried_object = $page;
+        $wp_query->queried_object_id = $page->ID;
         $wp_query->is_page = true;
         $wp_query->is_singular = true;
         $wp_query->is_404 = false;
 
-        // Ensure Gutenberg blocks are parsed correctly
+        $post = $page;
+        setup_postdata($post);
+
+        // Parse and render Gutenberg blocks
         $parsed_content = parse_blocks($page->post_content);
         $rendered_content = '';
         foreach ($parsed_content as $block) {
             $rendered_content .= render_block($block);
         }
 
-        // Output the header with meta tags before rendering content
+        // Output header and footer as before
         carrot_get_header();
-
-        // Output the rendered content
         echo $rendered_content;
-
-        // Output the footer after the content
         carrot_get_footer();
 
         exit;
     } else {
-        // If no matching page is found, return a 404 error
+        // No matching page found, set 404
         global $wp_query;
         $wp_query->is_404 = true;
         status_header(404);
 
-        // Fix: Check if get_404_template() returns a valid path before including
         $template_404 = get_404_template();
         if ($template_404) {
             include($template_404);
         } else {
-            // If no 404 template is found, output a default message or handle accordingly
             echo '404 Not Found';
         }
 
         exit;
     }
 }
-add_action('template_redirect', 'handle_dynamic_path_redirect');
+// Use the 'wp' action, which occurs after the query is set but before the template is loaded.
+// High priority to ensure it's run before templates are chosen.
+add_action('wp', 'handle_dynamic_path_redirect', 1);
 
 // Function to flush rewrite rules for all sites (use cautiously)
 function multisite_flush_rewrite_rules()
@@ -1085,5 +1139,4 @@ function multisite_flush_rewrite_rules()
         flush_rewrite_rules();
     }
 }
-// Hook into 'admin_init' to avoid performance issues on every page load
 add_action('admin_init', 'multisite_flush_rewrite_rules');
