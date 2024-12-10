@@ -84,7 +84,9 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		'lead-form',
         
         'exit-popup',
-        'nhp-exit-popup'
+        'nhp-exit-popup',
+        
+        'cookie-banner'
 	];
 
 	foreach ($blocks as $block) {
