@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "doctor-homes/lead-form",
+    "name": "chris-buys/lead-form",
     "version": "0.1.0",
     "title": "Lead Form V2",
     "category": "widgets",
@@ -10,7 +10,7 @@
     "supports": {
         "html": false
     },
-    "textdomain": "doctor-homes-blocks",
+    "textdomain": "chris-buys-blocks",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",
     "render": "file:./render.php",
