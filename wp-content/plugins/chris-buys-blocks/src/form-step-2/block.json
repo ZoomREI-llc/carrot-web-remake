@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "chris-buys/form-step-2",
+    "version": "0.1.0",
+    "title": "Form Step 2 V2",
+    "category": "widgets",
+    "icon": "feedback",
+    "description": "Form block built for the front-page.",
+    "supports": {
+        "html": false
+    },
+    "textdomain": "chris-buys-blocks",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "render": "file:./render.php",
+    "viewScript": "file:./view.js",
+    "attributes": {
+        "btnText": {
+            "type": "string",
+            "default": "SUBMIT"
+        },
+        "redirectUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "webhooks": {
+            "type": "array",
+            "default": [
+                {"url":"https://hooks.zapier.com/hooks/catch/3840841/o4yfm3b","usePreset":true,"fieldsPreset":"cmsFinal","fieldsMapping":[]}
+            ]
+        },
+        "redirectQuery": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "style": "file:./style-index.css"
+}

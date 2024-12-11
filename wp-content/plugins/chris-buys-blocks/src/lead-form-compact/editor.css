@@ -1,11 +1,10 @@
-.wp-block-chris-buys-s2-form {
+.wp-block-chris-buys-lead-form-compact {
 	padding-block: 1.5rem !important;
-	background-color: #004c8d;
+	background-color: var(--primaryBlue1);
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 	color: white;
 	margin-block: 1rem !important;
 }

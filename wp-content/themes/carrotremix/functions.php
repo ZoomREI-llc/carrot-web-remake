@@ -558,6 +558,13 @@ add_action('rest_api_init', function () {
 // Define the form submission handler
 function handle_lead_form_v2(WP_REST_Request $request)
 {
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
     $form_data = $request->get_params();
     $webhooks = $form_data['webhooks'] ? json_decode($form_data['webhooks'], true) : [];
     $presets = [
@@ -657,6 +664,222 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 "key" => "page_url"
             ],
         ],
+        'cmsContact' => [
+            [
+                "field" => "fullName",
+                "key" => "Name"
+            ],
+            [
+                "field" => "phone",
+                "key" => "Phone"
+            ],
+            [
+                "field" => "propertyAddress",
+                "key" => "Property Address"
+            ],
+            [
+                "field" => "email",
+                "key" => "Email"
+            ],
+            [
+                "field" => "heard_about_us",
+                "key" => "Heard About Us"
+            ],
+            [
+                "field" => "message",
+                "key" => "Message"
+            ],
+            [
+                "field" => "utm_source",
+                "default" => "",
+                "key" => "AdWords - Source"
+            ],
+            [
+                "field" => "utm_campaign",
+                "default" => "",
+                "key" => "AdWords - Campaign"
+            ],
+            [
+                "field" => "utm_term",
+                "default" => "",
+                "key" => "AdWords - Keyword"
+            ],
+            [
+                "field" => "device",
+                "default" => "",
+                "key" => "AdWords - Device"
+            ],
+            [
+                "field" => "gclid",
+                "default" => "",
+                "key" => "Google Click ID"
+            ],
+            [
+                "field" => "page_url",
+                "default" => "",
+                "key" => "UTM LeadSource"
+            ]
+        ],
+        'cmsFinal' => [
+            [
+                "field" => "bedrooms",
+                "key" => "Number of Bedrooms"
+            ],
+            [
+                "field" => "bathrooms",
+                "key" => "Number of Bathrooms"
+            ],
+            [
+                "field" => "garage",
+                "key" => "Garage"
+            ],
+            [
+                "field" => "basement",
+                "key" => "Basement"
+            ],
+            [
+                "field" => "owned",
+                "key" => "How long have you owned the property?"
+            ],
+            [
+                "field" => "condition",
+                "key" => "What is the current condition of the property?"
+            ],
+            [
+                "field" => "repairs",
+                "key" => "What kind of repairs and maintenance does the house need?"
+            ],
+            [
+                "field" => "living",
+                "key" => "Is there anyone living in the house?"
+            ],
+            [
+                "field" => "realtor",
+                "key" => "Is the house currently listed with a realtor?"
+            ],
+            [
+                "field" => "fast",
+                "key" => "Do you need to sell your house fast?"
+            ],
+            [
+                "field" => "soon",
+                "key" => "How soon would you like to sell your property?"
+            ],
+            [
+                "field" => "price",
+                "key" => "Asking Price"
+            ],
+            [
+                "field" => "reason",
+                "key" => "What is the reason you are selling your house?"
+            ],
+            [
+                "field" => "goal",
+                "key" => "What's your ultimate goal with your house?"
+            ],
+            [
+                "field" => "fullName",
+                "key" => "Full Name"
+            ],
+            [
+                "field" => "phone",
+                "key" => "Phone"
+            ],
+            [
+                "field" => "email",
+                "key" => "Email"
+            ],
+            
+            [
+                "field" => "landline",
+                "key" => "Landline"
+            ],
+            [
+                "field" => "bestTime",
+                "key" => "Best Time to Call"
+            ],
+            
+            
+            [
+                "field" => "propertyAddress",
+                "key" => "Property Address"
+            ],
+            [
+                "field" => "street",
+                "key" => "Property Address (Street Address)"
+            ],
+            [
+                "field" => "city",
+                "key" => "Property Address (City)"
+            ],
+            [
+                "field" => "state",
+                "key" => "Property Address (State / Province)"
+            ],
+            [
+                "field" => "zipcode",
+                "key" => "Property Address (Zip / Postal Code)"
+            ],
+            [
+                "field" => "country",
+                "key" => "Property Address (Country)"
+            ],
+            
+            
+            [
+                "field" => "form_name",
+                "key" => "Form Title"
+            ],
+            [
+                "field" => "entry_id",
+                "key" => "Entry ID"
+            ],
+            [
+                "field" => "timestamp",
+                "key" => "Entry Date"
+            ],
+            [
+                "field" => "userIp",
+                "default" => $ip,
+                "key" => "User IP"
+            ],
+            [
+                "field" => "page_url",
+                "key" => "Source Url"
+            ],
+            
+            
+            [
+                "field" => "utm_source",
+                "default" => "",
+                "key" => "AdWords - Source"
+            ],
+            [
+                "field" => "utm_campaign",
+                "default" => "",
+                "key" => "AdWords - Campaign"
+            ],
+            [
+                "field" => "utm_term",
+                "default" => "",
+                "key" => "AdWords - Keyword"
+            ],
+            [
+                "field" => "device",
+                "default" => "",
+                "key" => "AdWords - Device"
+            ],
+            [
+                "field" => "gclid",
+                "default" => "",
+                "key" => "Google Click ID"
+            ],
+            [
+                "field" => "page_url",
+                "default" => "",
+                "key" => "UTM LeadSource"
+            ]
+        ],
     ];
     $fieldDatas = [];
     foreach ($webhooks as $webhook) {
@@ -664,13 +887,13 @@ function handle_lead_form_v2(WP_REST_Request $request)
             continue;
         }
         $fieldData = [];
-
+        
         if ($webhook['usePreset']) {
             $mapping = $presets[$webhook['fieldsPreset']];
         } else {
             $mapping = $webhook['fieldsMapping'];
         }
-
+        
         foreach ($mapping as $field) {
             if (!$field['field'] || !$field['key']) {
                 continue;
@@ -681,12 +904,12 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 $fieldData[$field['key']] = $field['default'];
             }
         }
-
+        
         $fieldDatas[] = [
             'url' => $webhook['url'],
             'body' => $fieldData
         ];
-
+        
         if (!empty($fieldData)) {
             $response = wp_remote_post($webhook['url'], array(
                 'body' => json_encode($fieldData),
@@ -694,15 +917,15 @@ function handle_lead_form_v2(WP_REST_Request $request)
                     'Content-Type' => 'application/json',
                 ),
             ));
-
+            
             if (is_wp_error($response)) {
                 return new WP_REST_Response('Error sending data to webhook', 500);
             }
         }
     }
     wp_send_json_success($fieldDatas);
-
-
+    
+    
     return new WP_REST_Response('Form submitted successfully', 200);
 }
 

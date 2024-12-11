@@ -3,8 +3,6 @@ import { useBlockProps, InspectorControls, InnerBlocks } from "@wordpress/block-
 import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import "./editor.css";
 
-const ALLOWED_BLOCKS = ["gravityforms/form"];
-
 export default function Edit({ attributes, setAttributes }) {
 	const { selectedName, phoneNumber } = attributes;
 
@@ -38,7 +36,7 @@ export default function Edit({ attributes, setAttributes }) {
 			</InspectorControls>
 
 			<h3>{__("Step 2 Form NHP", "chris-buys")}</h3>
-			<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+			<InnerBlocks />
 		</div>
 	);
 }

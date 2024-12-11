@@ -1,7 +1,8 @@
-.wp-block-chris-buys-s2-form {
+.wp-block-chris-buys-form-step-2 {
 	padding-block: 1.5rem !important;
-	background-color: #004c8d;
-	width: 100%;
+	background-color: var(--primaryBlue1);
+	width: 35vw;
+	margin-top: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
