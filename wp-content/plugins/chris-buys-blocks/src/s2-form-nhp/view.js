@@ -97,7 +97,7 @@ function loadCallback() {
 	});
 
 	if(document.querySelector('[data-js-validation]')){
-		document.addEventListener('lead-form-final-success', function(){
+		document.addEventListener('form-submit-success', function(){
 			window.dataLayer = window.dataLayer || [];
 
 			// Push the event

@@ -63,6 +63,8 @@ function loadCallback() {
 
 			if(typeof jQuery !== 'undefined') {
 				jQuery('html, body').animate({scrollTop: 0}, 300);
+			} else {
+				window.scrollTo(0,0)
 			}
 			trigger(activePage, 'show');
 		}
@@ -85,7 +87,7 @@ function loadCallback() {
 	})
 
 	if(document.querySelector('.lead-form-final')){
-		document.addEventListener('lead-form-final-success', function(){
+		document.addEventListener('form-submit-success', function(){
 			window.dataLayer = window.dataLayer || [];
 
 			// Push the event

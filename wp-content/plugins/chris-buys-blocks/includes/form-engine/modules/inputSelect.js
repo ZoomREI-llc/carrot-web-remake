@@ -1,4 +1,4 @@
-import { fadeIn, fadeOut, slideUp, slideDown, dynamicListener, trigger } from "./helpers";
+import { fadeIn, fadeOut, slideUp, slideDown, dynamicListener, trigger } from "./helpers.js";
 
 export function dropdown(options) {
 	let opts = {

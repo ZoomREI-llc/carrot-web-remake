@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	anchors.forEach(function (item) {
 		item.addEventListener("click", function (e) {
-			if(!document.querySelector(item.getAttribute("href")) || document.querySelector(item.getAttribute("href").classList.contains('.popup'))){
+			if(!document.querySelector(item.getAttribute("href")) || document.querySelector(item.getAttribute("href")).classList.contains('popup')){
 				return;
 			}
 			// убираем стандартное поведение
