@@ -9,7 +9,8 @@ $form_config = [
 ];
 ?>
 <script type="application/json" id="form-config-<?= $short_id ?>"><?= json_encode($form_config) ?></script>
-<form id="<?= $short_id ?>" name="lead_form_v2" class="lead-form-contact" method="POST" style="--loader-gif: url('<?php echo get_image_url('lead-form-contact/loader'); ?>');">
+
+<form id="<?= $short_id ?>" name="lead_form_v2" class="lead-form-contact" data-submit-event="submitStep1" method="POST" style="--loader-gif: url('<?php echo get_image_url('lead-form-contact/loader'); ?>');">
     <input type="hidden" name="entry_id" value="<?= $short_id ?>" autocomplete="off">
     <input type="hidden" name="street" value="" autocomplete="off">
     <input type="hidden" name="city" value="" autocomplete="off">
@@ -78,7 +79,6 @@ $form_config = [
     <div class="lead-form-contact__btn">
         <button type="submit" class="green-btn green-btn--arrow cta-btn">
             <?= $btnText ?>
-            <?php echo get_responsive_image('lead-form-contact/cta-arrow', 'Arrow Icon', 'form-btn-arrow'); ?>
         </button>
     </div>
 </form>
@@ -105,4 +105,8 @@ $form_config = [
       },
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initFormEngine(document.getElementById('<?= $short_id ?>'));
+  });
 </script>

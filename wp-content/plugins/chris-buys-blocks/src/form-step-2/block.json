@@ -27,7 +27,7 @@
         "webhooks": {
             "type": "array",
             "default": [
-                {"url":"https://hooks.zapier.com/hooks/catch/3840841/o4yfm3b","usePreset":true,"fieldsPreset":"cmsFinal","fieldsMapping":[]}
+                {"url":"https://hooks.zapier.com/hooks/catch/3840841/o4yfm3b","usePreset":true,"fieldsPreset":"cmsStep2","fieldsMapping":[]}
             ]
         },
         "redirectQuery": {
