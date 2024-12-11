@@ -74,7 +74,9 @@ function loadCallback() {
 				gsap.set(newPage, { display: "block", opacity: 1, x: 0 });
 			}
 
-			jQuery("html, body").animate({ scrollTop: 0 }, 300);
+			if(typeof jQuery !== 'undefined') {
+				jQuery('html, body').animate({scrollTop: 0}, 300);
+			}
 			trigger(activePage, "show");
 		}
 
@@ -94,18 +96,32 @@ function loadCallback() {
 		timing: 500,
 	});
 
-	jQuery(document).bind("gform_confirmation_loaded", function (event, formId) {
-		// Initialize dataLayer if it doesn't exist
-		window.dataLayer = window.dataLayer || [];
+	if(document.querySelector('[data-js-validation]')){
+		document.addEventListener('lead-form-final-success', function(){
+			window.dataLayer = window.dataLayer || [];
 
-		// Push the event
-		window.dataLayer.push({
-			event: "lead_step_2",
+			// Push the event
+			window.dataLayer.push({
+				'event': 'lead_step_2'
+			});
+
+			// Show thank you page
+			pagesInstance.show('thanks')
 		});
+	} else if(typeof jQuery !== 'undefined') {
+		jQuery(document).bind('gform_confirmation_loaded', function (event, formId) {
+			// Initialize dataLayer if it doesn't exist
+			window.dataLayer = window.dataLayer || [];
 
-		// Show thank you page
-		pagesInstance.show("thanks");
-	});
+			// Push the event
+			window.dataLayer.push({
+				'event': 'lead_step_2'
+			});
+
+			// Show thank you page
+			pagesInstance.show('thanks');
+		});
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -1,0 +1,386 @@
+
+@media (min-width: 769px) {
+	.lead-form__address-btn {
+		padding: 0.625rem 1.25rem;
+		font-size: 1.25rem;
+		flex-shrink: 0;
+	}
+}
+
+.lead-form-final .form-btn-arrow {
+	display: flex;
+	width: 1.25rem;
+	height: auto;
+}
+
+.lead-form-final .input.input--select {
+	position: relative;
+}
+
+.lead-form-final .input.input--select .output_text {
+	cursor: pointer;
+}
+
+.lead-form-final .input__dropdown {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -0.3125rem;
+	transform: translateY(100%);
+	background: #fff;
+	border-radius: 1.5625rem;
+	color: #000;
+	text-align: left;
+}
+
+.lead-form-final .input__dropdown ul {
+	padding: 0.625rem 1.875rem;
+	max-height: 16.25rem;
+	overflow-y: auto;
+}
+
+.lead-form-final .input__dropdown li {
+	padding: 0.625rem 0.9375rem;
+	margin: 0 -0.9375rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.lead-form-final .input__dropdown li:hover {
+	background-color: #f5f5f5;
+}
+
+.lead-form-final .input__dropdown li.is-selected {
+	background-color: transparent;
+	color: #dfa01f;
+	cursor: default;
+}
+
+.lead-form-final .input.is-error input,
+.lead-form-final .input.is-error select,
+.lead-form-final .input.is-error textarea {
+	border-color: #c02b0a !important;
+}
+
+.lead-form-final .input__message > * {
+	background-color: #feebe7;
+	border: 1px solid #c02b0a;
+	border-radius: 0.25rem;
+	color: #c02b0a;
+	font-size: 0.75rem;
+	line-height: 0.75rem;
+	margin-top: 0.5rem;
+	padding: 0.5rem;
+}
+
+.lead-form-final .input.input--squared > label {
+	font-weight: 700 !important;
+	font-size: 0.75rem !important;
+	line-height: 0.74;
+	text-transform: uppercase;
+	color: #000;
+	margin-bottom: 0.625rem;
+	display: block;
+	text-align: left;
+}
+
+.lead-form-final .input.input--squared > input {
+	border: 1px solid #afbfcc;
+	border-radius: 3px;
+	padding: 0.625rem 0.9375rem;
+	font-size: 0.875rem;
+	background: #f1f6fa;
+	line-height: normal;
+	color: #000;
+}
+
+.lead-form-final > .input:not(:last-child) {
+	margin-bottom: 0.9375rem;
+}
+
+.lead-form-final {
+	width: 100%;
+	text-align: left;
+}
+
+.lead-form-final__disclaimer {
+	color: #000D17;
+	opacity: 0.6;
+	text-align: center;
+	margin-top: 1.125rem;
+}
+
+.lead-form-final__disclaimer::before {
+	content: '';
+	display: inline-block;
+	background-image: url('data:image/svg+xml,%3Csvg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M7.00663 4.6459H6.59326H6.59316V3.23091C6.59314 1.73372 5.33979 0.515625 3.79919 0.515625C2.25868 0.515625 1.00529 1.73372 1.00529 3.23093V4.64592H0.59184C0.265002 4.64592 0 4.90342 0 5.22108V5.57097V9.56274V9.91262C0 10.2303 0.264981 10.4878 0.59184 10.4878H3.79921H7.00663C7.33347 10.4878 7.59843 10.2303 7.59843 9.91262V9.56274V5.57097V5.22108C7.59843 4.9034 7.33347 4.6459 7.00663 4.6459ZM4.42915 8.76587H3.1693L3.39478 7.72169C3.18391 7.59128 3.04306 7.36356 3.04306 7.10265C3.04306 6.69682 3.38163 6.36782 3.79921 6.36782C4.21682 6.36782 4.55533 6.69682 4.55533 7.10265C4.55533 7.36356 4.41452 7.59128 4.20367 7.72165L4.42915 8.76587ZM5.59624 4.6459H3.79921H2.0023H2.00219V3.23091C2.00219 2.26784 2.80828 1.48446 3.79921 1.48446C4.79018 1.48446 5.59624 2.26786 5.59624 3.23091V4.6459Z" fill="%23000D17"/%3E%3C/svg%3E%0A');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 0.5rem;
+	height: 0.625rem;
+}
+
+.lead-form-final__disclaimer > * {
+	display: inline;
+	font-size: 0.875rem;
+	line-height: 1.14;
+	text-transform: capitalize;
+}
+
+.lead-form-final__disclaimer::before {
+	margin-right: 0.25rem;
+}
+
+.lead-form-final .input.input--squared input::placeholder {
+	color: #333 !important;
+	opacity: 0.5 !important;
+}
+
+@media (min-width: 769px) {
+	.lead-form-final .input.input--squared > label {
+		font-size: 0.875rem !important;
+		line-height: 1.2;
+		margin-bottom: 0.4375rem;
+	}
+
+	.lead-form-final .input.input--squared > input {
+		font-size: 1rem;
+		padding: 0.9375rem 1.125rem;
+	}
+
+	.lead-form-final > .input:not(:last-child) {
+		margin-bottom: 0.625rem;
+	}
+
+	.lead-form-final__disclaimer {
+		margin-top: 0.9375rem;
+	}
+}
+
+
+
+
+
+.lead-form-final__row > * {
+	margin-bottom: 1.5rem;
+}
+.input__row {
+	display: flex;
+	flex-direction: column;
+}
+
+.input__row > :not(:last-child) {
+	margin-bottom: 0.875rem;
+}
+
+.lead-form-final__btn {
+	margin-top: .5rem;
+	display: flex;
+	justify-content: center;
+}
+
+
+.input.input--underline {
+	display: flex;
+	flex-direction: column;
+	padding: 0 !important;
+	border: 0 !important;
+	align-items: flex-start;
+	gap: 0;
+}
+.input.input--underline.address-wrapper{
+	border: 0 !important;
+}
+.input.input--underline label {
+	font-weight: 600;
+	font-size: 0.75rem;
+	line-height: 167%;
+}
+.input.input--underline input,
+.input.input--underline textarea {
+	padding: 0.3125rem 0;
+	border: 0 !important;
+	border-bottom: 1px solid #3C4B5F !important;
+	border-radius: 0 !important;
+	font-size: 0.875rem;
+	outline: none !important;
+	resize: none;
+	width: 100%;
+	min-height: 2.1875rem;
+}
+.input.input--underline textarea {
+	height: 8.25rem;
+}
+.input.input--underline .input__message {
+	display: none;
+	position: static;
+	transform: none;
+	width: 100%;
+	border-radius: 0 !important;
+	margin-top: 0.5rem;
+	margin-bottom: -0.75rem;
+}
+.input.input--underline.is-error .input__message {
+	display: block;
+}
+.input.input--underline .input__message > * {
+	border-radius: 0;
+	padding: .5rem 0.75rem;
+}
+
+
+
+
+
+.input.input--checkboxes > label {
+	font-size: 0.875rem;
+	line-height: 143%;
+	margin-bottom: 1.25rem;
+	display: block;
+}
+
+.input--radio {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.input--radio input {
+	position: absolute;
+	left: -99999px;
+}
+
+.input--radio > span {
+	display: inline-block;
+	padding-left: 1.4375rem;
+	font-size: 0.75rem;
+	line-height: 167%;
+	color: #000;
+	position: relative;
+}
+.input--radio > span::before {
+	content: '';
+	position: absolute;
+	width: 0.8125rem;
+	height: 0.8125rem;
+	top: 0.1875rem;
+	left: 0;
+	background: #E0E0E0;
+	border-radius: 50%;
+}
+.input--radio input:checked + span::before {
+	background-color: #000;
+	background-image: url('data:image/svg+xml,%3Csvg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M8.38969 0.8115L4.07169 6.2105L0.679688 3.3835L1.31969 2.6155L3.92769 4.7885L7.60969 0.1875L8.38969 0.8115Z" fill="white"/%3E%3C/svg%3E');
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+@media (min-width: 769px) {
+	.input__row {
+		flex-direction: row;
+	}
+	.input__row > :not(:last-child) {
+		margin-bottom: 0;
+		margin-right: 0.875rem;
+	}
+
+
+
+	.lead-form-final__row > * {
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+
+	.lead-form-final__row {
+		display: flex;
+		align-items: flex-start;
+		gap: 1.5rem;
+	}
+
+	.lead-form-final__btn {
+		justify-content: flex-start;
+	}
+	.contact-form__details {
+		align-self: flex-start;
+	}
+}
+
+
+
+
+.lead-form-final__section {
+	padding: 2.5rem 0 1.25rem;
+	background: #fff;
+	margin-bottom: 0.625rem;
+}
+
+.lead-form-final__title > * {
+	font-size: 2.25rem;
+	line-height: 111%;
+	text-align: center;
+	color: #151111;
+}
+.lead-form-final__title {
+	margin-bottom: 2.125rem;
+}
+.lead-form-final__row:last-child {
+	margin-bottom: -1.5rem;
+}
+
+
+
+
+
+.input.input--rounded {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.input.input--rounded > input, .input.input--rounded > select, .input.input--rounded > textarea {
+	width: 100%;
+	font-size: 0.875rem;
+	line-height: normal;
+	letter-spacing: 0.01em;
+	padding: 0.875rem 1.125rem;
+	border: 1px solid #ddd;
+	border-radius: 0.3125rem !important;
+	background: #fff;
+	outline: 0;
+}
+.input.input--rounded > textarea{
+	height: 100px;
+	resize: none;
+}
+.input.input--rounded > label {
+	font-size: 1rem;
+	margin-bottom: 0.625rem;
+	line-height: normal;
+}
+.input.is-error .input__message{
+	display: block;
+}
+.input__message{
+	display: none;
+	width: 100%;
+	margin-bottom: -0.625rem;
+}
+
+@media (min-width: 769px) {
+	.lead-form-final__section {
+		padding: 2.5rem 5rem 1.25rem;
+	}
+
+	.lead-form-final__title > * {
+		font-weight: 600;
+	}
+	.lead-form-final__btn {
+		margin-top: 2.25rem;
+		justify-content: center;
+	}
+
+}

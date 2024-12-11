@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ? parentSection.id || parentSection.className
         : "unknown";
 
-      dataLayer.push({
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
         event: "call_click",
         call_click_id: callButton.id,
         call_click_location: location,
@@ -27,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ? parentSection.id || parentSection.className
         : "unknown";
 
-      dataLayer.push({
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
         event: "cta_click",
         cta_text: event.target.innerText,
         cta_section_name: sectionName,
@@ -66,7 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const label = findLabel(event.target);
         const labelText = label ? label.innerText.trim() : "unknown";
 
-        dataLayer.push({
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
           event: "form_field_focus",
           form_id: form.id,
           form_name: form.name,
@@ -104,7 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const labelText = label ? label.innerText.trim() : "unknown";
         const fieldValue = event.target.value || "";
 
-        dataLayer.push({
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
           event: "form_field_blur",
           form_id: form.id,
           form_name: form.name,
