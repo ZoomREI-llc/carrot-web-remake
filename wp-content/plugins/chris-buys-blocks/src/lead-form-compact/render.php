@@ -1,4 +1,8 @@
-<form id="dh-lead-form-multistep" name="lead_form_v2" class="lead-form-multistep" action="/wp-json/custom/v1/submit-form" method="POST" data-redirect="/step-2">
+<?php
+    $short_id = substr(wp_generate_uuid4(), 0, 8);
+?>
+
+<form id="<?= $short_id ?>" name="lead_form_v2" class="lead-form-multistep" data-submit-event="submitStep1" action="/wp-json/custom/v1/submit-form" method="POST" data-redirect="/step-2">
     <input type="hidden" name="street" value="" autocomplete="off">
     <input type="hidden" name="city" value="" autocomplete="off">
     <input type="hidden" name="state" value="" autocomplete="off">
@@ -53,20 +57,29 @@
 </form>
 
 <script>
+  if(typeof validationErrors === 'undefined') {
     let validationErrors = {
-        "required": "This field is required",
-        "invalid": "This field is invalid",
+      "required": "This field is required",
+      "invalid": "This field is invalid",
 
-        "email": {
-            "regex": "The E-mail must be a valid email address.",
-            "required": "E-mail is required."
-        },
-        "name": {
-            "required": "Please enter your full name."
-        },
-        "tel-mask": {
-            "required": "Please enter your phone number.",
-            "telMask": "Phone number is invalid."
-        },
+      "address-autocomplete": {
+        "addressAutocomplete": "Please re-enter and select your address from the dropdown"
+      },
+      "email": {
+        "regex": "The E-mail must be a valid email address.",
+        "required": "E-mail is required."
+      },
+      "name": {
+        "required": "Please enter your full name."
+      },
+      "tel-mask": {
+        "required": "Please enter your phone number.",
+        "telMask": "Phone number is invalid."
+      },
     }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initFormEngine(document.getElementById('<?= $short_id ?>'));
+  });
 </script>
