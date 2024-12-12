@@ -1,0 +1,276 @@
+.cookie-banner-consent {
+	display:none;
+	position:fixed;
+	z-index:10;
+	box-shadow:0 0.25rem 0.5rem 0 rgba(0,0,0,0.02),0 0.5625rem 1rem 0 rgba(0,0,0,0.03),0 1rem 1.4375rem 0 rgba(0,0,0,0.04),0 1.8125rem 1.875rem 0 rgba(0,0,0,0.04),0 3.4375rem 2.5625rem 0 rgba(0,0,0,0.05),0 8.1875rem 5rem 0 rgba(0,0,0,0.07);
+	border-radius:1.25rem;
+	left:1.25rem;
+	bottom:1.25rem;
+	max-width:unset;
+	width:calc(100% - 2.5rem)
+}
+
+.cookie-banner-consent-btn.btn {
+	display:none;
+	position:fixed;
+	z-index:10;
+	box-shadow:0 0.25rem 0.5rem 0 rgba(0,0,0,0.02),0 0.5625rem 1rem 0 rgba(0,0,0,0.03),0 1rem 1.4375rem 0 rgba(0,0,0,0.04),0 1.8125rem 1.875rem 0 rgba(0,0,0,0.04),0 3.4375rem 2.5625rem 0 rgba(0,0,0,0.05),0 8.1875rem 5rem 0 rgba(0,0,0,0.07);
+	border-radius:50%;
+	width:2.8125rem;
+	height:2.8125rem;
+	min-width:unset;
+	padding:0;
+	background-color:#fff;
+	left:1.25rem;
+	bottom:1.25rem;
+	align-items:center;
+	justify-content:center
+}
+
+.cookie-banner-consent-btn.btn > svg {
+	width:1.25rem;
+	height:1.25rem;
+	margin-right:0
+}
+
+.cookie-banner-consent-btn.btn > svg path {
+	transition:fill .3s ease;
+	fill:#000
+}
+
+.cookie-banner-consent__wrapper {
+	padding:2.5rem 1.125rem
+}
+
+.cookie-banner-consent__accordion {
+	margin-bottom:1.25rem
+}
+
+.cookie-banner-consent__accordion-btn {
+	position:relative;
+	width:max-content;
+	max-width:100%;
+	padding-right:1.25rem;
+	text-transform:uppercase;
+	font-weight:600;
+	color:#000;
+	display:block;
+	padding-bottom:0;
+	font-size:0.75rem;
+	line-height:100%
+}
+
+.cookie-banner-consent__accordion-btn::before {
+	content:"";
+	position:absolute;
+	right:0;
+	top:0.0625rem;
+	background-image:url('data:image/svg+xml,%3Csvg fill="%23000000" height="50rem" width="50rem" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 407.437 407.437" xml:space="preserve"%3E%3Cpolygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/%3E%3C/svg%3E');
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	pointer-events:none;
+	width:0.6875rem;
+	height:0.6875rem
+}
+
+.cookie-banner-consent__list {
+	display:none;
+	padding-top:0.4375rem
+}
+
+.cookie-banner-consent__list > :not(:last-child) {
+	margin-bottom:0.3125rem
+}
+
+.cookie-banner-consent__buttons {
+	display:flex;
+	flex-direction:column;
+	margin:unset
+}
+
+.cookie-banner-consent__buttons > * {
+	flex-grow:1;
+	flex-basis:0
+}
+
+.cookie-banner-consent__buttons > :not(:last-child) {
+	margin:0 0 0.625rem
+}
+
+.cookie-banner-consent__button .btn {
+	padding:1.25rem;
+	line-height:100%
+}
+
+.cookie-banner-consent__button .btn > svg {
+	width:.875rem;
+	height:.6875rem;
+	margin-right:.625rem
+}
+
+.cookie-banner-consent__button .btn--transparent {
+	padding:1.215625rem 1.25rem
+}
+
+.cookie-banner-consent__close {
+	position:absolute;
+	top:1.25rem;
+	right:1.25rem;
+	width:1.25rem;
+	height:1.25rem
+}
+
+.cookie-banner-consent__close > svg {
+	width:100%;
+	height:100%;
+	object-fit:contain
+}
+
+.cookie-banner-consent__close > svg rect {
+	transition:fill .3s ease
+}
+
+.cookie-banner-consent .input-checkbox {
+	font-size:0.875rem
+}
+
+.cookie-banner-consent {
+	z-index:999;
+	left:0;
+	bottom:0;
+	width:100%;
+	background:#00294C;
+	border-radius:0;
+	color:#fff
+}
+
+.cookie-banner-consent__close {
+	position:absolute;
+	top:1rem;
+	right:.5rem;
+	width:1.25rem;
+	height:1.25rem;
+	background-image:url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="white"/%3E%3Cpath d="M14 14H12.7241L10.0064 10.5937L7.28868 14H6L9.31738 9.89805L6.19139 6H7.48006L10.0064 9.2024L12.5199 6H13.8086L10.6954 9.88606L14 14Z" fill="white"/%3E%3C/svg%3E%0A');
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	cursor:pointer
+}
+
+.cookie-banner-consent__wrapper {
+	padding:1rem
+}
+
+.cookie-banner-consent__title {
+	margin-bottom:1rem
+}
+
+.cookie-banner-consent__text {
+	margin-bottom:1rem
+}
+
+.cookie-banner-consent__accordion-btn {
+	color:#fff
+}
+
+.cookie-banner-consent__accordion-btn::before {
+	background-image:url("data:image/svg+xml,%3Csvg fill=\"%23fff\" height=\"50rem\" width=\"50rem\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 407.437 407.437\" xml:space=\"preserve\"%3E%3Cpolygon points=\"386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 \"/%3E%3C/svg%3E")
+}
+
+.cookie-banner-consent__buttons {
+	gap:.5rem
+}
+
+.cookie-banner-consent__buttons > :not(:last-child) {
+	margin:0
+}
+
+.cookie-banner-consent .input-checkbox {
+	display:block
+}
+
+.cookie-banner-consent__buttons .green-btn {
+	padding-left:1.5rem;
+	padding-right:1.5rem
+}
+
+.green-btn.green-btn--transparent {
+	background:transparent!important;
+	border:0.0625rem solid
+}
+
+.cookie-banner-consent__text {
+	font-size: 0.875rem;
+}
+
+@media (min-width: 769px) {
+	.cookie-banner-consent {
+		left:2.5rem;
+		bottom:2.5rem;
+		max-width:33.75rem;
+		width:100%
+	}
+
+	.cookie-banner-consent__wrapper {
+		padding:2.5rem
+	}
+
+	.cookie-banner-consent__buttons {
+		flex-direction:row;
+		margin:0 -.625rem
+	}
+
+	.cookie-banner-consent__buttons > * {
+		margin:0 .625rem
+	}
+
+	.cookie-banner-consent__buttons > :not(:last-child) {
+		margin-bottom:0
+	}
+
+	.cookie-banner-consent-btn.btn {
+		left:2.5rem;
+		bottom:2.5rem
+	}
+
+	.cookie-banner-consent__accordion {
+		margin-bottom:1.25rem
+	}
+
+	.cookie-banner-consent__accordion-btn {
+		font-size:.8125rem
+	}
+
+	.cookie-banner-consent__accordion-btn::before {
+		width:.75rem;
+		height:.75rem
+	}
+
+	.cookie-banner-consent__list {
+		padding-top:.625rem
+	}
+
+	.cookie-banner-consent__list > :not(:last-child) {
+		margin-bottom:.9375rem
+	}
+
+	.cookie-banner-consent__buttons .green-btn {
+		width:100%
+	}
+
+	.cookie-banner-consent__wrapper {
+		padding:1.5rem
+	}
+
+	.cookie-banner-consent__close {
+		right:1rem
+	}
+
+	.cookie-banner-consent__title {
+		padding-right:1.5rem
+	}
+	.cookie-banner-consent__text {
+		font-size: 1rem;
+	}
+}
