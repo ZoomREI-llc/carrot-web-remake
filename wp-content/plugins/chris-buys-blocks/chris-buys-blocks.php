@@ -79,19 +79,21 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		's2-form-cw',
 		's2-form-nhp',
 		's2-as-seen-on-carousel',
-  
+
 		'cw-hero-v2',
-  
+		'cw-hero-dynamic', //namespace prefix issue
+
 		'lead-form',
-        'lead-form-compact',
-        'lead-form-consent',
-        'lead-form-contact',
-        'form-step-2',
-        
-        'exit-popup',
-        'nhp-exit-popup',
-        
-        'cookie-banner'
+		'lead-form-compact',
+		'lead-form-consent',
+		'lead-form-contact',
+		'form-step-2',
+
+		'exit-popup',
+		'nhp-exit-popup',
+
+		'cookie-banner',
+		'cookie-banner-consent', //namespace prefix issue
 	];
 
 	foreach ($blocks as $block) {

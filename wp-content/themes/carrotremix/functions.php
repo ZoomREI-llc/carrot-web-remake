@@ -796,6 +796,36 @@ add_action('save_post', 'save_market_override_meta_box_data');
 add_filter('the_content', 'replace_custom_placeholders_multisite');
 add_filter('the_title', 'replace_custom_placeholders_multisite');
 
+function cbh_get_site_data()
+{
+    static $site_data = null;
+    if ($site_data !== null) {
+        return $site_data;
+    }
+
+    $site_id = get_current_blog_id();
+    $site_data = array(
+        'phone' => get_blog_option($site_id, 'phone', ''),
+        'company_name' => get_blog_option($site_id, 'company_name', ''),
+        'address' => get_blog_option($site_id, 'address', ''),
+        'street_address' => get_blog_option($site_id, 'street_address', ''),
+        'city' => get_blog_option($site_id, 'city', ''),
+        'state' => get_blog_option($site_id, 'state', ''),
+        'zipcode' => get_blog_option($site_id, 'zipcode', ''),
+        'email' => get_blog_option($site_id, 'email', ''),
+        'facebook_link' => get_blog_option($site_id, 'facebook_link', ''),
+        'twitter_link' => get_blog_option($site_id, 'twitter_link', ''),
+        'youtube_link' => get_blog_option($site_id, 'youtube_link', ''),
+        'linkedin_link' => get_blog_option($site_id, 'linkedin_link', ''),
+        'instagram_link' => get_blog_option($site_id, 'instagram_link', ''),
+        'pinterest_link' => get_blog_option($site_id, 'pinterest_link', ''),
+        'zillow_link' => get_blog_option($site_id, 'zillow_link', ''),
+        'market_code' => get_blog_option($site_id, 'market_code', ''),
+    );
+
+    return $site_data;
+}
+
 // Add Custom Paths Meta Box
 function add_custom_paths_meta_box()
 {
