@@ -1,7 +1,7 @@
 <?php
-$site_id = get_current_blog_id();
-$market_city = get_blog_option($site_id, 'market_city', '');
-$market_code = get_blog_option($site_id, 'market_code', '');
+$site_data = cbh_get_site_data();
+$market_code = $site_data['market_code'];
+$market_city = $site_data['market_city'];
 
 $phone_numbers = [
     'sf'  => '(510) 283-9871',

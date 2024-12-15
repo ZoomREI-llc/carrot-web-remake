@@ -79,21 +79,21 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		's2-form-cw',
 		's2-form-nhp',
 		's2-as-seen-on-carousel',
-  
+
 		'cw-hero-v2',
-		'cw-hero-dynamic',
-  
+		'cw-hero-dynamic', //namespace prefix issue
+
 		'lead-form',
-        'lead-form-compact',
-        'lead-form-consent',
-        'lead-form-contact',
-        'form-step-2',
-        
-        'exit-popup',
-        'nhp-exit-popup',
-        
-        'cookie-banner',
-        'cookie-banner-consent',
+		'lead-form-compact',
+		'lead-form-consent',
+		'lead-form-contact',
+		'form-step-2',
+
+		'exit-popup',
+		'nhp-exit-popup',
+
+		'cookie-banner',
+		'cookie-banner-consent', //namespace prefix issue
 	];
 
 	foreach ($blocks as $block) {
@@ -110,15 +110,15 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 add_action('init', 'chris_buys_blocks_chris_buys_blocks_block_init');
 
 add_action('wp_enqueue_scripts', function () {
-    wp_register_script('doctor-homes-inline', '', [], false, false);
-    
-    $loadScripts = file_get_contents(__DIR__ . '/utils/loadScript.js');
-    
-    if ($loadScripts !== false) {
-        wp_add_inline_script('doctor-homes-inline', $loadScripts);
-    }
-    
-    wp_enqueue_script('doctor-homes-inline');
+	wp_register_script('doctor-homes-inline', '', [], false, false);
+
+	$loadScripts = file_get_contents(__DIR__ . '/utils/loadScript.js');
+
+	if ($loadScripts !== false) {
+		wp_add_inline_script('doctor-homes-inline', $loadScripts);
+	}
+
+	wp_enqueue_script('doctor-homes-inline');
 }, 0);
 
 add_filter('should_load_separate_core_block_assets', '__return_true');

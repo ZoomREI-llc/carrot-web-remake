@@ -1,9 +1,8 @@
 <?php
 global $no_header;
+$site_data = cbh_get_site_data();
 
-$site_id = get_current_blog_id();
-$market_code = get_blog_option($site_id, 'market_code', '');
-
+$market_code = $site_data['market_code'];
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@ $market_code = get_blog_option($site_id, 'market_code', '');
     );
 
     // Determine if the environment is production
-    $current_blog_name = get_bloginfo('name');
+    $current_blog_name = $site_data['company_name'];
     $is_production = in_array($current_blog_name, $production_blog_names);
 
     // Check if the market code has a corresponding GTM ID and is in production
@@ -86,57 +85,57 @@ $market_code = get_blog_option($site_id, 'market_code', '');
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
 
-    <?php if(!$no_header): ?>
-    <header class="cb-header">
-        <div class="cb-header__inner">
-            <div class="cb-header__logo">
-                <?php if (function_exists('the_custom_logo')) {
-                    the_custom_logo();
-                } ?>
-            </div>
-            <nav class="cb-header__mobile-nav">
-                <div class="cb-telephone-container">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1" style="transform: translateY(6%)" class="cb-triangle cb-triangle-top">
-                        <polygon class="hl-triangle-poly-1" fill="#ff651e" points="0,94 0,100 100,100 100,94 100,0"></polygon>
-                    </svg>
-                    <div class="cb-telephone-text">
-                        <span class="cb-contact-phone-text">Call Us!</span>
-                        <span itemprop="telephone">
-                            <b><a href="tel: <?php echo get_blog_option($site_id, 'phone', ''); ?>" style="color: #02bdfc;"><?php echo get_blog_option($site_id, 'phone', ''); ?></a></b>
-                        </span>
+    <?php if (!$no_header): ?>
+        <header class="cb-header">
+            <div class="cb-header__inner">
+                <div class="cb-header__logo">
+                    <?php if (function_exists('the_custom_logo')) {
+                        the_custom_logo();
+                    } ?>
+                </div>
+                <nav class="cb-header__mobile-nav">
+                    <div class="cb-telephone-container">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1" style="transform: translateY(6%)" class="cb-triangle cb-triangle-top">
+                            <polygon class="hl-triangle-poly-1" fill="#ff651e" points="0,94 0,100 100,100 100,94 100,0"></polygon>
+                        </svg>
+                        <div class="cb-telephone-text">
+                            <span class="cb-contact-phone-text">Call Us!</span>
+                            <span itemprop="telephone">
+                                <b><a href="tel: <?php echo $site_data['phone']; ?>" style="color: #02bdfc;"><?php echo $site_data['phone']; ?></a></b>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="cb-header____links">
-                    <?php if ($market_code === 'kc'): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer Today</a>
+                    <div class="cb-header____links">
+                        <?php if ($market_code === 'kc'): ?>
+                            <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer Today</a>
 
-                    <?php elseif (in_array($market_code, ['stl', 'sf'])): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
+                        <?php elseif (in_array($market_code, ['stl', 'sf'])): ?>
+                            <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
 
-                    <?php elseif ($market_code === 'ind'): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
-                        <a href="<?php echo site_url() ?>/our-company/" class="cb-header__mobile-nav-link">Our Company</a>
+                        <?php elseif ($market_code === 'ind'): ?>
+                            <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get A Cash Offer in 7 Minutes</a>
+                            <a href="<?php echo site_url() ?>/our-company/" class="cb-header__mobile-nav-link">Our Company</a>
 
-                    <?php elseif (in_array($market_code, ['cle', 'det'])): ?>
-                        <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get Your Cash Offer</a>
-                        <a href="<?php echo site_url() ?>/contact-us/" class="cb-header__mobile-nav-link">Contact Us</a>
+                        <?php elseif (in_array($market_code, ['cle', 'det'])): ?>
+                            <a href="<?php echo site_url() ?>/get-a-cash-offer-today/" class="cb-header__mobile-nav-link">Get Your Cash Offer</a>
+                            <a href="<?php echo site_url() ?>/contact-us/" class="cb-header__mobile-nav-link">Contact Us</a>
 
-                    <?php endif; ?>
-                </div>
-                <button type="button" class="cb-header__mobile-toggler">
-                    Menu&nbsp;▾
-                </button>
-            </nav>
-            <nav class="cb-header__menu-block">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container' => false,
-                    'menu_class' => 'cb-header__menu',
-                    'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-                ));
-                ?>
-            </nav>
-        </div>
-    </header>
+                        <?php endif; ?>
+                    </div>
+                    <button type="button" class="cb-header__mobile-toggler">
+                        Menu&nbsp;▾
+                    </button>
+                </nav>
+                <nav class="cb-header__menu-block">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container' => false,
+                        'menu_class' => 'cb-header__menu',
+                        'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+                    ));
+                    ?>
+                </nav>
+            </div>
+        </header>
     <?php endif; ?>

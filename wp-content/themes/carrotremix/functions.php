@@ -1,6 +1,4 @@
 <?php
-    define('GOOGLE_MAPS_API_KEY', 'AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI');
-
 // Enqueue Scripts and Styles
 function carrot_enqueue_assets()
 {
@@ -790,7 +788,7 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 "field" => "email",
                 "key" => "Email"
             ],
-            
+
             [
                 "field" => "landline",
                 "key" => "Landline"
@@ -799,8 +797,8 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 "field" => "bestTime",
                 "key" => "Best Time to Call"
             ],
-            
-            
+
+
             [
                 "field" => "propertyAddress",
                 "key" => "Property Address"
@@ -825,8 +823,8 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 "field" => "country",
                 "key" => "Property Address (Country)"
             ],
-            
-            
+
+
             [
                 "field" => "form_name",
                 "key" => "Form Title"
@@ -848,8 +846,8 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 "field" => "page_url",
                 "key" => "Source Url"
             ],
-            
-            
+
+
             [
                 "field" => "utm_source",
                 "default" => "",
@@ -888,13 +886,13 @@ function handle_lead_form_v2(WP_REST_Request $request)
             continue;
         }
         $fieldData = [];
-        
+
         if ($webhook['usePreset']) {
             $mapping = $presets[$webhook['fieldsPreset']];
         } else {
             $mapping = $webhook['fieldsMapping'];
         }
-        
+
         foreach ($mapping as $field) {
             if (!$field['field'] || !$field['key']) {
                 continue;
@@ -905,12 +903,12 @@ function handle_lead_form_v2(WP_REST_Request $request)
                 $fieldData[$field['key']] = $field['default'];
             }
         }
-        
+
         $fieldDatas[] = [
             'url' => $webhook['url'],
             'body' => $fieldData
         ];
-        
+
         if (!empty($fieldData)) {
             $response = wp_remote_post($webhook['url'], array(
                 'body' => json_encode($fieldData),
@@ -918,15 +916,15 @@ function handle_lead_form_v2(WP_REST_Request $request)
                     'Content-Type' => 'application/json',
                 ),
             ));
-            
+
             if (is_wp_error($response)) {
                 return new WP_REST_Response('Error sending data to webhook', 500);
             }
         }
     }
     wp_send_json_success($fieldDatas);
-    
-    
+
+
     return new WP_REST_Response('Form submitted successfully', 200);
 }
 
@@ -1182,6 +1180,36 @@ add_action('save_post', 'save_market_override_meta_box_data');
 // Apply the filter to both title and content
 add_filter('the_content', 'replace_custom_placeholders_multisite');
 add_filter('the_title', 'replace_custom_placeholders_multisite');
+
+function cbh_get_site_data()
+{
+    static $site_data = null;
+    if ($site_data !== null) {
+        return $site_data;
+    }
+
+    $site_id = get_current_blog_id();
+    $site_data = array(
+        'phone' => get_blog_option($site_id, 'phone', ''),
+        'company_name' => get_blog_option($site_id, 'company_name', ''),
+        'address' => get_blog_option($site_id, 'address', ''),
+        'street_address' => get_blog_option($site_id, 'street_address', ''),
+        'city' => get_blog_option($site_id, 'city', ''),
+        'state' => get_blog_option($site_id, 'state', ''),
+        'zipcode' => get_blog_option($site_id, 'zipcode', ''),
+        'email' => get_blog_option($site_id, 'email', ''),
+        'facebook_link' => get_blog_option($site_id, 'facebook_link', ''),
+        'twitter_link' => get_blog_option($site_id, 'twitter_link', ''),
+        'youtube_link' => get_blog_option($site_id, 'youtube_link', ''),
+        'linkedin_link' => get_blog_option($site_id, 'linkedin_link', ''),
+        'instagram_link' => get_blog_option($site_id, 'instagram_link', ''),
+        'pinterest_link' => get_blog_option($site_id, 'pinterest_link', ''),
+        'zillow_link' => get_blog_option($site_id, 'zillow_link', ''),
+        'market_code' => get_blog_option($site_id, 'market_code', ''),
+    );
+
+    return $site_data;
+}
 
 // Add a meta box to specify custom paths for the page
 function add_custom_paths_meta_box()
