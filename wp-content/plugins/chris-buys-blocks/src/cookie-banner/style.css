@@ -66,18 +66,18 @@
 
 
 
-.popup{
+.popup.popup--text .popup{
     max-width: 77.5rem;
     padding: 0;
 }
-.popup__inner{
+.popup.popup--text .popup__inner{
     font-size: 0.875rem;
     line-height: 154%;
     color: #000;
     display: flex;
     flex-direction: column;
 }
-.popup__title{
+.popup.popup--text .popup__title{
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 154%;
@@ -85,31 +85,31 @@
     padding: 1.875rem .75rem;
 }
 
-.popup__body{
+.popup.popup--text .popup__body{
     overflow-y: auto;
     max-height: calc(100vh - 15.625rem);
     padding: 0.625rem .75rem;
     background-color: #eef7ff;
 }
-.popup__body h1,
-.popup__body h2,
-.popup__body h3,
-.popup__body h4{
+.popup.popup--text .popup__body h1,
+.popup.popup--text .popup__body h2,
+.popup.popup--text .popup__body h3,
+.popup.popup--text .popup__body h4{
     font-size: 0.875rem;
     line-height: 154%;
     color: #000;
     margin-bottom: 0 !important;
 }
-.popup__body p:not(:last-child){
+.popup.popup--text .popup__body p:not(:last-child){
     margin-bottom: 1.25rem;
 }
-.popup__body>*:not(:last-child){
+.popup.popup--text .popup__body>*:not(:last-child){
     margin-bottom: 1rem;
 }
-.popup__body>*:last-child{
+.popup.popup--text .popup__body>*:last-child{
     margin-bottom: 0;
 }
-.popup__footer{
+.popup.popup--text .popup__footer{
     padding: .75rem;
     display: flex;
     justify-content: flex-start;
@@ -124,7 +124,7 @@
 .fancybox__backdrop{
     background: rgba(0, 0, 0, 0.61) !important;
 }
-.fancybox__content > .f-button.is-close-btn {
+.popup.popup--text.fancybox__content > .f-button.is-close-btn {
     --f-button-border-radius: 50% !important;
     --f-button-color: #fff !important;
     --f-button-hover-color: #fff !important;
@@ -136,7 +136,7 @@
     right: 1.25rem !important;
     opacity: 1 !important;
 }
-.popup__button {
+.popup.popup--text .popup__button {
     font-size: 1.25rem;
     padding: 1.125rem 1.5rem;
     text-transform: uppercase;
@@ -156,25 +156,25 @@
     min-width: unset;
 }
 
-.popup__body a:not([class]) {
+.popup.popup--text .popup__body a:not([class]) {
     color: inherit;
     text-decoration: underline;
 }
 
 @media (min-width: 769px) {
-    .popup__title{
+    .popup.popup--text .popup__title{
         padding: 1.875rem 2.5rem;
     }
-    .popup__body{
+    .popup.popup--text .popup__body{
         padding: 0.75rem 2.5rem;
     }
-    .popup__footer{
+    .popup.popup--text .popup__footer{
         padding: 0.75rem 2.5rem;
     }
-    .popup__button {
+    .popup.popup--text .popup__button {
         min-width: 11.125rem;
     }
-    .fancybox__content > .f-button.is-close-btn {
+    .popup.popup--text.fancybox__content > .f-button.is-close-btn {
         top: 1.75rem !important;
     }
 }

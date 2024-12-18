@@ -75,6 +75,7 @@ body .pac-container {
     padding: 2.3125rem 0.875rem;
     background: #02BDFC;
     border-radius: 0;
+    width: 100%;
 }
 .nhp-exit-popup .input.input--squared > input {
     font-size: 1rem;
