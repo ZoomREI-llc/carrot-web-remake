@@ -73,14 +73,14 @@ function exitPopupCallback() {
       }
     });
 
-    popupEl.addEventListener('lead-form-interaction', function () {
+    popupEl.addEventListener('form-interaction', function () {
       window.dataLayer.push({
         event: 'popup_interaction',
         popup_id: popupId,
         form_name: formName
       });
     })
-    popupEl.addEventListener('lead-form-submit', function () {
+    popupEl.addEventListener('form-submit', function () {
       window.dataLayer.push({
         event: 'popup_submit',
         popup_id: popupId,

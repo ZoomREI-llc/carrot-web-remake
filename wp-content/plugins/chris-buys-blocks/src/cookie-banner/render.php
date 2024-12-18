@@ -7,7 +7,7 @@
 </div>
 
 <div style="display: none">
-    <div class="popup" id="privacy">
+    <div class="popup popup--text" id="privacy">
         <div class="popup__inner">
             <header class="popup__title">
                 <span>Privacy Policy</span>

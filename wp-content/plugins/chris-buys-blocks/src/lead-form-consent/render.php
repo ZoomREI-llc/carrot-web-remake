@@ -49,7 +49,7 @@ $form_config = [
 </form>
 
 <div style="display: none">
-    <div class="popup" id="terms">
+    <div class="popup popup--text" id="terms">
         <div class="popup__inner">
             <header class="popup__title">
                 <span>Terms of Use</span>
@@ -140,7 +140,7 @@ $form_config = [
         </div>
     </div>
     
-    <div class="popup" id="privacy">
+    <div class="popup popup--text" id="privacy">
         <div class="popup__inner">
             <header class="popup__title">
                 <span>Privacy Policy</span>

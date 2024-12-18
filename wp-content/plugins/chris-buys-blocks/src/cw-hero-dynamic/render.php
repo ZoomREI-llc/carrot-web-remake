@@ -9,54 +9,57 @@ if ($selectedMarket === "the Bay Area") {
     $selectedName = "Chris";
 }
 
-function getDynamicTextsByTerm($default_title = '', $default_text = ''){
-    $title = $default_title;
-    $text = $default_text;
-    $term = isset($_GET['utm_term']) ? strtolower($_GET['utm_term']) : false;
-
-    if($term) {
-        $dynamic_texts = include plugin_dir_path(__FILE__) . 'includes/conditions.php';
-    
-        foreach ($dynamic_texts as $dynamic_text) {
-            $conditions = $dynamic_text['conditions'];
-            $match = [];
+if(!function_exists('getDynamicTextsByTerm')) {
+    function getDynamicTextsByTerm($default_title = '', $default_text = '')
+    {
+        $title = $default_title;
+        $text = $default_text;
+        $term = isset($_GET['utm_term']) ? strtolower($_GET['utm_term']) : false;
+        
+        if ($term) {
+            $dynamic_texts = include plugin_dir_path(__FILE__) . 'includes/conditions.php';
             
-            foreach ($conditions as $condition) {
-                $keywords = $condition['keywords'];
-                $variables = $condition['variables'] ?? true;
-            
-                foreach ($keywords as $keyword) {
-                    if (str_contains($term, $keyword)) {
-                        $match = $variables;
+            foreach ($dynamic_texts as $dynamic_text) {
+                $conditions = $dynamic_text['conditions'];
+                $match = [];
+                
+                foreach ($conditions as $condition) {
+                    $keywords = $condition['keywords'];
+                    $variables = $condition['variables'] ?? true;
+                    
+                    foreach ($keywords as $keyword) {
+                        if (str_contains($term, $keyword)) {
+                            $match = $variables;
+                            break;
+                        }
+                    }
+                    
+                    if ($match) {
                         break;
                     }
                 }
-            
+                
                 if ($match) {
+                    $title = $dynamic_text['title'] ?: $title;
+                    $text = $dynamic_text['text'] ?: $text;
+                    
+                    if (is_array($match)) {
+                        foreach (array_keys($match) as $var_name) {
+                            $title = str_replace('{' . $var_name . '}', $match[$var_name], $title);
+                            $text = str_replace('{' . $var_name . '}', $match[$var_name], $text);
+                        }
+                    }
+                    
                     break;
                 }
             }
-        
-            if ($match) {
-                $title = $dynamic_text['title'] ?: $title;
-                $text = $dynamic_text['text'] ?: $text;
-            
-                if(is_array($match)) {
-                    foreach (array_keys($match) as $var_name) {
-                        $title = str_replace('{' . $var_name . '}', $match[$var_name], $title);
-                        $text = str_replace('{' . $var_name . '}', $match[$var_name], $text);
-                    }
-                }
-            
-                break;
-            }
         }
+        
+        return [
+            'title' => $title,
+            'text'  => $text
+        ];
     }
-
-    return [
-        'title' => $title,
-        'text' => $text
-    ];
 }
 
 $default_title = 'We Buy ANY House In <span>ANY Condition, On YOUR Timeline</span>';
