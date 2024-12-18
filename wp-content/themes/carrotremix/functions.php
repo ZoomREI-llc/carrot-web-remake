@@ -826,7 +826,7 @@ function cbh_get_site_data()
     return $site_data;
 }
 
-// Add a meta box to specify custom paths for the page
+// Add Custom Paths Meta Box
 function add_custom_paths_meta_box()
 {
     add_meta_box(

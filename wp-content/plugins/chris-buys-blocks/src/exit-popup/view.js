@@ -83,7 +83,7 @@ function exitPopupCallback() {
 			}
 			g;
 		});
-
+    
 		popupEl.addEventListener("form-interaction", function () {
 			window.dataLayer.push({
 				event: "popup_interaction",
