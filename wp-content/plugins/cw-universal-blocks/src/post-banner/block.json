@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cw-universal/post-banner",
+    "version": "0.1.0",
+    "title": "DH Post Banner",
+    "category": "widgets",
+    "icon": "megaphone",
+    "description": "A post banner block.",
+    "supports": {
+        "html": false
+    },
+    "textdomain": "cw-universal-blocks",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "render": "file:./render.php",
+    "viewScript": "file:./view.js",
+    "attributes": {},
+    "style": "file:./style-index.css"
+}

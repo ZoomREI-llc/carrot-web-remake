@@ -1,0 +1,43 @@
+.cwu-footer {
+  background-color: #fff;
+  padding: 2rem 0;
+}
+.cwu-footer p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.cwu-footer .grid-container {
+  row-gap: 1.25rem;
+}
+.cwu-footer__logo img {
+  height: 2.5rem;
+  width: 100%;
+  object-fit: contain;
+}
+.cwu-footer__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+.cwu-footer__logo,
+.cwu-footer__text{
+  grid-column: span 4;
+}
+@media (min-width: 769px) {
+  .cwu-footer {
+    padding: 2.5rem 0;
+  }
+  .cwu-footer__logo{
+    grid-column: span 3;
+  }
+  .cwu-footer__logo img {
+    height: auto;
+  }
+  .cwu-footer__text{
+    grid-column: span 9;
+    text-align: left;
+  }
+}

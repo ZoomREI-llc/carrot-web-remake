@@ -1,0 +1,288 @@
+.cwu-universal {
+  display: flex;
+  flex-direction: column;
+}
+
+.cwu-universal__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  margin: 0 auto;
+  width: 100%;
+  flex-direction: row;
+  grid-column: span 4;
+}
+
+
+
+@media (min-width: 769px) {
+  .cwu-universal__content {
+    padding: 1.125rem 0;
+    grid-column: span 12;
+  }
+}
+.cwu-universal__logo {
+  width: auto;
+  max-width: 45%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  height: 3.75rem;
+}
+
+.cwu-universal__logo img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+
+.cwu-universal__menu {
+  display: none;
+}
+.cwu-universal__menu--link {
+  /* font-size: 1.125rem; */
+  font-size: 0.9375rem;
+  line-height: 1.2;
+  color: #000000;
+  text-decoration: none;
+}
+
+@media (min-width: 769px) {
+  .cwu-universal__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .cwu-universal__menu--link {
+    /* font-size: 1.125rem; */
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    color: #000000;
+    text-decoration: none;
+  }
+  .cwu-universal__logo {
+    max-width: 14.275rem;
+  }
+}
+
+.cwu-universal__phone-number {
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #004c8d;
+  display: block;
+}
+.cwu-universal__phone--text {
+  display: inline;
+  font-size: 0.75rem;
+}
+.cwu-universal__phone--text {
+  display: inline;
+  font-size: 0.75rem;
+
+  font-weight: normal;
+}
+.cwu-universal__phone--text a {
+  font-size: 0.875rem;
+
+  font-weight: bold;
+}
+@media (min-width: 769px) {
+  .cwu-universal__phone-number {
+    font-size: 1.125rem;
+    text-align: center;
+    display: flex !important;
+    align-items: center;
+    flex-direction: row;
+  }
+  .cwu-universal__phone--text {
+    display: flex;
+    font-size: 1.125rem;
+  }
+  .cwu-universal__phone--text a {
+    font-size: 1.125rem;
+  }
+}
+
+.cwu-universal__phone--icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.cwu-universal__phone--icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 769px) {
+  .cwu-universal__phone--icon {
+    /* padding: 0.625rem; */
+    flex: 0 0 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cwu-universal__phone--icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+}
+
+.cwu-universal__phone--number {
+  text-decoration: unset;
+  font-weight: bold;
+  color: #000;
+  margin-left: 0;
+  margin-top: 0.5rem;
+  display: block;
+}
+@media (min-width: 769px) {
+  .cwu-universal__phone--number {
+    margin-left: 0.2rem;
+    margin-top: 0;
+  }
+}
+
+
+.contact-phone {
+  position: fixed;
+  right: 1rem;
+  bottom: 20vh;
+  z-index: 99;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.125rem;
+}
+
+.contact-phone img {
+  width: 3rem;
+  height: auto;
+}
+
+@media (min-width: 769px) {
+  .contact-phone img {
+    width: 2.25rem;
+    height: auto;
+  }
+}
+
+.contact-phone {
+  display: flex;
+}
+
+@media (min-width: 769px) {
+  .contact-phone {
+    display: none;
+    position: static;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--primaryBlue1);
+    font-weight: bold;
+    gap: 0.75rem;
+    padding: 0.6875rem 0.5rem;
+  }
+}
+
+.cwu-universal__btn {
+  display: none;
+}
+
+.custom-logo-link {
+  width: 10rem;
+}
+.cwu-universal__phone-number{
+  text-align: center;
+}
+.cwu-universal__phone--number {
+  margin-top: 0.25rem;
+  width: max-content;
+  font-size: 0.875rem;
+  line-height: 120%;
+  text-align: center;
+}
+
+.cwu-universal__phone--icon {
+  vertical-align: middle;
+}
+
+
+.cwu-header__number-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: #004C8D;
+  padding: 0.5rem;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+}
+.cwu-header__number-one strong{
+  font-weight: 800;
+}
+.cwu-header__number-one p{
+  margin: 0;
+  padding: 0;
+}
+.cwu-header__flag{
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+@media (min-width: 769px) {
+  .cwu-header__number-one {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+  .cwu-header__flag{
+    flex: 0 0 1.875rem;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+}
+
+@media (min-width: 769px) {
+
+  .cwu-universal__phone-number {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cwu-universal__phone--icon {
+    flex: unset;
+    height: 1.65rem;
+    width: 1.65rem;
+    margin-top: -2px;
+  }
+
+  .cwu-universal__phone--number {
+    font-size: 1.125rem;
+    margin-top: 0;
+    padding-left: 8px;
+  }
+
+  .custom-logo-link {
+    width: 15.625rem;
+  }
+
+  .cwu-universal__btn {
+    display: flex;
+    margin-left: 2.5rem;
+    min-width: 13%;
+    justify-content: flex-end;
+  }
+  .cwu-universal__menu {
+    margin: 0 auto;
+  }
+
+}
