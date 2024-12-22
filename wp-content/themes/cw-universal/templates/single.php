@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * single.php
+ * 
+ * Main template for displaying single posts.
+ */
+
 $the_content = [
     do_shortcode("[cw_universal_blog]")
 ];
@@ -12,7 +19,7 @@ cw_universal_get_header();
         error_log('single.php - Start rendering post ID: ' . get_the_ID());
         cw_universal_get_template_part_with_fallback('template-parts/content', 'single');
         error_log('single.php - End rendering post ID: ' . get_the_ID());
-    endwhile; // End of the loop.
+    endwhile;
     ?>
 
     <?= implode(' ', $the_content) ?>
