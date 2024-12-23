@@ -28,8 +28,14 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies and build theme
+      - name: Install dependencies and build carrotremix theme
         working-directory: ./wp-content/themes/carrotremix
+        run: |
+          npm install
+          npm run build
+
+      - name: Install dependencies and build cw-universal theme
+        working-directory: ./wp-content/themes/cw-universal
         run: |
           npm install
           npm run build
@@ -44,6 +50,13 @@ jobs:
       # Install dependencies and build the chris-buys-blocks plugin
       - name: Install dependencies and build chris-buys-blocks plugin
         working-directory: ./wp-content/plugins/chris-buys-blocks
+        run: |
+          npm install
+          npm run build
+
+      # Install dependencies and build the cw-universal-blocks plugin
+      - name: Install dependencies and build cw-universal-blocks plugin
+        working-directory: ./wp-content/plugins/cw-universal-blocks
         run: |
           npm install
           npm run build
