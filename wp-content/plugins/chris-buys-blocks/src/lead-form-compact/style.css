@@ -48,7 +48,7 @@ form button {
 	align-items: center;
 	justify-content: center;
 	padding: 1.25rem 3.75rem;
-	background-color: var(--secondaryYellow);
+	background-color: var(--secondaryGreen);
 	color: #fff;
 	font-weight: bold;
 	gap: 0.625rem;

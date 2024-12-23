@@ -188,6 +188,7 @@ function site_settings_page_html()
         update_blog_option($blog_id, 'state', sanitize_text_field($_POST['state']));
         update_blog_option($blog_id, 'zipcode', sanitize_text_field($_POST['zipcode']));
         update_blog_option($blog_id, 'facebook_link', esc_url_raw($_POST['facebook_link']));
+        update_blog_option($blog_id, 'tiktok_link', esc_url_raw($_POST['tiktok_link']));
         update_blog_option($blog_id, 'twitter_link', esc_url_raw($_POST['twitter_link']));
         update_blog_option($blog_id, 'youtube_link', esc_url_raw($_POST['youtube_link']));
         update_blog_option($blog_id, 'linkedin_link', esc_url_raw($_POST['linkedin_link']));
@@ -211,6 +212,7 @@ function site_settings_page_html()
     $zipcode = get_blog_option($blog_id, 'zipcode', '');
     $facebook_link = get_blog_option($blog_id, 'facebook_link', '');
     $twitter_link = get_blog_option($blog_id, 'twitter_link', '');
+    $tiktok_link = get_blog_option($blog_id, 'tiktok_link', '');
     $youtube_link = get_blog_option($blog_id, 'youtube_link', '');
     $linkedin_link = get_blog_option($blog_id, 'linkedin_link', '');
     $instagram_link = get_blog_option($blog_id, 'instagram_link', '');
@@ -273,6 +275,10 @@ function site_settings_page_html()
                 <tr>
                     <th scope="row"><label for="twitter_link">Twitter Link</label></th>
                     <td><input type="url" name="twitter_link" value="<?php echo esc_attr($twitter_link); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="tiktok_link">TikTok Link</label></th>
+                    <td><input type="url" name="tiktok_link" value="<?php echo esc_attr($tiktok_link); ?>" class="regular-text"></td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="youtube_link">YouTube Link</label></th>
@@ -815,6 +821,7 @@ function cbh_get_site_data()
         'email' => get_blog_option($site_id, 'email', ''),
         'facebook_link' => get_blog_option($site_id, 'facebook_link', ''),
         'twitter_link' => get_blog_option($site_id, 'twitter_link', ''),
+        'tiktok_link' => get_blog_option($site_id, 'tiktok_link', ''),
         'youtube_link' => get_blog_option($site_id, 'youtube_link', ''),
         'linkedin_link' => get_blog_option($site_id, 'linkedin_link', ''),
         'instagram_link' => get_blog_option($site_id, 'instagram_link', ''),

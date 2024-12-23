@@ -1,0 +1,112 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cw-universal/benefits",
+	"version": "0.1.0",
+	"title": "CWU Benefits",
+	"category": "widgets",
+	"icon": "screenoptions",
+	"description": "Benefits block built for the front-page.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "cw-universal-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": "h2",
+			"default": "When to Reach Out to Doctor Homes"
+		},
+		"paragraph": {
+			"type": "string",
+			"source": "html",
+			"selector": "p",
+			"default": "No matter what property-related life challenge you're facing, we can help you sell your house as-is for cash fast! We buy any house in any condition, and let you close on your timeline."
+		},
+		"benefitItems": {
+			"type": "array",
+			"default": [
+				{
+					"asset": "benefits/fixer-upper",
+					"position": "left",
+					"text": "Fixer Upper",
+					"uuid": "uuid-1"
+				},
+				{
+					"asset": "benefits/job-relocation",
+					"position": "right",
+					"text": "Job Relocation",
+					"uuid": "uuid-2"
+				},
+				{
+					"asset": "benefits/downsizing-upsizing",
+					"position": "left",
+					"text": "Downsizing or Upsizing",
+					"uuid": "uuid-3"
+				},
+				{
+					"asset": "benefits/inherited-property",
+					"position": "right",
+					"text": "Inherited Property",
+					"uuid": "uuid-4"
+				},
+				{
+					"asset": "benefits/vacant-property",
+					"position": "left",
+					"text": "Vacant Property",
+					"uuid": "uuid-5"
+				},
+				{
+					"asset": "benefits/tenant-trouble",
+					"position": "right",
+					"text": "Tenant Trouble",
+					"uuid": "uuid-6"
+				},
+				{
+					"asset": "benefits/water-fire-damage",
+					"position": "left",
+					"text": "Water & Fire Damage",
+					"uuid": "uuid-7"
+				},
+				{
+					"asset": "benefits/financial-issues",
+					"position": "right",
+					"text": "Financial Issues",
+					"uuid": "uuid-8"
+				},
+				{
+					"asset": "benefits/unexpected-life-events",
+					"position": "left",
+					"text": "Unexpected Life Events",
+					"uuid": "uuid-9"
+				},
+				{
+					"asset": "benefits/divorce",
+					"position": "right",
+					"text": "Divorce",
+					"uuid": "uuid-10"
+				}
+			],
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "number"
+					},
+					"text": {
+						"type": "string"
+					},
+					"uuid": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	},
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,364 @@
+
+.cwu-sell-today {
+	padding: 0 0 2rem;
+	background: #00294C;
+}
+
+.cwu-sell-today .cwu-fresh-start__testimonee {
+	width: 5rem;
+	height: 5rem;
+	overflow: hidden;
+	object-fit: cover;
+	border-radius: 50%;
+	flex: 0 0 5rem;
+}
+.cwu-sell-today .cwu-fresh-start__testimonial {
+	display: flex;
+	gap: 1.375rem;
+	padding: 0rem 0;
+	box-shadow: none;
+	background-color: transparent;
+	border-radius: 10px;
+	font-size: 0.875rem;
+	flex-direction: row;
+	align-items: flex-start;
+	margin: 0;
+}
+.cwu-sell-today .cwu-fresh-start__testimonial cite {
+	font-weight: bold;
+	font-style: normal;
+}
+.cwu-sell-today .cwu-fresh-start__testimonial blockquote {
+	line-height: 1.4;
+}
+
+
+.cwu-sell-today__bg::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	z-index: 1;
+	background: linear-gradient(180deg, rgba(0,41,76,0.4) 0%, rgba(0,41,76,0.4) 100%);
+
+}
+
+.cwu-sell-today__media {
+	position: relative;
+}
+.cwu-sell-today__media::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;top: 0;
+
+	background: linear-gradient(180deg, rgba(0,41,76,0.4) 0%, rgba(0,41,76,0.4) 100%);
+	display: block;
+	z-index: 1;
+}
+.cwu-sell-today__media::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	left: 0;
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(0,41,76,0) 0%, rgba(0,41,76,1) 100%);
+	display: block;
+	z-index: 3;
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today__media::before {
+		display: none;
+	}
+}
+
+.cwu-sell-today .cwu-hero__reviews {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: auto;
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__reviews {
+		justify-content: start;
+		align-items: center;
+		display: flex;
+	}
+}
+
+.cwu-sell-today .cwu-hero__reviews-text {
+	margin-left: 0.25rem;
+}
+
+.cwu-sell-today .cwu-hero__reviews-text p {
+	font-size: 0.75rem;
+	margin: 0;
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__reviews-text p {
+		font-size: 1rem;
+		text-align: left;
+	}
+}
+
+.cwu-sell-today .cwu-hero__reviews-stars-wrapper {
+	display: flex;
+}
+
+.cwu-sell-today .cwu-hero__titles {
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	gap: 1.125rem;
+}
+
+
+.cwu-sell-today .cwu-hero__titles p {
+	line-height: 1.4;
+	font-size: 1rem;
+	margin: 0;
+	/* margin-block-end: 1em; */
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__titles {
+		gap: 1.5rem;
+	}
+}
+
+.cwu-sell-today .cwu-hero__bullet-points {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	color: #fff;
+	
+	padding: 0;
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__bullet-points {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin: 0;
+	}
+}
+
+.cwu-sell-today .cwu-hero__bullet-point {
+	display: flex;
+	align-items: center;
+	text-align: left;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	padding: 0;
+	margin: 0;
+	/* text-wrap: nowrap; */
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__bullet-point {
+		font-size: 1.25rem;
+	}
+}
+
+.cwu-sell-today .cwu-hero__bullet-point img {
+	margin-right: 0.625rem;
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__trust-icons {
+		width: max-content;
+		display: flex;
+		gap: 1rem;
+	}
+}
+
+
+.cwu-sell-today .cwu-hero__statistic--list {
+	width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	margin: 0;
+}
+
+.cwu-sell-today .cwu-hero__statistic--amunt {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.5625rem;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	margin-bottom: 0.4rem;
+}
+.cwu-sell-today .cwu-hero__statistic--text {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.5;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__statistic--list {
+		justify-content: flex-start;
+		gap: 3rem;
+	}
+	.cwu-sell-today .cwu-hero__statistic--text {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+	.cwu-sell-today .cwu-hero__statistic--amunt {
+		font-size: 2.5rem;
+	}
+
+	.cwu-sell-today .cwu-hero__footer-block{
+		display: flex;
+		align-items: center;
+		width: 100%;
+		justify-content: flex-start;
+	}
+
+	.cwu-sell-today .cwu-hero__footer-block .cwu-hero__reviews {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		display: flex;
+		width: 100%;
+		gap: 0.325rem;
+	}
+}
+
+
+
+
+.cwu-sell-today .cwu-hero__content,
+.cwu-sell-today__media {
+	grid-column: span 4;
+}
+
+.cwu-sell-today__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.cwu-sell-today__bg > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.cwu-sell-today__photo {
+	position: relative;
+	z-index: 2;
+}
+
+.cwu-sell-today__photo > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.cwu-sell-today__photo::before {
+	content: '';
+	display: block;
+	width: 100%;
+	padding-top: 116%;
+}
+
+.cwu-sell-today__photo {
+	max-width: 360px;
+	margin: 0 auto;
+}
+
+.cwu-sell-today .cwu-hero__titles {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.cwu-sell-today .cwu-hero__content {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+.cwu-sell-today .cwu-hero__footer-block {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.625rem;
+}
+
+.cwu-sell-today .cwu-hero__content {
+	order: 2;
+}
+
+.cwu-sell-today__media {
+	margin: 0 calc(var(--container-padding-mobile) * -1);
+	padding-top: 1rem;
+}
+
+.cwu-sell-today__media::before {
+	height: 16%;
+}
+
+@media (min-width: 769px) {
+	.cwu-sell-today .cwu-hero__content,
+	.cwu-sell-today__media {
+		grid-column: span 6;
+	}
+	.cwu-sell-today .cwu-hero__content {
+		order: 0;
+	}
+	.cwu-sell-today {
+		padding: 0;
+		position: relative;
+	}
+	.cwu-sell-today .cwu-hero__content {
+		padding: 2rem 0;
+		position: relative;
+		z-index: 2;
+	}
+
+	.cwu-sell-today__media {
+		position: static;
+	}
+
+	.cwu-sell-today__photo {
+		max-width: 100%;
+	}
+
+	.cwu-sell-today .cwu-hero__footer-block {
+		flex-direction: row;
+		gap: 1.5rem;
+	}
+	.cwu-sell-today .cwu-hero__reviews-text p {
+		font-size: 0.875rem;
+	}
+	.cwu-sell-today .cwu-hero__reviews-text {
+		margin-left: 0;
+	}
+
+	.cwu-sell-today .grid-container {
+		align-items: center;
+	}
+
+}
