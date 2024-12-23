@@ -87,9 +87,9 @@ if ($hostname === 'doctorhomes.com') {
         <img src="<?php echo get_template_directory_uri() . '/src/assets/menus/unitedstates_1.svg'; ?>" class="cw-header__flag" alt="Flag Icon" width="30" height="30">
         <p><strong>America’s</strong> Most Trusted Cash House Buyers Since 2000</p>
     </div>
-    <header class="cwu-universal">
+    <header class="cwu-header">
         <div class="grid-container">
-            <div class="cwu-universal__content">
+            <div class="cwu-header__content">
                 <?= get_custom_logo(); ?>
 
                 <?php
@@ -97,27 +97,48 @@ if ($hostname === 'doctorhomes.com') {
                         'theme_location' => 'primary-menu',
                         'container' => '',
                         'container_class' => '',
-                        'menu_class' => 'cwu-universal__menu',
+                        'menu_class' => 'cwu-header__menu',
                         'walker' => new Desktop_Walker_Nav_Menu()
                     ));
                 ?>
                 <a class="call-btn" href="tel:<?= get_blog_option(get_current_blog_id(), 'phone', '') ?>">
-                    <div class="cwu-universal__phone-number">
-                        <span class="cwu-universal__phone--text">
-                            <span class="cwu-universal__phone--icon">
+                    <div class="cwu-header__phone-number">
+                        <span class="cwu-header__phone--text">
+                            <span class="cwu-header__phone--icon">
                                 <img src="<?php echo get_template_directory_uri() . '/src/assets/menus/telephone_1.svg'; ?>" alt="Phone Icon">
                             </span>
                             Call Us On
                         </span>
-                        <span class="cwu-universal__phone--number"><?= get_blog_option(get_current_blog_id(), 'phone', '') ?></span>
+                        <span class="cwu-header__phone--number"><?= get_blog_option(get_current_blog_id(), 'phone', '') ?></span>
                     </div>
                     <div class="contact-phone">
                         <img src="<?php echo get_template_directory_uri() . '/src/assets/menus/phone-icon.svg'; ?>" alt="Phone Icon">
                     </div>
                 </a>
-                <div class="cwu-universal__btn">
+                <div class="cwu-header__btn">
                     <a href="/#cw-form" class="btn btn--small">Get My Offer</a>
                 </div>
+
+                <button id="mobile-menu-button" class="cwu-header__burger mobile-menu-button">
+                    <img src="<?php echo get_template_directory_uri() . '/src/assets/menus/mobile-menu-icon.svg'; ?>" alt="Mobile Navigation Menu">
+                </button>
             </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <button id="close-mobile-menu" class="close-mobile-menu">
+                <img src="<?php echo get_template_directory_uri() . '/src/assets/menus/close-mobile-menu-icon.svg'; ?>" alt="Close Mobile Navigation Menu">
+            </button>
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'primary-menu',
+                    'container'      => '',
+                    'menu_class'     => 'mobile-nav-menu',
+                    'walker'         => new Mobile_Walker_Nav_Menu(),
+                    'add_polygon'    => true,
+                ));
+            ?>
+            <a href="<?php echo get_offer_button_link(); ?>" class="btn get-offer-button">
+                Get My Offer <img src="<?php echo get_template_directory_uri() . '/src/assets/menus/cta-arrow.svg'; ?>" alt="Get My Offer">
+            </a>
         </div>
     </header>

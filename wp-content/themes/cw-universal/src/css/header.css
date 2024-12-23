@@ -1,9 +1,9 @@
-.cwu-universal {
+.cwu-header {
   display: flex;
   flex-direction: column;
 }
 
-.cwu-universal__content {
+.cwu-header__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,29 +17,32 @@
 
 
 @media (min-width: 769px) {
-  .cwu-universal__content {
-    padding: 1.125rem 0;
+  .cwu-header__content {
+    padding: .5rem 0;
     grid-column: span 12;
   }
 }
-.cwu-universal__logo {
+.cwu-header__logo {
   width: auto;
   max-width: 45%;
   -o-object-fit: contain;
   object-fit: contain;
   height: 3.75rem;
 }
+.cwu-header__btn .btn {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
 
-.cwu-universal__logo img {
+.cwu-header__logo img {
   width: 100%;
   object-fit: contain;
   height: 100%;
 }
 
-.cwu-universal__menu {
+.cwu-header__menu {
   display: none;
 }
-.cwu-universal__menu--link {
+.cwu-header__menu--link {
   /* font-size: 1.125rem; */
   font-size: 0.9375rem;
   line-height: 1.2;
@@ -48,77 +51,77 @@
 }
 
 @media (min-width: 769px) {
-  .cwu-universal__menu {
+  .cwu-header__menu {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
   }
-  .cwu-universal__menu--link {
+  .cwu-header__menu--link {
     /* font-size: 1.125rem; */
     font-size: 0.9375rem;
     line-height: 1.2;
     color: #000000;
     text-decoration: none;
   }
-  .cwu-universal__logo {
+  .cwu-header__logo {
     max-width: 14.275rem;
   }
 }
 
-.cwu-universal__phone-number {
+.cwu-header__phone-number {
   padding: 0;
   font-size: 0.9rem;
   font-weight: bold;
   color: #004c8d;
   display: block;
 }
-.cwu-universal__phone--text {
+.cwu-header__phone--text {
   display: inline;
   font-size: 0.75rem;
 }
-.cwu-universal__phone--text {
+.cwu-header__phone--text {
   display: inline;
   font-size: 0.75rem;
 
   font-weight: normal;
 }
-.cwu-universal__phone--text a {
+.cwu-header__phone--text a {
   font-size: 0.875rem;
 
   font-weight: bold;
 }
 @media (min-width: 769px) {
-  .cwu-universal__phone-number {
+  .cwu-header__phone-number {
     font-size: 1.125rem;
     text-align: center;
     display: flex !important;
     align-items: center;
     flex-direction: row;
   }
-  .cwu-universal__phone--text {
+  .cwu-header__phone--text {
     display: flex;
     font-size: 1.125rem;
   }
-  .cwu-universal__phone--text a {
+  .cwu-header__phone--text a {
     font-size: 1.125rem;
   }
 }
 
-.cwu-universal__phone--icon {
+.cwu-header__phone--icon {
   display: inline-block;
   width: 1rem;
   height: 1rem;
 }
 
-.cwu-universal__phone--icon img {
+.cwu-header__phone--icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
 @media (min-width: 769px) {
-  .cwu-universal__phone--icon {
+  .cwu-header__phone--icon {
     /* padding: 0.625rem; */
     flex: 0 0 2.5rem;
     width: 2.5rem;
@@ -127,14 +130,14 @@
     align-items: center;
     justify-content: center;
   }
-  .cwu-universal__phone--icon img {
+  .cwu-header__phone--icon img {
     width: 60%;
     height: 60%;
     object-fit: contain;
   }
 }
 
-.cwu-universal__phone--number {
+.cwu-header__phone--number {
   text-decoration: unset;
   font-weight: bold;
   color: #000;
@@ -143,7 +146,7 @@
   display: block;
 }
 @media (min-width: 769px) {
-  .cwu-universal__phone--number {
+  .cwu-header__phone--number {
     margin-left: 0.2rem;
     margin-top: 0;
   }
@@ -190,17 +193,17 @@
   }
 }
 
-.cwu-universal__btn {
+.cwu-header__btn {
   display: none;
 }
 
 .custom-logo-link {
   width: 10rem;
 }
-.cwu-universal__phone-number{
+.cwu-header__phone-number{
   text-align: center;
 }
-.cwu-universal__phone--number {
+.cwu-header__phone--number {
   margin-top: 0.25rem;
   width: max-content;
   font-size: 0.875rem;
@@ -208,7 +211,7 @@
   text-align: center;
 }
 
-.cwu-universal__phone--icon {
+.cwu-header__phone--icon {
   vertical-align: middle;
 }
 
@@ -251,21 +254,164 @@
 
 }
 
-@media (min-width: 769px) {
+.cwu-header__burger {
+  width: 3.75rem;
+}
 
-  .cwu-universal__phone-number {
+.cwu-header__burger > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  top: 0;
+  left: 0;
+  width: 84vw;
+  height: 100%;
+  background-color: white;
+  padding: 5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+}
+
+.close-mobile-menu {
+  position: absolute;
+  z-index: 102;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.mobile-nav-menu > li {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--primaryBlue1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-menu > li > .menu-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.625rem;
+}
+
+.mobile-nav-menu > li > .sub-menu {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .mobile-nav-menu > li:hover > .sub-menu {
+    display: block;
+  }
+  .mobile-nav-menu > li > .menu-item-title:hover {
+    background-color: var(--secondaryBeige);
+  }
+  .menu-item-title:hover .polygon-icon,
+  .menu-item-title:focus .polygon-icon {
+    transform: rotate(180deg); /* Facing down when submenu is open */
+  }
+  .sub-menu > li:hover {
+    font-weight: bold;
+  }
+}
+@media (max-width: 768px) {
+  .mobile-nav-menu > li.is-open > .sub-menu {
+    display: block;
+  }
+  .mobile-nav-menu > li.is-open > .menu-item-title {
+    background-color: var(--secondaryBeige);
+  }
+  .mobile-nav-menu > li.is-open > .menu-item-title .polygon-icon {
+    transform: rotate(180deg); /* Facing down when submenu is open */
+  }
+}
+
+.mobile-nav-menu > li > .sub-menu > li {
+  font-size: 0.875rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: white;
+}
+
+.polygon-icon {
+  display: flex;
+  width: 1rem;
+  height: auto;
+  transform: rotate(90deg); /* Facing right by default */
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu .get-offer-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  padding: 1.875rem 3.75rem;
+  font-size: 1.25rem;
+  align-self: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 769px) {
+  .main-nav {
+    display: block;
+  }
+
+  .main-nav > .nav-menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .main-nav > .nav-menu > li {
+    height: 100%;
+    padding: 2.375rem 1rem;
+    position: relative;
+  }
+
+  .main-nav .nav-menu > li:hover > a {
+    background-color: var(--secondaryBeige);
+  }
+
+  .main-nav .nav-menu > li:hover > .sub-menu {
+    display: flex;
+    z-index: 102;
+  }
+}
+
+@media (min-width: 769px) {
+  .cwu-header__burger{
+    display: none;
+  }
+  .cwu-header__phone-number {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .cwu-universal__phone--icon {
+  .cwu-header__phone--icon {
     flex: unset;
     height: 1.65rem;
     width: 1.65rem;
     margin-top: -2px;
   }
 
-  .cwu-universal__phone--number {
+  .cwu-header__phone--number {
     font-size: 1.125rem;
     margin-top: 0;
     padding-left: 8px;
@@ -275,14 +421,19 @@
     width: 15.625rem;
   }
 
-  .cwu-universal__btn {
+  .cwu-header__btn {
     display: flex;
     margin-left: 2.5rem;
     min-width: 13%;
     justify-content: flex-end;
   }
-  .cwu-universal__menu {
+  .cwu-header__menu {
     margin: 0 auto;
+    gap: 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #3c3c3c;
   }
+
 
 }

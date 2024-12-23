@@ -20,8 +20,11 @@
                         <span class="category-name title-1"><?php the_category(', '); ?></span>
                     </div>
                     <div class="post-content">
-                        <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p class="post-meta">By <?php the_author(); ?> on <?php echo get_the_date(); ?></p>
+                        <div class="post-content__text">
+                            <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <p class="post-meta">By <?php the_author(); ?> on <?php echo get_the_date(); ?></p>
+                        </div>
+                        <a href="<?php the_permalink(); ?>" class="btn btn--smallest btn--transparent">Read More</a>
                     </div>
                 </div>
             <?php endwhile;

@@ -1,43 +1,134 @@
-.cwu-footer {
-  background-color: #fff;
-  padding: 2rem 0;
+/* ==========================================
+   ============== FOOTER STYLES =============
+   ========================================== */
+
+#doctor-homes-footer {
+  background-color: #004C8D;
+  padding: 3.5rem 0;
+  color: white;
 }
-.cwu-footer p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.4;
-}
-.cwu-footer .grid-container {
-  row-gap: 1.25rem;
-}
-.cwu-footer__logo img {
-  height: 2.5rem;
-  width: 100%;
-  object-fit: contain;
-}
-.cwu-footer__text {
+#doctor-homes-footer .grid-container{
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  gap: 2.5rem;
+  position: relative;
 }
-.cwu-footer__logo,
-.cwu-footer__text{
-  grid-column: span 4;
+
+@media (min-width: 769px) {
+  #doctor-homes-footer {
+    padding: 3.5rem 0;
+  }
+}
+
+.footer-logo img {
+  max-width: 8.75rem;
+}
+
+.back-to-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.625rem;
+  max-width: max-content;
+  color: var(--primaryGray);
+}
+.footer-menus .social-icons img{
+  width: 2rem;
 }
 @media (min-width: 769px) {
-  .cwu-footer {
-    padding: 2.5rem 0;
+  .back-to-top {
+    order: 1;
   }
-  .cwu-footer__logo{
-    grid-column: span 3;
+}
+
+.back-to-top-icon {
+  padding: 1rem 0.75rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+.back-to-top-icon img {
+  width: 1.75rem;
+  height: auto;
+}
+
+.footer-content {
+  display: flex;
+  gap: 2.5rem 3.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+  .footer-content {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: start;
   }
-  .cwu-footer__logo img {
-    height: auto;
+}
+
+.footer-menus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.footer-menus li:not(:first-child) {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 769px) {
+  .footer-menus {
+    gap: 1rem;
+    justify-content: space-between;
+    flex: 1;
   }
-  .cwu-footer__text{
-    grid-column: span 9;
-    text-align: left;
+}
+
+.footer-menu{
+  max-width: 10rem;
+}
+.footer-menu,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1.625rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  height: max-content;
+  margin-top: 1.875rem;
+}
+
+@media (min-width: 769px) {
+  .social-icons {
+    margin-top: 1.375rem;
   }
+}
+
+/* .footer-disclaimer hr {
+  margin: 1rem 0;
+} */
+
+.footer-disclaimer p {
+  font-size: 0.625em;
+  line-height: 1rem;
+  /* text-align: center; */
 }

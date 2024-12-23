@@ -1,5 +1,6 @@
 <?php
-
+    define('GOOGLE_MAPS_API_KEY', 'AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI');
+    define('CRM_WEBHOOK_URL', 'https://workflow-automation.podio.com/catch/2kt203ir6i3uk64');
 // Enqueue Scripts and Styles
 function cw_universal_enqueue_assets()
 {
@@ -528,14 +529,14 @@ function get_breadcrumb()
     global $post;
     $breadcrumb = '<nav class="breadcrumb">';
     if (!is_home()) {
-        $breadcrumb .= '<a href="' . home_url() . '">Home</a> > ';
+        $breadcrumb .= '<a href="' . home_url() . '">Home</a>';
         if (is_category() || is_single()) {
-            $breadcrumb .= '<a href="' . get_permalink(get_option('page_for_posts')) . '">Blog</a> > ';
+            $breadcrumb .= '<a href="' . get_permalink(get_option('page_for_posts')) . '">Blog</a>';
             if (is_single()) {
                 $categories = get_the_category();
                 if ($categories) {
                     $category = $categories[0];
-                    $breadcrumb .= '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a> > ';
+                    $breadcrumb .= '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
                 }
                 $breadcrumb .= '<span>' . get_the_title() . '</span>';
             }
@@ -549,7 +550,7 @@ function get_breadcrumb()
                     $parent_id  = $page->post_parent;
                 }
                 $breadcrumbs = array_reverse($breadcrumbs);
-                foreach ($breadcrumbs as $crumb) $breadcrumb .= $crumb . ' > ';
+                foreach ($breadcrumbs as $crumb) $breadcrumb .= $crumb;
             }
             $breadcrumb .= '<span>' . get_the_title() . '</span>';
         }
