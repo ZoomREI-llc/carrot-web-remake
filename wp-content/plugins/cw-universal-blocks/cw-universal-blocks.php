@@ -32,6 +32,22 @@ function cw_universal_blocks_cw_universal_blocks_block_init()
 		'blog-category',
         
         'post-banner',
+        'benefits',
+        
+        'cwu-hero-v2',
+        'cwu-as-seen-on-carousel',
+        'cwu-steps',
+        'cwu-blockquote',
+        'cwu-meet-company',
+        'cwu-why-choose-us',
+        'cwu-testimonials',
+        'cwu-service',
+        'cwu-faqs',
+        'cwu-sell-today',
+        
+        'faq-accordions',
+        'faq-form',
+        
     ];
 
 	foreach ($blocks as $block) {

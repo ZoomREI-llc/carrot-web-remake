@@ -395,6 +395,16 @@
   }
 }
 
+.cwu-header .call-btn {
+  margin-left: auto;
+}
+.cwu-header__phone-number {
+  text-align: right;
+}
+.cwu-header__burger {
+  width: 2.625rem;
+}
+
 @media (min-width: 769px) {
   .cwu-header__burger{
     display: none;

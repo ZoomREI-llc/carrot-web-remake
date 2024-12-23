@@ -1,6 +1,5 @@
 <?php
-    define('GOOGLE_MAPS_API_KEY', 'AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI');
-    define('CRM_WEBHOOK_URL', 'https://workflow-automation.podio.com/catch/2kt203ir6i3uk64');
+
 // Enqueue Scripts and Styles
 function cw_universal_enqueue_assets()
 {
@@ -51,6 +50,27 @@ function cw_universal_theme_support()
     add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'cw_universal_theme_support');
+
+function customizer_add_logo_white($wp_customize) {
+    $wp_customize->add_setting('logo_white', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    ]);
+    
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'logo_white_control',
+            [
+                'label'    => __('Logo White', 'cw_universal'),
+                'section'  => 'title_tagline',
+                'settings' => 'logo_white',
+                'priority' => 9,
+            ]
+        )
+    );
+}
+add_action('customize_register', 'customizer_add_logo_white');
 
 function cw_universal_custom_js_customizer($wp_customize)
 {
@@ -217,6 +237,7 @@ function site_settings_page_html()
         update_blog_option($blog_id, 'zipcode', sanitize_text_field($_POST['zipcode']));
         update_blog_option($blog_id, 'facebook_link', esc_url_raw($_POST['facebook_link']));
         update_blog_option($blog_id, 'twitter_link', esc_url_raw($_POST['twitter_link']));
+        update_blog_option($blog_id, 'tiktok_link', esc_url_raw($_POST['tiktok_link']));
         update_blog_option($blog_id, 'youtube_link', esc_url_raw($_POST['youtube_link']));
         update_blog_option($blog_id, 'linkedin_link', esc_url_raw($_POST['linkedin_link']));
         update_blog_option($blog_id, 'instagram_link', esc_url_raw($_POST['instagram_link']));
@@ -239,6 +260,7 @@ function site_settings_page_html()
     $zipcode = get_blog_option($blog_id, 'zipcode', '');
     $facebook_link = get_blog_option($blog_id, 'facebook_link', '');
     $twitter_link = get_blog_option($blog_id, 'twitter_link', '');
+    $tiktok_link = get_blog_option($blog_id, 'tiktok_link', '');
     $youtube_link = get_blog_option($blog_id, 'youtube_link', '');
     $linkedin_link = get_blog_option($blog_id, 'linkedin_link', '');
     $instagram_link = get_blog_option($blog_id, 'instagram_link', '');
@@ -301,6 +323,10 @@ function site_settings_page_html()
                 <tr>
                     <th scope="row"><label for="twitter_link">Twitter Link</label></th>
                     <td><input type="url" name="twitter_link" value="<?php echo esc_attr($twitter_link); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="tiktok_link">TikTok Link</label></th>
+                    <td><input type="url" name="tiktok_link" value="<?php echo esc_attr($tiktok_link); ?>" class="regular-text"></td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="youtube_link">YouTube Link</label></th>
@@ -939,6 +965,7 @@ function cwu_get_site_data()
         'email' => get_blog_option($site_id, 'email', ''),
         'facebook_link' => get_blog_option($site_id, 'facebook_link', ''),
         'twitter_link' => get_blog_option($site_id, 'twitter_link', ''),
+        'tiktok_link' => get_blog_option($site_id, 'tiktok_link', ''),
         'youtube_link' => get_blog_option($site_id, 'youtube_link', ''),
         'linkedin_link' => get_blog_option($site_id, 'linkedin_link', ''),
         'instagram_link' => get_blog_option($site_id, 'instagram_link', ''),

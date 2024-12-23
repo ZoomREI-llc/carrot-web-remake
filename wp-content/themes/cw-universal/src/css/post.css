@@ -419,9 +419,7 @@ article.post{
 .post-title {
   line-height: 78%;
 }
-.entry-content__aside{
-  display: none;
-}
+
 @media (min-width: 769px) {
   .entry-banner {
     padding: 1.875rem 1.25rem;
@@ -670,6 +668,18 @@ article.post {
 .post-content {
   display: flex;
   align-items: flex-end;
+}
+
+
+.entry-content__aside {
+  margin-bottom: 2rem;
+}
+.entry-content__aside .entry-banner {
+  margin: 0;
+}
+.entry-content__wrapper {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 @media (min-width: 769px) {
