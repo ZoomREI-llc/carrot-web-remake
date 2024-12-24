@@ -139,8 +139,14 @@
   /* text-align: center; */
 }
 
+.footer-contact .social-icons{
+  display: none;
+}
 
 @media (min-width: 769px) {
+  .footer-contact .social-icons{
+    display: flex;
+  }
   .footer-menus {
     flex-wrap: nowrap;
   }
