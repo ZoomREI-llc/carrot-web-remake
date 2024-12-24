@@ -1,6 +1,4 @@
 <?php
-    define('GOOGLE_MAPS_API_KEY', 'AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI');
-    define('CRM_WEBHOOK_URL', 'https://workflow-automation.podio.com/catch/2kt203ir6i3uk64');
 // Enqueue Scripts and Styles
 function cw_universal_enqueue_assets()
 {
@@ -227,6 +225,7 @@ function site_settings_page_html()
     if (isset($_POST['site_settings_update'])) {
         update_blog_option($blog_id, 'market_code', sanitize_text_field($_POST['market_code']));
         update_blog_option($blog_id, 'company_name', sanitize_text_field($_POST['company_name']));
+        update_blog_option($blog_id, 'company_name_short', sanitize_text_field($_POST['company_name_short']));
         update_blog_option($blog_id, 'market_city', sanitize_text_field($_POST['market_city']));
         update_blog_option($blog_id, 'market_state', sanitize_text_field($_POST['market_state']));
         update_blog_option($blog_id, 'phone', sanitize_text_field($_POST['phone']));
@@ -250,6 +249,7 @@ function site_settings_page_html()
     // Retrieve the saved values for the current site
     $market_code = get_blog_option($blog_id, 'market_code', '');
     $company_name = get_blog_option($blog_id, 'company_name', '');
+    $company_name_short = get_blog_option($blog_id, 'company_name_short', '');
     $market_city = get_blog_option($blog_id, 'market_city', '');
     $market_state = get_blog_option($blog_id, 'market_state', '');
     $phone = get_blog_option($blog_id, 'phone', '');
@@ -280,6 +280,10 @@ function site_settings_page_html()
                 <tr>
                     <th scope="row"><label for="company_name">Company Name</label></th>
                     <td><input type="text" name="company_name" value="<?php echo esc_attr($company_name); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="company_name_short">Company Name Short</label></th>
+                    <td><input type="text" name="company_name_short" value="<?php echo esc_attr($company_name_short); ?>" class="regular-text"></td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="market_city">Market City</label></th>
@@ -757,6 +761,7 @@ function replace_custom_placeholders_multisite($content)
     
     // Fetch Site Settings values for the current site
     $company_name   = get_blog_option($site_id, 'company_name', '');
+    $company_name_short   = get_blog_option($site_id, 'company_name_short', '');
     $market_city    = get_blog_option($site_id, 'market_city', '');
     $market_state   = get_blog_option($site_id, 'market_state', '');
     $phone          = get_blog_option($site_id, 'phone', '');
@@ -800,6 +805,7 @@ function replace_custom_placeholders_multisite($content)
     // Define an array of placeholders and their corresponding values
     $placeholders = array(
         '[company]'        => $company_name,
+        '[company_short]'  => $company_name_short,
         '[market_city]'    => $market_city,
         '[market_state]'   => $market_state,
         '[phone]'          => $phone,

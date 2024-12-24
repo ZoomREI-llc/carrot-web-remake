@@ -395,9 +395,6 @@
   }
 }
 
-.cwu-header .call-btn {
-  margin-left: auto;
-}
 .cwu-header__phone-number {
   text-align: right;
   display: none;
@@ -409,6 +406,7 @@
 .cwu-header__btn {
   display: block;
   margin-left: auto;
+  margin-right: auto;
   flex-shrink: 0;
 }
 
@@ -423,7 +421,9 @@
     align-items: flex-start;
     flex-direction: column;
   }
-
+  .cwu-header .call-btn {
+    margin-left: auto;
+  }
   .cwu-header__phone--icon {
     flex: unset;
     height: 1.65rem;
