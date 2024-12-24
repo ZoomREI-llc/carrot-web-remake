@@ -19,46 +19,69 @@ $site_data = cwu_get_site_data();
                 <span>Back to top</span>
             </a>
             <div class="footer-menus">
-                <div class="footer-menu">
-                    <span class="footer-title">Company</span>
-                    <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'footer-company-menu',
-                            'container' => false,
-                            'menu_class' => 'footer-menu-list',
-                        ));
-                    ?>
-                </div>
-                <div class="footer-menu">
-                    <span class="footer-title">Locations</span>
-                    <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'footer-locations-menu',
-                            'container' => false,
-                            'menu_class' => 'footer-menu-list',
-                        ));
-                    ?>
-                </div>
-                <div class="footer-menu">
-                    <span class="footer-title">Resources</span>
-                    <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'footer-resources-menu',
-                            'container' => false,
-                            'menu_class' => 'footer-menu-list',
-                        ));
-                    ?>
-                </div>
-                <div class="footer-menu">
-                    <span class="footer-title">Legal</span>
-                    <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'footer-legal-menu',
-                            'container' => false,
-                            'menu_class' => 'footer-menu-list',
-                        ));
-                    ?>
-                </div>
+                <?php
+                    $company_menu = wp_nav_menu(array(
+                        'theme_location' => 'footer-company-menu',
+                        'container' => false,
+                        'menu_class' => 'footer-menu-list',
+                        'fallback_cb' => '__return_false',
+                        'echo' => false
+                    ));
+                ?>
+                <?php if($company_menu): ?>
+                    <div class="footer-menu">
+                        <span class="footer-title">Company</span>
+                        <?= $company_menu ?>
+                    </div>
+                <?php endif; ?>
+    
+                <?php
+                    $locations_menu = wp_nav_menu(array(
+                        'theme_location' => 'footer-locations-menu',
+                        'container' => false,
+                        'menu_class' => 'footer-menu-list',
+                        'fallback_cb' => '__return_false',
+                        'echo' => false
+                    ));
+                ?>
+                <?php if($locations_menu): ?>
+                    <div class="footer-menu">
+                        <span class="footer-title">Locations</span>
+                        <?= $locations_menu ?>
+                    </div>
+                <?php endif; ?>
+    
+                <?php
+                    $resources_menu = wp_nav_menu(array(
+                        'theme_location' => 'footer-resources-menu',
+                        'container' => false,
+                        'menu_class' => 'footer-menu-list',
+                        'fallback_cb' => '__return_false',
+                        'echo' => false
+                    ));
+                ?>
+                <?php if($resources_menu): ?>
+                    <div class="footer-menu">
+                        <span class="footer-title">Resources</span>
+                        <?= $resources_menu ?>
+                    </div>
+                <?php endif; ?>
+    
+                <?php
+                    $legal_menu = wp_nav_menu(array(
+                        'theme_location' => 'footer-legal-menu',
+                        'container' => false,
+                        'menu_class' => 'footer-menu-list',
+                        'fallback_cb' => '__return_false',
+                        'echo' => false
+                    ));
+                ?>
+                <?php if($legal_menu): ?>
+                    <div class="footer-menu">
+                        <span class="footer-title">Legal</span>
+                        <?= $legal_menu ?>
+                    </div>
+                <?php endif; ?>
                 <div class="footer-contact">
                     <span class="footer-title">Contact Us</span>
                     <a class="call-btn" href="tel:<?= get_blog_option(get_current_blog_id(), 'phone', '') ?>">

@@ -12,7 +12,7 @@
                     <div class="post-image">
                         <a href="<?php the_permalink(); ?>">
                             <?php if (has_post_thumbnail()) {
-                                the_post_thumbnail('medium');
+                                the_post_thumbnail('large');
                             } else { ?>
                                 <img src="path/to/default-image.jpg" alt="<?php the_title(); ?>">
                             <?php } ?>

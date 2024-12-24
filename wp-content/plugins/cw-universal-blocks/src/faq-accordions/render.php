@@ -15,7 +15,7 @@
     }
 ?>
 
-<section class="faq-accordions">
+<section class="faq-accordions body-gray">
     <div class="grid-container">
         <div class="faq-accordions__container">
             <div class="faq-accordions-title">
