@@ -54,13 +54,6 @@ jobs:
           npm install
           npm run build
 
-      # Install dependencies and build the cw-universal-blocks plugin
-      - name: Install dependencies and build cw-universal-blocks plugin
-        working-directory: ./wp-content/plugins/cw-universal-blocks
-        run: |
-          npm install
-          npm run build
-
       # Sync themes and plugins to the staging server, excluding node_modules
       - name: Sync Plugins and Themes to Production
         run: |

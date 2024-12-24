@@ -1,0 +1,103 @@
+.cwu-faqs {
+	padding: 2rem 0;
+	background-color: #eef7ff;
+}
+.cwu-faqs__header,
+.cwu-faqs__items{
+ 	grid-column: span 4;
+}
+.cwu-faqs__header {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	text-align: center;
+	margin-bottom: 0.8rem;
+}
+@media (min-width: 769px) {
+	.cwu-faqs__header,
+	.cwu-faqs__items{
+		grid-column: span 12;
+	}
+	.cwu-faqs__header {
+		margin-bottom: 2rem;
+	}
+}
+
+.cwu-faqs__header .title-2 span{
+	color: #004C8D;
+}
+
+.cwu-faqs__item {
+	font-size: 1.125rem;
+}
+
+.cwu-faqs__question {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	background-color: transparent;
+	padding: 1rem 0rem 1rem 0rem;
+	cursor: pointer;
+	border-radius: 0;
+	border-bottom: 1px solid #004c8d66;
+	font-size: 1rem;
+	line-height: 1.4;
+}
+.cwu-faqs__question .cwu-faq-indicator {
+	border: 2px solid #004c8d66;
+	color: #004c8d66;
+	background-color: transparent;
+}
+.cwu-faqs__question._active .cwu-faq-indicator {
+	border: 2px solid #004c8d66;
+	color: #fff;
+	background: #004c8d66;
+	/* background-color: transparent; */
+}
+@media (min-width: 769px) {
+	.cwu-faqs__question {
+		font-size: 1.125rem;
+	}
+}
+
+.cwu-faq-indicator {
+	width: 1.625rem;
+	height: 1.625rem;
+	background-color: #004c8d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	flex-shrink: 0;
+	border-radius: 50%;
+	font-size: 0.875rem;
+	font-weight: 500;
+	padding-bottom: 0.1875rem;
+}
+
+.cwu-faqs__answer {
+	/* margin-bottom: 0.75rem; */
+	overflow: hidden;
+	padding: 1.5rem 1.125rem;
+	background-color: #fff;
+	font-size: 1rem;
+}
+@media (min-width: 769px) {
+	.cwu-faqs__answer {
+		font-size: 14px;
+	}
+	.cwu-faq-indicator {
+		width: 2.75rem;
+		height: 2.75rem;
+		font-size: 1.625rem;
+	}
+	.cwu-faqs__header {
+		margin-bottom: 1rem;
+		gap: 3px;
+	}
+	.cwu-faqs {
+		background-color: #fff;
+	}
+
+}

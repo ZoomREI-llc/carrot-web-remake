@@ -7,7 +7,7 @@
  */
 
 $the_content = [
-    do_shortcode("[cw_universal_blog]")
+    do_shortcode("[chris_buys_blocks_blog]")
 ];
 
 cw_universal_get_header();

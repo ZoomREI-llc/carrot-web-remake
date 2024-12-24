@@ -1,0 +1,284 @@
+
+.cwu-service {
+	background-color: #00294C;
+}
+.cwu-service .cwu-hero__reviews-text p{
+	color: #fff;
+}
+
+.cwu-service__table {
+	margin: 1.5rem 0;
+	width: 100%;
+}
+.cwu-service__row {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+.cwu-service__row--left-item{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	flex: 0 0 42%;
+	width:42%;
+	min-height: 4rem;
+}
+
+.cwu-service__row--right-item,
+.cwu-service__row--centr-item{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	flex: 0 0 29%;
+	width: 29%;
+	min-height: 4rem;
+}
+@media (min-width: 769px) {
+	.cwu-service__row--right-item,
+	.cwu-service__row--left-item,
+	.cwu-service__row--centr-item{
+		min-height: 7rem;
+	}
+	.cwu-service__row--right-item,
+	.cwu-service__row--left-item,
+	.cwu-service__row--centr-item{
+		position: relative;
+		flex: 0 0 33.33%;
+		width: 33.33%;
+		min-height: 7rem;
+	}
+}
+.cwu-service__row--centr-item {
+	background-color: #D2E2F2;
+	
+}
+.cwu-service__row--right-item,
+.cwu-service__row--left-item {
+	background-color: #063F6F;
+}
+.cwu-service__row--header .cwu-service__row--centr-item {
+	border-radius: 5px 5px 0px 0px;
+}
+.cwu-service__row--header .cwu-service__row--centr-item,
+.cwu-service__row:nth-child(2n +1) .cwu-service__row--centr-item {
+	background-color: #fff;
+}
+.cwu-service__row:nth-child(2n +1) .cwu-service__row--right-item,
+.cwu-service__row:nth-child(2n +1) .cwu-service__row--left-item {
+	background-color: #0F62A9;
+}
+.cwu-service__row:nth-child(2) .cwu-service__row--right-item{
+
+border-radius: 0px 5px 0px 0px;
+}
+.cwu-service__row:nth-child(2) .cwu-service__row--left-item{
+	border-radius: 5px 0px 0px 0px;
+}
+.cwu-service__row:last-child .cwu-service__row--right-item{
+	border-radius: 0px 0px 5px 0px;
+}
+.cwu-service__row:last-child .cwu-service__row--left-item{
+	border-radius: 0px 0px 0px 5px;
+}
+.cwu-service__row:last-child .cwu-service__row--centr-item{
+	position: relative;
+}
+.cwu-service__row:last-child .cwu-service__row--centr-item ::after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	background-color: #fff;
+	top: 100%;
+	left: 0;
+	border-radius: 0px 0px 5px 5px;
+}
+@media (min-width: 769px) {
+	.cwu-service__row--header .cwu-service__row--centr-item {
+		border-radius: 10px 10px 0px 0px;
+	}
+	.cwu-service__row:nth-child(2) .cwu-service__row--right-item{
+		border-radius: 0px 10px 0px 0px;
+	}
+	.cwu-service__row:nth-child(2) .cwu-service__row--left-item{
+		border-radius: 10px 0px 0px 0px;
+	}
+	.cwu-service__row:last-child .cwu-service__row--right-item{
+		border-radius: 0px 0px 10px 0px;
+	}
+	.cwu-service__row:last-child .cwu-service__row--left-item{
+		border-radius: 0px 0px 0px 10px;
+	}
+	.cwu-service__row:last-child .cwu-service__row--centr-item ::after{
+		height: 30%;
+		border-radius: 0px 0px 10px 10px;
+	}
+}
+.cwu-service__row--text {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1.2;
+	color: #FFFFFF;
+	padding: 5px;
+	padding-top: 0;
+}
+.cwu-service__row--header .cwu-service__row--icon{
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%,-50%);
+	height: 3.5rem;
+	margin: 0;
+}
+
+@media (min-width: 769px) {
+	.cwu-service__row--header .cwu-service__row--icon{
+		height: 5rem;
+	}
+	.cwu-service__row--text {
+		font-weight: 500;
+		text-align: center;
+		font-size: 1.125rem;
+		padding: 0;
+	}
+}
+.cwu-service__row--icon {
+	width: auto;
+	height: 1rem;
+
+	object-fit: contain;
+	margin: 0.5rem;
+}
+.cwu-service__row--centr-item .cwu-service__row--text {
+	color: #000;
+	text-align: center;
+}
+
+.cwu-service__row--right-item .cwu-service__row--text {
+	font-size: 10px;
+	padding: 5px;
+	padding-top: 0;
+	text-align: center;
+}
+.cwu-service__row--left-item .cwu-service__row--text {
+	/* text-align: left; */
+	align-self: flex-start;
+	padding: 0 0.5rem;
+}
+
+
+.cwu-service__row--header .cwu-service__row--text {
+	font-size: 12px;
+	line-height:1.2;
+	font-weight: 600;
+	text-align: center;
+	padding: 2.2rem 0.5rem 0.3rem;
+}
+.cwu-service__row--header .cwu-service__row--right-item,
+.cwu-service__row--header .cwu-service__row--left-item{
+	background-color: transparent !important;
+}
+@media (min-width: 769px) {
+	.cwu-service__row--left-item .cwu-service__row--text {
+		text-align: left;
+		font-size: 1.125rem;
+		font-weight: 500;
+		padding: 0 2rem;
+			}
+	.cwu-service__table {
+		margin: 4rem auto;
+	}
+
+	.cwu-service__row--icon {
+		height: 2rem;
+		margin: 0;
+		margin-bottom: 0.5rem;
+	}
+	.cwu-service__row--right-item .cwu-service__row--text {
+		font-weight: 500;
+		font-size: 1rem;
+		text-align: center;
+	}
+	.cwu-service__row--header .cwu-service__row--text {
+		font-weight: 600;
+		font-size: 1.375rem;
+		padding: 3rem 4rem 1.5rem;
+		text-align: center;
+	}
+}
+.cwu-service__footer-block{
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.cwu-service__footer-block {
+	margin-top: 1rem;
+	gap: 1rem;
+}
+.cwu-service__footer-block .cwu-hero__reviews {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.425rem;
+}
+
+.cwu-service__header,
+.cwu-service__table,
+.cwu-service__footer{
+	grid-column: span 4;
+}
+
+.cwu-service__header {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	color: #fff;
+}
+
+.cwu-service__header .sub-title {
+	color: #fff;
+}
+
+.cwu-service__footer {
+	text-align: center;
+	color: #fff;
+}
+
+.cwu-service {
+	padding: 2rem 0;
+}
+
+.cwu-service__table {
+	padding: 1.75rem 0 1rem;
+}
+
+
+@media (min-width: 769px) {
+	.cwu-service__header,
+	.cwu-service__table,
+	.cwu-service__footer{
+		grid-column: span 12;
+	}
+	.cwu-service__footer-block .cwu-hero__reviews {
+		flex-direction: row;
+	}
+	.cwu-hero__reviews-text p {
+		font-size: 1rem;
+	}
+	.cwu-hero__star {
+		width: 1rem;
+	}
+}

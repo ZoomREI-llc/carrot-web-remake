@@ -137,7 +137,7 @@ $logoUrl = "cw-service/{$selectedMarket}-favicon";
         <div class="cw-service__footer">
             <h3 class="title-4">Ready to sell your house to us?</h3>
             <div class="cw-service__footer-block">
-                <a class="cw-service__cta cta-btn green-btn green-btn--arrow" href="#cw-form">Get my offer</a>
+                <a class="cw-service__cta cta-btn green-btn green-btn--arrow" href="<?= get_offer_button_link() ?>">Get my offer</a>
                 <div class="cw-hero__reviews">
                     <div class="cw-hero__reviews-stars-wrapper">
                         <span class="cw-hero__star"><?php echo get_responsive_image('cw-service/star', 'star'); ?></span>

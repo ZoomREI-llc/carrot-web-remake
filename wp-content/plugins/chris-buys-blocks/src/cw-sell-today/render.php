@@ -11,7 +11,7 @@ $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName']
             </div>
   
             <div class="cw-hero__footer-block">
-               <a class="cw-service__cta green-btn green-btn--arrow cta-btn" href="#cw-form">Get my offer</a>
+               <a class="cw-service__cta green-btn green-btn--arrow cta-btn" href="<?= get_offer_button_link() ?>">Get my offer</a>
                <div class="cw-hero__reviews">
                    <div class="cw-hero__reviews-stars-wrapper">
                        <span class="cw-hero__star"><?php echo get_responsive_image('cw-sell-today/star', 'star'); ?></span>

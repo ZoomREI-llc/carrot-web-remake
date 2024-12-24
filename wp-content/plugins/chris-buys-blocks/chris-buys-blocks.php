@@ -94,11 +94,35 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 
 		'cookie-banner',
 		'cookie-banner-consent', //namespace prefix issue
+        
+        
+        // CWU Blocks
+        'benefits',
+		'blog',
+		'blog-categories',
+		'blog-category',
+		'blog-category-hero',
+		'blog-hero',
+		'blog-latest',
+		'blog-post-banner',
+		'cwu-as-seen-on-carousel',
+		'cwu-blockquote',
+		'cwu-faqs',
+		'cwu-hero-v2',
+		'cwu-meet-company',
+		'cwu-sell-today',
+		'cwu-service',
+		'cwu-steps',
+		'cwu-testimonials',
+		'cwu-why-choose-us',
+		'faq-accordions',
+		'faq-form',
+		'post-banner'
 	];
 
 	foreach ($blocks as $block) {
 		register_block_type(__DIR__ . "/build/$block");
-		add_shortcode("doctor_homes_$block", function ($atts) use ($block) {
+		add_shortcode("chris_buys_blocks_$block", function ($atts) use ($block) {
 			$attributes = shortcode_atts([], $atts);
 			return render_block([
 				'blockName' => "chris-buys/$block",

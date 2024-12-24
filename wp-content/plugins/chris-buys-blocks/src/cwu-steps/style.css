@@ -1,0 +1,178 @@
+.cwu-steps {
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.cwu-steps__text {
+	text-align: center;
+	max-width: 61.25rem;
+}
+
+.cwu-steps__steps {
+	display: grid;
+	grid-template-columns: subgrid;
+}
+
+.cwu-steps .cwu-step {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 1rem;
+	grid-column: span 4;
+}
+
+.cwu-steps .cwu-step__img {
+	flex-shrink: 0;
+	width: 4.6875rem;
+	height: 4.6875rem;
+	margin: 0 auto;
+	margin-bottom: 0.5rem; 
+}
+
+.cwu-steps .cwu-step__img img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: contain;
+}
+
+@media (min-width: 769px) {
+	.cwu-steps .cwu-step__img {
+		width: 6.25rem;
+		height: 6.25rem;
+	}
+}
+
+.cwu-steps .cwu-step__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* align-items: center; */
+	gap: 0.625rem;
+}
+
+.cwu-steps .cwu-step__title {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.cwu-steps .cwu-step__number {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	border-radius: 50%;
+	font-size: 1rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: #00b43d;
+	flex-shrink: 0;
+	font-weight: 600;
+	position: relative;
+	
+	/* font-size: 1.25rem; */
+}
+.cwu-steps .cwu-step__number--arrow {
+	display: none;
+}
+
+@media (min-width: 769px) {
+	.cwu-steps .cwu-step__number {
+		flex-direction: row;
+		width: 4rem;
+		height: 4rem;
+		font-size: 1.5rem;
+	}
+	.cwu-steps .cwu-step__number--arrow {
+		position: absolute;
+		left: 40%;
+		z-index: -1;
+		display: block;
+  }
+}
+
+.cwu-steps .cwu-step__content p {
+	/* font-size: 1rem; */
+	font-size: 0.875rem;
+	line-height: 1.4;
+	margin: 0;
+	text-align: center;
+}
+
+@media (min-width: 769px) {
+	.cwu-steps .cwu-step__content p {
+		/* font-size: 1.125rem; */
+		font-size: 1rem;
+		text-align: center;
+		padding: 0 1.875rem;
+	}
+}
+
+.cwu-steps__text {
+	grid-column: span 4;
+	row-gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.5rem;
+}
+
+.cwu-steps__steps {
+	grid-column: span 4;
+}
+
+.cwu-steps .cwu-step {
+	gap: 1.25rem;
+}
+
+.cwu-steps .cwu-step__img {
+	margin-bottom: 0;
+}
+
+.cwu-steps .cwu-step__title {
+	gap: 1rem;
+}
+
+.cwu-steps .cwu-step__content {
+	gap: 0.875rem;
+}
+
+@media (min-width: 769px) {
+	.cwu-steps__text {
+		grid-column: span 12;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.cwu-steps__steps {
+		grid-column: span 12;
+	}
+
+	.cwu-steps .cwu-step__title {
+		position: relative;
+	}
+
+	.cwu-steps .cwu-step__number--arrow {
+		left: calc(50% + 1rem);
+		top: 2rem;
+		transform: translateY(-50%);
+	}
+
+	.cwu-steps .cwu-step__content {
+		gap: 0.625rem;
+	}
+
+	.cwu-steps__text {
+		row-gap: 3px;
+		margin-bottom: 28px;
+	}
+
+	.cwu-steps .cwu-step {
+		gap: 16px;
+	}
+}
+
