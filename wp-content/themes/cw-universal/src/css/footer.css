@@ -138,3 +138,19 @@
   line-height: 1rem;
   /* text-align: center; */
 }
+
+
+@media (min-width: 769px) {
+  .footer-menus {
+    flex-wrap: nowrap;
+  }
+  .footer-contact, .footer-menu {
+    min-width: 7rem;
+  }
+  .footer-contact a {
+    word-break: break-all;
+  }
+  .social-icons{
+    gap: .5rem;
+  }
+}

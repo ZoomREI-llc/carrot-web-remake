@@ -742,4 +742,7 @@ article.post {
   .post-content{
     align-items: center;
   }
+  .entry-content__aside .entry-banner {
+    top: 6.5rem;
+  }
 }

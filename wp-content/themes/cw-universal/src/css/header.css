@@ -400,12 +400,22 @@
 }
 .cwu-header__phone-number {
   text-align: right;
+  display: none;
 }
 .cwu-header__burger {
   width: 2.625rem;
 }
 
+.cwu-header__btn {
+  display: block;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
 @media (min-width: 769px) {
+  .cwu-header__phone-number{
+    display: block;
+  }
   .cwu-header__burger{
     display: none;
   }
@@ -433,17 +443,32 @@
 
   .cwu-header__btn {
     display: flex;
-    margin-left: 2.5rem;
-    min-width: 13%;
     justify-content: flex-end;
+    margin-left: 1.5rem;
+    flex-shrink: 0;
   }
   .cwu-header__menu {
     margin: 0 auto;
-    gap: 1.5rem;
-    font-size: 0.9375rem;
     font-weight: 600;
     color: #3c3c3c;
+    gap: 1.5rem;
+    font-size: 0.875rem;
   }
 
+  .custom-logo-link {
+    width: 13.625rem;
+  }
+  .cwu-header__phone--number {
+    font-size: 1rem;
+  }
+  .cwu-header__phone--text {
+    font-size: 1rem;
+  }
+}
 
+.cwu-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 99;
 }

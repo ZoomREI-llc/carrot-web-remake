@@ -110,9 +110,7 @@ if (!empty($rank_math_toc_block)) {
                     <div class="entry-meta__avatar">
                         <?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
                     </div>
-                    <span class="author"><?php the_author(); ?></span>
-                    |
-                    <span class="date"><?php the_date(); ?></span>
+                    <span class="author"><?php the_author(); ?></span>&nbsp;|&nbsp;<span class="date"><?php the_date(); ?></span>
                 </div>
             </div>
             <?php get_template_part('template-parts/share-bar'); ?>

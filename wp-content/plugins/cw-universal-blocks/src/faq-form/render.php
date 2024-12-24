@@ -6,7 +6,7 @@ $phone_img = plugins_url('src/faq-form/assets/phone.svg', dirname(__FILE__, 2));
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';
 ?>
 
-<section class="faq-form" style="--tick-url: url('<?php echo cwu_get_image_url('faq-form/tick'); ?>');">
+<section class="faq-form body-gray" style="--tick-url: url('<?php echo cwu_get_image_url('faq-form/tick'); ?>');">
 	<div class="faq-form-title title-2"><h2>Didn't find the answer you were looking for?</h2></div>
 	<div class="faq-form-description"><h3>Give us a call--we're happy to help!</h3></div>
 	<a href="tel:<?php echo $phoneNumber; ?>" class="faq-form-number">
