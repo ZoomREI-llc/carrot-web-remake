@@ -116,7 +116,7 @@ if ($hostname === 'doctorhomes.com') {
                     </div>
                 </a>
                 <div class="cwu-header__btn">
-                    <a href="/#cw-form" class="btn btn--small">Get My Offer</a>
+                    <a href="<?= get_offer_button_link() ?>" class="btn btn--small">Get My Offer</a>
                 </div>
 
                 <button id="mobile-menu-button" class="cwu-header__burger mobile-menu-button">
