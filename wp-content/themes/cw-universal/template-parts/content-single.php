@@ -151,7 +151,7 @@ if (!empty($rank_math_toc_block)) {
                             <h3>Sell your home Fast As-Is</h3>
                         </div>
                         <div class="entry-banner__btn">
-                            <a href="/#cw-form" class="btn cta-btn">
+                            <a href="<?= get_offer_button_link() ?>" class="btn cta-btn">
                                 Get My Offer
                             </a>
                         </div>
@@ -204,7 +204,7 @@ if (!empty($rank_math_toc_block)) {
                         <h3>Sell your home Fast As-Is</h3>
                     </div>
                     <div class="entry-banner__btn">
-                        <a href="/#cw-form" class="btn cta-btn">
+                        <a href="<?= get_offer_button_link() ?>" class="btn cta-btn">
                             Get My Offer
                         </a>
                     </div>
