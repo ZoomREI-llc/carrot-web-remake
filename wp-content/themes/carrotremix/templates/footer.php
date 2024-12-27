@@ -192,6 +192,20 @@ $market_code = $site_data['market_code'];
 
         </div>
     </footer>
+<?php elseif ($no_footer): ?>
+    <div class="footer-disclaimer">
+        <hr style="border-top: 1px solid #CCCCCC;" />
+        <p>The content provided on this website is intended for informational purposes only and does not constitute an offer to buy or a solicitation to sell property. All representations regarding potential transactions are preliminary and subject to change. No content on this site should be interpreted as a binding promise or guarantee of a specific outcome. Each property purchase will be subject to individual negotiation and the execution of a definitive agreement, the terms of which may vary. We make no warranties regarding the accuracy, completeness, legality, or reliability of any information offered on this website. Sellers are advised to conduct their own due diligence and consult with professional advisors prior to entering into any transaction with us.</p>
+    </div>
+
+    <style>
+        .footer-disclaimer p {
+            font-size: 0.75em;
+            padding: 1rem;
+            line-height: 1rem;
+            text-align: center;
+        }
+    </style>
 <?php endif; ?>
 
 <?php wp_footer(); ?>
