@@ -23,7 +23,7 @@ $john_reviews = [
     'john-review-8'
 ];
 
-$selected_reviews = in_array($selected_market, ['San Francisco Bay Area']) ? $john_reviews : $chris_reviews;
+$selected_reviews = in_array($selected_market, ['San Francisco']) ? $john_reviews : $chris_reviews;
 ?>
 
 <section id="cb-home-reviews" class="cb-home-reviews">
