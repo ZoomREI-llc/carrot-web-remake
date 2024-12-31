@@ -10,7 +10,7 @@ if ($selectedMarket === "the Bay Area") {
 }
 
 if(!function_exists('getDynamicTextsByTerm')) {
-    function getDynamicTextsByTerm($default_title = '', $default_text = '')
+    function getDynamicTextsByTerm($default_title = '', $default_text = '', $selectedMarket = '')
     {
         $title = $default_title;
         $text = $default_text;
@@ -55,6 +55,10 @@ if(!function_exists('getDynamicTextsByTerm')) {
             }
         }
         
+        // always replace {market} with $selectedMarket
+        $title = str_replace('{market}', $selectedMarket, $title);
+        $text = str_replace('{market}', $selectedMarket, $text);
+
         return [
             'title' => $title,
             'text'  => $text
@@ -65,7 +69,7 @@ if(!function_exists('getDynamicTextsByTerm')) {
 $default_title = 'We Buy ANY House In <span>ANY Condition, On YOUR Timeline</span>';
 $default_text = 'House to sell in '. esc_html($selectedMarket) . '? <strong>Get a cash offer in just 7 minutes</strong>, and get the sale closed as soon as you want to.';
 
-$texts = getDynamicTextsByTerm($default_title, $default_text);
+$texts = getDynamicTextsByTerm($default_title, $default_text, $selectedMarket);
 ?>
 
 <section class="cw-hero-wrapper inter-font" style="
