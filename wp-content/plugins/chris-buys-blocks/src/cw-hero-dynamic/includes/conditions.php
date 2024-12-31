@@ -78,4 +78,13 @@ return [
         'title'      => 'Sell Your House \'As Is\' <span>– Hassle-Free, Immediate Cash Offers!</span>',
         'text'       => 'Forget repairs and renovations; we buy your house as it stands.<br> Get a fair cash offer and sell your property on your terms, quickly and effortlessly.'
     ],
+    [
+        'conditions' => [
+            [
+                'keywords' => ['sell']
+            ]
+        ],
+        'title' => 'Ready to Sell Your House? <span>We Buy Houses As-Is, On Your Timeline.</span>',
+        'text'  => 'Selling your house in {market} is easy. Receive a fair cash offer in minutes and close as soon as you want.'
+    ],
 ];
